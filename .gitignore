@@ -1,3 +1,5 @@
 sources/*
 json/*
 !json/*.zip
+!json/*.md
+!json/LICENSE

@@ -6,14 +6,14 @@
 
 Rappel de ce que sont les données essentielles de la commande publique (ou DECP) [sur le blog de data.gouv.fr](https://www.data.gouv.fr/fr/posts/le-point-sur-les-donnees-essentielles-de-la-commande-publique/).
 
-L'objectif de ce projet est d'identifier toutes les sources de DECP, et de créer des scripts permettant de produire des fichiers JSON utilisables ([exemple fictif sur le dépôt officiel](https://github.com/etalab/format-commande-publique/blob/master/exemples/json/paquet.json)).
+L'objectif de ce projet est d'identifier toutes les sources de DECP, et de créer des scripts permettant de produire des fichiers utilisables ([exemple fictif sur le dépôt officiel](https://github.com/etalab/format-commande-publique/blob/master/exemples/json/paquet.json)) au [format JSON réglementaire](https://github.com/etalab/format-commande-publique/tree/master/sch%C3%A9mas/json).
 
 La procédure standard est la suivante :
 
 1. J'agrège toutes les données possibles dans leur format d'origine, **XML ou JSON** (les DECP n'existent pas dans d'autres formats)
 2. Je les stocke dans `/sources` dans un répertoire spécifique à la source des données. En effet, selon la source, les données n'ont pas besoin des même traitements pour être utilisables (nettoyage, réparation de la structure, correction de l'encodage, conversion depuis XML)
-3. Je les convertis au format JSON réglementaire, en rajoutant un champ `source`. Certaines données sources n'étant pas valide (par exemple si certains champs manquent), les données JSON ne seront pas non plus valides. Je prends le parti de les garder.
-4. Je crée une archive ZIP avec le JSON converti. Ces ZIP sont sauvegardés dans le dépot Git, vous les trouverez dans `/json`
+3. Je les convertis au format JSON réglementaire, en rajoutant un champ `source`. Certaines données sources n'étant pas valides (par exemple si certains champs manquent), les données JSON ne seront pas non plus valides. Je prends le parti de les garder.
+4. Je crée une archive ZIP avec le JSON converti. Ces archives ZIP sont sauvegardées dans le dépot Git, vous les trouverez dans `/json`
 
 **Si vous avez connaissance de données essentielles de la commande publique facilement accessibles (téléchargement en masse possible) et qui ne sont pas encore identifiées ci-dessous, merci de [m'en informer](#contact).**
 
@@ -59,16 +59,18 @@ Les données doivent avoir été converties. Il est recommander de créer une ar
 
 ## Sources de données
 
-| Code               | Description                                          | URL                                                           | Statut       |
-| ------------------ | ---------------------------------------------------- | ------------------------------------------------------------- | ------------ |
-| `data.gouv.fr_pes` | Données des collectivités publiées via le PES Marché | https://www.data.gouv.fr/fr/datasets/5bd0b6fd8b4c413d0801dc57 | **Intégrée** |
-|                    | Données de l'État publiées par l'AIFE                | https://www.data.gouv.fr/fr/datasets/5bd789ee8b4c4155bd9a0770 | Identifiée   |
+| Code               | Description                                          | URL                                                           | Statut                   |
+| ------------------ | ---------------------------------------------------- | ------------------------------------------------------------- | ------------------------ |
+| `data.gouv.fr_pes` | Données des collectivités publiées via le PES Marché | https://www.data.gouv.fr/fr/datasets/5bd0b6fd8b4c413d0801dc57 | **Intégrée**             |
+|                    | Données de l'État publiées par l'AIFE                | https://www.data.gouv.fr/fr/datasets/5bd789ee8b4c4155bd9a0770 | Intégrée prochainement   |
+|                    | DECP publiées par achatpublic.com                    | [https://www.achatpublic.com](https://frama.link/47M71Xz2)    | Téléchargement compliqué |
+|                    |                                                      |                                                               |                          |
 
 ## Contact
 
 Vous pouvez :
 
-- m'écrire un mail à [colin@maudry.com]
+- m'écrire un mail à colin@maudry.com
 - me trouver sur Twitter ([@col1m](https://twitter.com/col1m))
 - intéragir avec ce dépôt sur Github (issues, pull request).
 
