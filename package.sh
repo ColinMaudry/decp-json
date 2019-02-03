@@ -12,17 +12,27 @@ source=$1
 date=`date +%Y-%m-%d`
 
 
-if [[ -d ./json/$source ]]
+if [[ -d $DECP_HOME/json/$source ]]
     then
-    cd ./json
-    filename=$source-json
+
+    cd $DECP_HOME/json/$source
+
+    # Fusion de tous les fichiers en un seul
+    $DECP_HOME/scripts/mergeJson.sh > ../$source.json
+
+    filename=${source}_json
+
+    cd $DECP_HOME/json
 
     # Suppression de l'ancienne denière archive ZIP de la source choisie
     rm $filename.zip
 
     # Création d'une archive ZIP avec tous les JSON de la source choisie
-    zip -q -9 $filename.zip $source/*.json
+    zip -q -9 $filename.zip $source.json
     cp $filename.zip ${filename}_$date.zip
+
+    # Suppression du fichier des JSON fusionnés
+    rm $source.json
 
 elif [[ -z "$source" ]]
     then
