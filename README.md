@@ -21,6 +21,7 @@ La procédure standard est la suivante :
 
 - [xml2json](https://github.com/Cheedoong/xml2json) pour la conversion de XML vers JSON
 - [jq](https://stedolan.github.io/jq/) pour la conversion JSON vers JSON (disponible dans les dépôts Ubuntu)
+- `mongoimport` pour le chargement dans une base MongoDB
 - pouvoir exécuter des scripts bash
 
 ## Mode d'emploi
@@ -48,6 +49,15 @@ Les données doivent avoir été converties.
 ./package.sh [code]
 ```
 
+### Charger des données JSON converties dans MongoDB
+
+Les données doivent avoir été converties.
+
+```
+./load-in-db.sh [code]
+```
+
+
 ### Supprimer les données JSON converties
 
 Les données doivent avoir été converties. Il est recommander de créer une archive ZIP auparavant, au cas où.
@@ -64,6 +74,7 @@ Les données doivent avoir été converties. Il est recommander de créer une ar
 | `data.gouv.fr_pes` | Données des collectivités publiées via le PES Marché | https://www.data.gouv.fr/fr/datasets/5bd0b6fd8b4c413d0801dc57 | **Intégrée**             |
 |                    | Données de l'État publiées par l'AIFE                | https://www.data.gouv.fr/fr/datasets/5bd789ee8b4c4155bd9a0770 | Intégrée prochainement   |
 |                    | DECP publiées par achatpublic.com                    | [https://www.achatpublic.com](https://frama.link/47M71Xz2)    | Téléchargement compliqué |
+|                    | DECP publiées par marches-publics.info(AWS)          | https://www.marches-publics.info/mpiaws/index.cfm             | Intégrée prochainement   |
 |                    |                                                      |                                                               |                          |
 
 ## Contact
