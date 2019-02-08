@@ -20,9 +20,17 @@ if [[ -f $DECP_HOME/json/${source}_json.zip ]]
         source $DECP_HOME/config/config.sh
     fi
 
+    # Décompression des données dans le répertoire courant
     unzip -o $DECP_HOME/json/${source}_json.zip
 
-    jq '.marches' $source.json | mongoimport --username $mongoUsername --password $mongoPassword --host $mongoHost:$mongoPort --db $mongoDatabase --collection $mongoCollection --drop --jsonArray
+    # Chargement des données dans MongoDB, en suivant la configuration
+    jq '.marches' $source.json | mongoimport --username $mongoUsername --password $mongoPassword --host $mongoHost:$mongoPort --db $mongoDatabase --collection data --drop --jsonArray
+
+    # Chargement des métadonnées des sources
+    mongoimport --username $mongoUsername --password $mongoPassword --host $mongoHost:$mongoPort --db $mongoDatabase --collection sources --drop --jsonArray --file $DECP_HOME/sources/metadata.json
+
+
+
 
     rm $source.json
 

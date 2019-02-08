@@ -9,5 +9,9 @@ mongoUsername=user
 mongoPassword=1234
 mongoPort=27017
 mongoHost=localhost
+
+# Il est préférables que la base de données ci-desous doit dédiée aux DECP
+# Collections créées dans cette base de données :
+# - data
+# - sources
 mongoDatabase=decp
-mongoCollection=data
