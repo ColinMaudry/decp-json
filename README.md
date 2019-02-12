@@ -17,6 +17,8 @@ La procédure standard est la suivante :
 
 **Si vous avez connaissance de données essentielles de la commande publique facilement accessibles (téléchargement en masse possible) et qui ne sont pas encore identifiées ci-dessous, merci de [m'en informer](#contact).**
 
+À terme, les données converties seront principalement mis à disposition sur https://sireneld.io/data.
+
 ## Pré-requis
 
 - [xml2json](https://github.com/Cheedoong/xml2json) pour la conversion de XML vers JSON

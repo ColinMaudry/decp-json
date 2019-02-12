@@ -14,6 +14,8 @@ if [[ -d ./scripts/sources/$source ]]
     then
     cd ./scripts/sources/$source
     ./get.sh $source
+
+    
 elif [[ -z "$source" ]]
     then
     echo "Récupération de toutes les sources (désactivé)"
