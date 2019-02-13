@@ -1,3 +1,3 @@
 #!/bin/bash
 
-jq -s '{ marches: map(.marches[0]) }' *.json
+jq -s '{ marches: map(.marches[]) }' *.json
