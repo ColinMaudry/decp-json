@@ -4,5 +4,11 @@
         "code":"data.gouv.fr_pes",
         "description": "Données des collectivités publiées via le PES Marché",
         "url":"https://www.data.gouv.fr/fr/datasets/5bd0b6fd8b4c413d0801dc57"
+    },
+    {
+        "id":"2",
+        "code":"data.gouv.fr_aife",
+        "description": "Données publiées par l'AIFE",
+        "url":"https://www.data.gouv.fr/fr/datasets/5bd789ee8b4c4155bd9a0770"
     }
 ]
