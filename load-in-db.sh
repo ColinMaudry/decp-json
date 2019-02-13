@@ -23,8 +23,15 @@ if [[ -f $DECP_HOME/json/${source}_json.zip ]]
     # Décompression des données dans le répertoire courant
     unzip -o $DECP_HOME/json/${source}_json.zip
 
+    jsCommand1="db.data.deleteMany({source:'"
+    jsCommand2="'})"
+    jsCommand="$jsCommand1$source$jsCommand2"
+
+    # Suppression des données de la source dans mongoDB
+    mongo -u $mongoUsername -p $mongoPassword --eval "$jsCommand1$source$jsCommand2" $mongoDatabase
+
     # Chargement des données dans MongoDB, en suivant la configuration
-    jq '.marches' $source.json | mongoimport --username $mongoUsername --password $mongoPassword --host $mongoHost:$mongoPort --db $mongoDatabase --collection data --drop --jsonArray
+    jq '.marches' $source.json | mongoimport --username $mongoUsername --password $mongoPassword --host $mongoHost:$mongoPort --db $mongoDatabase --collection data --jsonArray
 
     # Chargement des métadonnées des sources
     mongoimport --username $mongoUsername --password $mongoPassword --host $mongoHost:$mongoPort --db $mongoDatabase --collection sources --drop --jsonArray --file $DECP_HOME/sources/metadata.json
