@@ -25,14 +25,17 @@ if [[ -d $DECP_HOME/json/$source ]]
     cd $DECP_HOME/json
 
     # Suppression de l'ancienne denière archive ZIP de la source choisie
-    rm $filename.zip
+    if [[ -f $filename.zip ]]
+    then
+        rm $filename.zip
+    fi
 
     # Création d'une archive ZIP avec tous les JSON de la source choisie
     zip -q -9 $filename.zip $source.json
     cp $filename.zip ${filename}_$date.zip
 
     # Suppression du fichier des JSON fusionnés
-    rm $source.json
+    # rm $source.json
 
 elif [[ -z "$source" ]]
     then
