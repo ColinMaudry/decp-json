@@ -30,7 +30,6 @@ do
     wget $resource
 
 done
-done
 
 
 
