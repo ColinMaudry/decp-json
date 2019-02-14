@@ -5,10 +5,6 @@
 
 # À partir du répertoire racine (où se trouve README.md), création d'un repértoire temporaire
 
-cd $DECP_HOME/sources
-mkdir $1
-cd $1
-
 # Récupération des données, tous les fichiers sont stockés dans le même dossier
 # Le nombre de fichiers sur cette source pouvant un jour atteindre des sommets, cette solution n'est pas pérenne
 
@@ -23,15 +19,11 @@ nbResources=`cat resources.tmp | wc -l`
 
 echo "$nbResources ressources identifiées"
 
-
-
 for resource in `cat resources.tmp`
 do
     wget $resource
 
 done
-
-
 
 rm resources.tmp
 
