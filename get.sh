@@ -12,10 +12,19 @@ source=$1
 
 if [[ -d ./scripts/sources/$source ]]
     then
-    cd ./scripts/sources/$source
-    ./get.sh $source
 
-    
+    # Si des données sont déjà présentes, on les supprime
+    if [[ -d ./sources/$source ]]
+        then
+        rm -r ./sources/$source
+    fi
+
+    mkdir ./sources/$source
+    cd ./sources/$source
+
+    $DECP_HOME/scripts/sources/$source/get.sh $source
+
+
 elif [[ -z "$source" ]]
     then
     echo "Récupération de toutes les sources (désactivé)"
