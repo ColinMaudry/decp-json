@@ -27,7 +27,7 @@ if [[ -d $DECP_HOME/sources/$source ]]
 
 elif [[ -z "$source" ]]
     then
-    echo "Récupération de toutes les sources (désactivé)"
+    echo "Correction de toutes les sources (désactivé)"
 else
     cd ./json
     echo "Cette source n'existe pas"
