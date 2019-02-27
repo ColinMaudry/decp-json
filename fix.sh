@@ -15,14 +15,6 @@ if [[ -d $DECP_HOME/sources/$source ]]
 
     cd $DECP_HOME/sources/$source
 
-    if [[ ! -d original-data ]]
-    then
-        mkdir original-data
-        cp *.* original-data/
-    fi
-
-    rm *.*
-
     $DECP_HOME/scripts/sources/$source/fix.sh $source
 
 elif [[ -z "$source" ]]
