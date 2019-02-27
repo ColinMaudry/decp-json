@@ -10,7 +10,7 @@
 export DECP_HOME=`pwd`
 source=$1
 
-if [[ -d ./scripts/sources/$source ]]
+if [ -d ./scripts/sources/$source -a -f ./scripts/sources/$source/convert.sh ]
     then
     cd ./scripts/sources/$source
     ./convert.sh $source

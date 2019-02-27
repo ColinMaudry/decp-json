@@ -10,7 +10,7 @@
 export DECP_HOME=`pwd`
 source=$1
 
-if [[ -d ./scripts/sources/$source ]]
+if [ -d ./scripts/sources/$source -a -f ./scripts/sources/$source/get.sh ]
     then
 
     # Si des données sont déjà présentes, on les supprime
