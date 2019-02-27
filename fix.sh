@@ -2,7 +2,7 @@
 
 #**********************************************************************
 #
-# Conversion des données vers le format JSON, pour une source ou pour toutes
+# Correction des anomalies dans les données source
 #
 #**********************************************************************
 
@@ -10,19 +10,23 @@
 export DECP_HOME=`pwd`
 source=$1
 
-if [ -d ./scripts/sources/$source -a -f ./scripts/sources/$source/convert.sh ]
+if [[ -d $DECP_HOME/sources/$source ]]
     then
-    cd ./scripts/sources/$source
-    ./convert.sh $source
+
+    cd $DECP_HOME/sources/$source
+
+    $DECP_HOME/scripts/sources/$source/fix.sh $source
+
 elif [[ -z "$source" ]]
     then
-    echo "Conversion de toutes les sources téléchargées (désactivé pour l'instant)"
+    echo "Correction de toutes les sources (désactivé)"
 else
+    cd ./json
     echo "Cette source n'existe pas"
     echo ""
-    echo "Voici les sources supportées pour CONVERT :"
+    echo "Voici les sources supportées pour GET :"
     echo ""
-    ls -1 scripts/sources
+    ls -d1 */
     echo ""
 
     exit 1

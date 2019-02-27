@@ -1,0 +1,16 @@
+[
+  {
+    "id": "1",
+    "code": "data.gouv.fr_pes",
+    "description": "Données des collectivités publiées via le PES Marché",
+    "url": "https://www.data.gouv.fr/fr/datasets/5bd0b6fd8b4c413d0801dc57",
+    "lastDownload": "2019-02-27T16:23:41Z"
+  },
+  {
+    "id": "2",
+    "code": "marches-publics.info",
+    "description": "Marchés attribués sur marches-publics.info",
+    "url": "https://www.marches-publics.info/mpiaws/index.cfm",
+    "lastDownload": "2019-02-27T17:58:21Z"
+  }
+]

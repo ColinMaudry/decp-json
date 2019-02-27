@@ -2,7 +2,7 @@
 
 > Toutes les données essentielles de la commande publique converties en JSON.
 
-**Version 1.0.0**
+**Version 1.1.0**
 
 Rappel de ce que sont les données essentielles de la commande publique (ou DECP) [sur le blog de data.gouv.fr](https://www.data.gouv.fr/fr/posts/le-point-sur-les-donnees-essentielles-de-la-commande-publique/).
 
@@ -17,10 +17,13 @@ La procédure standard est la suivante :
 
 **Si vous avez connaissance de données essentielles de la commande publique facilement accessibles (téléchargement en masse possible) et qui ne sont pas encore identifiées ci-dessous, merci de [m'en informer](#contact).**
 
+À terme, les données converties seront principalement mises à disposition sur https://sireneld.io/data.
+
 ## Pré-requis
 
 - [xml2json](https://github.com/Cheedoong/xml2json) pour la conversion de XML vers JSON
 - [jq](https://stedolan.github.io/jq/) pour la conversion JSON vers JSON (disponible dans les dépôts Ubuntu)
+- `mongoimport` pour le chargement dans une base MongoDB
 - pouvoir exécuter des scripts bash
 
 ## Mode d'emploi
@@ -48,7 +51,16 @@ Les données doivent avoir été converties.
 ./package.sh [code]
 ```
 
-### Supprimer les données JSON converties
+### Charger des données JSON converties dans MongoDB
+
+Les données doivent avoir été converties.
+
+```
+./load-in-db.sh [code]
+```
+
+
+### Supprimer les données JSON converties (mais pas les ZIP)
 
 Les données doivent avoir été converties. Il est recommander de créer une archive ZIP auparavant, au cas où.
 
@@ -59,12 +71,13 @@ Les données doivent avoir été converties. Il est recommander de créer une ar
 
 ## Sources de données
 
-| Code               | Description                                          | URL                                                           | Statut                   |
-| ------------------ | ---------------------------------------------------- | ------------------------------------------------------------- | ------------------------ |
-| `data.gouv.fr_pes` | Données des collectivités publiées via le PES Marché | https://www.data.gouv.fr/fr/datasets/5bd0b6fd8b4c413d0801dc57 | **Intégrée**             |
-|                    | Données de l'État publiées par l'AIFE                | https://www.data.gouv.fr/fr/datasets/5bd789ee8b4c4155bd9a0770 | Intégrée prochainement   |
-|                    | DECP publiées par achatpublic.com                    | [https://www.achatpublic.com](https://frama.link/47M71Xz2)    | Téléchargement compliqué |
-|                    |                                                      |                                                               |                          |
+| Code                   | Description                                    | URL                                                           | Statut                   |
+| ---------------------- | ---------------------------------------------- | ------------------------------------------------------------- | ------------------------ |
+| `data.gouv.fr_pes`     | Données des collectivités issues du PES Marché | https://www.data.gouv.fr/fr/datasets/5bd0b6fd8b4c413d0801dc57 | **Intégrée**             |
+|                        | Données de l'État publiées par l'AIFE          | https://www.data.gouv.fr/fr/datasets/5bd789ee8b4c4155bd9a0770 | Intégrée prochainement   |
+|                        | DECP publiées par achatpublic.com              | [https://www.achatpublic.com](https://frama.link/47M71Xz2)    | Téléchargement compliqué |
+| `marches-publics.info` | DECP publiées par marches-publics.info (AWS)   | https://www.marches-publics.info/mpiaws/index.cfm             | **Intégrée**             |
+|                        |                                                |                                                               |                          |
 
 ## Contact
 
@@ -79,6 +92,13 @@ Vous pouvez :
 Le code source de ce projet est publié sous licence [Unlicense](http://unlicense.org).
 
 ## Notes de version
+
+### 1.1.0
+
+- support des [données publiées sur marches-publics.info](https://www.marches-publics.info/mpiaws/index.cfm) (`marches-publics.info`)
+- ajout de la date du dernier téléchargement dans les métadonnées
+- amélioration de la scructure des scripts
+- ajout de `all.sh`, pour traiter intégralement une source (sauf le chargement en base de données)
 
 ### 1.0.0
 
