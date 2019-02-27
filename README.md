@@ -60,7 +60,7 @@ Les données doivent avoir été converties.
 ```
 
 
-### Supprimer les données JSON converties
+### Supprimer les données JSON converties (mais pas les ZIP)
 
 Les données doivent avoir été converties. Il est recommander de créer une archive ZIP auparavant, au cas où.
 
@@ -71,13 +71,13 @@ Les données doivent avoir été converties. Il est recommander de créer une ar
 
 ## Sources de données
 
-| Code               | Description                                          | URL                                                           | Statut                   |
-| ------------------ | ---------------------------------------------------- | ------------------------------------------------------------- | ------------------------ |
-| `data.gouv.fr_pes` | Données des collectivités publiées via le PES Marché | https://www.data.gouv.fr/fr/datasets/5bd0b6fd8b4c413d0801dc57 | **Intégrée**             |
-|                    | Données de l'État publiées par l'AIFE                | https://www.data.gouv.fr/fr/datasets/5bd789ee8b4c4155bd9a0770 | Intégrée prochainement   |
-|                    | DECP publiées par achatpublic.com                    | [https://www.achatpublic.com](https://frama.link/47M71Xz2)    | Téléchargement compliqué |
-|                    | DECP publiées par marches-publics.info(AWS)          | https://www.marches-publics.info/mpiaws/index.cfm             | Intégrée prochainement   |
-|                    |                                                      |                                                               |                          |
+| Code                   | Description                                    | URL                                                           | Statut                   |
+| ---------------------- | ---------------------------------------------- | ------------------------------------------------------------- | ------------------------ |
+| `data.gouv.fr_pes`     | Données des collectivités issues du PES Marché | https://www.data.gouv.fr/fr/datasets/5bd0b6fd8b4c413d0801dc57 | **Intégrée**             |
+|                        | Données de l'État publiées par l'AIFE          | https://www.data.gouv.fr/fr/datasets/5bd789ee8b4c4155bd9a0770 | Intégrée prochainement   |
+|                        | DECP publiées par achatpublic.com              | [https://www.achatpublic.com](https://frama.link/47M71Xz2)    | Téléchargement compliqué |
+| `marches-publics.info` | DECP publiées par marches-publics.info (AWS)   | https://www.marches-publics.info/mpiaws/index.cfm             | **Intégrée**             |
+|                        |                                                |                                                               |                          |
 
 ## Contact
 
