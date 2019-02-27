@@ -2,7 +2,7 @@
 
 > Toutes les données essentielles de la commande publique converties en JSON.
 
-**Version 1.0.0**
+**Version 1.1.0**
 
 Rappel de ce que sont les données essentielles de la commande publique (ou DECP) [sur le blog de data.gouv.fr](https://www.data.gouv.fr/fr/posts/le-point-sur-les-donnees-essentielles-de-la-commande-publique/).
 
@@ -92,6 +92,13 @@ Vous pouvez :
 Le code source de ce projet est publié sous licence [Unlicense](http://unlicense.org).
 
 ## Notes de version
+
+### 1.1.0
+
+- support des [données publiées sur marches-publics.info](https://www.marches-publics.info/mpiaws/index.cfm) (`marches-publics.info`)
+- ajout de la date du dernier téléchargement dans les métadonnées
+- amélioration de la scructure des scripts
+- ajout de `all.sh`, pour traiter intégralement une source (sauf le chargement en base de données)
 
 ### 1.0.0
 
