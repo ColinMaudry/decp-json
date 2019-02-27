@@ -8,10 +8,10 @@ Pour chaque source, l'archive ZIP la plus récente n'est pas datée.
 
 Voici un récapitulatif des données publiées à ce jour :
 
-| Code               | Description                                          | Source                                                        | Données valides ?  | Exhaustivité |
-| ------------------ | ---------------------------------------------------- | ------------------------------------------------------------- | ------------------ | ------------ |
-| `data.gouv.fr_pes` | Données des collectivités publiées via le PES Marché | https://www.data.gouv.fr/fr/datasets/5bd0b6fd8b4c413d0801dc57 | Pas encore vérifié | 100 %        |
-|                    |                                                      |                                                               |                    |              |
+| Code                   |                                                               | Données valides ?                                                  | Exhaustivité |
+| ---------------------- | ------------------------------------------------------------- | ------------------------------------------------------------------ | ------------ |
+| `data.gouv.fr_pes`     | https://www.data.gouv.fr/fr/datasets/5bd0b6fd8b4c413d0801dc57 | Pas encore vérifié                                                 | 100 %        |
+| `marches-publics.info` | https://www.marches-publics.info/mpiaws/index.cfm             | [Partiellement](https://github.com/ColinMaudry/decp-json/issues/2) | 100 %        |
 
 
 ### Licence des données
