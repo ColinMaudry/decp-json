@@ -24,6 +24,13 @@ if [[ -d ./scripts/sources/$source ]]
 
     $DECP_HOME/scripts/sources/$source/get.sh $source
 
+    ## Ajouter la date du dernier téléchargement dans les métadonnées
+
+    metadata="$DECP_HOME/sources/metadata.json"
+
+    jq --arg source $source -f $DECP_HOME/scripts/jq/addLastDownloadTime.jq $metadata > $metadata.temp
+    mv $metadata.temp $metadata
+
 
 elif [[ -z "$source" ]]
     then
