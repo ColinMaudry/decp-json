@@ -16,6 +16,7 @@ if [[ -d ./json/$source ]]
 
     # Suppression des données JSON pour la source choisie
     rm -rf ./json/$source
+    rm ./json/*.json
 
 elif [[ -z "$source" ]]
     then
