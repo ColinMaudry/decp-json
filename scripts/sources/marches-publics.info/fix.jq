@@ -29,6 +29,7 @@ def walk(f):
 .marches[].donneesExecution |= if (type != "array") then [] else . end |
 .marches[].dateNotification |= fixDate(.) |
 .marches[].modifications |= if (type == "array" and length > 0) then .[].dateNotificationModification |= fixDate(.) else . end |
+.marches[] |= if ( .["_type"] | type == "null") then if has("acheteur") then .["_type"] |= "Marché" elif has("autoriteConcedante") then .["_type"] |= "Contrat de concession" else .["_type"] |= "?" end else . end |
 .marches[].modifications |=
 if (type == "array" and length > 0) then
 .[].titulaires |=
