@@ -2,7 +2,7 @@
 
 > Toutes les données essentielles de la commande publique converties en JSON.
 
-**Version 1.1.0**
+**Version 1.2.0**
 
 Rappel de ce que sont les données essentielles de la commande publique (ou DECP) [sur le blog de data.gouv.fr](https://www.data.gouv.fr/fr/posts/le-point-sur-les-donnees-essentielles-de-la-commande-publique/).
 
@@ -23,12 +23,30 @@ La procédure standard est la suivante :
 
 - [xml2json](https://github.com/Cheedoong/xml2json) pour la conversion de XML vers JSON
 - [jq](https://stedolan.github.io/jq/) pour la conversion JSON vers JSON (disponible dans les dépôts Ubuntu)
-- `mongoimport` pour le chargement dans une base MongoDB
+- une instance MongoDB et `mongoimport` pour le chargement
 - pouvoir exécuter des scripts bash
 
 ## Mode d'emploi
 
 Vous trouverez les `code` possibles dans le tableau plus bas.
+
+Pour commencer, vous devez faire une copie de `config/config_template.sh` en `config/config.sh`.
+
+```
+cp config/config_template.sh config/config.sh
+```
+
+Puis éditez le contenu de `config/config.sh` pour configurer l'accès à votre base de données MongoDB.
+
+### (Ré)initialiser la base de données MongoDB
+
+La base de données configurée dans `config/config.sh` et l'utilisateur doivent être créés par vos soins.
+
+Ensuite, vous pouvez initialiser la base de données (suppression/création des collections, création de l'index textuel) :
+
+```
+./dbInit.sh
+```
 
 ### Télécharger les données
 
@@ -92,6 +110,12 @@ Vous pouvez :
 Le code source de ce projet est publié sous licence [Unlicense](http://unlicense.org).
 
 ## Notes de version
+
+### 1.2.0
+
+- correction d'une anomalie dans les données `marches-publics.info` (certains marchés n'ont pas de `_type`)
+- nouvelles données dans `/json`
+- ajout d'un script de (ré)initialisation de MongoDB
 
 ### 1.1.0
 
