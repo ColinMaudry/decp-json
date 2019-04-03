@@ -14,6 +14,15 @@ if [ -d ./scripts/sources/$source -a -f ./scripts/sources/$source/convert.sh ]
     then
     cd ./scripts/sources/$source
     ./convert.sh $source
+
+# Si pas de fichier de conversion, mais des fichiers sources, alors pas besoin de conversion et copie directe vers JSON
+elif [ -d ./scripts/sources/$source -a ! -f ./scripts/sources/$source/convert.sh -a "$(ls -A ./sources/$source)" ]
+    then
+        if [[ -d ./json/$source ]]
+            then
+            rm -r ./json/$source
+        fi
+        cp -r ./sources/$source ./json
 elif [[ -z "$source" ]]
     then
     echo "Conversion de toutes les sources téléchargées (désactivé pour l'instant)"
