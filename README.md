@@ -89,13 +89,13 @@ Les données doivent avoir été converties. Il est recommander de créer une ar
 
 ## Sources de données
 
-| Code                   | Description                                    | URL                                                           | Statut                   |
-| ---------------------- | ---------------------------------------------- | ------------------------------------------------------------- | ------------------------ |
-| `data.gouv.fr_pes`     | Données des collectivités issues du PES Marché | https://www.data.gouv.fr/fr/datasets/5bd0b6fd8b4c413d0801dc57 | **Intégrée**             |
-|                        | Données de l'État publiées par l'AIFE          | https://www.data.gouv.fr/fr/datasets/5bd789ee8b4c4155bd9a0770 | Intégrée prochainement   |
-|                        | DECP publiées par achatpublic.com              | [https://www.achatpublic.com](https://frama.link/47M71Xz2)    | Téléchargement compliqué |
-| `marches-publics.info` | DECP publiées par marches-publics.info (AWS)   | https://www.marches-publics.info/mpiaws/index.cfm             | **Intégrée**             |
-|                        |                                                |                                                               |                          |
+| Code                   | Description                                      | URL                                                              | Statut                   |     |
+| ---------------------- | ------------------------------------------------ | ---------------------------------------------------------------- | ------------------------ | --- |
+| `data.gouv.fr_pes`     | Données des collectivités issues du PES Marché   | https://www.data.gouv.fr/fr/datasets/5bd0b6fd8b4c413d0801dc57    | **Intégrée**             |     |
+| `data.gouv.fr_aife`    | Données de l'État publiées par l'AIFE            | https://www.data.gouv.fr/fr/datasets/5bd789ee8b4c4155bd9a0770    | **Intégrée**             |     |
+|                        | DECP publiées par achatpublic.com                | [https://www.achatpublic.com](https://frama.link/47M71Xz2)       | Téléchargement compliqué |     |
+| `marches-publics.info` | DECP publiées par marches-publics.info (AWS)     | https://www.marches-publics.info/mpiaws/index.cfm                | **Intégrée**             |     |
+| `e-marchespublics.com` | DECP publiées par e-marchespublics.com (Dematis) | https://www.data.gouv.fr/api/1/datasets/5c0a7845634f4139b2ee8883 | **Intégrée**                 |     |
 
 ## Contact
 
