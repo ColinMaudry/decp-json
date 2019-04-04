@@ -20,6 +20,8 @@ if [[ -f $DECP_HOME/json/${source}_json.zip ]]
         source $DECP_HOME/config/config.sh
     fi
 
+    echo "## Chargement en base données ($source)..."
+
     # Décompression des données dans le répertoire courant
     unzip -o $DECP_HOME/json/${source}_json.zip
 

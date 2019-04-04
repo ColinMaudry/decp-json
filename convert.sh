@@ -12,12 +12,14 @@ source=$1
 
 if [ -d ./scripts/sources/$source -a -f ./scripts/sources/$source/convert.sh ]
     then
+        echo "Conversion ($source)..."
     cd ./scripts/sources/$source
     ./convert.sh $source
 
 # Si pas de fichier de conversion, mais des fichiers sources, alors pas besoin de conversion et copie directe vers JSON
 elif [ -d ./scripts/sources/$source -a ! -f ./scripts/sources/$source/convert.sh -a "$(ls -A ./sources/$source)" ]
     then
+        echo "Pas de conversion, copie des fichiers source vers /json/$source."
         if [[ -d ./json/$source ]]
             then
             rm -r ./json/$source
