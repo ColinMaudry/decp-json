@@ -14,6 +14,8 @@ source=$1
 if [[ -d ./json/$source ]]
     then
 
+    echo "## Suppression des fichiers JSON ($source)..."
+
     # Suppression des données JSON pour la source choisie
     rm -rf ./json/$source
     rm ./json/*.json

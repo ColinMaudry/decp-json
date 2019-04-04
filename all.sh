@@ -8,14 +8,27 @@
 
 source=$1
 
-echo "## Téléchargement..."
+if [[ -f ./config/config.sh ]]
+then
+
+source config/config.sh
+
+## Téléchargement
 ./get.sh $source
 
-echo "## Correction..."
+## Correction
 ./fix.sh $source
 
-echo "## Conversion..."
+## Conversion
 ./convert.sh $source
 
-echo "## Empaquetage..."
+## Empaquetage
 ./package.sh $source
+    if [[ ! -z $mongoUsername ]]
+    then
+        ## Chargement en base de données
+        ./load-in-db.sh $source
+    fi
+else
+    echo "Vous devez d'abord faire une copie de ./config/config_template.sh vers ./config/config.sh."
+fi

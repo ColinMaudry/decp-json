@@ -10,12 +10,17 @@
 export DECP_HOME=`pwd`
 source=$1
 
-if [[ -d $DECP_HOME/sources/$source ]]
+if [ -d $DECP_HOME/sources/$source -a -f $DECP_HOME/scripts/sources/$source/fix.sh ]
     then
 
     cd $DECP_HOME/sources/$source
 
     $DECP_HOME/scripts/sources/$source/fix.sh $source
+
+elif [ -d $DECP_HOME/sources/$source -a ! -f $DECP_HOME/scripts/sources/$source/fix.sh ]
+        then
+        echo "Pas de correction."
+        exit 0
 
 elif [[ -z "$source" ]]
     then
