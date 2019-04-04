@@ -5,7 +5,7 @@
 
 # Configuration de mongoDB
 
-mongoUsername=user
+mongoUsername=
 mongoPassword=1234
 mongoPort=27017
 mongoHost=localhost

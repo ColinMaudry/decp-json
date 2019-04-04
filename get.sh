@@ -13,6 +13,7 @@ source=$1
 if [ -d ./scripts/sources/$source -a -f ./scripts/sources/$source/get.sh ]
     then
 
+    echo "## Téléchargement ($source)..."
     # Si des données sont déjà présentes, on les supprime
     if [[ -d ./sources/$source ]]
         then

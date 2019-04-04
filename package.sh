@@ -15,6 +15,8 @@ date=`date +%Y-%m-%d`
 if [[ -d $DECP_HOME/json/$source ]]
     then
 
+    echo "## Empaquetage ($source)..."
+
     cd $DECP_HOME/json/$source
 
     # Fusion de tous les fichiers en un seul et dans la foulée, ajoute le code de la source dans le JSON

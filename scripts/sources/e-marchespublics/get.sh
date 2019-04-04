@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Récupération des données essentielles publiées par l'AIFE
+# Récupération des données essentielles publiées par Dematis pour e-marchespublics.com
 
 
 # À partir du répertoire racine (où se trouve README.md), création d'un repértoire temporaire
@@ -10,10 +10,8 @@
 
 # Récupération de la liste des ressources à partir de l'adresse des jeux de données.
 
-for dataset in 5bd789ee8b4c4155bd9a0770 5c3d0d6b8b4c41333775f45a 5be9feed8b4c41367475f40d
-do
-curl https://www.data.gouv.fr/api/1/datasets/$dataset/ | jq '.resources[].url' >> resources.tmp
-done
+
+curl https://www.data.gouv.fr/api/1/datasets/5c0a7845634f4139b2ee8883/ | jq '.resources[].url' >> resources.tmp
 
 # Suppression des guillemets dans la liste ds URL des ressources
 sed -i "s/\"//g" resources.tmp
