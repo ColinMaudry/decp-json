@@ -2,7 +2,7 @@
 
 > Toutes les données essentielles de la commande publique converties en JSON.
 
-**Version 1.2.0**
+**Version 1.3.0**
 
 Rappel de ce que sont les données essentielles de la commande publique (ou DECP) [sur le blog de data.gouv.fr](https://www.data.gouv.fr/fr/posts/le-point-sur-les-donnees-essentielles-de-la-commande-publique/).
 
@@ -48,11 +48,22 @@ Ensuite, vous pouvez initialiser la base de données (suppression/création des 
 ./dbInit.sh
 ```
 
+### Télécharger, traiter, empaqueter et charger les données en base
+
+Toutes les étapes ci-dessous sont activées de façon séquentielle, à l'exception de `clean`.
+
+Si la source sélectionnée n'a pas de script pour une étape donnée, cette étape sera ignorée.
+
+```
+./all.sh [code]
+```
+
 ### Télécharger les données
 
 ```
 ./get.sh [code]
 ```
+
 ### Convertir les données
 
 Les données doivent avoir été téléchargées.
@@ -89,13 +100,14 @@ Les données doivent avoir été converties. Il est recommander de créer une ar
 
 ## Sources de données
 
-| Code                   | Description                                      | URL                                                              | Statut                   |     |
-| ---------------------- | ------------------------------------------------ | ---------------------------------------------------------------- | ------------------------ | --- |
-| `data.gouv.fr_pes`     | Données des collectivités issues du PES Marché   | https://www.data.gouv.fr/fr/datasets/5bd0b6fd8b4c413d0801dc57    | **Intégrée**             |     |
-| `data.gouv.fr_aife`    | Données de l'État publiées par l'AIFE            | https://www.data.gouv.fr/fr/datasets/5bd789ee8b4c4155bd9a0770    | **Intégrée**             |     |
-|                        | DECP publiées par achatpublic.com                | [https://www.achatpublic.com](https://frama.link/47M71Xz2)       | Téléchargement compliqué |     |
-| `marches-publics.info` | DECP publiées par marches-publics.info (AWS)     | https://www.marches-publics.info/mpiaws/index.cfm                | **Intégrée**             |     |
-| `e-marchespublics.com` | DECP publiées par e-marchespublics.com (Dematis) | https://www.data.gouv.fr/api/1/datasets/5c0a7845634f4139b2ee8883 | **Intégrée**                 |     |
+| Code                   | Description                                      | URL                                                           | Statut                                                                               |
+| ---------------------- | ------------------------------------------------ | ------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| `data.gouv.fr_pes`     | DECP des collectivités issues du PES Marché      | https://www.data.gouv.fr/fr/datasets/5bd0b6fd8b4c413d0801dc57 | **Intégrée**                                                                         |
+| `data.gouv.fr_aife`    | DECP de l'État publiées par l'AIFE               | https://www.data.gouv.fr/fr/datasets/5bd789ee8b4c4155bd9a0770 | **Intégrée**                                                                         |
+|                        | DECP publiées par achatpublic.com                | [https://www.achatpublic.com](https://frama.link/47M71Xz2)    | Pas de téléchargement en masse                                                       |
+| `marches-publics.info` | DECP publiées par marches-publics.info (AWS)     | https://www.marches-publics.info/mpiaws/index.cfm             | [Plus de téléchargement en masse](https://github.com/ColinMaudry/decp-json/issues/3) |
+| `e-marchespublics.com` | DECP publiées par e-marchespublics.com (Dematis) | https://www.data.gouv.fr/fr/datasets/5c0a7845634f4139b2ee8883 | **Intégrée**                                                                         |
+|                        | DECP des membres de Mégalis Bretagne             | https://marches.megalisbretagne.org/                          | Très peu de DECP publiées                                                            |
 
 ## Contact
 
@@ -110,6 +122,13 @@ Vous pouvez :
 Le code source de ce projet est publié sous licence [Unlicense](http://unlicense.org).
 
 ## Notes de version
+
+### 1.3.0
+
+- ajout des données de e-marchespublics.com
+- couvertures des trois datasets de l'AIFE
+- gestion des sources de données qui ne nécessitent pas de conversion
+- amélioration du workflow (get > convert > fix > package > load-in-db)
 
 ### 1.2.0
 
