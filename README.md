@@ -2,7 +2,7 @@
 
 > Toutes les données essentielles de la commande publique converties en JSON.
 
-**Version 1.3.0**
+**Version 1.3.1**
 
 Rappel de ce que sont les données essentielles de la commande publique (ou DECP) [sur le blog de data.gouv.fr](https://www.data.gouv.fr/fr/posts/le-point-sur-les-donnees-essentielles-de-la-commande-publique/).
 
@@ -122,6 +122,10 @@ Vous pouvez :
 Le code source de ce projet est publié sous licence [Unlicense](http://unlicense.org).
 
 ## Notes de version
+
+#### 1.3.1
+
+- correction d'un bug dans la fusion des JSON
 
 ### 1.3.0
 
