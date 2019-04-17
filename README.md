@@ -88,7 +88,6 @@ Les données doivent avoir été converties.
 ./load-in-db.sh [code]
 ```
 
-
 ### Supprimer les données JSON converties (mais pas les ZIP)
 
 Les données doivent avoir été converties. Il est recommander de créer une archive ZIP auparavant, au cas où.
@@ -96,7 +95,6 @@ Les données doivent avoir été converties. Il est recommander de créer une ar
 ```
 ./clean.sh [code]
 ```
-
 
 ## Sources de données
 
