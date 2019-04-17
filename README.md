@@ -16,15 +16,12 @@ La procédure standard est la suivante :
 3. Nous les convertissons au format JSON ou XML réglementaire selon le format de récupération, en rajoutant un champ `source` qui permet d'identifier la source d'origine (voir le tableau ci-dessous). Certaines données sources n'étant pas valides (par exemple si certains champs manquent), les données ne seront pas non plus valides. Nous avons pris le parti de les garder et de signaler ces anomalies.
 4. Nous agrégeons les données XML et les JSON et les publions sur un jeu de données sur data.gouv.fr (prochainement).
 
-**Si vous avez connaissance de données essentielles de la commande publique facilement accessibles (téléchargement en masse possible) et qui ne sont pas encore identifiées ci-dessous, merci de [m'en informer](#contact).**
-
-À terme, les données converties seront principalement mises à disposition sur https://sireneld.io/data.
+**Si vous avez connaissance de données essentielles de la commande publique facilement accessibles (téléchargement en masse possible) et qui ne sont pas encore identifiées ci-dessous, merci de [nous en informer](#contact).**
 
 ## Pré-requis
 
 - [xml2json](https://github.com/Cheedoong/xml2json) pour la conversion de XML vers JSON
 - [jq](https://stedolan.github.io/jq/) pour la conversion JSON vers JSON (disponible dans les dépôts Ubuntu)
-- une instance MongoDB et `mongoimport` pour le chargement
 - pouvoir exécuter des scripts bash
 
 ## Mode d'emploi
@@ -32,22 +29,6 @@ La procédure standard est la suivante :
 Vous trouverez les `code` possibles dans le tableau plus bas.
 
 Pour commencer, vous devez faire une copie de `config/config_template.sh` en `config/config.sh`.
-
-```
-cp config/config_template.sh config/config.sh
-```
-
-Puis éditez le contenu de `config/config.sh` pour configurer l'accès à votre base de données MongoDB.
-
-### (Ré)initialiser la base de données MongoDB
-
-La base de données configurée dans `config/config.sh` et l'utilisateur doivent être créés par vos soins.
-
-Ensuite, vous pouvez initialiser la base de données (suppression/création des collections, création de l'index textuel) :
-
-```
-./dbInit.sh
-```
 
 ### Télécharger, traiter, empaqueter et charger les données en base
 
@@ -81,15 +62,6 @@ Les données doivent avoir été converties.
 ./package.sh [code]
 ```
 
-### Charger des données JSON converties dans MongoDB
-
-Les données doivent avoir été converties.
-
-```
-./load-in-db.sh [code]
-```
-
-
 ### Supprimer les données JSON converties (mais pas les ZIP)
 
 Les données doivent avoir été converties. Il est recommander de créer une archive ZIP auparavant, au cas où.
@@ -112,10 +84,7 @@ Les données doivent avoir été converties. Il est recommander de créer une ar
 
 ## Contact
 
-Vous pouvez :
-
-- m'écrire un mail à colin@maudry.com
-- me trouver sur Twitter ([@col1m](https://twitter.com/col1m))
+- commandepublique@data.gouv.fr
 - intéragir avec ce dépôt sur Github (issues, pull request).
 
 ## License
