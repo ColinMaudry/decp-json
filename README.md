@@ -1,6 +1,7 @@
-# DECP JSON
+# DECPrama
 
-> Toutes les données essentielles de la commande publique converties en JSON.
+> Toutes les données essentielles de la commande publique agrégées et converties
+.
 
 **Version 1.3.1**
 
@@ -10,10 +11,10 @@ L'objectif de ce projet est d'identifier toutes les sources de DECP, et de crée
 
 La procédure standard est la suivante :
 
-1. J'agrège toutes les données possibles dans leur format d'origine, **XML ou JSON** (les DECP n'existent pas dans d'autres formats)
-2. Je les stocke dans `/sources` dans un répertoire spécifique à la source des données. En effet, selon la source, les données n'ont pas besoin des même traitements pour être utilisables (nettoyage, réparation de la structure, correction de l'encodage, conversion depuis XML)
-3. Je les convertis au format JSON réglementaire, en rajoutant un champ `source`. Certaines données sources n'étant pas valides (par exemple si certains champs manquent), les données JSON ne seront pas non plus valides. Je prends le parti de les garder.
-4. Je crée une archive ZIP avec le JSON converti. Ces archives ZIP sont sauvegardées dans le dépot Git, vous les trouverez dans `/json`
+1. Nous agrégeons toutes les données possibles dans leur format d'origine, **XML ou JSON** (les DECP n'existent pas dans d'autres formats)
+2. Nous les stockons dans `/sources` dans un répertoire spécifique à la source des données. En effet, selon la source, les données n'ont pas besoin des même traitements pour être utilisables (nettoyage, réparation de la structure, correction de l'encodage)
+3. Nous les convertissons au format JSON ou XML réglementaire selon le format de récupération, en rajoutant un champ `source` qui permet d'identifier la source d'origine (voir le tableau ci-dessous). Certaines données sources n'étant pas valides (par exemple si certains champs manquent), les données ne seront pas non plus valides. Nous avons pris le parti de les garder et de signaler ces anomalies.
+4. Nous agrégeons les données XML et les JSON et les publions sur un jeu de données sur data.gouv.fr (prochainement).
 
 **Si vous avez connaissance de données essentielles de la commande publique facilement accessibles (téléchargement en masse possible) et qui ne sont pas encore identifiées ci-dessous, merci de [m'en informer](#contact).**
 
