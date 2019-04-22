@@ -62,7 +62,7 @@ Les données doivent avoir été converties.
 ./package.sh [code]
 ```
 
-### Supprimer les données JSON converties (mais pas les ZIP)
+### Supprimer les données converties (mais pas les ZIP)
 
 Les données doivent avoir été converties. Il est recommander de créer une archive ZIP auparavant, au cas où.
 
@@ -89,7 +89,7 @@ Les données doivent avoir été converties. Il est recommander de créer une ar
 
 ## License
 
-Le code source de ce projet est publié sous licence [Unlicense](http://unlicense.org).
+Le code source de ce projet est publié sous licence [MIT](https://opensource.org/licenses/MIT).
 
 ## Notes de version
 
