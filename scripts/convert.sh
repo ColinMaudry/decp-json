@@ -10,30 +10,30 @@
 export DECP_HOME=`pwd`
 source=$1
 
-if [ -d ./scripts/sources/$source -a -f ./scripts/sources/$source/convert.sh ]
+if [ -d $DECP_HOME/scripts/sources/$source -a -f $DECP_HOME/scripts/sources/$source/convert.sh ]
     then
         echo "Conversion ($source)..."
-    cd ./scripts/sources/$source
+    cd $DECP_HOME/scripts/sources/$source
     ./convert.sh $source
 
 # Si pas de fichier de conversion, mais des fichiers sources, alors pas besoin de conversion et copie directe vers JSON
-elif [ -d ./scripts/sources/$source -a ! -f ./scripts/sources/$source/convert.sh -a "$(ls -A ./sources/$source)" ]
+elif [ -d $DECP_HOME/scripts/sources/$source -a ! -f $DECP_HOME/scripts/sources/$source/convert.sh -a "$(ls -A $DECP_HOME/sources/$source)" ]
     then
         echo "Pas de conversion, copie des fichiers source vers /json/$source."
-        if [[ -d ./json/$source ]]
+        if [[ -d $DECP_HOME/json/$source ]]
             then
-            rm -r ./json/$source
+            rm -r $DECP_HOME/json/$source
         fi
-        cp -r ./sources/$source ./json
+        cp -r $DECP_HOME/sources/$source $DECP_HOME/json
 elif [[ -z "$source" ]]
     then
-    echo "Conversion de toutes les sources téléchargées (désactivé pour l'instant)"
+    echo "Il manque le code d'une source en paramètre."
 else
     echo "Cette source n'existe pas"
     echo ""
     echo "Voici les sources supportées pour CONVERT :"
     echo ""
-    ls -1 scripts/sources
+    ls -1 sources
     echo ""
 
     exit 1

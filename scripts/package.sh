@@ -6,8 +6,6 @@
 #
 #**********************************************************************
 
-# Pour facilement s'y retrouver dans les répertoires, création d'une variable avec le chemin de la racine de decp-json
-export DECP_HOME=`pwd`
 source=$1
 date=`date +%Y-%m-%d`
 
@@ -26,27 +24,25 @@ if [[ -d $DECP_HOME/json/$source ]]
 
     cd $DECP_HOME/json
 
-    # Suppression de l'ancienne denière archive ZIP de la source choisie
-    if [[ -f $filename.zip ]]
+    if [[ ! -d archives ]]
     then
-        rm $filename.zip
+        mkdir archives
     fi
-
     # Création d'une archive ZIP avec tous les JSON de la source choisie
-    zip -q -9 $filename.zip $source.json
-    cp $filename.zip ${filename}_$date.zip
+    zip -q -9 archives/${filename}_$date.zip ${source}.json
 
-    # Suppression du fichier des JSON fusionnés
-    # rm $source.json
-
+    if [[ -f archives/${filename}_$date.zip ]]
+    then
+        echo "Empaquetage de $source OK"
+    fi
 elif [[ -z "$source" ]]
     then
-    echo "Récupération de toutes les sources (désactivé)"
+    echo "Il manque un code source en paramètre."
 else
     cd ./json
     echo "Cette source n'existe pas"
     echo ""
-    echo "Voici les sources supportées pour GET :"
+    echo "Voici les sources supportées pour PACKAGE :"
     echo ""
     ls -d1 */
     echo ""
