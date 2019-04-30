@@ -3,8 +3,7 @@
 #**********************************************************************
 #
 # Toutes les opérations de récupération, correction, conversion et empaquetage
-# pour la source sélectionnée.
-#
+# pour la source sélectionnée ou pour toutes les sources
 #**********************************************************************
 
 source=$1
@@ -37,13 +36,13 @@ case $source in
 
          case $mode in
              only)
-             echo "scripts/$step.sh $source"
+             scripts/$step.sh $source
              ;;
              sequence)
                 finalStep=$step
                 for currentStep in get fix convert package
                 do
-                    echo "scripts/$currentStep.sh $source"
+                    scripts/$currentStep.sh $source
                     if [ "$currentStep" == "$finalStep" ]; then
                         break;
                     fi
