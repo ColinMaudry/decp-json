@@ -6,23 +6,21 @@
 #
 #**********************************************************************
 
-# Pour facilement s'y retrouver dans les répertoires, création d'une variable avec le chemin de la racine de decp-json
-export DECP_HOME=`pwd`
 source=$1
 
 
-if [[ -d ./json/$source ]]
+if [[ -d $DECP_HOME/json/$source ]]
     then
 
     echo "## Suppression des fichiers JSON ($source)..."
 
     # Suppression des données JSON pour la source choisie
-    rm -rf ./json/$source
-    rm ./json/*.json
+    rm -rf $DECP_HOME/json/$source
+    rm ../json/*.json
 
 elif [[ -z "$source" ]]
     then
-    echo "Suppression des données JSON pour toutes les sources (désactivé)"
+    echo "Il manque le code d'une source en paramètre."
 else
     cd ./json
     echo "Cette source n'existe pas"

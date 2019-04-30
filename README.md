@@ -30,46 +30,43 @@ Vous trouverez les `code` possibles dans le tableau plus bas.
 
 Pour commencer, vous devez faire une copie de `config/config_template.sh` en `config/config.sh`.
 
-### Télécharger, traiter, empaqueter et charger les données en base
+### Traitement séquentiel d'une source ou de toutes les sources
 
-Toutes les étapes ci-dessous sont activées de façon séquentielle, à l'exception de `clean`.
+Le script `process.sh` permet de lancer une étape de traitement ou toutes les étapes de traitement pour une source ou toutes les sources configurées.
+
+Les sources configurées sont visibles dans `sources/metadata.json`, et récapitulées dans le tableau ci-dessous.
+
+Les étapes de traitement et leur code respectif sont les suivantes, dans l'ordre :
+
+1. `get` (téléchargement des données de la source)
+2. `fix` (correction des anomalies pour optimiser l'utilisabilité des données et tendre vers la conformité aux schémas, si besoin)
+3. `convert` (conversion des données XML en JSON, si besoin)
+4. `package` (création d'un seul fichier JSON pour la source et archivage sous forme de ZIP)
+
+Le script `process.sh` prend trois paramètres, dans cette ordre :
+
+1. le `code` de la source à traiter, ou `all` pour traiter toutes les sources
+2. le `code` de l'étape de traitement à effectuer sur la ou les sources
+3. le `mode` de sélection de l'étape : `only` ou rien pour n'éxecuter que l'étape sélectionnée, ou `sequence` pour sélectionner toutes les étapes jusqu'à l'étape sélectionnée.
 
 Si la source sélectionnée n'a pas de script pour une étape donnée, cette étape sera ignorée.
 
-```
-./all.sh [code]
-```
-
-### Télécharger les données
+Exemples :
 
 ```
-./get.sh [code]
-```
+# Ne lancer que l'étape de conversion XML > JSON pour la source data.gouv.fr_pes
+./process.sh data.gouv.fr_pes convert only
 
-### Convertir les données
+# Ne lancer que l'étape de téléchargement des données, pour toutes les sources configurées
+./process.sh all get
 
-Les données doivent avoir été téléchargées.
+# Lancer toutes les étapes jusqu'à convert (get, fix, convert) pour toutes les sources configurées
+./process.sh all convert sequence
 
-```
-./convert.sh [code]
-```
-
-### Créer une archive ZIP des données JSON converties
-
-Les données doivent avoir été converties.
+# Lancer toutes les étapes de traitement sur toutes les sources
+./process.sh all package sequence
 
 ```
-./package.sh [code]
-```
-
-### Supprimer les données JSON converties (mais pas les ZIP)
-
-Les données doivent avoir été converties. Il est recommander de créer une archive ZIP auparavant, au cas où.
-
-```
-./clean.sh [code]
-```
-
 
 ## Sources de données
 
@@ -89,7 +86,7 @@ Les données doivent avoir été converties. Il est recommander de créer une ar
 
 ## License
 
-Le code source de ce projet est publié sous licence [Unlicense](http://unlicense.org).
+Le code source de ce projet est publié sous licence [MIT](https://opensource.org/licenses/MIT).
 
 ## Notes de version
 
