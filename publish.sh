@@ -9,6 +9,23 @@
 # /!\ Le dataset doit avoir été créé et une ressource decp.json doit avoir été ajoutée
 # à ce dataset.
 
+case ${CIRCLE_BRANCH} in
+    master)
+    export API_URL="https://data.gouv.fr/api/1"
+    export DATASET_ID="?"
+    export DECP_JSON_RESOURCE_ID="?"
+    ;;
+
+    *)
+    export API_URL="https://next.data.gouv.fr/api/1"
+    export DATASET_ID="5cc1bb51dc470946203cc376"
+    export DECP_JSON_RESOURCE_ID="5f550643-9867-41ee-a77c-8d7739383dbe"
+    ;;
+esac
+
+
+
+
 if [[ ! -f ./json/decp.json ]]
 then
     echo "Le fichier agrégé ./json/decp.json doit d'abord être généré."
@@ -17,7 +34,7 @@ fi
 
 api=$API_URL
 
-#Configurée dans les options de build de Circle CI
+#API_KEY configurée dans les options de build de CircleCI
 api_key=$API_KEY
 dataset_id=$DATASET_ID
 resource_id=$DECP_JSON_RESOURCE_ID
