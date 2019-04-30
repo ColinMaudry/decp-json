@@ -1,1 +1,32 @@
 version: 2
+jobs:
+    process-and-publish:
+        machine:
+            image: circleci/classic:2019-04-01
+        steps:
+            - checkout
+            - run:
+                name: Récupération et traitement des données
+                command: ./process.sh all package sequence
+            - run:
+                name: Publication des données sur (next.)data.gouv.fr
+                command: ./publish.sh
+workflows:
+    version: 2
+    dev:
+        jobs:
+            - process-and-publish:
+                filters:
+                    branches:
+                        only:
+                            - develop
+    daily:
+        jobs:
+            - process-and-publish
+        triggers:
+            - schedule:
+                cron: 0 4 * * *
+                filters:
+                    branches:
+                        only:
+                            - master
