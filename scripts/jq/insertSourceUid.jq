@@ -9,8 +9,13 @@ def walk(f):
 
 . | walk(
     if type == "object" and has("_type") then
+    .acheteur.id as $acheteurId  |
+    .id as $marcheId |
     to_entries
-      | .[0:1] + [{key: "source", value: $source}] + .[1:]
+      | .[0:1]
+        + [{key: "source", value: $source },
+        {key: "uid", value: ($acheteurId + $marcheId) }]
+        + .[1:]
       | from_entries
       else
       .
