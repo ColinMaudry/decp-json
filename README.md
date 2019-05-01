@@ -20,8 +20,9 @@ La procédure standard est la suivante :
 
 ## Pré-requis
 
-- [xml2json](https://github.com/Cheedoong/xml2json) pour la conversion de XML vers JSON
+- [xml2json](https://github.com/Cheedoong/xml2json) pour la conversion de XML vers JSON (binaire Linus amd64 inclus dans `./scripts/bin`)
 - [jq](https://stedolan.github.io/jq/) pour la conversion JSON vers JSON (disponible dans les dépôts Ubuntu)
+- [xsltproc](http://xmlsoft.org/XSLT/xsltproc2.html) pour la correction d'anomalies dans certaines sources XML (disponible dans les dépôts Ubuntu)
 - pouvoir exécuter des scripts bash
 
 ## Mode d'emploi
