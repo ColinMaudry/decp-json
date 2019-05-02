@@ -1,7 +1,8 @@
 version: 2
 jobs:
     process-and-publish:
-        machine: true
+        machine:
+            image: circleci/buildpack-deps:latest-dind
         steps:
             - run:
                 # Récupération du code manuel car soucis avec "- checkout"
@@ -12,6 +13,7 @@ jobs:
                     git clone https://github.com/etalab/decp-rama
                     cd decp-rama
                     git checkout $CIRCLE_BRANCH
+                    strings /usr/lib/x86_64-linux-gnu/libstdc++.so.6 | grep GLIBCXX
             - run:
                 name: Installation des dépendances
                 command: |
