@@ -1,7 +1,3 @@
 sources/*
 !sources/metadata.json
-json/*
-!json/*.zip
-!json/*.md
-!json/LICENSE
-config.sh
+json

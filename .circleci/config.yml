@@ -1,0 +1,59 @@
+version: 2
+jobs:
+    process-and-publish:
+        machine: true
+        steps:
+            - run:
+                # Récupération du code manuel car soucis avec "- checkout"
+                name: Récupération de decp-rama
+                command: |
+                    mkdir -p /home/circleci/project
+                    cd /home/circleci/project
+                    git clone https://github.com/etalab/decp-rama
+                    cd decp-rama
+                    git checkout $CIRCLE_BRANCH
+                    strings /usr/lib/x86_64-linux-gnu/libstdc++.so.6 | grep GLIBCXX
+            - run:
+                name: Installation des dépendances
+                command: |
+                    sudo apt install -y jq xsltproc
+                    cd /home/circleci/project
+                    git clone https://github.com/Cheedoong/xml2json.git
+                    cd xml2json
+                    make
+
+            - run:
+                name: Récupération et traitement des données
+                command: |
+                     cd /home/circleci/project/decp-rama
+                     export PATH=$PATH:/home/circleci/project/xml2json
+                     ./process.sh all package sequence
+            - run:
+                name: Fusion de tous les fichiers de source en un seul
+                command: |
+                    cd /home/circleci/project/decp-rama
+                    ./merge_all_sources.sh
+            - run:
+                name: Publication des données sur (next.)data.gouv.fr
+                command: |
+                    cd /home/circleci/project/decp-rama
+                    ./publish.sh
+workflows:
+    version: 2
+    dev:
+        jobs:
+            - process-and-publish:
+                filters:
+                    branches:
+                        only:
+                            - develop
+    daily:
+        jobs:
+            - process-and-publish
+        triggers:
+            - schedule:
+                cron: 0 4 * * *
+                filters:
+                    branches:
+                        only:
+                            - master

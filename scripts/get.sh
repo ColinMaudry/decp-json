@@ -6,8 +6,6 @@
 #
 #**********************************************************************
 
-# Pour facilement s'y retrouver dans les répertoires, création d'une variable avec le chemin de la racine de decp-json
-export DECP_HOME=`pwd`
 source=$1
 
 if [ -d ./scripts/sources/$source -a -f ./scripts/sources/$source/get.sh ]
@@ -15,13 +13,13 @@ if [ -d ./scripts/sources/$source -a -f ./scripts/sources/$source/get.sh ]
 
     echo "## Téléchargement ($source)..."
     # Si des données sont déjà présentes, on les supprime
-    if [[ -d ./sources/$source ]]
+    if [[ -d $DECP_HOME/sources/$source ]]
         then
-        rm -r ./sources/$source
+        rm -r $DECP_HOME/sources/$source
     fi
 
-    mkdir ./sources/$source
-    cd ./sources/$source
+    mkdir $DECP_HOME/sources/$source
+    cd $DECP_HOME/sources/$source
 
     $DECP_HOME/scripts/sources/$source/get.sh $source
 
@@ -35,14 +33,9 @@ if [ -d ./scripts/sources/$source -a -f ./scripts/sources/$source/get.sh ]
 
 elif [[ -z "$source" ]]
     then
-    echo "Récupération de toutes les sources (désactivé)"
+    echo "Il manque le code d'une source en paramètre."
 else
-    sources=`ll ./scripts/sources`
-    echo "Cette source n'existe pas"
-    echo ""
-    echo "Voici les sources supportées pour GET :"
-    echo ""
-    ls -1 scripts/sources
+    echo "Cette source ($source) n'existe pas"
     echo ""
 
     exit 1

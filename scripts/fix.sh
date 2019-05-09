@@ -6,8 +6,6 @@
 #
 #**********************************************************************
 
-# Pour facilement s'y retrouver dans les répertoires, création d'une variable avec le chemin de la racine de decp-json
-export DECP_HOME=`pwd`
 source=$1
 
 if [ -d $DECP_HOME/sources/$source -a -f $DECP_HOME/scripts/sources/$source/fix.sh ]
@@ -19,12 +17,12 @@ if [ -d $DECP_HOME/sources/$source -a -f $DECP_HOME/scripts/sources/$source/fix.
 
 elif [ -d $DECP_HOME/sources/$source -a ! -f $DECP_HOME/scripts/sources/$source/fix.sh ]
         then
-        echo "Pas de correction."
+        echo "Pas de correction configurée pour cette source."
         exit 0
 
 elif [[ -z "$source" ]]
     then
-    echo "Correction de toutes les sources (désactivé)"
+    echo "Il manque le code d'une source en paramètre."
 else
     cd ./json
     echo "Cette source n'existe pas"

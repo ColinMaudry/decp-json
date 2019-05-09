@@ -24,8 +24,7 @@ echo "$nbResources ressources identifiées"
 
 for resource in `cat resources.tmp`
 do
-    wget $resource
-
+    wget -nv $resource
 done
 
 rm resources.tmp
