@@ -3,7 +3,7 @@
 > Toutes les données essentielles de la commande publique agrégées et converties
 .
 
-**Version 1.3.1**
+**Version 1.4.0**
 
 Rappel de ce que sont les données essentielles de la commande publique (ou DECP) [sur le blog de data.gouv.fr](https://www.data.gouv.fr/fr/posts/le-point-sur-les-donnees-essentielles-de-la-commande-publique/).
 
@@ -90,6 +90,13 @@ Exemples :
 Le code source de ce projet est publié sous licence [MIT](https://opensource.org/licenses/MIT).
 
 ## Notes de version
+
+### 1.4.0
+
+- fork d'Etalab pour la publication des données sur data.gouv.fr
+- passage à la licence MIT
+- amélioration du mécanisme d'orchestration du traitement avec `process.sh`
+- automatisation du process récupération/traitement/publication dans CircleCI
 
 #### 1.3.1
 

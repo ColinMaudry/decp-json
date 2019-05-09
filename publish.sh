@@ -11,12 +11,15 @@
 
 case ${CIRCLE_BRANCH} in
     master)
-    export api="https://data.gouv.fr/api/1"
-    export dataset_id="?"
-    export resource_id="?"
 
-    #API_KEY configurée dans les options de build de CircleCI
-    api_key=$API_KEY
+    # Pas de publication sur data.gouv.fr pour l'instant, le JDD n'est pas prêt.
+
+    # export api="https://data.gouv.fr/api/1"
+    # export dataset_id="?"
+    # export resource_id="?"
+    #
+    # #API_KEY configurée dans les options de build de CircleCI
+    # api_key=$API_KEY
     ;;
 
     *)
@@ -37,7 +40,7 @@ echo "Remplacement du decp.json par sa mise à jour quotidienne"
 curl $api/datasets/$dataset_id/resources/$resource_id/upload/ -F "file=@json/decp.json" -H "X-API-KEY: $api_key" | jq .success
 
 # Si nous sommes le premier du mois, publication d'une nouvelle archive mensuelle
-if [[ `date +%d` -eq "01"  ]]
+if [[ `date +%d` -eq "01" ]]
 then
     date=`date +%d/%m/%Y`
 
