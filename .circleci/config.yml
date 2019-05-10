@@ -34,6 +34,7 @@ jobs:
                     ./merge_all_sources.sh
             - run:
                 name: Conversion du JSON agrégé en XML
+                command: |
                     cd /home/circleci/project
                     mkdir decp-rama/xml
                     git clone https://github.com/edsu/json2xml.git
