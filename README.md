@@ -70,14 +70,15 @@ Exemples :
 
 ## Sources de données
 
-| Code                   | Description                                      | URL                                                           | Statut                                                                               |
-| ---------------------- | ------------------------------------------------ | ------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
-| `data.gouv.fr_pes`     | DECP des collectivités issues du PES Marché      | https://www.data.gouv.fr/fr/datasets/5bd0b6fd8b4c413d0801dc57 | **Intégrée**                                                                         |
-| `data.gouv.fr_aife`    | DECP de l'État publiées par l'AIFE               | https://www.data.gouv.fr/fr/datasets/5bd789ee8b4c4155bd9a0770 | **Intégrée**                                                                         |
-|                        | DECP publiées par achatpublic.com                | [https://www.achatpublic.com](https://frama.link/47M71Xz2)    | Pas de téléchargement en masse                                                       |
-| `marches-publics.info` | DECP publiées par marches-publics.info (AWS)     | https://www.marches-publics.info/mpiaws/index.cfm             | [Plus de téléchargement en masse](https://github.com/ColinMaudry/decp-json/issues/3) |
-| `e-marchespublics.com` | DECP publiées par e-marchespublics.com (Dematis) | https://www.data.gouv.fr/fr/datasets/5c0a7845634f4139b2ee8883 | **Intégrée**                                                                         |
-|                        | DECP des membres de Mégalis Bretagne             | https://marches.megalisbretagne.org/                          | Très peu de DECP publiées                                                            |
+| Code                   | Description                                          | URL                                                                           | Statut                                                                               |
+| ---------------------- | ---------------------------------------------------- | ----------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| `data.gouv.fr_pes`     | DECP des collectivités issues du PES Marché          | https://www.data.gouv.fr/fr/datasets/5bd0b6fd8b4c413d0801dc57                 | **Intégrée**                                                                         |
+| `data.gouv.fr_aife`    | DECP de l'État publiées par l'AIFE                   | https://www.data.gouv.fr/fr/datasets/5bd789ee8b4c4155bd9a0770                 | **Intégrée**                                                                         |
+|                        | DECP publiées par achatpublic.com                    | [https://www.achatpublic.com](https://frama.link/47M71Xz2)                    | Pas de téléchargement en masse                                                       |
+| `marches-publics.info` | DECP publiées par marches-publics.info (AWS)         | https://www.marches-publics.info/mpiaws/index.cfm                             | [Plus de téléchargement en masse](https://github.com/ColinMaudry/decp-json/issues/3) |
+| `e-marchespublics.com` | DECP publiées par e-marchespublics.com (Dematis)     | https://www.data.gouv.fr/fr/datasets/5c0a7845634f4139b2ee8883                 | **Intégrée**                                                                         |
+|                        | DECP des membres de Mégalis Bretagne                 | https://marches.megalisbretagne.org/                                          | Très peu de DECP publiées                                                            |
+| `grandlyon`            | Marchés du Grand Lyon publiés sur data.grandlyon.com | https://data.grandlyon.com/citoyennete/marchf-public-de-la-mftropole-de-lyon/ | **Intégrée**                                                                         | 
 
 ## Contact
 
