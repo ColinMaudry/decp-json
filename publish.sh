@@ -12,14 +12,12 @@
 case ${CIRCLE_BRANCH} in
     master)
 
-    # Pas de publication sur data.gouv.fr pour l'instant, le JDD n'est pas prêt.
+    export api="https://data.gouv.fr/api/1"
+    export dataset_id="5cd57bf68b4c4179299eb0e9"
+    export resource_id="16962018-5c31-4296-9454-5998585496d2"
 
-    # export api="https://data.gouv.fr/api/1"
-    # export dataset_id="?"
-    # export resource_id="?"
-    #
-    # #API_KEY configurée dans les options de build de CircleCI
-    # api_key=$API_KEY
+    #API_KEY configurée dans les options de build de CircleCI
+    api_key=$API_KEY
     ;;
 
     *)
