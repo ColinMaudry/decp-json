@@ -20,8 +20,10 @@ La procédure standard est la suivante :
 ## Pré-requis
 
 - [xml2json](https://github.com/Cheedoong/xml2json) pour la conversion de XML vers JSON (binaire Linus amd64 inclus dans `./scripts/bin`)
-- [jq](https://stedolan.github.io/jq/) pour la conversion JSON vers JSON (disponible dans les dépôts Ubuntu)
+- [jq](https://stedolan.github.io/jq/) pour la modification des fichiers JSON (disponible dans les dépôts Ubuntu)
 - [xsltproc](http://xmlsoft.org/XSLT/xsltproc2.html) pour la correction d'anomalies dans certaines sources XML (disponible dans les dépôts Ubuntu)
+- [json2xml](https://github.com/edsu/json2xml) pour la conversion XML vers JSON
+- [libxml2-utils] pour l'outil `xmllint` (disponible dans les dépôts Ubuntu)
 - pouvoir exécuter des scripts bash
 
 ## Mode d'emploi
@@ -78,7 +80,7 @@ Exemples :
 | `marches-publics.info` | DECP publiées par marches-publics.info (AWS)         | https://www.marches-publics.info/mpiaws/index.cfm                             | [Plus de téléchargement en masse](https://github.com/ColinMaudry/decp-json/issues/3) |
 | `e-marchespublics.com` | DECP publiées par e-marchespublics.com (Dematis)     | https://www.data.gouv.fr/fr/datasets/5c0a7845634f4139b2ee8883                 | **Intégrée**                                                                         |
 |                        | DECP des membres de Mégalis Bretagne                 | https://marches.megalisbretagne.org/                                          | Très peu de DECP publiées                                                            |
-| `grandlyon`            | Marchés du Grand Lyon publiés sur data.grandlyon.com | https://data.grandlyon.com/citoyennete/marchf-public-de-la-mftropole-de-lyon/ | **Intégrée**                                                                         | 
+| `grandlyon`            | Marchés du Grand Lyon publiés sur data.grandlyon.com | https://data.grandlyon.com/citoyennete/marchf-public-de-la-mftropole-de-lyon/ | **Intégrée**                                                                         |
 
 ## Contact
 
