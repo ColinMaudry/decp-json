@@ -1,7 +1,6 @@
 # DECPrama
 
 > Toutes les données essentielles de la commande publique agrégées et converties
-.
 
 **Version 1.4.0**
 
@@ -93,7 +92,7 @@ Le code source de ce projet est publié sous licence [MIT](https://opensource.or
 
 ### 1.4.0
 
-- fork d'Etalab pour la publication des données sur data.gouv.fr
+- fork de [decp-json](https://github.com/ColinMaudry/decp-json) ([Colin Maudry](https://twitter.com/col1m)) par Etalab pour la publication des données sur data.gouv.fr
 - passage à la licence MIT
 - amélioration du mécanisme d'orchestration du traitement avec `process.sh`
 - automatisation du process récupération/traitement/publication dans CircleCI
