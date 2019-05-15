@@ -21,7 +21,7 @@ fi
 case $source in
 
     all)
-        sources=`jq -r '.[] | .code' sources/metadata.json`
+        sources=`jq -r '.[] | .code' $DECP_HOME/sources/metadata.json`
         for source in $sources
         do
             ./process.sh $source $step $mode

@@ -25,7 +25,8 @@ do
 done
 
 if [[ ! -d $DECP_HOME/json/$source ]]
-mkdir $DECP_HOME/json/$source
+then
+    mkdir $DECP_HOME/json/$source
 fi
 
 echo "Copie des fichiers corrigés vers json/$source..."

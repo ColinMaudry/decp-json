@@ -3,29 +3,29 @@
     "id": "1",
     "code": "data.gouv.fr_pes",
     "description": "Données des collectivités publiées via le PES Marché",
-    "url": "https://www.data.gouv.fr/fr/datasets/5bd0b6fd8b4c413d0801dc57",
+    "url": "https://www.data.gouv.fr/fr/datasets/5bd0b6fd8b4c413d0801dc57"
   },
   {
     "id": "2",
     "code": "marches-publics.info",
     "description": "Marchés attribués sur marches-publics.info",
-    "url": "https://www.data.gouv.fr/fr/datasets/5cdb1722634f41416ffe90e2",
+    "url": "https://www.data.gouv.fr/fr/datasets/5cdb1722634f41416ffe90e2"
   },
   {
     "id": "3",
     "code": "data.gouv.fr_aife",
     "description": "Marchés attribués par l'État ou transmis au service DUME de l'AIFE",
-    "url": "https://www.data.gouv.fr/fr/organizations/agence-pour-linformatique-financiere-de-letat/",
+    "url": "https://www.data.gouv.fr/fr/organizations/agence-pour-linformatique-financiere-de-letat/"
   },
   {
     "id": "4",
     "code": "e-marchespublics",
     "description": "Marchés attribués sur e-marchespublics.com",
-    "url": "https://www.data.gouv.fr/fr/datasets/5c0a7845634f4139b2ee8883",
+    "url": "https://www.data.gouv.fr/fr/datasets/5c0a7845634f4139b2ee8883"
   },
   {
     "id": "5",
     "code": "grandlyon",
     "description": "Marchés du Grand Lyon publiés sur data.grandlyon.com",
-    "url": "https://download.data.grandlyon.com/files/grandlyon/citoyennete/marches_publics.xml",
+    "url": "https://download.data.grandlyon.com/files/grandlyon/citoyennete/marches_publics.xml"
   }
