@@ -14,7 +14,9 @@ case ${CIRCLE_BRANCH} in
 
     export api="https://data.gouv.fr/api/1"
     export dataset_id="5cd57bf68b4c4179299eb0e9"
-    export resource_id="16962018-5c31-4296-9454-5998585496d2"
+    export resource_id_json="16962018-5c31-4296-9454-5998585496d2"
+    export resource_id_xml="17046b18-8921-486a-bc31-c9196d5c3e9c"
+
 
     #API_KEY configurée dans les options de build de CircleCI
     api_key=$API_KEY
@@ -23,7 +25,8 @@ case ${CIRCLE_BRANCH} in
     *)
     export api="https://next.data.gouv.fr/api/1"
     export dataset_id="5cc1bb51dc470946203cc376"
-    export resource_id="5f550643-9867-41ee-a77c-8d7739383dbe"
+    export resource_id_json="5f550643-9867-41ee-a77c-8d7739383dbe"
+    export resource_id_xml=""
     api_key=$NEXT_API_KEY
     ;;
 esac
@@ -34,23 +37,40 @@ then
     exit 1
 fi
 
-echo "Remplacement du decp.json par sa mise à jour quotidienne"
-curl $api/datasets/$dataset_id/resources/$resource_id/upload/ -F "file=@json/decp.json" -H "X-API-KEY: $api_key" | jq .success
+echo "Remplacement de decp.json et decp.xml par leur mise à jour quotidienne"
+
+for ext in json xml
+do
+
+case ext in
+    xml)
+    resource_id=$resource_id_xml
+    ;;
+    json)
+    resource_id=$resource_id_json
+    ;;
+esac
+
+echo "Mise à jour de decp.${ext}..."
+
+curl $api/datasets/$dataset_id/resources/${resource_id}/upload/ -F "file=@${ext}/decp.${ext}" -H "X-API-KEY: $api_key" | jq .success
+
+done
 
 # Si nous sommes le premier du mois, publication d'une nouvelle archive mensuelle
 if [[ `date +%d` -eq "01" ]]
 then
     date=`date +%d/%m/%Y`
 
-    echo "Upload du fichier comme nouvelle ressource"
-    curl -v $api/datasets/$dataset_id/upload/ -F "file=@json/decp.json" -F "filename=decp-$date" -H "X-API-KEY: $api_key" > new_resource.json
+    for ext in json xml
+    do
 
-    echo "new_resource.json"
-    jq . new_resource.json
+    echo "Upload du fichier comme nouvelle ressource"
+    curl -v $api/datasets/$dataset_id/upload/ -F "file=@${ext}/decp.${ext}" -F "filename=decp-$date" -H "X-API-KEY: $api_key" > new_resource.json
 
     new_resource_id=`jq -r .id new_resource.json`
     echo "New resource_id : $new_resource_id"
-    jq --arg date $date '.title |= "Archive du " + $date' new_resource.json > new_resource_modified.json
+    jq --arg date $date ext ${ext^^} '.title |= "Fichier " + $ext + " du " + $date' new_resource.json > new_resource_modified.json
 
     echo "new_resource_modified.json"
     jq . new_resource_modified.json
@@ -60,5 +80,6 @@ then
 
     rm new_resource.json
     rm new_resource_modified.json
+    done
 
 fi
