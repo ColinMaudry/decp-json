@@ -8,7 +8,7 @@ cd $DECP_HOME/sources/$source
 
 mkdir -p $DECP_HOME/json/$source
 
-for xml in *.xml
+for xml in *.*
 do
 
 #Converti le XML DECP vers JSON DECP
