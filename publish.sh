@@ -55,31 +55,42 @@ echo "Mise à jour de decp.${ext}..."
 
 curl "$api/datasets/$dataset_id/resources/${resource_id}/upload/" -F "file=@${ext}/decp.${ext}" -H "X-API-KEY: $api_key" | jq .
 
+date=`date "+%F"`
+
+echo "Publication de decp_$date.${ext}..."
+
+curl "$api/datasets/$dataset_id/upload/" -F "file=@decp_${date}.${ext}" -F "filename=decp_$date" -H "X-API-KEY: $api_key"
+
 done
 
+
+
 # Si nous sommes le premier du mois, publication d'une nouvelle archive mensuelle
-if [[ `date +%d` -eq "01" ]]
-then
-    date=`date +%d/%m/%Y`
 
-    for ext in json xml
-    do
+# Pas sûr de continuer sur cette voie, voir https://github.com/etalab/decp-rama/issues/6
 
-    echo "Upload du fichier comme nouvelle ressource"
-    curl "$api/datasets/$dataset_id/upload/" -F "file=@${ext}/decp.${ext}" -F "filename=decp-$date" -H "X-API-KEY: $api_key" > new_resource.json
-
-    new_resource_id=`jq -r .id new_resource.json`
-    echo "New resource_id : $new_resource_id"
-    jq --arg date $date ext ${ext^^} '.title |= "Fichier " + $ext + " du " + $date' new_resource.json > new_resource_modified.json
-
-    echo "new_resource_modified.json"
-    jq . new_resource_modified.json
-
-    echo "Modification du titre de la nouvelle ressource"
-    curl -X PUT "$api/datasets/$dataset_id/resources/$new_resource_id/" --data-binary "@new_resource_modified.json" -H "Content-type: application/json" -H "X-API-KEY: $api_key" | jq .
-
-    rm new_resource.json
-    rm new_resource_modified.json
-    done
-
-fi
+# if [[ `date +%d` -eq "01" ]]
+# then
+#     datejma=`date +%d/%m/%Y`
+#
+#     for ext in json xml
+#     do
+#
+#     echo "Upload du fichier comme nouvelle ressource"
+#     curl "$api/datasets/$dataset_id/upload/" -F "file=@${ext}/decp.${ext}" -F "filename=decp-$datejma" -H "X-API-KEY: $api_key" > new_resource.json
+#
+#     new_resource_id=`jq -r .id new_resource.json`
+#     echo "New resource_id : $new_resource_id"
+#     jq --arg date $datejma ext ${ext^^} '.title |= "Fichier " + $ext + " du " + $date' new_resource.json > new_resource_modified.json
+#
+#     echo "new_resource_modified.json"
+#     jq . new_resource_modified.json
+#
+#     echo "Modification du titre de la nouvelle ressource"
+#     curl -X PUT "$api/datasets/$dataset_id/resources/$new_resource_id/" --data-binary "@new_resource_modified.json" -H "Content-type: application/json" -H "X-API-KEY: $api_key" | jq .
+#
+#     rm new_resource.json
+#     rm new_resource_modified.json
+#     done
+#
+# fi

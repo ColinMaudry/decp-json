@@ -36,16 +36,44 @@ case $source in
         scripts/merge_all_sources.sh
 
         echo ""
-        echo "## Conversion du JSON agrégé en XML"
+        echo "Extraction des marchés du jour"
 
-        scripts/jsonDECP2xmlDECP.sh
+        case ${CIRCLE_BRANCH} in
+            master)
+
+            export api="https://data.gouv.fr/api/1"
+            export resource_id_json="16962018-5c31-4296-9454-5998585496d2"
+
+            #API_KEY configurée dans les options de build de CircleCI
+            api_key=$API_KEY
+            ;;
+
+            *)
+            export api="https://next.data.gouv.fr/api/1"
+            export resource_id_json="a53049f9-3536-4dab-b0fb-8928917cb12a"
+            api_key=$NEXT_API_KEY
+            ;;
+        esac
+
+        wget https://www.data.gouv.fr/fr/datasets/r/16962018-5c31-4296-9454-5998585496d2 -O decp_previous.json
+
+        # Le fichier des marchés du jour est sauvegardé dans ./decp_{date-iso}.json
+        scripts/get_new_data.sh decp_previous.json json/decp.json
+
+        echo ""
+        echo "## Conversion du JSON agrégé et du JSON du jour en XML"
 
         if [[ ! -d xml  ]]
         then
             mkdir xml
         fi
 
+        date=`date "+%F"`
         scripts/jsonDECP2xmlDECP.sh json/decp.json > xml/decp.xml
+        ls -lh xml/decp.xml
+
+        scripts/jsonDECP2xmlDECP.sh decp_$date.json > decp_$date.xml
+        ls -lh decp_$date.xml
     ;;
     *)
 
