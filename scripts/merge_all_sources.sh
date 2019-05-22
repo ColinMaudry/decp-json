@@ -6,7 +6,7 @@
 #
 #**********************************************************************
 
-echo "## Aggrégation du JSON de toutes les sources"
+echo "## Agrégation du JSON de toutes les sources"
 cd ./json
 
 # Suppression de l'ancien fichier agrégé

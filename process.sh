@@ -12,7 +12,7 @@ mode=$3
 
 # Pour facilement s'y retrouver dans les répertoires, création d'une variable avec le chemin de la racine de decp-rama
 export DECP_HOME=`pwd`
-
+echo $DECP_HOME
 if [[ -z $mode ]]
 then
     mode=only
@@ -22,10 +22,30 @@ case $source in
 
     all)
         sources=`jq -r '.[] | .code' $DECP_HOME/sources/metadata.json`
+        echo "Sources :"
+        echo $sources
+        echo ""
         for source in $sources
         do
             ./process.sh $source $step $mode
         done
+
+        echo ""
+        echo "## Fusion de tous les fichiers JSON de source en un seul"
+
+        scripts/merge_all_sources.sh
+
+        echo ""
+        echo "## Conversion du JSON agrégé en XML"
+
+        scripts/jsonDECP2xmlDECP.sh
+
+        if [[ ! -d xml  ]]
+        then
+            mkdir xml
+        fi
+
+        scripts/jsonDECP2xmlDECP.sh json/decp.json > xml/decp.xml
     ;;
     *)
 

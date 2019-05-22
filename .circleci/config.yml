@@ -18,6 +18,7 @@ jobs:
                 command: |
                     sudo apt install -y jq xsltproc libxml2-utils
                     cd /home/circleci/project
+                    git clone https://github.com/edsu/json2xml.git
                     git clone https://github.com/Cheedoong/xml2json.git
                     cd xml2json
                     make
@@ -27,21 +28,9 @@ jobs:
                 command: |
                      cd /home/circleci/project/decp-rama
                      export PATH=$PATH:/home/circleci/project/xml2json
-                     ./process.sh all package sequence
-            - run:
-                name: Fusion de tous les fichiers de source en un seul
-                command: |
-                    cd /home/circleci/project/decp-rama
-                    ./merge_all_sources.sh
-            - run:
-                name: Conversion du JSON agrégé en XML
-                command: |
-                    cd /home/circleci/project/decp-rama
-                    mkdir xml
-                    git clone https://github.com/edsu/json2xml.git ../json2xml
-                    export PATH=$PATH:/home/circleci/project/json2xml
-                    scripts/jsonDECP2xmlDECP.sh json/decp.json > xml/decp.xml
+                     export PATH=$PATH:/home/circleci/project/json2xml
 
+                     ./process.sh all package sequence
             - run:
                 name: Publication des données sur (next.)data.gouv.fr
                 command: |
