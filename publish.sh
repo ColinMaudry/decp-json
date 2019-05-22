@@ -53,7 +53,7 @@ esac
 
 echo "Mise à jour de decp.${ext}..."
 
-curl "$api/datasets/$dataset_id/resources/${resource_id}/upload/" -F "file=@${ext}/decp.${ext}" -H "X-API-KEY: $api_key" | jq .success
+curl "$api/datasets/$dataset_id/resources/${resource_id}/upload/" -F "file=@${ext}/decp.${ext}" -H "X-API-KEY: $api_key" | jq .
 
 done
 
@@ -66,7 +66,7 @@ then
     do
 
     echo "Upload du fichier comme nouvelle ressource"
-    curl -v "$api/datasets/$dataset_id/upload/" -F "file=@${ext}/decp.${ext}" -F "filename=decp-$date" -H "X-API-KEY: $api_key" > new_resource.json
+    curl "$api/datasets/$dataset_id/upload/" -F "file=@${ext}/decp.${ext}" -F "filename=decp-$date" -H "X-API-KEY: $api_key" > new_resource.json
 
     new_resource_id=`jq -r .id new_resource.json`
     echo "New resource_id : $new_resource_id"
@@ -76,7 +76,7 @@ then
     jq . new_resource_modified.json
 
     echo "Modification du titre de la nouvelle ressource"
-    curl -v -X PUT "$api/datasets/$dataset_id/resources/$new_resource_id/" --data-binary "@new_resource_modified.json" -H "Content-type: application/json" -H "X-API-KEY: $api_key"
+    curl -X PUT "$api/datasets/$dataset_id/resources/$new_resource_id/" --data-binary "@new_resource_modified.json" -H "Content-type: application/json" -H "X-API-KEY: $api_key" | jq .
 
     rm new_resource.json
     rm new_resource_modified.json
