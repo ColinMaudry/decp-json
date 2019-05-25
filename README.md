@@ -2,18 +2,20 @@
 
 > Toutes les données essentielles de la commande publique agrégées et converties
 
-**Version 1.4.0**
+**Version 1.5.0**
 
 Rappel de ce que sont les données essentielles de la commande publique (ou DECP) [sur le blog de data.gouv.fr](https://www.data.gouv.fr/fr/posts/le-point-sur-les-donnees-essentielles-de-la-commande-publique/).
 
-L'objectif de ce projet est d'identifier toutes les sources de DECP, et de créer des scripts permettant de produire des fichiers utilisables ([exemple fictif sur le dépôt officiel](https://github.com/etalab/format-commande-publique/blob/master/exemples/json/paquet.json)) au [format JSON réglementaire](https://github.com/etalab/format-commande-publique/tree/master/sch%C3%A9mas/json).
+L'objectif de ce projet est d'identifier toutes les sources de DECP, et de créer des scripts permettant de produire des fichiers utilisables ([jeu de données sur data.gouv.fr](https://www.data.gouv.fr/fr/datasets/5cd57bf68b4c4179299eb0e9)) au [formats JSON et XML réglementaires](https://github.com/etalab/format-commande-publique/tree/master/sch%C3%A9mas).
 
 La procédure standard est la suivante :
 
 1. Nous agrégeons toutes les données possibles dans leur format d'origine, **XML ou JSON** (les DECP n'existent pas dans d'autres formats)
 2. Nous les stockons dans `/sources` dans un répertoire spécifique à la source des données. En effet, selon la source, les données n'ont pas besoin des même traitements pour être utilisables (nettoyage, réparation de la structure, correction de l'encodage)
-3. Nous les convertissons au format JSON ou XML réglementaire selon le format de récupération, en rajoutant un champ `source` qui permet d'identifier la source d'origine (voir le tableau ci-dessous). Certaines données sources n'étant pas valides (par exemple si certains champs manquent), les données ne seront pas non plus valides. Nous avons pris le parti de les garder et de signaler ces anomalies.
-4. Nous agrégeons les données XML et les JSON et les publions sur un jeu de données sur data.gouv.fr (prochainement).
+3. Nous les convertissons au format JSON réglementaire si la source est en XML. Certaines données sources n'étant pas valides, nous corrigeons ce qui peut être corrigé (par exemple le format d'une date).  Si certains champs manquent dans les données, nous avons pris le parti de les garder et de [signaler ces anomalies](https://github.com/etalab/decp-rama/labels/anomalie).
+4. Nous convertissons l'agrégat au format JSON au fichier XML
+4. Nous publions les agrégats XML et JSON sur [un jeu de données sur data.gouv.fr](https://www.data.gouv.fr/fr/datasets/5cd57bf68b4c4179299eb0e9)
+5. Nous publions également chaque jour un fichier des nouveaux marchés sur le même jeu de données
 
 **Si vous avez connaissance de données essentielles de la commande publique facilement accessibles (téléchargement en masse possible) et qui ne sont pas encore identifiées ci-dessous, merci de [nous en informer](#contact).**
 
@@ -77,7 +79,7 @@ Exemples :
 | `data.gouv.fr_pes`     | DECP des collectivités issues du PES Marché          | https://www.data.gouv.fr/fr/datasets/5bd0b6fd8b4c413d0801dc57                 | **Intégrée**                                                                         |
 | `data.gouv.fr_aife`    | DECP de l'État publiées par l'AIFE                   | https://www.data.gouv.fr/fr/datasets/5bd789ee8b4c4155bd9a0770                 | **Intégrée**                                                                         |
 |                        | DECP publiées par achatpublic.com                    | [https://www.achatpublic.com](https://frama.link/47M71Xz2)                    | Pas de téléchargement en masse                                                       |
-| `marches-publics.info` | DECP publiées par marches-publics.info (AWS)         | https://www.marches-publics.info/mpiaws/index.cfm                             | [Plus de téléchargement en masse](https://github.com/ColinMaudry/decp-json/issues/3) |
+| `marches-publics.info` | DECP publiées par marches-publics.info (AWS)         | https://www.marches-publics.info/mpiaws/index.cfm                             | [Mises à dispo par la communauté](https://www.data.gouv.fr/fr/datasets/donnees-essentielles-des-marches-publics-publies-sur-marches-publics-info-aws/) |
 | `e-marchespublics.com` | DECP publiées par e-marchespublics.com (Dematis)     | https://www.data.gouv.fr/fr/datasets/5c0a7845634f4139b2ee8883                 | **Intégrée**                                                                         |
 |                        | DECP des membres de Mégalis Bretagne                 | https://marches.megalisbretagne.org/                                          | Très peu de DECP publiées                                                            |
 | `grandlyon`            | Marchés du Grand Lyon publiés sur data.grandlyon.com | https://data.grandlyon.com/citoyennete/marchf-public-de-la-mftropole-de-lyon/ | **Intégrée**                                                                         |
@@ -92,6 +94,13 @@ Exemples :
 Le code source de ce projet est publié sous licence [MIT](https://opensource.org/licenses/MIT).
 
 ## Notes de version
+
+### 1.5.0
+
+- conversion de l'agrégat vers XML
+- correction des soucis de téléchargement et de traitement
+- ajout des données du Grand Lyon (merci Nathalie Vernus-Prost)
+- création d'un fichier des nouveaux marchés du jour
 
 ### 1.4.0
 
