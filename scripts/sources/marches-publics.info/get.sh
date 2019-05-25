@@ -11,7 +11,7 @@
 # Récupération de la liste des ressources à partir de l'adresse des jeux de données.
 
 
-curl https://www.data.gouv.fr/api/1/datasets/5cdb1722634f41416ffe90e2/  | jq -r '.resources[].url' >> resources.tmp
+curl "https://www.data.gouv.fr/api/1/datasets/5cdb1722634f41416ffe90e2/"  | jq -r '.resources[].url' >> resources.tmp
 
 nbResources=`cat resources.tmp | wc -l`
 
