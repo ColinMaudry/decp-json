@@ -39,23 +39,20 @@ case $source in
         echo "Extraction des marchés du jour"
 
         case ${CIRCLE_BRANCH} in
-            master)
-
-            export api="https://data.gouv.fr/api/1"
-            export resource_id_json="16962018-5c31-4296-9454-5998585496d2"
-
-            #API_KEY configurée dans les options de build de CircleCI
-            api_key=$API_KEY
-            ;;
-
             *)
-            export api="https://next.data.gouv.fr/api/1"
-            export resource_id_json="a53049f9-3536-4dab-b0fb-8928917cb12a"
-            api_key=$NEXT_API_KEY
+
+            resource="https://www.data.gouv.fr/fr/datasets/r/16962018-5c31-4296-9454-5998585496d2"
+
             ;;
+
+            # *)
+            # export api="https://next.data.gouv.fr/api/1"
+            # export resource_id_json="a53049f9-3536-4dab-b0fb-8928917cb12a"
+            # api_key=$NEXT_API_KEY
+            # ;;
         esac
 
-        wget https://www.data.gouv.fr/fr/datasets/r/16962018-5c31-4296-9454-5998585496d2 -O decp_previous.json
+        wget $resource -O decp_previous.json
 
         # Le fichier des marchés du jour est sauvegardé dans ./decp_{date-iso}.json
         scripts/get_new_data.sh decp_previous.json json/decp.json

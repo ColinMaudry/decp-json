@@ -10,7 +10,7 @@
 # à ce dataset.
 
 case ${CIRCLE_BRANCH} in
-    master)
+    *)
 
     export api="https://data.gouv.fr/api/1"
     export dataset_id="5cd57bf68b4c4179299eb0e9"
@@ -22,13 +22,15 @@ case ${CIRCLE_BRANCH} in
     api_key=$API_KEY
     ;;
 
-    *)
-    export api="https://next.data.gouv.fr/api/1"
-    export dataset_id="5cdc1726dc470945800204fd"
-    export resource_id_json="a53049f9-3536-4dab-b0fb-8928917cb12a"
-    export resource_id_xml="61d64aa3-d853-4841-a1c5-8e12556ed57b"
-    api_key=$NEXT_API_KEY
-    ;;
+
+    # Test temporaire en prod (data.gouv.fr) en raison de l'indisponibilité de next.data
+    # *)
+    # export api="https://next.data.gouv.fr/api/1"
+    # export dataset_id="5cdc1726dc470945800204fd"
+    # export resource_id_json="a53049f9-3536-4dab-b0fb-8928917cb12a"
+    # export resource_id_xml="61d64aa3-d853-4841-a1c5-8e12556ed57b"
+    # api_key=$NEXT_API_KEY
+    # ;;
 esac
 
 if [[ ! -f ./json/decp.json ]]
