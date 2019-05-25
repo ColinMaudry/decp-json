@@ -12,10 +12,8 @@
 
 for dataset in 5bd789ee8b4c4155bd9a0770 5c3d0d6b8b4c41333775f45a 5be9feed8b4c41367475f40d 5cc8be59634f412a53e309e8
 do
-    echo "https://www.data.gouv.fr/api/1/datasets/$dataset/"
-    curl "https://www.data.gouv.fr/api/1/datasets/$dataset/" > "$dataset.json"
-    cat $dataset.json
-    jq -r '.resources[].url' $dataset.json >> resources.tmp
+    curl "https://www.data.gouv.fr/api/1/datasets/$dataset/" | jq -r '.resources[].url' >> resources.tmp
+
 done
 
 nbResources=`cat resources.tmp | wc -l`
