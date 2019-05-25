@@ -12,7 +12,7 @@
 case ${CIRCLE_BRANCH} in
     *)
 
-    export api="https://data.gouv.fr/api/1"
+    export api="https://www.data.gouv.fr/api/1"
     export dataset_id="5cd57bf68b4c4179299eb0e9"
     export resource_id_json="16962018-5c31-4296-9454-5998585496d2"
     export resource_id_xml="17046b18-8921-486a-bc31-c9196d5c3e9c"
@@ -44,10 +44,11 @@ echo "Remplacement de decp.json et decp.xml par leur mise à jour quotidienne"
 for ext in json xml
 do
 
-case ext in
+case $ext in
     xml)
     resource_id=$resource_id_xml
     ;;
+
     json)
     resource_id=$resource_id_json
     ;;
@@ -55,7 +56,7 @@ esac
 
 echo "Mise à jour de decp.${ext}..."
 
-curl "$api/datasets/$dataset_id/resources/${resource_id}/upload/" -F "file=@${ext}/decp.${ext}" -H "X-API-KEY: $api_key" | jq .
+curl "$api/datasets/$dataset_id/resources/${resource_id}/upload/" -F "file=@${ext}/decp.${ext}" -H "X-API-KEY: $api_key"
 
 date=`date "+%F"`
 
