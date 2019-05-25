@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Récupération des données essentielles publiées par Dematis pour e-marchespublics.com
+# Récupération des données essentielles publiées par Dematis pour e-marchespublics.com, à partir du dataset constitué par Colin Maudry.
 
 
 # À partir du répertoire racine (où se trouve README.md), création d'un repértoire temporaire
@@ -11,7 +11,7 @@
 # Récupération de la liste des ressources à partir de l'adresse des jeux de données.
 
 
-curl "https://www.data.gouv.fr/api/1/datasets/5c0a7845634f4139b2ee8883/" | jq -r '.resources[].url' >> resources.tmp
+curl "https://www.data.gouv.fr/api/1/datasets/5cdb1722634f41416ffe90e2/"  | jq -r '.resources[].url' >> resources.tmp
 
 nbResources=`cat resources.tmp | wc -l`
 

@@ -20,6 +20,12 @@ if [[ -d $DECP_HOME/json/$source ]]
     # Fusion de tous les fichiers en un seul et dans la foulée, ajoute le code de la source et l'ID unique dans le JSON
     $DECP_HOME/scripts/mergeJson.sh | $DECP_HOME/scripts/insertSourceUidInJSON.sh $source > ../$source.json
 
+    nombreMarches=`jq '.marches | length' ../$source.json`
+
+    echo ""
+    echo "$source contient $nombreMarches marchés"
+    echo ""
+
     filename=${source}_json
 
     cd $DECP_HOME/json

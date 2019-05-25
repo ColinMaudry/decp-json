@@ -6,7 +6,7 @@
 #
 #**********************************************************************
 
-echo "## Aggrégation du JSON de toutes les sources"
+echo "## Agrégation du JSON de toutes les sources"
 cd ./json
 
 # Suppression de l'ancien fichier agrégé
@@ -17,6 +17,12 @@ fi
 
 # Fusion des JSON de toutes les sources
 ../scripts/mergeJson.sh > decp.json
+
+nombreMarches=`jq '.marches | length' decp.json`
+
+echo ""
+echo "Le fichier consolidé contient $nombreMarches marchés"
+echo ""
 
 # Création d'une archive ZIP avec tous les JSON de la source choisie
 date=`date +%Y-%m-%d`
