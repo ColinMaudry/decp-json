@@ -1,3 +1,18 @@
+def getIdScheme(typeIdentifiant):
+    typeIdentifiant |
+    if . == "SIRET" then "FR-INSEE"
+    else .
+    end;
+
+def getBuyer:
+    . | (if (."_type" == "Marché") then
+    .acheteur else .autoriteConcedante end)
+    ;
+def getSupplier:
+    . | (if (."_type" == "Marché") then
+    .titulaires[] else .concessionnaires[] end)
+    ;
+
 {
 	"version": "1.1",
 	"uri": "http://files.data.gouv.fr/" ,
@@ -14,59 +29,61 @@
         .marches[] | {
 		"ocid": ($ocidPrefix + "-" + .uid),
 		"id": .id,
-		"date": "2018-11-12T00:00:00Z",
-		"tag": ["award"],
-		"#comment": "awardUpdate if modifications non-null",
+		"date": .datePublicationDonnees,
+		"tag": (if (.modifications | length) > 0
+            then "awardUpdate" else "award" end),
 		"initiationType": "tender",
-		"parties": [{
-				"name": "VILLE DE CHOLET",
-				"id": "21490099500017",
-				"identifier": {
-					"scheme": "FR-INSEE",
-					"id": "21490099500017",
-					"legalName": "VILLE DE CHOLET"
-				},
-				"roles": ["buyer"]
-			},
-			{
-				"name": "ESVIA SAS",
-				"id": "32902082000042",
-				"identifier": {
-					"scheme": "FR-INSEE",
-					"id": "32902082000042",
-					"legalName": "ESVIA SAS"
-				},
-				"roles": ["supplier"]
-			}
+		"parties": [(getBuyer |
+            {
+                    "name": .nom,
+                    "id": .id,
+                    "roles": ["buyer"],
+                    "identifier": {
+                        "scheme": "FR-INSEE",
+                        "id": .id,
+                        "legalName": .nom
+                    }}),
+              (getSupplier | {
+                      "name": .denominationSociale,
+                      "id": .id,
+                      "roles": ["supplier"],
+                      "identifier": {
+                          "scheme": getIdScheme(.typeIdentifiant),
+                          "id": .id,
+                          "legalName": .denominationSociale
+                      }
+                  })
 		],
 		"buyer": {
-			"name": "VILLE DE CHOLET",
-			"id": "21350051500019"
+			"name": .acheteur.nom,
+			"id": .acheteur.id
 		},
 		"awards": [{
-			"id": "213500515000192018tet01",
-			"description": "TRAVAUX DE SIGNALISATION VERTICALE ET HORIZONTALE ET POSE DE MOBILIER URBAIN 2018/2021",
+			"id": "??",
+			"description": .objet,
 			"status": "active",
-			"date": "2018-10-04T00:00:00+02:00",
+			"date": .dateNotification,
 			"value": {
 				"amount": 200000,
 				"currency": "EUR"
 			},
-			"suppliers": [{
-				"name": "ESVIA SAS",
-				"id": "32902082000042"
-			}],
+			"suppliers": [(.titulaires[] | {
+                  "name": .denominationSociale,
+                  "id": .id
+                  })
+              ],
 			"items": [{
 				"id": "1",
-				"description": "TRAVAUX DE SIGNALISATION VERTICALE ET HORIZONTALE ET POSE DE MOBILIER URBAIN 2018/2021",
-				"classification": {
+				"description": .objet,
+				"classification":
+                (if .codeCPV != null then {
 					"scheme": "CPV",
-					"id": "34942000-2"
-				}
+					"id": .codeCPV
+				} else null
+                end)
 			}],
 			"contractPeriod": {
-				"startDate": "2018-10-04T00:00:00+02:00",
-				"durationInDays": 366
+				"durationInDays": (.dureeMois * 30.5 )
 			},
 			"amendments": [{
 				"#comment": "content of moficiations/modification (last, if any)"
