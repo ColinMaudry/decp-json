@@ -10,7 +10,8 @@ def getBuyer:
     ;
 def getSupplier:
     . | (if (."_type" == "Marché") then
-    .titulaires[] else .concessionnaires[] end)
+    .titulaires else .concessionnaires end) |
+    if (. == null) then empty else .[] end
     ;
 
 {
@@ -33,7 +34,8 @@ def getSupplier:
 		"tag": (if (.modifications | length) > 0
             then "awardUpdate" else "award" end),
 		"initiationType": "tender",
-		"parties": [(getBuyer |
+		"parties":
+         [(getBuyer |
             {
                     "name": .nom,
                     "id": .id,
@@ -42,7 +44,8 @@ def getSupplier:
                         "scheme": "FR-INSEE",
                         "id": .id,
                         "legalName": .nom
-                    }}),
+                    }})
+                    ,
               (getSupplier | {
                       "name": .denominationSociale,
                       "id": .id,
@@ -53,10 +56,10 @@ def getSupplier:
                           "legalName": .denominationSociale
                       }
                   })
-		],
-		"buyer": {
-			"name": .acheteur.nom,
-			"id": .acheteur.id
+              ],
+		"buyer": getBuyer | {
+			"name": .nom,
+			"id": .id
 		},
 		"awards": [{
 			"id": "??",
@@ -67,7 +70,7 @@ def getSupplier:
 				"amount": 200000,
 				"currency": "EUR"
 			},
-			"suppliers": [(.titulaires[] | {
+			"suppliers": [(getSupplier | {
                   "name": .denominationSociale,
                   "id": .id
                   })
@@ -83,11 +86,16 @@ def getSupplier:
                 end)
 			}],
 			"contractPeriod": {
-				"durationInDays": (.dureeMois * 30.5 )
+				"durationInDays": (.dureeMois * 30.5 | floor )
 			},
-			"amendments": [{
-				"#comment": "content of moficiations/modification (last, if any)"
-			}]
+			"amendments": [
+                .modifications | last | {
+                    "date" : .dateNotificationModification,
+                    "description": .objetModification,
+                    "#comment": "il manque les releases précédentes et suivantes"
+                }
+
+			]
 		}],
 		"language": "fr"
 	}]
