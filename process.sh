@@ -57,8 +57,7 @@ case $source in
         # Le fichier des marchés du jour est sauvegardé dans ./decp_{date-iso}.json
         scripts/get_new_data.sh decp_previous.json json/decp.json
 
-        echo ""
-        echo "## Conversion du JSON agrégé et du JSON du jour en XML"
+
 
         if [[ ! -d xml  ]]
         then
@@ -66,9 +65,13 @@ case $source in
         fi
 
         date=`date "+%F"`
+        echo ""
+        echo "## Conversion du JSON agrégé en XML..."
         scripts/jsonDECP2xmlDECP.sh json/decp.json > xml/decp.xml
         ls -lh xml/decp.xml
 
+        echo ""
+        echo "## Conversion du JSON du jour en XML..."
         scripts/jsonDECP2xmlDECP.sh decp_$date.json > decp_$date.xml
         ls -lh decp_$date.xml
     ;;
