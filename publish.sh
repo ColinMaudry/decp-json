@@ -62,7 +62,14 @@ date=`date "+%F"`
 
 echo "Publication de decp_$date.${ext}..."
 
-curl "$api/datasets/$dataset_id/upload/" -F "file=@decp_${date}.${ext}" -F "filename=decp_$date" -H "X-API-KEY: $api_key"
+curl "$api/datasets/$dataset_id/upload/" -F "file=@decp_${date}.${ext}" -F "filename=decp_$date" -H "X-API-KEY: $api_key" > dailyResource.json
+
+idDailyResource=`jq -r '.id' dailyResource.json`
+
+# Change le type de ressource de 'main' à 'update'
+curl -X PUT "$api/datasets/$dataset_id/resources/$idDailyResource/" --data '{"type":"update"}' -H "Content-type: application/json" -H "X-API-KEY: $api_key"
+
+rm dailyResource.json
 
 done
 
