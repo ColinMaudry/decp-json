@@ -6,7 +6,7 @@
 #
 #**********************************************************************
 
-datetime=`date "+%FT%T"`
+datetime=`date "+%FT%T+02:00"`
 dataset_id="5cc1bb51dc470946203cc376"
 dataset_url="https://www.data.gouv.fr/fr/datasets/$dataset_id"
 ocid_prefix="ocds-78apv2"

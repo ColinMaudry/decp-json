@@ -8,12 +8,14 @@ def getBuyer:
     . | (if (."_type" == "Marché") then
     .acheteur else .autoriteConcedante end)
     ;
-def getSupplier:
+def getSupplier(lastModif):
     . | (if (."_type" == "Marché") then
-    .titulaires else .concessionnaires end) |
+    (lastModif.titulaires // .titulaires) else .concessionnaires end) |
     if (. == null) then empty else .[] end
     ;
-
+def formatDate:
+    . + "T00:00+02:00"
+    ;
 {
 	"version": "1.1",
 	"uri": "http://files.data.gouv.fr/" ,
@@ -27,12 +29,13 @@ def getSupplier:
 	"license": "https://www.etalab.gouv.fr/licence-ouverte-open-licence",
 	"publicationPolicy": $datasetUrl,
 	"releases": [
-        .marches[] | {
-		"ocid": ($ocidPrefix + "-" + .uid),
+        .marches[] |
+        (.modifications | last) as $lastModif |
+        {"ocid": ($ocidPrefix + "-" + .uid),
 		"id": .id,
 		"date": .datePublicationDonnees,
-		"tag": (if (.modifications | length) > 0
-            then "awardUpdate" else "award" end),
+		"tag": [(if (.modifications | length) > 0
+            then "awardUpdate" else "award" end)],
 		"initiationType": "tender",
 		"parties":
          [(getBuyer |
@@ -46,7 +49,7 @@ def getSupplier:
                         "legalName": .nom
                     }})
                     ,
-              (getSupplier | {
+              (getSupplier($lastModif) | {
                       "name": .denominationSociale,
                       "id": .id,
                       "roles": ["supplier"],
@@ -62,15 +65,16 @@ def getSupplier:
 			"id": .id
 		},
 		"awards": [{
+            "#comment":"ID à déterminer",
 			"id": "??",
 			"description": .objet,
 			"status": "active",
-			"date": .dateNotification,
+			"date": .dateNotification | formatDate,
 			"value": {
-				"amount": 200000,
+				"amount": ($lastModif.montant // .montant),
 				"currency": "EUR"
 			},
-			"suppliers": [(getSupplier | {
+			"suppliers": [(getSupplier($lastModif) | {
                   "name": .denominationSociale,
                   "id": .id
                   })
@@ -86,15 +90,17 @@ def getSupplier:
                 end)
 			}],
 			"contractPeriod": {
-				"durationInDays": (.dureeMois * 30.5 | floor )
+				"durationInDays": (($lastModif.dureeMois //.dureeMois) * 30.5 | floor )
 			},
 			"amendments": [
+                if (.modifications|length > 0) then
                 .modifications | last | {
-                    "date" : .dateNotificationModification,
+                    "date" : .dateNotificationModification | formatDate,
                     "description": .objetModification,
                     "#comment": "il manque les releases précédentes et suivantes"
                 }
-
+                else empty
+                end
 			]
 		}],
 		"language": "fr"
