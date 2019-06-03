@@ -2,8 +2,7 @@ version: 2
 jobs:
     process-and-publish:
         docker:
-            # TODO switch to etalab
-            - image: abulte/decp-rama
+            - image: etalab/decp-rama
         steps:
             - run:
                 # Récupération du code manuel car soucis avec "- checkout"
