@@ -45,6 +45,7 @@ workflows:
                     branches:
                         only:
                             - develop
+                            - feature/docker
     daily:
         jobs:
             - process-and-publish
