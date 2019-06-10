@@ -9,6 +9,9 @@
 # /!\ Le dataset doit avoir été créé et une ressource decp.json doit avoir été ajoutée
 # à ce dataset.
 
+# fail on error
+set -e
+
 case ${CIRCLE_BRANCH} in
     *)
 

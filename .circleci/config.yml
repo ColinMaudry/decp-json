@@ -1,7 +1,8 @@
 version: 2
 jobs:
     process-and-publish:
-        machine: true
+        docker:
+            - image: etalab/decp-rama
         steps:
             - run:
                 # Récupération du code manuel car soucis avec "- checkout"
@@ -12,24 +13,10 @@ jobs:
                     git clone https://github.com/etalab/decp-rama
                     cd decp-rama
                     git checkout $CIRCLE_BRANCH
-
-            - run:
-                name: Installation des dépendances
-                command: |
-                    sudo apt install -y jq xsltproc libxml2-utils
-                    cd /home/circleci/project
-                    git clone https://github.com/edsu/json2xml.git
-                    git clone https://github.com/Cheedoong/xml2json.git
-                    cd xml2json
-                    make
-
             - run:
                 name: Récupération et traitement des données
                 command: |
                      cd /home/circleci/project/decp-rama
-                     export PATH=$PATH:/home/circleci/project/xml2json
-                     export PATH=$PATH:/home/circleci/project/json2xml
-
                      ./process.sh all package sequence
             - run:
                 name: Publication des données sur (next.)data.gouv.fr
@@ -45,6 +32,7 @@ workflows:
                     branches:
                         only:
                             - develop
+                            - feature/docker
     daily:
         jobs:
             - process-and-publish
