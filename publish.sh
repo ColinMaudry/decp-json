@@ -13,7 +13,8 @@
 set -e
 
 case ${CIRCLE_BRANCH} in
-    *)
+    # La publication n'est appliquée que sur la branche master.
+    master)
 
     export api="https://www.data.gouv.fr/api/1"
     export dataset_id="5cd57bf68b4c4179299eb0e9"
@@ -34,7 +35,6 @@ case ${CIRCLE_BRANCH} in
 #         export resource_id_xml="61d64aa3-d853-4841-a1c5-8e12556ed57b"
 #         api_key=$NEXT_API_KEY
 #     ;;
- esac
 
 if [[ ! -f ./json/decp.json ]]
 then
@@ -76,6 +76,7 @@ rm dailyResource.json
 
 done
 
+esac
 
 
 # Si nous sommes le premier du mois, publication d'une nouvelle archive mensuelle
