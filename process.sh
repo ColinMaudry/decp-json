@@ -6,6 +6,9 @@
 # pour la source sélectionnée ou pour toutes les sources
 #**********************************************************************
 
+# fail on error
+set -e
+
 source=$1
 step=$2
 mode=$3
