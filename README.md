@@ -89,7 +89,7 @@ Exemples :
 - commandepublique@data.gouv.fr
 - intéragir avec ce dépôt sur Github (issues, pull request).
 
-## License
+## Licence
 
 Le code source de ce projet est publié sous licence [MIT](https://opensource.org/licenses/MIT).
 
