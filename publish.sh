@@ -24,7 +24,7 @@ case ${CIRCLE_BRANCH} in
 
     #API_KEY configurée dans les options de build de CircleCI
     api_key=$API_KEY
-    ;;
+
 
 
     # Test temporaire en prod (data.gouv.fr) en raison de l'indisponibilité de next.data
@@ -76,6 +76,7 @@ rm dailyResource.json
 
 done
 
+;;
 esac
 
 
