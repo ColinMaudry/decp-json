@@ -1,0 +1,44 @@
+version: 2
+jobs:
+    process-and-publish:
+        docker:
+            - image: etalab/decp-rama
+        steps:
+            - run:
+                # Récupération du code manuel car soucis avec "- checkout"
+                name: Récupération de decp-rama
+                command: |
+                    mkdir -p /home/circleci/project
+                    cd /home/circleci/project
+                    git clone https://github.com/etalab/decp-rama
+                    cd decp-rama
+                    git checkout $CIRCLE_BRANCH
+            - run:
+                name: Récupération et traitement des données
+                command: |
+                     cd /home/circleci/project/decp-rama
+                     ./process.sh all package sequence
+            - run:
+                name: Publication des données sur (next.)data.gouv.fr
+                command: |
+                    cd /home/circleci/project/decp-rama
+                    ./publish.sh
+workflows:
+    version: 2
+    dev:
+        jobs:
+            - process-and-publish:
+                filters:
+                    branches:
+                        only:
+                            - develop
+    daily:
+        jobs:
+            - process-and-publish
+        triggers:
+            - schedule:
+                cron: 0 4 * * 2,3,4,5,6
+                filters:
+                    branches:
+                        only:
+                            - master
