@@ -45,7 +45,7 @@ i=1
 for uid in `cat todayMarches`
 do
          uid=`echo $uid | sed 's/xSPACEx/ /'`
-         echo $uid
+         echo "$i   $uid"
          if [[ $i -lt $nbNew ]]
          then
              object=`jq --arg uid "$uid" '.marches[] | select(.uid == $uid)' $new | sed 's/^\}/},/'`
@@ -58,6 +58,8 @@ do
 done
 
 echo ']}' >> temp.json
+
+tail -n 50 temp.json
 
 echo "Nombre de marchés dans le fichier des nouveaux marchés :"
 jq '.marches | length' temp.json
