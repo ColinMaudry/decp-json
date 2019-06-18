@@ -33,7 +33,7 @@ Nouveau fichier :       $nbMarchesUniqueNew marchés uniques\n
 echo ""
 echo "Diff entre la liste d'UID des anciens marchés et des nouveaux marchés..."
 
-diff -u --suppress-common-lines oldMarches newMarches | grep -e "^+\w" | sed -E 's/^\+//' | sort -u > todayMarches
+diff -u --suppress-common-lines oldMarchesNoDuplicates newMarchesNoDuplicates | grep -e "^+\w" | sed -E 's/^\+//' | sort -u > todayMarches
 
 echo '{"marches":[' > temp.json
 
@@ -65,4 +65,4 @@ jq '.marches | length' temp.json
 date=`date "+%F"`
 jq . temp.json > decp_$date.json
 
-rm oldMarches newMarches oldMarchesRaw newMarchesRaw todayMarches temp.json
+rm oldMarchesNoDuplicates newMarchesNoDuplicates oldMarchesRaw newMarchesRaw todayMarches temp.json
