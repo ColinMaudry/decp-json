@@ -6,29 +6,29 @@
 #
 #**********************************************************************
 
-old=$1
-new=$2
+oldFile=$1
+newFile=$2
 
 echo "Extraction des UID des anciens et nouveaux marchés, en remplaçant les espaces éventuels par 'xSPACEx'... "
 
-jq -r '.marches[].uid' $old | sed 's/ /xSPACEx/' > oldMarchesRaw
-jq -r '.marches[].uid' $new | sed 's/ /xSPACEx/' > newMarchesRaw
+jq -r '.marches[].uid' $oldFile | sed 's/ /xSPACEx/' > oldMarchesRaw
+jq -r '.marches[].uid' $newFile | sed 's/ /xSPACEx/' > newMarchesRaw
 
-nbLinesRaw=`cat newMarchesRaw | wc -l`
+nbMarchesRaw=`cat newMarchesRaw | wc -l`
 
-sort -u oldMarchesRaw > oldMarches
-sort -u newMarchesRaw > newMarches
+sort -u oldMarchesRaw > oldMarchesNoDuplicates
+sort -u newMarchesRaw > newMarchesNoDuplicates
 
-nbLinesOld=`cat oldMarches | wc -l`
-nbLinesNew=`cat newMarches | wc -l`
-nbNew=$(( $nbLinesNew-$nbLinesOld ))
-nbDoublons=$(( $nbLinesRaw-$nbLinesNew ))
+nbMarchesUniqueOld=`cat oldMarchesNoDuplicates | wc -l`
+nbMarchesUniqueNew=`cat newMarchesNoDuplicates | wc -l`
+nbNewMarches=$(( $nbMarchesUniqueNew-$nbMarchesUniqueOld ))
+nbDuplicates=$(( $nbMarchesRaw-$nbMarchesUniqueNew ))
 
 echo -e "\
-Ancien fichier :        $nbLinesOld marchés uniques (via uid)\n
-Nouveau fichier :       $nbLinesNew marchés uniques\n
-                        $nbNew nouveaux marchés uniques\n
-                        $nbDoublons doublons"
+Ancien fichier :        $nbMarchesUniqueOld marchés uniques (via uid)\n
+Nouveau fichier :       $nbMarchesUniqueNew marchés uniques\n
+                        $nbNewMarches nouveaux marchés uniques\n
+                        $nbDuplicates doublons"
 
 echo ""
 echo "Diff entre la liste d'UID des anciens marchés et des nouveaux marchés..."
