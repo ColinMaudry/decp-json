@@ -46,12 +46,12 @@ for uid in `cat todayMarches`
 do
          uid=`echo $uid | sed 's/xSPACEx/ /'`
          echo "$i   $uid"
-         if [[ $i -lt $nbNew ]]
+         if [[ $i -lt $nbNewMarches ]]
          then
-             object=`jq --arg uid "$uid" '.marches[] | select(.uid == $uid)' $new | sed 's/^\}/},/'`
+             object=`jq --arg uid "$uid" '.marches[] | select(.uid == $uid)' $newFile | sed 's/^\}/},/'`
              ((i++));
          else
-             object=`jq --arg uid "$uid" '.marches[] | select(.uid == $uid)' $new`
+             object=`jq --arg uid "$uid" '.marches[] | select(.uid == $uid)' $newFile`
          fi
          echo "${object}" >> temp.json
 
