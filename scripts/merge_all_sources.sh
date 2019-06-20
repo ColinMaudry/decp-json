@@ -32,6 +32,7 @@ nombreMarchesNoDuplicates=`jq '.marches | length' decp.json`
 
 echo ""
 echo "Le fichier consolidé contient $nombreMarchesNoDuplicates marchés après déduplication."
+echo "Il contenait donc $((nombreMarches-nombreMarchesNoDuplicates)) doublons."
 echo ""
 
 # Création d'une archive ZIP avec tous les JSON de la source choisie
