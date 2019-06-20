@@ -2,7 +2,7 @@
 
 > Toutes les données essentielles de la commande publique agrégées et converties
 
-**Version 1.7.0**
+**Version 1.8.0**
 
 Rappel de ce que sont les données essentielles de la commande publique (ou DECP) [sur le blog de data.gouv.fr](https://www.data.gouv.fr/fr/posts/le-point-sur-les-donnees-essentielles-de-la-commande-publique/).
 
@@ -74,15 +74,14 @@ Exemples :
 
 ## Sources de données
 
-| Code                   | Description                                          | URL                                                                           | Statut                                                                               |
-| ---------------------- | ---------------------------------------------------- | ----------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
-| `data.gouv.fr_pes`     | DECP des collectivités issues du PES Marché          | https://www.data.gouv.fr/fr/datasets/5bd0b6fd8b4c413d0801dc57                 | **Intégrée**                                                                         |
-| `data.gouv.fr_aife`    | DECP de l'État publiées par l'AIFE                   | https://www.data.gouv.fr/fr/datasets/5bd789ee8b4c4155bd9a0770                 | **Intégrée**                                                                         |
-|                        | DECP publiées par achatpublic.com                    | [https://www.achatpublic.com](https://frama.link/47M71Xz2)                    | Pas de téléchargement en masse                                                       |
-| `marches-publics.info` | DECP publiées par marches-publics.info (AWS)         | https://www.marches-publics.info/mpiaws/index.cfm                             | [Mises à dispo par la communauté](https://www.data.gouv.fr/fr/datasets/donnees-essentielles-des-marches-publics-publies-sur-marches-publics-info-aws/) |
-| `e-marchespublics.com` | DECP publiées par e-marchespublics.com (Dematis)     | https://www.data.gouv.fr/fr/datasets/5c0a7845634f4139b2ee8883                 | **Intégrée**                                                                         |
-|                        | DECP des membres de Mégalis Bretagne                 | https://marches.megalisbretagne.org/                                          | Très peu de DECP publiées                                                            |
-| `grandlyon`            | Marchés du Grand Lyon publiés sur data.grandlyon.com | https://data.grandlyon.com/citoyennete/marchf-public-de-la-mftropole-de-lyon/ | **Intégrée**                                                                         |
+| Code                   | Description                                          | URL                                                                           | Statut                                                                                        |
+| ---------------------- | ---------------------------------------------------- | ----------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| `data.gouv.fr_pes`     | DECP des collectivités issues du PES Marché          | https://www.data.gouv.fr/fr/datasets/5bd0b6fd8b4c413d0801dc57                 | **Intégrée**                                                                                  |
+| `data.gouv.fr_aife`    | DECP de l'État publiées par l'AIFE                   | https://www.data.gouv.fr/fr/datasets/5bd789ee8b4c4155bd9a0770                 | **Intégrée**                                                                                  |
+| `marches-publics.info` | DECP publiées par marches-publics.info (AWS)         | https://www.marches-publics.info/mpiaws/index.cfm                             | [Mises à dispo par la communauté](https://www.data.gouv.fr/datasets/5cdb1722634f41416ffe90e2) |
+| `e-marchespublics.com` | DECP publiées par e-marchespublics.com (Dematis)     | https://www.data.gouv.fr/fr/datasets/5c0a7845634f4139b2ee8883                 | **Intégrée**                                                                                  |
+|                        | DECP des membres de Mégalis Bretagne                 | https://marches.megalisbretagne.org/                                          | Très peu de DECP publiées                                                                     |
+| `grandlyon`            | Marchés du Grand Lyon publiés sur data.grandlyon.com | https://data.grandlyon.com/citoyennete/marchf-public-de-la-mftropole-de-lyon/ | **Intégrée**                                                                                  |
 
 ## Contact
 
@@ -95,58 +94,63 @@ Le code source de ce projet est publié sous licence [MIT](https://opensource.or
 
 ## Notes de version
 
-### 1.7.0
+### 1.8.0 (20/06/2019)
+
+- Correction d'un bug dans la génération des nouveaux marchés du jour
+- dédublication des marchés via l'`uid` (concaténation du SIRET de l'acheteur et de l'`id` du marché)
+
+### 1.7.0 (10/06/2019)
 
 - image docker plutôt que de réinstaller toutes les dépendances dans la VM à chaque run de CircleCI
 - les données ne sont récupérées et consolidées que du mardi au samedi matin (peu ou pas de nouvelles données le weekend)
 - seul les runs sur la branche `master` se terminent par une publication sur data.gouv.fr, pas sur `develop` et autres branches
 
-### 1.6.0
+### 1.6.0 (30/05/2019)
 
 - les fichiers des nouveaux marchés du jour sont maintenant [typés "Mise à jour" sur data.gouv.fr](https://www.data.gouv.fr/datasets/5cd57bf68b4c4179299eb0e9)
 
-### 1.5.1
+### 1.5.1 (28/05/2019)
 
 - correction d'une erreur dans la conversion JSON > XML
 
-### 1.5.0
+### 1.5.0 (25/05/2019)
 
 - conversion de l'agrégat vers XML
 - correction des soucis de téléchargement et de traitement
 - ajout des données du Grand Lyon (merci Nathalie Vernus-Prost)
 - création d'un fichier des nouveaux marchés du jour
 
-### 1.4.0
+### 1.4.0 (09/05/2019)
 
-- fork de [decp-json](https://github.com/ColinMaudry/decp-json) ([Colin Maudry](https://twitter.com/col1m)) par Etalab pour la publication des données sur data.gouv.fr
+- **fork de [decp-json](https://github.com/ColinMaudry/decp-json) ([Colin Maudry](https://twitter.com/col1m)) par Etalab pour la publication des données sur data.gouv.fr**
 - passage à la licence MIT
 - amélioration du mécanisme d'orchestration du traitement avec `process.sh`
 - automatisation du process récupération/traitement/publication dans CircleCI
 
-#### 1.3.1
+#### 1.3.1 (05/04/2019)
 
 - correction d'un bug dans la fusion des JSON
 
-### 1.3.0
+### 1.3.0 (04/04/2019)
 
 - ajout des données de e-marchespublics.com
 - couvertures des trois datasets de l'AIFE
 - gestion des sources de données qui ne nécessitent pas de conversion
 - amélioration du workflow (get > convert > fix > package > load-in-db)
 
-### 1.2.0
+### 1.2.0 (07/03/2019)
 
 - correction d'une anomalie dans les données `marches-publics.info` (certains marchés n'ont pas de `_type`)
 - nouvelles données dans `/json`
 - ajout d'un script de (ré)initialisation de MongoDB
 
-### 1.1.0
+### 1.1.0 (27/02/2019)
 
 - support des [données publiées sur marches-publics.info](https://www.marches-publics.info/mpiaws/index.cfm) (`marches-publics.info`)
 - ajout de la date du dernier téléchargement dans les métadonnées
 - amélioration de la scructure des scripts
 - ajout de `all.sh`, pour traiter intégralement une source (sauf le chargement en base de données)
 
-### 1.0.0
+### 1.0.0 (02/02/2019)
 
 - support des [données PES marché publiées sur data.gouv.fr](https://www.data.gouv.fr/fr/datasets/5bd0b6fd8b4c413d0801dc57/) (`data.gouv.fr_pes`)

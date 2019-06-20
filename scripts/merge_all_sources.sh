@@ -16,12 +16,23 @@ then
 fi
 
 # Fusion des JSON de toutes les sources
-../scripts/mergeJson.sh > decp.json
+../scripts/mergeJson.sh > decp_with_duplicates.json
 
-nombreMarches=`jq '.marches | length' decp.json`
+nombreMarches=`jq '.marches | length' decp_with_duplicates.json`
 
 echo ""
-echo "Le fichier consolidé contient $nombreMarches marchés"
+echo "Le fichier consolidé contient $nombreMarches marchés avant déduplication."
+echo ""
+
+jq '{"marches": .marches | unique_by(.uid)}' decp_with_duplicates.json > decp.json
+rm decp_with_duplicates.json
+
+nombreMarchesNoDuplicates=`jq '.marches | length' decp.json`
+
+
+echo ""
+echo "Le fichier consolidé contient $nombreMarchesNoDuplicates marchés après déduplication."
+echo "Il contenait donc $((nombreMarches-nombreMarchesNoDuplicates)) doublons."
 echo ""
 
 # Création d'une archive ZIP avec tous les JSON de la source choisie

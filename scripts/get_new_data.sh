@@ -6,34 +6,39 @@
 #
 #**********************************************************************
 
-old=$1
-new=$2
+oldFile=$1
+newFile=$2
 
 echo "Extraction des UID des anciens et nouveaux marchés, en remplaçant les espaces éventuels par 'xSPACEx'... "
 
-jq -r '.marches[].uid' $old | sed 's/ /xSPACEx/' > oldMarchesRaw
-jq -r '.marches[].uid' $new | sed 's/ /xSPACEx/' > newMarchesRaw
+jq -r '.marches[].uid' $oldFile | sed 's/ /xSPACEx/' > oldMarchesRaw
+jq -r '.marches[].uid' $newFile | sed 's/ /xSPACEx/' > newMarchesRaw
 
-nbLinesRaw=`cat newMarchesRaw | wc -l`
+nbMarchesRaw=`cat newMarchesRaw | wc -l`
 
-sort -u oldMarchesRaw > oldMarches
-sort -u newMarchesRaw > newMarches
+sort -u oldMarchesRaw > oldMarchesNoDuplicates
+sort -u newMarchesRaw > newMarchesNoDuplicates
 
-nbLinesOld=`cat oldMarches | wc -l`
-nbLinesNew=`cat newMarches | wc -l`
-nbNew=$(( $nbLinesNew-$nbLinesOld ))
-nbDoublons=$(( $nbLinesRaw-$nbLinesNew ))
+nbMarchesUniqueOld=`cat oldMarchesNoDuplicates | wc -l`
+nbMarchesUniqueNew=`cat newMarchesNoDuplicates | wc -l`
+
+diff -u --suppress-common-lines oldMarchesNoDuplicates newMarchesNoDuplicates | grep -e "^+\w" | sed -E 's/^\+//' | sort -u > todayMarches
+
+nbNewMarches=`cat todayMarches | wc -l`
+
+# Bizarrement,la différence de nombre de ligne entre oldMarchesNoDuplicates et newMarchesNoDuplicates n'est pas équivalente au nombre de marchés dans todaysMarches
+# nbNewMarches=$(( $nbMarchesUniqueNew-$nbMarchesUniqueOld))
 
 echo -e "\
-Ancien fichier :        $nbLinesOld marchés uniques (via uid)\n
-Nouveau fichier :       $nbLinesNew marchés uniques\n
-                        $nbNew nouveaux marchés uniques\n
-                        $nbDoublons doublons"
+Ancien fichier :        $nbMarchesUniqueOld marchés uniques (via uid)\n
+Nouveau fichier :       $nbMarchesUniqueNew marchés uniques\n
+                        $nbNewMarches nouveaux marchés uniques\n
+                        $nbDuplicates doublons"
 
 echo ""
 echo "Diff entre la liste d'UID des anciens marchés et des nouveaux marchés..."
 
-diff -u --suppress-common-lines oldMarches newMarches | grep -e "^+\w" | sed -E 's/^\+//' > todayMarches
+
 
 echo '{"marches":[' > temp.json
 
@@ -45,13 +50,13 @@ i=1
 for uid in `cat todayMarches`
 do
          uid=`echo $uid | sed 's/xSPACEx/ /'`
-         echo $uid
-         if [[ $i -lt $nbNew ]]
+         echo "$i   $uid"
+         if [[ $i -lt $nbNewMarches ]]
          then
-             object=`jq --arg uid "$uid" '.marches[] | select(.uid == $uid)' $new | sed 's/^\}/},/'`
+             object=`jq --arg uid "$uid" '.marches[] | select(.uid == $uid)' $newFile | sed 's/^\}/},/'`
              ((i++));
          else
-             object=`jq --arg uid "$uid" '.marches[] | select(.uid == $uid)' $new`
+             object=`jq --arg uid "$uid" '.marches[] | select(.uid == $uid)' $newFile`
          fi
          echo "${object}" >> temp.json
 
@@ -65,4 +70,4 @@ jq '.marches | length' temp.json
 date=`date "+%F"`
 jq . temp.json > decp_$date.json
 
-rm oldMarches newMarches oldMarchesRaw newMarchesRaw todayMarches temp.json
+rm oldMarchesNoDuplicates newMarchesNoDuplicates oldMarchesRaw newMarchesRaw todayMarches temp.json
