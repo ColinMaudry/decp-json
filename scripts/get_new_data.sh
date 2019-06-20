@@ -21,8 +21,13 @@ sort -u newMarchesRaw > newMarchesNoDuplicates
 
 nbMarchesUniqueOld=`cat oldMarchesNoDuplicates | wc -l`
 nbMarchesUniqueNew=`cat newMarchesNoDuplicates | wc -l`
-nbNewMarches=$(( $nbMarchesUniqueNew-$nbMarchesUniqueOld ))
-nbDuplicates=$(( $nbMarchesRaw-$nbMarchesUniqueNew ))
+
+diff -u --suppress-common-lines oldMarchesNoDuplicates newMarchesNoDuplicates | grep -e "^+\w" | sed -E 's/^\+//' | sort -u > todayMarches
+
+nbNewMarches=`cat todayMarches | wc -l`
+
+# Bizarrement,la différence de nombre de ligne entre oldMarchesNoDuplicates et newMarchesNoDuplicates n'est pas équivalente au nombre de marchés dans todaysMarches
+# nbNewMarches=$(( $nbMarchesUniqueNew-$nbMarchesUniqueOld))
 
 echo -e "\
 Ancien fichier :        $nbMarchesUniqueOld marchés uniques (via uid)\n
@@ -33,7 +38,7 @@ Nouveau fichier :       $nbMarchesUniqueNew marchés uniques\n
 echo ""
 echo "Diff entre la liste d'UID des anciens marchés et des nouveaux marchés..."
 
-diff -u --suppress-common-lines oldMarchesNoDuplicates newMarchesNoDuplicates | grep -e "^+\w" | sed -E 's/^\+//' | sort -u > todayMarches
+
 
 echo '{"marches":[' > temp.json
 
