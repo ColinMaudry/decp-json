@@ -1,6 +1,6 @@
 def getIdScheme(typeIdentifiant):
     typeIdentifiant |
-    if . == "SIRET" then "FR-INSEE"
+    if . == "SIRET" then "FR-RCS"
     else .
     end;
 
@@ -13,8 +13,17 @@ def getSupplier(lastModif):
     (lastModif.titulaires // .titulaires) else .concessionnaires end) |
     if (. == null) then empty else .[] end
     ;
-def formatDate:
-    . + "T00:00+02:00"
+def chooseReleaseTag(lastModif):
+
+    if (lastModif|type == "object")|not then ["award"] else
+        [] |
+        if (lastModif.titulaires | type == "array") then . + ["awardUpdate"] else . end
+        | if (lastModif.montant | type == "number") or (lastModif.dureeMois | type == "number") then . + ["contractAmendment"] else . end
+    end
+    ;
+def formatDate(date):
+    #date | .
+    date | match("(\\d\\d\\d\\d-\\d\\d-\\d\\d)(.*)?") | (.captures[0].string + "T00:00:00" + (if .captures[1].string == "" then "Z" else .captures[1].string end))
     ;
 {
 	"version": "1.1",
@@ -23,7 +32,7 @@ def formatDate:
 	"publishedDate": $datetime,
 	"publisher": {
 		"name": "Secrétariat Général du Gouvernement",
-		"scheme": "FR-INSEE",
+		"scheme": "FR-RCS",
 		"uid": "12000101100010"
 	},
 	"license": "https://www.etalab.gouv.fr/licence-ouverte-open-licence",
@@ -31,11 +40,12 @@ def formatDate:
 	"releases": [
         .marches[] |
         (.modifications | last) as $lastModif |
-        {"ocid": ($ocidPrefix + "-" + .uid),
+        ($ocidPrefix + "-" + .uid) as $ocid |
+        {"ocid": $ocid,
 		"id": .id,
-		"date": .datePublicationDonnees,
-		"tag": [(if (.modifications | length) > 0
-            then "awardUpdate" else "award" end)],
+		"date": formatDate(.datePublicationDonnees),
+        "language": "fr",
+		"tag": chooseReleaseTag($lastModif),
 		"initiationType": "tender",
 		"parties":
          [(getBuyer |
@@ -44,7 +54,7 @@ def formatDate:
                     "id": .id,
                     "roles": ["buyer"],
                     "identifier": {
-                        "scheme": "FR-INSEE",
+                        "scheme": "FR-RCS",
                         "id": .id,
                         "legalName": .nom
                     }})
@@ -65,11 +75,10 @@ def formatDate:
 			"id": .id
 		},
 		"awards": [{
-            "#comment":"ID à déterminer",
-			"id": "??",
+			"id": ($ocid + "-award-1"),
 			"description": .objet,
 			"status": "active",
-			"date": .dateNotification | formatDate,
+			"date": formatDate(.dateNotification),
 			"value": {
 				"amount": ($lastModif.montant // .montant),
 				"currency": "EUR"
@@ -80,7 +89,7 @@ def formatDate:
                   })
               ],
 			"items": [{
-				"id": "1",
+				"id": ($ocid + "-item-1"),
 				"description": .objet,
 				"classification":
                 (if .codeCPV != null then {
@@ -91,18 +100,8 @@ def formatDate:
 			}],
 			"contractPeriod": {
 				"durationInDays": (($lastModif.dureeMois //.dureeMois) * 30.5 | floor )
-			},
-			"amendments": [
-                if (.modifications|length > 0) then
-                .modifications | last | {
-                    "date" : .dateNotificationModification | formatDate,
-                    "description": .objetModification,
-                    "#comment": "il manque les releases précédentes et suivantes"
-                }
-                else empty
-                end
-			]
-		}],
-		"language": "fr"
-	}]
+			}
+			}]
+		}
+    ],
 }
