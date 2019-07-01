@@ -105,10 +105,33 @@ def getReleaseDate(lastModif):
 				} else null
                 end)
 			}],
-			"contractPeriod": {
-				"durationInDays": (.dureeMois * 30.5 | floor )
-			}
-			}]
+            "contracts":[
+                {
+                    "id": ($ocid + "-contract-1"),
+                    "awardID": ($ocid + "-award-1"),
+                    "value": {
+                        "amount": ($lastModif.montant // .montant),
+                        "currency": "EUR"
+                    },
+                    "description": .objet,
+                    "amendments": (if ($releaseIdMeta.nbModif > 0) then
+                        [ {
+                            "id": ($ocid + "-amendment-" + ($releaseIdMeta.seq | tonumber | tostring)),
+                            "date": (formatDate($lastModif.dateNotificationModification)),
+                            "rationale":  ($lastModif.objetModification),
+                            "amendsReleaseID": ($releaseIdMeta.id + "-" + ($releaseIdMeta.seq | tonumber | . - 1 |
+                            tostring | if length < 2 then "0" + . else . end)),
+                            "releaseID": $releaseId
+                            } ]
+                        else null end),
+                    "period":   {
+                        "durationInDays": getDurationInDays($lastModif.dureeMois //
+                        .dureeMois)
+                    },
+                    "status": (if $releaseIdMeta.nbModif > 0 then "active" else "pending" end),
+                    "items": $items
+                }
+            ]
 		}
     ],
 }

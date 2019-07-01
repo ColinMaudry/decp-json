@@ -79,6 +79,31 @@
             "durationInDays": 1189
           }
         }
+      ],
+      "contracts": [
+        {
+          "id": "ocds-78apv2-200013183000212018MAPA201805-contract-1",
+          "awardID": "ocds-78apv2-200013183000212018MAPA201805-award-1",
+          "value": {
+            "amount": 80000,
+            "currency": "EUR"
+          },
+          "description": "FOURNITURE D'UN AUTOMATE DE SET UP PCR",
+          "period": {
+            "durationInDays": 1189
+          },
+          "status": "pending",
+          "items": [
+            {
+              "id": "ocds-78apv2-200013183000212018MAPA201805-item-1",
+              "description": "FOURNITURE D'UN AUTOMATE DE SET UP PCR",
+              "classification": {
+                "scheme": "CPV",
+                "id": "38950000-9"
+              }
+            }
+          ]
+        }
       ]
     }
   ]
