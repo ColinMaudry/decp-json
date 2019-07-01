@@ -3,6 +3,8 @@ cd ../../../
 
 export datetime=2019-01-01T01:01:01+02:00
 
+echo ""
+
 for test in `ls scripts/jq/ocds/tests/source`
 do
     echo "$test"
