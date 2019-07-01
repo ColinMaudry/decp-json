@@ -66,16 +66,16 @@ def getReleaseDate(lastModif):
                         "legalName": .nom
                     }})
                     ,
-              (getSupplier($lastModif) | {
-                      "name": .denominationSociale,
+          (getSupplier($lastModif) | {
+                  "name": .denominationSociale,
+                  "id": .id,
+                  "roles": ["supplier"],
+                  "identifier": {
+                      "scheme": getIdScheme(.typeIdentifiant),
                       "id": .id,
-                      "roles": ["supplier"],
-                      "identifier": {
-                          "scheme": getIdScheme(.typeIdentifiant),
-                          "id": .id,
-                          "legalName": .denominationSociale
-                      }
-                  })
+                      "legalName": .denominationSociale
+                  }
+              })
               ],
 		"buyer": getBuyer | {
 			"name": .nom,
@@ -87,7 +87,7 @@ def getReleaseDate(lastModif):
 			"status": "active",
 			"date": formatDate(.dateNotification),
 			"value": {
-				"amount": ($lastModif.montant // .montant),
+				"amount": .montant,
 				"currency": "EUR"
 			},
 			"suppliers": [(getSupplier($lastModif) | {
@@ -106,7 +106,7 @@ def getReleaseDate(lastModif):
                 end)
 			}],
 			"contractPeriod": {
-				"durationInDays": (($lastModif.dureeMois //.dureeMois) * 30.5 | floor )
+				"durationInDays": (.dureeMois * 30.5 | floor )
 			}
 			}]
 		}
