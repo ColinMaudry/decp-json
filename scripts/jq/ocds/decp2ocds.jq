@@ -31,13 +31,16 @@ def chooseReleaseTag(lastModif):
 
 def formatDate(date):
     #date | .
-    date | match("(\\d\\d\\d\\d-\\d\\d-\\d\\d)(.*)?") | (.captures[0].string + "T00:00:00" + (if .captures[1].string == "" then "Z" else .captures[1].string end))
+    date | match("(\\d{4}-\\d\\d-\\d\\d)(.*)?") | (.captures[0].string + "T00:00:00" + (if .captures[1].string == "" then "Z" else .captures[1].string end))
     ;
 
 def getReleaseDate(lastModif):
     if (lastModif|type == "object")|not then formatDate(.datePublicationDonnees)
     else formatDate(lastModif.datePublicationDonneesModification)
     end
+    ;
+def getDurationInDays(durationInMonths):
+    durationInMonths * 30.5 | floor
     ;
 def getReleaseIdMeta:
     (.uid | match("..$") | .string) as $suffix |
@@ -71,10 +74,10 @@ def getReleaseIdMeta:
 	"publicationPolicy": $datasetUrl,
 	"releases": [
         .marches[] |
-        (.modifications | last) as $lastModif |
+        .modifications as $modifications |
         getReleaseIdMeta as $releaseIdMeta |
         ($releaseIdMeta.id + "-" + $releaseIdMeta.seq) as $releaseId |
-		"id": .id,
+        ($modifications | last) as $lastModif |
         ($ocidPrefix + "-" + $releaseIdMeta.id) as $ocid |
         [{
         "id": ($ocid + "-item-1"),
@@ -86,12 +89,16 @@ def getReleaseIdMeta:
         } else empty
         end)
     }] as $items |
+    {
+        "ocid": $ocid,
+		"id": $releaseId ,
 		"date": getReleaseDate($lastModif),
         "language": "fr",
 		"tag": chooseReleaseTag($lastModif),
 		"initiationType": "tender",
 		"parties":
-         [(getBuyer |
+        [
+            (getBuyer |
             {
                     "name": .nom,
                     "id": .id,
