@@ -21,10 +21,18 @@ def chooseReleaseTag(lastModif):
         | if (lastModif.montant | type == "number") or (lastModif.dureeMois | type == "number") then . + ["contractAmendment"] else . end
     end
     ;
+
 def formatDate(date):
     #date | .
     date | match("(\\d\\d\\d\\d-\\d\\d-\\d\\d)(.*)?") | (.captures[0].string + "T00:00:00" + (if .captures[1].string == "" then "Z" else .captures[1].string end))
     ;
+
+def getReleaseDate(lastModif):
+    if (lastModif|type == "object")|not then formatDate(.datePublicationDonnees)
+    else formatDate(lastModif.datePublicationDonneesModification)
+    end
+    ;
+
 {
 	"version": "1.1",
 	"uri": "http://files.data.gouv.fr/" ,
@@ -42,7 +50,7 @@ def formatDate(date):
         ($ocidPrefix + "-" + .uid) as $ocid |
         {"ocid": $ocid,
 		"id": .id,
-		"date": formatDate(.datePublicationDonnees),
+		"date": getReleaseDate($lastModif),
         "language": "fr",
 		"tag": chooseReleaseTag($lastModif),
 		"initiationType": "tender",
