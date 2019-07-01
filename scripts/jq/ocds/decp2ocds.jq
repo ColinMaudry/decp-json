@@ -76,6 +76,16 @@ def getReleaseIdMeta:
         ($releaseIdMeta.id + "-" + $releaseIdMeta.seq) as $releaseId |
 		"id": .id,
         ($ocidPrefix + "-" + $releaseIdMeta.id) as $ocid |
+        [{
+        "id": ($ocid + "-item-1"),
+        "description": .objet,
+        "classification":
+        (if .codeCPV != null then {
+            "scheme": "CPV",
+            "id": .codeCPV
+        } else empty
+        end)
+    }] as $items |
 		"date": getReleaseDate($lastModif),
         "language": "fr",
 		"tag": chooseReleaseTag($lastModif),
@@ -121,15 +131,10 @@ def getReleaseIdMeta:
                   "id": .id
                   })
               ],
-			"items": [{
-				"id": ($ocid + "-item-1"),
-				"description": .objet,
-				"classification":
-                (if .codeCPV != null then {
-					"scheme": "CPV",
-					"id": .codeCPV
-				} else null
-                end)
+			"items": $items,
+			"contractPeriod": {
+				"durationInDays": getDurationInDays(.dureeMois)
+			}
 			}],
             "contracts":[
                 {
