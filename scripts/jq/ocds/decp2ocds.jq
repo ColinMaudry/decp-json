@@ -39,6 +39,24 @@ def getReleaseDate(lastModif):
     else formatDate(lastModif.datePublicationDonneesModification)
     end
     ;
+def getReleaseIdMeta:
+    (.uid | match("..$") | .string) as $suffix |
+    if
+    ((.uid | type) == "string")
+    and ($suffix | test("\\d\\d")) and ($suffix | tonumber) == (.modifications |length)
+    then
+    {
+        "id": (.uid | rtrimstr($suffix)),
+        "seq": $suffix,
+        "nbModif": (.modifications |length)
+    }
+    else
+    {
+        "id": .uid,
+        "seq": (if (.modifications |length) < 10 then  ("0"  + (.modifications |length | tostring)) else (.modifications | length | tostring) end),
+        "nbModif": (.modifications |length)
+    } end
+    ;
 
 {
 	"version": "1.1",
@@ -54,9 +72,10 @@ def getReleaseDate(lastModif):
 	"releases": [
         .marches[] |
         (.modifications | last) as $lastModif |
-        ($ocidPrefix + "-" + .uid) as $ocid |
-        {"ocid": $ocid,
+        getReleaseIdMeta as $releaseIdMeta |
+        ($releaseIdMeta.id + "-" + $releaseIdMeta.seq) as $releaseId |
 		"id": .id,
+        ($ocidPrefix + "-" + $releaseIdMeta.id) as $ocid |
 		"date": getReleaseDate($lastModif),
         "language": "fr",
 		"tag": chooseReleaseTag($lastModif),

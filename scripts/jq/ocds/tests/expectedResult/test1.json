@@ -11,8 +11,8 @@
   "publicationPolicy": "https://www.data.gouv.fr/fr/datasets/5cc1bb51dc470946203cc376",
   "releases": [
     {
-      "ocid": "ocds-78apv2-200013183000212018MAPA20180500",
-      "id": "2018MAPA20180500",
+      "ocid": "ocds-78apv2-200013183000212018MAPA201805",
+      "id": "200013183000212018MAPA201805-00",
       "date": "2019-04-25T00:00:00+02:00",
       "language": "fr",
       "tag": [
@@ -51,7 +51,7 @@
       },
       "awards": [
         {
-          "id": "ocds-78apv2-200013183000212018MAPA20180500-award-1",
+          "id": "ocds-78apv2-200013183000212018MAPA201805-award-1",
           "description": "FOURNITURE D'UN AUTOMATE DE SET UP PCR",
           "status": "active",
           "date": "2018-12-03T00:00:00Z",
@@ -67,7 +67,7 @@
           ],
           "items": [
             {
-              "id": "ocds-78apv2-200013183000212018MAPA20180500-item-1",
+              "id": "ocds-78apv2-200013183000212018MAPA201805-item-1",
               "description": "FOURNITURE D'UN AUTOMATE DE SET UP PCR",
               "classification": {
                 "scheme": "CPV",
