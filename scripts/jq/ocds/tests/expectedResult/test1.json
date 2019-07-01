@@ -1,7 +1,6 @@
 {
   "version": "1.1",
   "uri": "http://files.data.gouv.fr/",
-  "#comment": "URL where this file can be downloaded",
   "publishedDate": "2019-01-01T01:01:01+02:00",
   "publisher": {
     "name": "Secrétariat Général du Gouvernement",

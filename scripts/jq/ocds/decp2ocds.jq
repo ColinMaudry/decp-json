@@ -28,7 +28,6 @@ def formatDate(date):
 {
 	"version": "1.1",
 	"uri": "http://files.data.gouv.fr/" ,
-    "#comment": "URL where this file can be downloaded",
 	"publishedDate": $datetime,
 	"publisher": {
 		"name": "Secrétariat Général du Gouvernement",
