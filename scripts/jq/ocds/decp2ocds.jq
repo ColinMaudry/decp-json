@@ -1,9 +1,16 @@
+def walk(f):
+      . as $in
+      | if type == "object" then
+          reduce keys_unsorted[] as $key
+            ( {}; . + { ($key):  ($in[$key] | walk(f)) } ) | f
+      elif type == "array" then map( walk(f) ) | f
+      else f
+      end;
 def getIdScheme(typeIdentifiant):
     typeIdentifiant |
     if . == "SIRET" then "FR-RCS"
     else .
     end;
-
 def getBuyer:
     . | (if (."_type" == "Marché") then
     .acheteur else .autoriteConcedante end)
@@ -135,3 +142,13 @@ def getReleaseDate(lastModif):
 		}
     ],
 }
+# Added to remove all null properties from the resulting tree
+| walk(
+    if type == "object" then
+        with_entries(select( .value != null and .value != {} and .value != []))
+    elif type == "array" then
+        map(select( . != null and . != {} and . != []))
+    else
+        .
+    end
+)
