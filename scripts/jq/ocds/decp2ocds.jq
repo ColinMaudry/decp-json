@@ -30,8 +30,9 @@ def chooseReleaseTag(lastModif):
     ;
 
 def formatDate(date):
-    #date | .
-    date | match("(\\d{4}-\\d\\d-\\d\\d)(.*)?") | (.captures[0].string + "T00:00:00" + (if .captures[1].string == "" then "Z" else .captures[1].string end))
+    if (date|type == "string") then
+        date | match("(\\d{4}-\\d\\d-\\d\\d)(.*)?") | (.captures[0].string + "T00:00:00" + (if .captures[1].string == "" then "Z" else .captures[1].string end))
+    else null end
     ;
 
 def getReleaseDate(lastModif):
