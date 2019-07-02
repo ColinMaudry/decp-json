@@ -26,7 +26,9 @@ du marché intervient, les données sont republiées, avec un bloc `modification
 
 Afin de reproduire cette structure au format OCDS, nous avons fait les choix suivants (se référer au [schéma d'instance (fr)](http://standard.open-contracting.org/latest/fr/schema/release/) (*release*)).
 
-### Gestion des modifications
+### Identifiants
+
+### Modifications
 
 - le "tronc" de données hors `modifications` est systématiquement republié dans les nouvelles instances
 - si un fichier DECP n'a pas de modification :
@@ -40,5 +42,9 @@ Afin de reproduire cette structure au format OCDS, nous avons fait les choix sui
     - la `date` de l'instance est égale à `datePublicationDonneesModification`
 - si la dernière modification d'un fichier DECP contient une modification des titulaires :
     - seul un bloc `award` est créé et il intègre les nouvelles données des titulaires
+    - le `tag` d'instance utilisé est `awardUpdate`
+    - la `date` de l'instance est égale à `datePublicationDonneesModification`
+- si la dernière modification d'un fichier DECP ne contient pas de modification des titulaires, du montant ou de la durée (ex : correction dans un document de la procédure) :
+    - un bloc `award` et un bloc `contract` sont créés, mais le bloc `contract` se limite aux champs `id`, `awardID` et `amendments`
     - le `tag` d'instance utilisé est `awardUpdate`
     - la `date` de l'instance est égale à `datePublicationDonneesModification`
