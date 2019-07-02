@@ -75,6 +75,8 @@ def getReleaseIdMeta:
 	"publicationPolicy": $datasetUrl,
 	"releases": [
         .marches[] |
+
+        if (._type == "Marché") then
         .modifications as $modifications |
         getReleaseIdMeta as $releaseIdMeta |
         ($releaseIdMeta.id + "-" + $releaseIdMeta.seq) as $releaseId |
@@ -171,7 +173,7 @@ def getReleaseIdMeta:
                     "items": $items
                 }
             ]
-		}
+		} else null end
     ],
 }
 # Added to remove all null properties from the resulting tree
