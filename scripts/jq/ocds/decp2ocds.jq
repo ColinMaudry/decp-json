@@ -64,7 +64,7 @@ def getReleaseIdMeta:
 
 {
 	"version": "1.1",
-	"uri": "http://files.data.gouv.fr/" ,
+	"uri": $packageUri,
 	"publishedDate": $datetime,
 	"publisher": {
 		"name": "Secrétariat Général du Gouvernement",
