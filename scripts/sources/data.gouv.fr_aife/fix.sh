@@ -15,5 +15,6 @@ rm *.*
 
 for file in `ls original-data`
 do
-    xsltproc $DECP_HOME/scripts/sources/$source/fix.xslt ./original-data/$file > $file
+    date=`echo $file |  sed -r 's/donnees\-essentielles\-marches([0-9]{2})\.([0-9]{2})\.([0-9]{4}).*/\3-\2-\1/'`
+    xsltproc --stringparam date "$date" $DECP_HOME/scripts/sources/$source/fix.xslt ./original-data/$file > $file
 done
