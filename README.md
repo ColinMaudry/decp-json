@@ -2,7 +2,7 @@
 
 > Toutes les données essentielles de la commande publique agrégées et converties
 
-**Version 1.8.0**
+**Version 1.8.1**
 
 Rappel de ce que sont les données essentielles de la commande publique (ou DECP) [sur le blog de data.gouv.fr](https://www.data.gouv.fr/fr/posts/le-point-sur-les-donnees-essentielles-de-la-commande-publique/).
 
@@ -93,6 +93,11 @@ Exemples :
 Le code source de ce projet est publié sous licence [MIT](https://opensource.org/licenses/MIT).
 
 ## Notes de version
+
+### 1.8.1 (04/07/2019)
+
+- pour les marchés provenant de l'AIFE (`data.gouv.fr_aife`), si une `datePublicationDonnees` est manquante, elle est récupérée à partir du nom du fichier XML publié par l'AIFE
+- pour les marchés provenant du portail du Grand Lyon (`grandlyon`), si plusieurs `datePublicationDonnees` sont présentes, seule la première est retenue
 
 ### 1.8.0 (20/06/2019)
 
