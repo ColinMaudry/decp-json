@@ -94,7 +94,8 @@ def getReleaseIdMeta:
     }] as $items |
     {
         "ocid": $ocid,
-		"id": $releaseId ,
+		"id": $releaseId,
+        "decpUID": .uid,
 		"date": getReleaseDate($lastModif),
         "language": "fr",
 		"tag": chooseReleaseTag($lastModif),
