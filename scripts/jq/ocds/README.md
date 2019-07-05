@@ -114,23 +114,28 @@ Lorsque les DECP ne renseignent qu'un seul titulaire, un seul objet `contrat` es
 
 ### Modifications et impact sur la structure des instances
 
-- le "tronc" de données hors `modifications` est systématiquement republié dans les nouvelles instances
-- si un fichier DECP n'a pas de modification :
+Le "tronc" de données hors `modifications` est systématiquement republié dans les nouvelles instances.
+
+Si un fichier DECP n'a pas de modification :
     - un bloc `award` et un bloc `contract` sont créés pour accueillir les données DECP
     - le `tag` d'instance utilisé est `award`
     - le `status` du `contract` est `pending`, car à la date de publication des données, on ne sait pas si le contrat a été signé
     - la `date` de l'instance est égale à `datePublicationDonnees`
-- si la dernière modification d'un fichier DECP contient une modification de montant ou de durée :
+
+Si la dernière modification d'un fichier DECP contient une modification de montant ou de durée :
     - un bloc `award` et un bloc `contract` sont créés, mais seul le bloc `contract` intègre les données du bloc `modification`, le bloc `award` garde les données du tronc
     - le bloc `contract.amendements` est renseigné
     - le `tag` d'instance utilisé est `contractAmendment`
     - le `status` du `contract` est `active`, car si le contrat a été modifié, cela signifie qu'il a été signé
     - la `date` de l'instance est égale à `datePublicationDonneesModification`
-- si la dernière modification d'un fichier DECP contient une modification des titulaires :
+
+Si la dernière modification d'un fichier DECP contient une modification des titulaires :
     - seul un bloc `award` est créé et il intègre les nouvelles données des titulaires
     - le `tag` d'instance utilisé est `awardUpdate`
     - la `date` de l'instance est égale à `datePublicationDonneesModification`
-- si la dernière modification d'un fichier DECP ne contient pas de modification des titulaires, du montant ou de la durée (ex : correction dans un document de la procédure) :
+
+Si la dernière modification d'un fichier DECP ne contient pas de modification des titulaires, du montant ou de la durée (ex : correction dans un document de la procédure) :
+
     - un bloc `award` et un bloc `contract` sont créés, mais le bloc `contract` se limite aux champs `id`, `awardID` et `amendments`
     - le `tag` d'instance utilisé est `awardUpdate`
     - la `date` de l'instance est égale à `datePublicationDonneesModification`
