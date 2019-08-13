@@ -2,7 +2,7 @@
 
 > Toutes les données essentielles de la commande publique agrégées et converties
 
-**Version 1.8.1**
+**Version 1.8.2**
 
 Rappel de ce que sont les données essentielles de la commande publique (ou DECP) [sur le blog de data.gouv.fr](https://www.data.gouv.fr/fr/posts/le-point-sur-les-donnees-essentielles-de-la-commande-publique/).
 
@@ -93,6 +93,10 @@ Exemples :
 Le code source de ce projet est publié sous licence [MIT](https://opensource.org/licenses/MIT).
 
 ## Notes de version
+
+### 1.8.2 (13/08/2019)
+
+- `wget` parcourait également les dossiers parents et frères de /decp, téléchargeant les fichiers XML de /lcsqa. C'est corrigé avec l'option `-np`pour `no-parent`.
 
 ### 1.8.1 (04/07/2019)
 
