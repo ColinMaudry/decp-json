@@ -11,8 +11,8 @@ newFile=$2
 
 echo "Extraction des UID des anciens et nouveaux marchés, en remplaçant les espaces éventuels par 'xSPACEx'... "
 
-jq -r '.marches[].uid' $oldFile | sed 's/ /xSPACEx/' > oldMarchesRaw
-jq -r '.marches[].uid' $newFile | sed 's/ /xSPACEx/' > newMarchesRaw
+jq -r '.marches[].uid' $oldFile | sed 's/ /xSPACEx/g' > oldMarchesRaw
+jq -r '.marches[].uid' $newFile | sed 's/ /xSPACEx/g' > newMarchesRaw
 
 nbMarchesRaw=`cat newMarchesRaw | wc -l`
 
@@ -49,7 +49,7 @@ i=1
 
 for uid in `cat todayMarches`
 do
-         uid=`echo $uid | sed 's/xSPACEx/ /'`
+         uid=`echo $uid | sed 's/xSPACEx/ /g'`
          echo "$i   $uid"
          if [[ $i -lt $nbNewMarches ]]
          then
@@ -70,4 +70,4 @@ jq '.marches | length' temp.json
 date=`date "+%F"`
 jq . temp.json > decp_$date.json
 
-rm oldMarchesNoDuplicates newMarchesNoDuplicates oldMarchesRaw newMarchesRaw todayMarches temp.json
+# rm oldMarchesNoDuplicates newMarchesNoDuplicates oldMarchesRaw newMarchesRaw todayMarches temp.json
