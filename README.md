@@ -2,7 +2,7 @@
 
 > Toutes les données essentielles de la commande publique agrégées et converties
 
-**Version 1.8.2**
+**Version 1.8.3**
 
 Rappel de ce que sont les données essentielles de la commande publique (ou DECP) [sur le blog de data.gouv.fr](https://www.data.gouv.fr/fr/posts/le-point-sur-les-donnees-essentielles-de-la-commande-publique/).
 
@@ -93,6 +93,10 @@ Exemples :
 Le code source de ce projet est publié sous licence [MIT](https://opensource.org/licenses/MIT).
 
 ## Notes de version
+
+### 1.8.3 (31/08/2019)
+
+- Seul le premier espace (s'il y en avait) dans les identifiants de marchés était traité. S'il y avait plus d'un espace, il décalait le compte des nouveaux marchés. J'ai modifié l'expression régulière pour qu'elle soit globale.
 
 ### 1.8.2 (13/08/2019)
 
