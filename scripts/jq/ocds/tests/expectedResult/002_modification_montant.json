@@ -1,6 +1,6 @@
 {
   "version": "1.1",
-  "uri": "http://files.data.gouv.fr/",
+  "uri": "https://www.data.gouv.fr/fr/datasets/r/2a84ffc7-7121-48d2-a28f-85d835ed09a4",
   "publishedDate": "2019-01-01T01:01:01+02:00",
   "publisher": {
     "name": "Secrétariat Général du Gouvernement",
@@ -8,11 +8,12 @@
     "uid": "12000101100010"
   },
   "license": "https://www.etalab.gouv.fr/licence-ouverte-open-licence",
-  "publicationPolicy": "https://www.data.gouv.fr/fr/datasets/5cc1bb51dc470946203cc376",
+  "publicationPolicy": "https://www.data.gouv.fr/fr/datasets/5d1a216e6f4441513e89b93e",
   "releases": [
     {
       "ocid": "ocds-78apv2-200013183000212018MAPA201805",
       "id": "200013183000212018MAPA201805-01",
+      "decpUID": "200013183000212018MAPA20180501",
       "date": "2019-05-21T00:00:00Z",
       "language": "fr",
       "tag": [

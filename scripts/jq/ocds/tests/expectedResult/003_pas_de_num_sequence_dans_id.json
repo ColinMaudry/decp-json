@@ -1,6 +1,6 @@
 {
   "version": "1.1",
-  "uri": "http://files.data.gouv.fr/",
+  "uri": "https://www.data.gouv.fr/fr/datasets/r/2a84ffc7-7121-48d2-a28f-85d835ed09a4",
   "publishedDate": "2019-01-01T01:01:01+02:00",
   "publisher": {
     "name": "Secrétariat Général du Gouvernement",
@@ -8,11 +8,12 @@
     "uid": "12000101100010"
   },
   "license": "https://www.etalab.gouv.fr/licence-ouverte-open-licence",
-  "publicationPolicy": "https://www.data.gouv.fr/fr/datasets/5cc1bb51dc470946203cc376",
+  "publicationPolicy": "https://www.data.gouv.fr/fr/datasets/5d1a216e6f4441513e89b93e",
   "releases": [
     {
-      "ocid": "ocds-78apv2-200013183000212018MAPA201805",
-      "id": "200013183000212018MAPA201805-00",
+      "ocid": "ocds-78apv2-200013183000212018MAPA2018059Z",
+      "id": "200013183000212018MAPA2018059Z-00",
+      "decpUID": "200013183000212018MAPA2018059Z",
       "date": "2019-04-25T00:00:00+02:00",
       "language": "fr",
       "tag": [
@@ -51,7 +52,7 @@
       },
       "awards": [
         {
-          "id": "ocds-78apv2-200013183000212018MAPA201805-award-1",
+          "id": "ocds-78apv2-200013183000212018MAPA2018059Z-award-1",
           "description": "FOURNITURE D'UN AUTOMATE DE SET UP PCR",
           "status": "active",
           "date": "2018-12-03T00:00:00Z",
@@ -67,7 +68,7 @@
           ],
           "items": [
             {
-              "id": "ocds-78apv2-200013183000212018MAPA201805-item-1",
+              "id": "ocds-78apv2-200013183000212018MAPA2018059Z-item-1",
               "description": "FOURNITURE D'UN AUTOMATE DE SET UP PCR",
               "classification": {
                 "scheme": "CPV",
@@ -82,8 +83,8 @@
       ],
       "contracts": [
         {
-          "id": "ocds-78apv2-200013183000212018MAPA201805-contract-1",
-          "awardID": "ocds-78apv2-200013183000212018MAPA201805-award-1",
+          "id": "ocds-78apv2-200013183000212018MAPA2018059Z-contract-1",
+          "awardID": "ocds-78apv2-200013183000212018MAPA2018059Z-award-1",
           "value": {
             "amount": 80000,
             "currency": "EUR"
@@ -95,7 +96,7 @@
           "status": "pending",
           "items": [
             {
-              "id": "ocds-78apv2-200013183000212018MAPA201805-item-1",
+              "id": "ocds-78apv2-200013183000212018MAPA2018059Z-item-1",
               "description": "FOURNITURE D'UN AUTOMATE DE SET UP PCR",
               "classification": {
                 "scheme": "CPV",
