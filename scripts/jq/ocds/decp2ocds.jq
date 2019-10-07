@@ -25,7 +25,7 @@ def chooseReleaseTag(lastModif):
     if (lastModif|type == "object")|not then ["award"] else
         [] |
         if (lastModif.titulaires | type == "array") then . + ["awardUpdate"] else . end
-        | if (lastModif.montant | type == "number") or (lastModif.dureeMois | type == "number") then . + ["contractAmendment"] else . end
+        | if (lastModif.montant | type == "number") or (lastModif.dureeMois | type == "number") or (lastModif.dureeMois == null) and (lastModif.montant == null) then . + ["contractAmendment"] else . end
     end
     ;
 
