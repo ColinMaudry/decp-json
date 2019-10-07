@@ -1,3 +1,4 @@
 sources/*
 !sources/metadata.json
 json
+flattened
