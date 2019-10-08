@@ -96,7 +96,7 @@ def getReleaseIdMeta:
         "ocid": $ocid,
 		"id": $releaseId,
         "decpUID": .uid,
-		"date": getReleaseDate($lastModif),
+		"date": getReleaseDate($lastModif) // $datetime,
         "language": "fr",
 		"tag": chooseReleaseTag($lastModif),
 		"initiationType": "tender",
