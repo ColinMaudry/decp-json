@@ -53,7 +53,7 @@ Dans le standard OCDS, trois ensembles de données doivent être identifiés, av
 
 L'`ocid` identifie une procédure de passation de marché, de sa genèse jusqu'à sa conclusion. Cet identifiant doit être unique au niveau mondial, de façon à permettre l'aggrégation et l'analyse de données de marchés publics provenant de différents pays.
 
-Un `ocid` est structuré de la façon suivante :
+Un identifiant `ocid` est structuré de la façon suivante :
 
 - un préfixe, attribué par l'Open Contracting Partnership, unique pour chaque producteur de données OCDS. Exemple, le préfixe utilisé par la DINSIC pour la publication des données agrégées : `ocds-78apv2`.
 - un identfiant unique à l'échelle du producteur de données
@@ -65,9 +65,9 @@ La construction de l'`ocid` se fait donc de la manière suivante :
 1) Vérifier que les derniers chiffres de l'`uid` correspondent au nombre de `modifications` dans les DECP
     - si oui, on les enlève pour avoir un `uid` non versionné
     - si non, on ne touche à rien car on suppose que l'`uid` ne changera pas à chaque modification (certains acheteurs publique n'ajoute pas ce suffixe de séquence à leurs `id`)
-2) Ajouter le préfixe et un tiret avant
+2) Ajouter le préfixe () et un tiret avant (`ocds-78apv2`), ce qui donne par exemple.
 
-**/!\\** Cette méthode nous expose au risque que des `uid` non corrélées au nombre de modifications se terminent accidentellement par deux chiffres correspondant au nombre de modifications, et donc que l'`ocid` soit tronquée par erreur. Nous réfléchissons à une solution, la plus évidente étant de contacter les producteurs pour corriger le problème à la source.
+**/!\\ Cette méthode nous expose au risque que des `uid` non corrélées au nombre de modifications se terminent accidentellement par deux chiffres correspondant au nombre de modifications**, et donc que l'`ocid` soit tronquée par erreur. Nous réfléchissons à une solution, la plus évidente étant de contacter les producteurs pour corriger le problème à la source.
 
 Exemples de conversions `uid` > `ocid` :
 
@@ -90,7 +90,7 @@ Exemples d'`id` d'instance (basés sur les exemples de la section précédentes)
 
 **L'objet**
 
-Un contrat et une attribution sont des objets qui doivent être identifiés dans des donées OCDS. Cet identifiant doit être unique au sein d'une même procédure (`ocid`).
+Un contrat et une attribution sont des objets qui doivent être identifiés dans des données OCDS. Cet identifiant doit être unique au sein d'une même procédure (`ocid`).
 
 Comme pour l'`id` d'instance, nous avons décidé de la baser sur l`ocid` pour rendre sa filiation plus évidente. Une fois l'`ocid` déterminé, la construction de l'`id` d'objet est aisée :
 
@@ -114,28 +114,6 @@ Lorsque les DECP ne renseignent qu'un seul titulaire, un seul objet `contrat` es
 
 ### Modifications et impact sur la structure des instances
 
-Le "tronc" de données hors `modifications` est systématiquement republié dans les nouvelles instances.
+**Les modifications ne sont pas encore implémentées, et les spécifications ci-dessous peuvent évoluer pendant le développement.**
 
-Si un fichier DECP n'a pas de modification :
-    - un bloc `award` et un bloc `contract` sont créés pour accueillir les données DECP
-    - le `tag` d'instance utilisé est `award`
-    - le `status` du `contract` est `pending`, car à la date de publication des données, on ne sait pas si le contrat a été signé
-    - la `date` de l'instance est égale à `datePublicationDonnees`
-
-Si la dernière modification d'un fichier DECP contient une modification de montant ou de durée :
-    - un bloc `award` et un bloc `contract` sont créés, mais seul le bloc `contract` intègre les données du bloc `modification`, le bloc `award` garde les données du tronc
-    - le bloc `contract.amendements` est renseigné
-    - le `tag` d'instance utilisé est `contractAmendment`
-    - le `status` du `contract` est `active`, car si le contrat a été modifié, cela signifie qu'il a été signé
-    - la `date` de l'instance est égale à `datePublicationDonneesModification`
-
-Si la dernière modification d'un fichier DECP contient une modification des titulaires :
-    - seul un bloc `award` est créé et il intègre les nouvelles données des titulaires
-    - le `tag` d'instance utilisé est `awardUpdate`
-    - la `date` de l'instance est égale à `datePublicationDonneesModification`
-
-Si la dernière modification d'un fichier DECP ne contient pas de modification des titulaires, du montant ou de la durée (ex : correction dans un document de la procédure) :
-
-    - un bloc `award` et un bloc `contract` sont créés, mais le bloc `contract` se limite aux champs `id`, `awardID` et `amendments`
-    - le `tag` d'instance utilisé est `awardUpdate`
-    - la `date` de l'instance est égale à `datePublicationDonneesModification`
+Le script de transformation traite le "tronc" DECP, ainsi que chaque modification, comme une instance OCDS. Un flux DECP avec deux modifications sera donc transformé en trois instances OCDS. Un dédoublonnage par ID d'instance est appliqué en sortie pour supprimer les inévitables instances doublons.
