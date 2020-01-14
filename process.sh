@@ -15,7 +15,6 @@ mode=$3
 
 # Pour facilement s'y retrouver dans les répertoires, création d'une variable avec le chemin de la racine de decp-rama
 export DECP_HOME=`pwd`
-echo $DECP_HOME
 if [[ -z $mode ]]
 then
     mode=only
