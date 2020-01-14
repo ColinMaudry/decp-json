@@ -1,3 +1,5 @@
 sources/*
 !sources/metadata.json
 json
+*.json
+*.log

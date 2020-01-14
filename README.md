@@ -2,7 +2,7 @@
 
 > Toutes les données essentielles de la commande publique agrégées et converties
 
-**Version 1.8.3**
+**Version 1.9.0**
 
 Rappel de ce que sont les données essentielles de la commande publique (ou DECP) [sur le blog de data.gouv.fr](https://www.data.gouv.fr/fr/posts/le-point-sur-les-donnees-essentielles-de-la-commande-publique/).
 
@@ -26,6 +26,7 @@ La procédure standard est la suivante :
 - [xsltproc](http://xmlsoft.org/XSLT/xsltproc2.html) pour la correction d'anomalies dans certaines sources XML (disponible dans les dépôts Ubuntu)
 - [json2xml](https://github.com/edsu/json2xml) pour la conversion XML vers JSON
 - [libxml2-utils] pour l'outil `xmllint` (disponible dans les dépôts Ubuntu)
+- [wget](https://doc.ubuntu-fr.org/wget)
 - pouvoir exécuter des scripts bash
 
 ## Mode d'emploi
@@ -72,6 +73,16 @@ Exemples :
 
 ```
 
+## Publication du résultat
+
+Le script `publish.sh` permet de publier les fichiers produits sur [le jeu de données](https://www.data.gouv.fr/fr/datasets/5cd57bf68b4c4179299eb0e9).
+
+Les fichiers JSON et XML doivent avoir été produits préalablement, par exemple avec :
+
+```
+./process.sh all package sequence
+```
+
 ## Sources de données
 
 | Code                   | Description                                          | URL                                                                           | Statut                                                                                        |
@@ -93,6 +104,11 @@ Exemples :
 Le code source de ce projet est publié sous licence [MIT](https://opensource.org/licenses/MIT).
 
 ## Notes de version
+
+### 1.9.0
+
+- Amélioration de la production des fichiers JSON et XML du jour lorsqu'il y a plus de 1000 nouveaux marchés sur une journée
+- Prise en compte des [marchés exclus (fictifs ou inexploitables)](https://github.com/etalab/decp-rama/issues/26)
 
 ### 1.8.3 (31/08/2019)
 
