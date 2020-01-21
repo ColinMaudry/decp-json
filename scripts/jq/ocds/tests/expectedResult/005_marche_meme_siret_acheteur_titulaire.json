@@ -12,12 +12,12 @@
   "releases": [
     {
       "ocid": "ocds-78apv2-200013183000212018MAPA201805",
-      "id": "200013183000212018MAPA201805-01",
-      "decpUID": "200013183000212018MAPA20180501",
-      "date": "2019-05-21T00:00:00Z",
+      "id": "200013183000212018MAPA201805-00",
+      "decpUID": "200013183000212018MAPA20180500",
+      "date": "2019-04-25T00:00:00+02:00",
       "language": "fr",
       "tag": [
-        "contractAmendment"
+        "award"
       ],
       "initiationType": "tender",
       "parties": [
@@ -35,13 +35,13 @@
         },
         {
           "name": "TECAN FRANCE SASU",
-          "id": "FR-RCS-38024392300089-supplier",
+          "id": "FR-RCS-20001318300021-supplier",
           "roles": [
             "supplier"
           ],
           "identifier": {
             "scheme": "FR-RCS",
-            "id": "38024392300089",
+            "id": "20001318300021",
             "legalName": "TECAN FRANCE SASU"
           }
         }
@@ -63,7 +63,7 @@
           "suppliers": [
             {
               "name": "TECAN FRANCE SASU",
-              "id": "FR-RCS-38024392300089-supplier"
+              "id": "FR-RCS-20001318300021-supplier"
             }
           ],
           "items": [
@@ -86,23 +86,14 @@
           "id": "ocds-78apv2-200013183000212018MAPA201805-contract-1",
           "awardID": "ocds-78apv2-200013183000212018MAPA201805-award-1",
           "value": {
-            "amount": 100000,
+            "amount": 80000,
             "currency": "EUR"
           },
           "description": "FOURNITURE D'UN AUTOMATE DE SET UP PCR",
-          "amendments": [
-            {
-              "id": "ocds-78apv2-200013183000212018MAPA201805-amendment-1",
-              "date": "2019-05-19T00:00:00Z",
-              "rationale": "L'objet de la modification",
-              "amendsReleaseID": "200013183000212018MAPA201805-00",
-              "releaseID": "200013183000212018MAPA201805-01"
-            }
-          ],
           "period": {
             "durationInDays": 1189
           },
-          "status": "active",
+          "status": "pending",
           "items": [
             {
               "id": "ocds-78apv2-200013183000212018MAPA201805-item-1",

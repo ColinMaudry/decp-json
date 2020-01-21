@@ -105,7 +105,7 @@ def getReleaseIdMeta:
             (getBuyer |
             {
                     "name": .nom,
-                    "id": .id,
+                    "id": ("FR-RCS-" + .id + "-buyer"),
                     "roles": ["buyer"],
                     "identifier": {
                         "scheme": "FR-RCS",
@@ -115,7 +115,7 @@ def getReleaseIdMeta:
                     ,
           (getSupplier($lastModif) | {
                   "name": .denominationSociale,
-                  "id": .id,
+                  "id": (getIdScheme(.typeIdentifiant) + "-" + .id + "-supplier") ,
                   "roles": ["supplier"],
                   "identifier": {
                       "scheme": getIdScheme(.typeIdentifiant),
@@ -126,7 +126,7 @@ def getReleaseIdMeta:
               ],
 		"buyer": getBuyer | {
 			"name": .nom,
-			"id": .id
+			"id": ("FR-RCS-" + .id + "-buyer")
 		},
 		"awards": [{
 			"id": ($ocid + "-award-1"),
@@ -139,7 +139,7 @@ def getReleaseIdMeta:
 			},
 			"suppliers": [(getSupplier($lastModif) | {
                   "name": .denominationSociale,
-                  "id": .id
+                  "id": (getIdScheme(.typeIdentifiant) + "-" + .id + "-supplier")
                   })
               ],
 			"items": $items,

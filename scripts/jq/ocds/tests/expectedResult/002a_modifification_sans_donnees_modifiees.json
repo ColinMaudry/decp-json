@@ -23,7 +23,7 @@
       "parties": [
         {
           "name": "LASAT",
-          "id": "20001318300021",
+          "id": "FR-RCS-20001318300021-buyer",
           "roles": [
             "buyer"
           ],
@@ -35,7 +35,7 @@
         },
         {
           "name": "TECAN FRANCE SASU",
-          "id": "38024392300089",
+          "id": "FR-RCS-38024392300089-supplier",
           "roles": [
             "supplier"
           ],
@@ -48,7 +48,7 @@
       ],
       "buyer": {
         "name": "LASAT",
-        "id": "20001318300021"
+        "id": "FR-RCS-20001318300021-buyer"
       },
       "awards": [
         {
@@ -63,7 +63,7 @@
           "suppliers": [
             {
               "name": "TECAN FRANCE SASU",
-              "id": "38024392300089"
+              "id": "FR-RCS-38024392300089-supplier"
             }
           ],
           "items": [
