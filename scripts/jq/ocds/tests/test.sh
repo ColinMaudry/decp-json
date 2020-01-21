@@ -15,7 +15,7 @@ for test in `ls $DECP_HOME/scripts/jq/ocds/tests/source`
 do
     echo "$test"
     $DECP_HOME/scripts/makeOCDS_json.sh $DECP_HOME/scripts/jq/ocds/tests/source/$test > result
-    diff result $DECP_HOME/scripts/jq/ocds/tests/expectedResult/$test
+    diff -u result $DECP_HOME/scripts/jq/ocds/tests/expectedResult/$test
     echo ""
     echo "*******************"
 done
