@@ -2,6 +2,26 @@
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fn="http://www.w3.org/2005/xpath-functions" exclude-result-prefixes="xsl xs fn">
     <xsl:output method="xml" encoding="UTF-8"/>
+    <xsl:param name="date"/>
+
+    <xsl:template match="/marches/marche[not(datePublicationDonnees)]">
+        <marche>
+            <xsl:apply-templates/>
+            <datePublicationDonnees>
+                <xsl:value-of select="$date"/>
+            </datePublicationDonnees>
+        </marche>
+    </xsl:template>
+
+    <xsl:template match="/marches/contrat-concession[not(datePublicationDonnees)]">
+        <contrat-concession>
+            <xsl:apply-templates/>
+            <datePublicationDonnees>
+                <xsl:value-of select="$date"/>
+            </datePublicationDonnees>
+        </contrat-concession>
+    </xsl:template>
+
     <xsl:template match="/marches/marche/nature">
         <nature>
             <xsl:choose>

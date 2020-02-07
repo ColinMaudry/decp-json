@@ -6,34 +6,42 @@
 #
 #**********************************************************************
 
-old=$1
-new=$2
+oldFile=$1
+newFile=$2
 
 echo "Extraction des UID des anciens et nouveaux marchés, en remplaçant les espaces éventuels par 'xSPACEx'... "
 
-jq -r '.marches[].uid' $old | sed 's/ /xSPACEx/' > oldMarchesRaw
-jq -r '.marches[].uid' $new | sed 's/ /xSPACEx/' > newMarchesRaw
+jq -r '.marches[].uid' $oldFile | sed 's/ /xSPACEx/g' > oldMarchesRaw
+jq -r '.marches[].uid' $newFile | sed 's/ /xSPACEx/g' > newMarchesRaw
 
-nbLinesRaw=`cat newMarchesRaw | wc -l`
+nbMarchesRaw=`cat newMarchesRaw | wc -l`
 
-sort -u oldMarchesRaw > oldMarches
-sort -u newMarchesRaw > newMarches
+sort -u oldMarchesRaw > oldMarchesNoDuplicates
+sort -u newMarchesRaw > newMarchesNoDuplicates
 
-nbLinesOld=`cat oldMarches | wc -l`
-nbLinesNew=`cat newMarches | wc -l`
-nbNew=$(( $nbLinesNew-$nbLinesOld ))
-nbDoublons=$(( $nbLinesRaw-$nbLinesNew ))
+nbMarchesUniqueOld=`cat oldMarchesNoDuplicates | wc -l`
+nbMarchesUniqueNew=`cat newMarchesNoDuplicates | wc -l`
+
+diff -u --suppress-common-lines oldMarchesNoDuplicates newMarchesNoDuplicates | grep -e "^+\w" | sed -E 's/^\+//' | sort -u > todayMarches
+
+nbNewMarches=`cat todayMarches | wc -l`
+
+# Bizarrement,la différence de nombre de ligne entre oldMarchesNoDuplicates et newMarchesNoDuplicates n'est pas équivalente au nombre de marchés dans todaysMarches
+# nbNewMarches=$(( $nbMarchesUniqueNew-$nbMarchesUniqueOld))
 
 echo -e "\
-Ancien fichier :        $nbLinesOld marchés uniques (via uid)\n
-Nouveau fichier :       $nbLinesNew marchés uniques\n
-                        $nbNew nouveaux marchés uniques\n
-                        $nbDoublons doublons"
+Ancien fichier :        $nbMarchesUniqueOld marchés uniques (via uid)\n
+Nouveau fichier :       $nbMarchesUniqueNew marchés uniques\n
+                        $nbNewMarches nouveaux marchés uniques\n"
 
-echo ""
-echo "Diff entre la liste d'UID des anciens marchés et des nouveaux marchés..."
 
-diff -u --suppress-common-lines oldMarches newMarches | grep -e "^+\w" | sed -E 's/^\+//' > todayMarches
+# Si le nombre de nouveaux marchés uniques est trop important par rapport au précédent fichier decp.json (previous_decp.json) le temps de traitement devient trop important et le CI peut time out (5h pour extraire 8500 nouveaux marchés https://circleci.com/gh/etalab/decp-rama/234).
+# Pour éviter cela, si le nombre de marchés est important, on utilise une méthode jq (différence d'array) qui est un peu longue (30 min ?), mais don't le temps d'exécution ne devrait pas être lié au nombre de nouveaux marchés.
+
+if [[ $nbNewMarches -lt 1000 ]]
+
+# Méthode classique si peu de nouveaux marchés
+then
 
 echo '{"marches":[' > temp.json
 
@@ -44,14 +52,14 @@ i=1
 
 for uid in `cat todayMarches`
 do
-         uid=`echo $uid | sed 's/xSPACEx/ /'`
-         echo $uid
-         if [[ $i -lt $nbNew ]]
+         uid=`echo $uid | sed 's/xSPACEx/ /g'`
+         echo "$i   $uid"
+         if [[ $i -lt $nbNewMarches ]]
          then
-             object=`jq --arg uid "$uid" '.marches[] | select(.uid == $uid)' $new | sed 's/^\}/},/'`
+             object=`jq --arg uid "$uid" '.marches[] | select(.uid == $uid)' $newFile | sed 's/^\}/},/'`
              ((i++));
          else
-             object=`jq --arg uid "$uid" '.marches[] | select(.uid == $uid)' $new`
+             object=`jq --arg uid "$uid" '.marches[] | select(.uid == $uid)' $newFile`
          fi
          echo "${object}" >> temp.json
 
@@ -59,10 +67,17 @@ done
 
 echo ']}' >> temp.json
 
+else
+    # Méthode si nombreux nouveaux marchés
+    echo "L'ancien array est soustrait du nouveau, les objets identiques sont supprimés..."
+
+    time jq --slurpfile previous $oldFile '{"marches": (.marches - $previous[0].marches)} ' $newFile > temp.json
+fi
+
 echo "Nombre de marchés dans le fichier des nouveaux marchés :"
 jq '.marches | length' temp.json
 
 date=`date "+%F"`
 jq . temp.json > decp_$date.json
 
-rm oldMarches newMarches oldMarchesRaw newMarchesRaw todayMarches temp.json
+# rm oldMarchesNoDuplicates newMarchesNoDuplicates oldMarchesRaw newMarchesRaw todayMarches temp.json
