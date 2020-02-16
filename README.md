@@ -2,7 +2,7 @@
 
 > Toutes les données essentielles de la commande publique agrégées et converties
 
-**Version 1.10.0**
+**Version 1.11.0**
 
 Rappel de ce que sont les données essentielles de la commande publique (ou DECP) [sur le blog de data.gouv.fr](https://www.data.gouv.fr/fr/posts/le-point-sur-les-donnees-essentielles-de-la-commande-publique/).
 
@@ -104,6 +104,11 @@ Les fichiers JSON et XML doivent avoir été produits préalablement, par exempl
 Le code source de ce projet est publié sous licence [MIT](https://opensource.org/licenses/MIT).
 
 ## Notes de version
+
+### 1.11.0
+
+- Ajout d'un jeu de données supplémentaire de l'AIFE (https://www.data.gouv.fr/fr/datasets/aife-de-13001977100018/)
+- Ajout de stats dans les logs
 
 ### 1.10.0
 
