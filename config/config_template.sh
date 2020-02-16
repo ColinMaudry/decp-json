@@ -15,3 +15,6 @@ mongoHost=localhost
 # - data
 # - sources
 mongoDatabase=decp
+
+# CircleCI API key to get job metadata
+circleApiKey=
