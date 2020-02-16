@@ -66,13 +66,38 @@ echo "Le fichier consolidé contient $nombreMarchesNoAnomalies marchés après e
 echo "Il contenait donc $((nombreMarchesNoDuplicates-nombreMarchesNoAnomalies)) marchés inexploitables."
 echo ""
 
+nombreAcheteurs=`jq '.marches[].acheteur.id' decp.json | sort -u | wc -l`
+
+echo "Nombre d'acheteurs uniques : $nombreAcheteurs"
+
+nombreTitulaires=`jq '.marches[].titulaires[]?.id' decp.json | sort -u | wc -l`
+
+echo "Nombre de titulaires uniques : $nombreTitulaires"
+
+# Extraction stats par année
+
+for annee in 2018 2019 2020
+do
+    jq --arg annee "$annee" '[.marches[] | select(((.dateNotification // .datePublicationDonnees) | match(".{4}") | .string) == $annee)]' decp.json > $DECP_HOME/$annee.json
+
+    nbMarches=`jq '. | length' $DECP_HOME/$annee.json`
+
+    echo "Nombre total de marchés pour l'année $annee : $nbMarches"
+
+    montantTotal=`jq '[.[] |.montant?] | add' $DECP_HOME/$annee.json`
+
+    echo "Montant total pour l'année $annee : $montantTotal"
+done
+
+
+
 # Création d'une archive ZIP avec tous les JSON de la source choisie
 date=`date +%Y-%m-%d`
 if [[ ! -d archives ]]
 then
     mkdir archives
 fi
-zip -q -9 archives/decp_$date.zip decp.json
+#zip -q -9 archives/decp_$date.zip decp.json
 
 ls -lh decp.json
 ls -lh archives/decp_$date.zip

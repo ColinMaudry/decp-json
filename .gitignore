@@ -1,5 +1,6 @@
 sources/*
 !sources/metadata.json
 json
+xml
 *.json
 *.log
