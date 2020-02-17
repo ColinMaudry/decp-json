@@ -2,7 +2,7 @@
 
 > Toutes les données essentielles de la commande publique agrégées et converties
 
-**Version 1.11.0**
+**Version 1.11.1**
 
 Rappel de ce que sont les données essentielles de la commande publique (ou DECP) [sur le blog de data.gouv.fr](https://www.data.gouv.fr/fr/posts/le-point-sur-les-donnees-essentielles-de-la-commande-publique/).
 
@@ -105,10 +105,15 @@ Le code source de ce projet est publié sous licence [MIT](https://opensource.or
 
 ## Notes de version
 
+#### 1.11.1
+
+- Suppression d'une commande qui dépendait de la création d'une archive ZIP
+
 ### 1.11.0
 
 - Ajout d'un jeu de données supplémentaire de l'AIFE (https://www.data.gouv.fr/fr/datasets/aife-de-13001977100018/)
 - Ajout de stats dans les logs
+- Suppression de la création d'archive ZIP
 
 ### 1.10.0
 
@@ -119,15 +124,15 @@ Le code source de ce projet est publié sous licence [MIT](https://opensource.or
 - Amélioration de la production des fichiers JSON et XML du jour lorsqu'il y a plus de 1000 nouveaux marchés sur une journée
 - Prise en compte des [marchés exclus (fictifs ou inexploitables)](https://github.com/etalab/decp-rama/issues/26)
 
-### 1.8.3 (31/08/2019)
+#### 1.8.3 (31/08/2019)
 
 - Seul le premier espace (s'il y en avait) dans les identifiants de marchés était traité. S'il y avait plus d'un espace, il décalait le compte des nouveaux marchés. J'ai modifié l'expression régulière pour qu'elle soit globale.
 
-### 1.8.2 (13/08/2019)
+#### 1.8.2 (13/08/2019)
 
 - `wget` parcourait également les dossiers parents et frères de /decp, téléchargeant les fichiers XML de /lcsqa. C'est corrigé avec l'option `-np`pour `no-parent`.
 
-### 1.8.1 (04/07/2019)
+#### 1.8.1 (04/07/2019)
 
 - pour les marchés provenant de l'AIFE (`data.gouv.fr_aife`), si une `datePublicationDonnees` est manquante, elle est récupérée à partir du nom du fichier XML publié par l'AIFE
 - pour les marchés provenant du portail du Grand Lyon (`grandlyon`), si plusieurs `datePublicationDonnees` sont présentes, seule la première est retenue
@@ -147,7 +152,7 @@ Le code source de ce projet est publié sous licence [MIT](https://opensource.or
 
 - les fichiers des nouveaux marchés du jour sont maintenant [typés "Mise à jour" sur data.gouv.fr](https://www.data.gouv.fr/datasets/5cd57bf68b4c4179299eb0e9)
 
-### 1.5.1 (28/05/2019)
+#### 1.5.1 (28/05/2019)
 
 - correction d'une erreur dans la conversion JSON > XML
 
