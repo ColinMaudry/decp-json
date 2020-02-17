@@ -36,45 +36,45 @@ case ${CIRCLE_BRANCH} in
 #         api_key=$NEXT_API_KEY
 #     ;;
 
-if [[ ! -f ./json/decp.json ]]
-then
-    echo "Le fichier agrégé ./json/decp.json doit d'abord être généré avec la commande './merge_all_sources.sh'."
-    exit 1
-fi
+    if [[ ! -f ./json/decp.json ]]
+    then
+        echo "Le fichier agrégé ./json/decp.json doit d'abord être généré avec la commande './merge_all_sources.sh'."
+        exit 1
+    fi
 
-echo "Remplacement de decp.json et decp.xml par leur mise à jour quotidienne"
+    echo "Remplacement de decp.json et decp.xml par leur mise à jour quotidienne"
 
-for ext in json xml
-do
+    for ext in json xml
+    do
 
-case $ext in
-    xml)
-    resource_id=$resource_id_xml
-    ;;
+        case $ext in
+            xml)
+            resource_id=$resource_id_xml
+            ;;
 
-    json)
-    resource_id=$resource_id_json
-    ;;
-esac
+            json)
+            resource_id=$resource_id_json
+            ;;
+        esac
 
-echo "Mise à jour de decp.${ext}..."
+        echo "Mise à jour de decp.${ext}..."
 
-curl "$api/datasets/$dataset_id/resources/${resource_id}/upload/" -F "file=@${ext}/decp.${ext}" -H "X-API-KEY: $api_key"
+        curl "$api/datasets/$dataset_id/resources/${resource_id}/upload/" -F "file=@${ext}/decp.${ext}" -H "X-API-KEY: $api_key"
 
-date=`date "+%F"`
+        date=`date "+%F"`
 
-echo "Publication de decp_$date.${ext}..."
+        echo "Publication de decp_$date.${ext}..."
 
-curl "$api/datasets/$dataset_id/upload/" -F "file=@decp_${date}.${ext}" -F "filename=decp_$date" -H "X-API-KEY: $api_key" > dailyResource.json
+        curl "$api/datasets/$dataset_id/upload/" -F "file=@decp_${date}.${ext}" -F "filename=decp_$date" -H "X-API-KEY: $api_key" > dailyResource.json
 
-idDailyResource=`jq -r '.id' dailyResource.json`
+        idDailyResource=`jq -r '.id' dailyResource.json`
 
-# Change le type de ressource de 'main' à 'update'
-curl -X PUT "$api/datasets/$dataset_id/resources/$idDailyResource/" --data '{"type":"update"}' -H "Content-type: application/json" -H "X-API-KEY: $api_key"
+        # Change le type de ressource de 'main' à 'update'
+        curl -X PUT "$api/datasets/$dataset_id/resources/$idDailyResource/" --data '{"type":"update"}' -H "Content-type: application/json" -H "X-API-KEY: $api_key"
 
-rm dailyResource.json
+        rm dailyResource.json
 
-done
+    done
 
 ;;
 esac
