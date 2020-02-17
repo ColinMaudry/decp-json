@@ -100,4 +100,4 @@ fi
 #zip -q -9 archives/decp_$date.zip decp.json
 
 ls -lh decp.json
-ls -lh archives/decp_$date.zip
+#ls -lh archives/decp_$date.zip
