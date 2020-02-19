@@ -23,3 +23,6 @@ mongoimport --username $mongoUsername --password $mongoPassword --host $mongoHos
 wget https://www.data.gouv.fr/fr/datasets/r/16962018-5c31-4296-9454-5998585496d2 -O json/decp.json
 
 jq '.marches' json/decp.json | mongoimport --username $mongoUsername --password $mongoPassword --host $mongoHost:$mongoPort --db $mongoDatabase --collection data --drop --jsonArray
+
+# Recréatin de l'index
+mongo -u $mongoUsername -p $mongoPassword --eval 'db.data.createIndex({"$**":"text"},{"default_language":"french"})' $mongoDatabase
