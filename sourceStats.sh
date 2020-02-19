@@ -84,7 +84,7 @@ do
 
     echo ""
     echo "Processing $log..."
-    dateObject="{"
+    dateObject="{\"sources\":["
 
 
     date=`basename -s .log $log`
@@ -109,13 +109,13 @@ do
         echo $nbMarches > nbMarches_$source
 
         dateObject="$dateObject
-        \"$source\":{\"nbMarches\":$nbMarches,\"nbNewMarches\":$nbNewMarches},"
+        {\"source\":\"$source\",\"marches\":$nbMarches,\"nouveauxMarches\":$nbNewMarches},"
         csvLine="$csvLine,$nbNewMarches"
     done
 
     # Close the date object
 
-    dateObject="$dateObject\"date\":\"$date\"}"
+    dateObject="${dateObject::-1}],\"date\":\"$date\"}"
 
     echo $dateObject > dateObject.json
     echo $csvLine >> sourceStats.csv
@@ -130,7 +130,7 @@ jq . sourceStats.json | head
 
 head sourceStats.csv
 
-rm job.json dateObject.json
+#rm job.json dateObject.json
 rm nbMarches*
 
 
