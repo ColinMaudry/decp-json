@@ -10,8 +10,9 @@
 
 source ./config/config.sh
 
-# Suppression des collections
 
+
+# Suppression des collections
 mongo -u $mongoUsername -p $mongoPassword --port $mongoPort --eval 'db.data.drop()' $mongoDatabase
 
 mongo -u $mongoUsername -p $mongoPassword --port $mongoPort --eval 'db.sources.drop()' $mongoDatabase
@@ -21,6 +22,8 @@ mongo -u $mongoUsername -p $mongoPassword --port $mongoPort --eval 'db.sources.d
 mongo -u $mongoUsername -p $mongoPassword --port $mongoPort --eval 'db.createCollection("data")' $mongoDatabase
 
 mongo -u $mongoUsername -p $mongoPassword --port $mongoPort --eval 'db.createCollection("sources")' $mongoDatabase
+
+mongo -u $mongoUsername -p $mongoPassword --port $mongoPort --eval 'db.createCollection("stats")' $mongoDatabase
 
 # Création de l'index texte sur la collection data
 

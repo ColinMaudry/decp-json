@@ -14,6 +14,7 @@ mongoHost=localhost
 # Collections créées dans cette base de données :
 # - data
 # - sources
+# - stats
 mongoDatabase=decp
 
 # CircleCI API key to get job metadata
