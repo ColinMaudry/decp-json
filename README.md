@@ -2,7 +2,7 @@
 
 > Toutes les données essentielles de la commande publique agrégées et converties
 
-**Version 1.11.2**
+**Version 1.11.3**
 
 Rappel de ce que sont les données essentielles de la commande publique (ou DECP) [sur le blog de data.gouv.fr](https://www.data.gouv.fr/fr/posts/le-point-sur-les-donnees-essentielles-de-la-commande-publique/).
 
@@ -104,6 +104,10 @@ Les fichiers JSON et XML doivent avoir été produits préalablement, par exempl
 Le code source de ce projet est publié sous licence [MIT](https://opensource.org/licenses/MIT).
 
 ## Notes de version
+
+#### 1.11.3
+
+- Données AIFE : Plus de discrimination sur l'extension de fichier ([#30](https://github.com/etalab/decp-rama/issues/30))
 
 #### 1.11.2
 
