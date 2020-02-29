@@ -37,7 +37,7 @@ echo $head > sourceStats.csv
 
 # Jobs before 51 are rubbish
 i=51
-lastLog=260
+lastLog=274
 
 while [[ ! $i -gt $lastLog ]]
 do
