@@ -5,7 +5,7 @@
 
 # Configuration de mongoDB
 
-mongoUsername=
+mongoUsername=decp
 mongoPassword=1234
 mongoPort=27017
 mongoHost=localhost
@@ -15,3 +15,5 @@ mongoHost=localhost
 # - data
 # - sources
 mongoDatabase=decp
+
+adminPassword=""
