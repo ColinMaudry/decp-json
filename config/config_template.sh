@@ -14,6 +14,8 @@ mongoHost=localhost
 # Collections créées dans cette base de données :
 # - data
 # - sources
+# - stats
 mongoDatabase=decp
 
 adminPassword=""
+circleApiKey=

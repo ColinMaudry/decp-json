@@ -5,3 +5,5 @@ json/*
 !json/*.md
 !json/LICENSE
 config.sh
+sourceStats.json
+sourceStats.csv

@@ -28,6 +28,8 @@ fi
 
 # Suppression des collections
 
+
+# Suppression des collections
 mongo -u $mongoUsername -p $mongoPassword --port $mongoPort --eval 'db.data.drop()' $mongoDatabase
 
 mongo -u $mongoUsername -p $mongoPassword --port $mongoPort --eval 'db.sources.drop()' $mongoDatabase
