@@ -37,7 +37,11 @@ echo $head > sourceStats.csv
 
 # Jobs before 51 are rubbish
 i=51
-lastLog=274
+
+# Get last job number
+lastLog=`curl -s "https://circleci.com/api/v1.1/project/github/etalab/decp-rama/tree/master?circle-token=$circleApiKey&limit=1&filter=completed" | jq -r '.[0].build_num'`
+
+echo "last log = $lastLog"
 
 while [[ ! $i -gt $lastLog ]]
 do
@@ -53,18 +57,12 @@ do
     url=102
     grepNb=`grep "début du traitement pour source" $log | wc -l`
 
-    echo $i
-    echo $grepNb
-
     while [ $url -lt 105 -a $grepNb -le 1 ]
     do
         echo "Downloading logs ($i $url)..."
         curl -s "https://circleci.com/api/v1.1/project/github/etalab/decp-rama/$i/output/$url/0?file=true" > $log
 
         grepNb=`grep "début du traitement pour source" $log | wc -l`
-        echo $grepNb
-        echo $url
-        echo ""
 
         ((url++))
     done
@@ -95,13 +93,11 @@ do
     do
         nbMarches=`grep "$source contient" $log | sed -r 's/^.*contient ([0-9]+) marchés/\1/' | tr -d "\r\n "`
 
-        echo "$source marchés : $nbMarches"
         csvLine="$csvLine,$nbMarches"
 
         if [[ -f nbMarches_$source ]]
         then
             prevNbMarches=`cat nbMarches_$source | tr -d "\r\n "`
-            echo $prevNbMarches
             nbNewMarches=$((nbMarches - prevNbMarches))
         else
             nbNewMarches=0

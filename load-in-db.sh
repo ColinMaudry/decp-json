@@ -14,10 +14,10 @@ curl -s https://raw.githubusercontent.com/etalab/decp-rama/master/sources/metada
 
 mongoimport --username $mongoUsername --password $mongoPassword --host $mongoHost:$mongoPort --db $mongoDatabase --collection sources --drop --jsonArray --file source-metadata.json
 
-# Création et chargement des stats
-./sourceStats.sh
-
-mongoimport --username $mongoUsername --password $mongoPassword --host $mongoHost:$mongoPort --db $mongoDatabase --collection stats --drop --jsonArray --file sourceStats.json
+if [[ -s sourceStats.json ]]
+then
+    mongoimport --username $mongoUsername --password $mongoPassword --host $mongoHost:$mongoPort --db $mongoDatabase --collection stats --drop --jsonArray --file sourceStats.json
+fi
 
 # Chargement des données agrégées de decp-rama
 curl -s https://www.data.gouv.fr/fr/datasets/r/16962018-5c31-4296-9454-5998585496d2 > decp.json
