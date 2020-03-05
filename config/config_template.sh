@@ -5,7 +5,7 @@
 
 # Configuration de mongoDB
 
-mongoUsername=
+mongoUsername=decp
 mongoPassword=1234
 mongoPort=27017
 mongoHost=localhost
@@ -14,4 +14,8 @@ mongoHost=localhost
 # Collections créées dans cette base de données :
 # - data
 # - sources
+# - stats
 mongoDatabase=decp
+
+adminPassword=""
+circleApiKey=

@@ -1,0 +1,1200 @@
+Sources :
+data.gouv.fr_pes marches-publics.info data.gouv.fr_aife e-marchespublics grandlyon
+
+============================================
+2020-02-17T09:26:32 : début du traitement pour source data.gouv.fr_pes
+
+## Téléchargement (data.gouv.fr_pes)...
+--2020-02-17 09:26:32--  https://files.data.gouv.fr/decp/dgfip-pes-decp.xml
+Resolving files.data.gouv.fr (files.data.gouv.fr)... 51.38.54.240
+Connecting to files.data.gouv.fr (files.data.gouv.fr)|51.38.54.240|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 15872609 (15M) [text/xml]
+Saving to: ‘dgfip-pes-decp.xml’
+
+dgfip-pes-decp.xml    0%[                    ]       0  --.-KB/s               dgfip-pes-decp.xml    1%[                    ] 183.68K   849KB/s               dgfip-pes-decp.xml    5%[>                   ] 871.68K  1.97MB/s               dgfip-pes-decp.xml   28%[====>               ]   4.27M  6.53MB/s               dgfip-pes-decp.xml   49%[========>           ]   7.43M  8.53MB/s               dgfip-pes-decp.xml   77%[==============>     ]  11.71M  10.7MB/s               dgfip-pes-decp.xml   98%[==================> ]  14.90M  11.4MB/s               dgfip-pes-decp.xml  100%[===================>]  15.14M  11.5MB/s    in 1.3s    
+
+2020-02-17 09:26:34 (11.5 MB/s) - ‘dgfip-pes-decp.xml’ saved [15872609/15872609]
+
+Pas de correction configurée pour cette source.
+Conversion (data.gouv.fr_pes)...
+## Empaquetage (data.gouv.fr_pes)...
+
+data.gouv.fr_pes contient 14129 marchés
+
+Empaquetage de data.gouv.fr_pes OK
+
+2020-02-17T09:26:46 : fin du traitement pour source data.gouv.fr_pes
+============================================
+
+============================================
+2020-02-17T09:26:46 : début du traitement pour source marches-publics.info
+
+## Téléchargement (marches-publics.info)...
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0100 12677  100 12677    0     0   8690      0  0:00:01  0:00:01 --:--:--  8688
+13 ressources identifiées
+2020-02-17 09:26:49 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-publies-sur-marches-publics-info-aws/20200113-155920/2019-12.json [2595417/2595417] -> "2019-12.json" [1]
+2020-02-17 09:26:50 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-publies-sur-marches-publics-info-aws/20200113-155904/2019-11.json [2373570/2373570] -> "2019-11.json" [1]
+2020-02-17 09:26:53 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-publies-sur-marches-publics-info-aws/20200113-155852/2019-10.json [2757402/2757402] -> "2019-10.json" [1]
+2020-02-17 09:26:56 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-publies-sur-marches-publics-info-aws/20200114-160222/2019-09.json [2211283/2211283] -> "2019-09.json" [1]
+2020-02-17 09:26:59 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-publies-sur-marches-publics-info-aws/20200114-160205/2019-08.json [2068264/2068264] -> "2019-08.json" [1]
+2020-02-17 09:27:02 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-publies-sur-marches-publics-info-aws/20200113-155520/2019-07.json [5540485/5540485] -> "2019-07.json" [1]
+2020-02-17 09:27:04 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-publies-sur-marches-publics-info-aws/20190919-062138/2019-06.json [2536745/2536745] -> "2019-06.json" [1]
+2020-02-17 09:27:06 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-publies-sur-marches-publics-info-aws/20190915-183522/2019-05.json [2238113/2238113] -> "2019-05.json" [1]
+2020-02-17 09:27:08 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-publies-sur-marches-publics-info-aws/20190915-183511/2019-04.json [2116355/2116355] -> "2019-04.json" [1]
+2020-02-17 09:27:09 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-publies-sur-marches-publics-info-aws/20190915-183455/2019-03.json [1866933/1866933] -> "2019-03.json" [1]
+2020-02-17 09:27:11 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-publies-sur-marches-publics-info-aws/20190915-183439/2019-02.json [1491457/1491457] -> "2019-02.json" [1]
+2020-02-17 09:27:12 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-publies-sur-marches-publics-info-aws/20190915-183424/2019-01.json [1311789/1311789] -> "2019-01.json" [1]
+2020-02-17 09:27:14 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-publies-sur-marches-publics-info-aws/20190915-183617/2018.json [2410616/2410616] -> "2018.json" [1]
+
+13 fichiers téléchargés.
+
+Déplacement des fichiers téléchargés vers source/marches-publics.info/original-data...
+Correction des anomalies
+Correction de 2018.json...
+Correction de 2019-01.json...
+Correction de 2019-02.json...
+Correction de 2019-03.json...
+Correction de 2019-04.json...
+Correction de 2019-05.json...
+Correction de 2019-06.json...
+Correction de 2019-07.json...
+Correction de 2019-08.json...
+Correction de 2019-09.json...
+Correction de 2019-10.json...
+Correction de 2019-11.json...
+Correction de 2019-12.json...
+Copie des fichiers corrigés vers json/marches-publics.info...
+Pas de conversion, copie des fichiers source vers /json/marches-publics.info.
+## Empaquetage (marches-publics.info)...
+
+marches-publics.info contient 43373 marchés
+
+Empaquetage de marches-publics.info OK
+
+2020-02-17T09:30:10 : fin du traitement pour source marches-publics.info
+============================================
+
+============================================
+2020-02-17T09:30:10 : début du traitement pour source data.gouv.fr_aife
+
+## Téléchargement (data.gouv.fr_aife)...
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 64702  100 64702    0     0  71451      0 --:--:-- --:--:-- --:--:-- 71493
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 22287  100 22287    0     0  35906      0 --:--:-- --:--:-- --:--:-- 35888
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0 17  175k   17 31961    0     0  21396      0  0:00:08  0:00:01  0:00:07 21392100  175k  100  175k    0     0   101k      0  0:00:01  0:00:01 --:--:--  101k
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 36482  100 36482    0     0  52267      0 --:--:-- --:--:-- --:--:-- 52266100 36482  100 36482    0     0  52246      0 --:--:-- --:--:-- --:--:-- 52191
+397 ressources identifiées
+2020-02-17 09:30:14 URL:https://static.data.gouv.fr/resources/aife-de-44785462100045/20190430-010002/donnees-essentielles-marches30.04.2019.01-00.xml [55974/55974] -> "donnees-essentielles-marches30.04.2019.01-00.xml" [1]
+2020-02-17 09:30:15 URL:https://static.data.gouv.fr/resources/aife-de-44785462100045/20190427-010000/donnees-essentielles-marches27.04.2019.01-00.xml [45274/45274] -> "donnees-essentielles-marches27.04.2019.01-00.xml" [1]
+2020-02-17 09:30:16 URL:https://static.data.gouv.fr/resources/aife-de-44785462100045/20190426-010002/donnees-essentielles-marches26.04.2019.01-00.xml [136185/136185] -> "donnees-essentielles-marches26.04.2019.01-00.xml" [1]
+2020-02-17 09:30:17 URL:https://static.data.gouv.fr/resources/aife-de-44785462100045/20190425-010002/donnees-essentielles-marches25.04.2019.01-00.xml [166785/166785] -> "donnees-essentielles-marches25.04.2019.01-00.xml" [1]
+2020-02-17 09:30:17 URL:https://static.data.gouv.fr/resources/aife-de-44785462100045/20190424-010004/donnees-essentielles-marches24.04.2019.01-00.xml [70308/70308] -> "donnees-essentielles-marches24.04.2019.01-00.xml" [1]
+2020-02-17 09:30:18 URL:https://static.data.gouv.fr/resources/aife-de-44785462100045/20190420-010001/donnees-essentielles-marches20.04.2019.01-00.xml [99296/99296] -> "donnees-essentielles-marches20.04.2019.01-00.xml" [1]
+2020-02-17 09:30:18 URL:https://static.data.gouv.fr/resources/aife-de-44785462100045/20190419-010001/donnees-essentielles-marches19.04.2019.01-00.xml [90224/90224] -> "donnees-essentielles-marches19.04.2019.01-00.xml" [1]
+2020-02-17 09:30:19 URL:https://static.data.gouv.fr/resources/aife-de-44785462100045/20190418-010004/donnees-essentielles-marches18.04.2019.01-00.xml [65731/65731] -> "donnees-essentielles-marches18.04.2019.01-00.xml" [1]
+2020-02-17 09:30:20 URL:https://static.data.gouv.fr/resources/aife-de-44785462100045/20190417-010001/donnees-essentielles-marches17.04.2019.01-00.xml [91345/91345] -> "donnees-essentielles-marches17.04.2019.01-00.xml" [1]
+2020-02-17 09:30:21 URL:https://static.data.gouv.fr/resources/aife-de-44785462100045/20190416-010003/donnees-essentielles-marches16.04.2019.01-00.xml [93301/93301] -> "donnees-essentielles-marches16.04.2019.01-00.xml" [1]
+2020-02-17 09:30:21 URL:https://static.data.gouv.fr/resources/aife-de-44785462100045/20190413-010000/donnees-essentielles-marches13.04.2019.01-00.xml [115778/115778] -> "donnees-essentielles-marches13.04.2019.01-00.xml" [1]
+2020-02-17 09:30:22 URL:https://static.data.gouv.fr/resources/aife-de-44785462100045/20190412-010000/donnees-essentielles-marches12.04.2019.01-00.xml [66353/66353] -> "donnees-essentielles-marches12.04.2019.01-00.xml" [1]
+2020-02-17 09:30:23 URL:https://static.data.gouv.fr/resources/aife-de-44785462100045/20190411-010000/donnees-essentielles-marches11.04.2019.01-00.xml [67373/67373] -> "donnees-essentielles-marches11.04.2019.01-00.xml" [1]
+2020-02-17 09:30:23 URL:https://static.data.gouv.fr/resources/aife-de-44785462100045/20190410-010221/donnees-essentielles-marches10.04.2019.01-02.xml [96069/96069] -> "donnees-essentielles-marches10.04.2019.01-02.xml" [1]
+2020-02-17 09:30:24 URL:https://static.data.gouv.fr/resources/aife-de-44785462100045/20190409-010002/donnees-essentielles-marches09.04.2019.01-00.xml [119817/119817] -> "donnees-essentielles-marches09.04.2019.01-00.xml" [1]
+2020-02-17 09:30:25 URL:https://static.data.gouv.fr/resources/aife-de-44785462100045/20190406-010000/donnees-essentielles-marches06.04.2019.01-00.xml [53012/53012] -> "donnees-essentielles-marches06.04.2019.01-00.xml" [1]
+2020-02-17 09:30:25 URL:https://static.data.gouv.fr/resources/aife-de-44785462100045/20190405-010000/donnees-essentielles-marches05.04.2019.01-00.xml [62157/62157] -> "donnees-essentielles-marches05.04.2019.01-00.xml" [1]
+2020-02-17 09:30:26 URL:https://static.data.gouv.fr/resources/aife-de-44785462100045/20190404-010001/donnees-essentielles-marches04.04.2019.01-00.xml [183549/183549] -> "donnees-essentielles-marches04.04.2019.01-00.xml" [1]
+2020-02-17 09:30:27 URL:https://static.data.gouv.fr/resources/aife-de-44785462100045/20190403-010001/donnees-essentielles-marches03.04.2019.01-00.xml [126760/126760] -> "donnees-essentielles-marches03.04.2019.01-00.xml" [1]
+2020-02-17 09:30:27 URL:https://static.data.gouv.fr/resources/aife-de-44785462100045/20190402-010002/donnees-essentielles-marches02.04.2019.01-00.xml [56390/56390] -> "donnees-essentielles-marches02.04.2019.01-00.xml" [1]
+2020-02-17 09:30:28 URL:https://static.data.gouv.fr/resources/aife-de-44785462100045/20190331-010002/donnees-essentielles-marches31.03.2019.01-00.xml [1059/1059] -> "donnees-essentielles-marches31.03.2019.01-00.xml" [1]
+2020-02-17 09:30:28 URL:https://static.data.gouv.fr/resources/aife-de-44785462100045/20190330-010001/donnees-essentielles-marches30.03.2019.01-00.xml [45998/45998] -> "donnees-essentielles-marches30.03.2019.01-00.xml" [1]
+2020-02-17 09:30:29 URL:https://static.data.gouv.fr/resources/aife-de-44785462100045/20190329-010000/donnees-essentielles-marches29.03.2019.01-00.xml [67009/67009] -> "donnees-essentielles-marches29.03.2019.01-00.xml" [1]
+2020-02-17 09:30:29 URL:https://static.data.gouv.fr/resources/aife-de-44785462100045/20190328-010001/donnees-essentielles-marches28.03.2019.01-00.xml [31801/31801] -> "donnees-essentielles-marches28.03.2019.01-00.xml" [1]
+2020-02-17 09:30:30 URL:https://static.data.gouv.fr/resources/aife-de-44785462100045/20190327-010002/donnees-essentielles-marches27.03.2019.01-00.xml [63219/63219] -> "donnees-essentielles-marches27.03.2019.01-00.xml" [1]
+2020-02-17 09:30:31 URL:https://static.data.gouv.fr/resources/aife-de-44785462100045/20190326-010001/donnees-essentielles-marches26.03.2019.01-00.xml [73955/73955] -> "donnees-essentielles-marches26.03.2019.01-00.xml" [1]
+2020-02-17 09:30:31 URL:https://static.data.gouv.fr/resources/aife-de-44785462100045/20190323-010002/donnees-essentielles-marches23.03.2019.01-00.xml [134258/134258] -> "donnees-essentielles-marches23.03.2019.01-00.xml" [1]
+2020-02-17 09:30:32 URL:https://static.data.gouv.fr/resources/aife-de-44785462100045/20190321-010001/donnees-essentielles-marches21.03.2019.01-00.xml [68180/68180] -> "donnees-essentielles-marches21.03.2019.01-00.xml" [1]
+2020-02-17 09:30:33 URL:https://static.data.gouv.fr/resources/aife-de-44785462100045/20190320-010001/donnees-essentielles-marches20.03.2019.01-00.xml [138094/138094] -> "donnees-essentielles-marches20.03.2019.01-00.xml" [1]
+2020-02-17 09:30:33 URL:https://static.data.gouv.fr/resources/aife-de-44785462100045/20190319-010001/donnees-essentielles-marches19.03.2019.01-00.xml [162160/162160] -> "donnees-essentielles-marches19.03.2019.01-00.xml" [1]
+2020-02-17 09:30:34 URL:https://static.data.gouv.fr/resources/aife-de-44785462100045/20190316-010002/donnees-essentielles-marches16.03.2019.01-00.xml [93601/93601] -> "donnees-essentielles-marches16.03.2019.01-00.xml" [1]
+2020-02-17 09:30:35 URL:https://static.data.gouv.fr/resources/aife-de-44785462100045/20190315-010002/donnees-essentielles-marches15.03.2019.01-00.xml [105496/105496] -> "donnees-essentielles-marches15.03.2019.01-00.xml" [1]
+2020-02-17 09:30:35 URL:https://static.data.gouv.fr/resources/aife-de-44785462100045/20190314-010001/donnees-essentielles-marches14.03.2019.01-00.xml [93126/93126] -> "donnees-essentielles-marches14.03.2019.01-00.xml" [1]
+2020-02-17 09:30:36 URL:https://static.data.gouv.fr/resources/aife-de-44785462100045/20190313-010001/donnees-essentielles-marches13.03.2019.01-00.xml [82320/82320] -> "donnees-essentielles-marches13.03.2019.01-00.xml" [1]
+2020-02-17 09:30:37 URL:https://static.data.gouv.fr/resources/aife-de-44785462100045/20190312-010000/donnees-essentielles-marches12.03.2019.01-00.xml [59263/59263] -> "donnees-essentielles-marches12.03.2019.01-00.xml" [1]
+2020-02-17 09:30:37 URL:https://static.data.gouv.fr/resources/aife-de-44785462100045/20190309-010002/donnees-essentielles-marches09.03.2019.01-00.xml [19912/19912] -> "donnees-essentielles-marches09.03.2019.01-00.xml" [1]
+2020-02-17 09:30:38 URL:https://static.data.gouv.fr/resources/aife-de-44785462100045/20190308-010108/donnees-essentielles-marches08.03.2019.01-01.xml [99149/99149] -> "donnees-essentielles-marches08.03.2019.01-01.xml" [1]
+2020-02-17 09:30:38 URL:https://static.data.gouv.fr/resources/aife-de-44785462100045/20190307-010515/donnees-essentielles-marches07.03.2019.01-05.xml [69938/69938] -> "donnees-essentielles-marches07.03.2019.01-05.xml" [1]
+2020-02-17 09:30:39 URL:https://static.data.gouv.fr/resources/aife-de-44785462100045/20190306-010000/donnees-essentielles-marches06.03.2019.01-00.xml [33925/33925] -> "donnees-essentielles-marches06.03.2019.01-00.xml" [1]
+2020-02-17 09:30:40 URL:https://static.data.gouv.fr/resources/aife-de-44785462100045/20190305-010010/donnees-essentielles-marches05.03.2019.01-00.xml [36936/36936] -> "donnees-essentielles-marches05.03.2019.01-00.xml" [1]
+2020-02-17 09:30:40 URL:https://static.data.gouv.fr/resources/aife-de-44785462100045/20190302-010003/donnees-essentielles-marches02.03.2019.01-00.xml [87034/87034] -> "donnees-essentielles-marches02.03.2019.01-00.xml" [1]
+2020-02-17 09:30:41 URL:https://static.data.gouv.fr/resources/aife-de-44785462100045/20190301-010020/donnees-essentielles-marches01.03.2019.01-00.xml [45483/45483] -> "donnees-essentielles-marches01.03.2019.01-00.xml" [1]
+2020-02-17 09:30:41 URL:https://static.data.gouv.fr/resources/aife-de-44785462100045/20190228-010001/donnees-essentielles-marches28.02.2019.01-00.xml [89381/89381] -> "donnees-essentielles-marches28.02.2019.01-00.xml" [1]
+2020-02-17 09:30:42 URL:https://static.data.gouv.fr/resources/aife-de-44785462100045/20190227-010013/donnees-essentielles-marches27.02.2019.01-00.xml [123618/123618] -> "donnees-essentielles-marches27.02.2019.01-00.xml" [1]
+2020-02-17 09:30:43 URL:https://static.data.gouv.fr/resources/aife-de-44785462100045/20190226-010001/donnees-essentielles-marches26.02.2019.01-00.xml [64865/64865] -> "donnees-essentielles-marches26.02.2019.01-00.xml" [1]
+2020-02-17 09:30:43 URL:https://static.data.gouv.fr/resources/aife-de-44785462100045/20190223-010007/donnees-essentielles-marches23.02.2019.01-00.xml [38588/38588] -> "donnees-essentielles-marches23.02.2019.01-00.xml" [1]
+2020-02-17 09:30:44 URL:https://static.data.gouv.fr/resources/aife-de-44785462100045/20190222-010001/donnees-essentielles-marches22.02.2019.01-00.xml [91643/91643] -> "donnees-essentielles-marches22.02.2019.01-00.xml" [1]
+2020-02-17 09:30:44 URL:https://static.data.gouv.fr/resources/aife-de-44785462100045/20190221-010000/donnees-essentielles-marches21.02.2019.01-00.xml [19572/19572] -> "donnees-essentielles-marches21.02.2019.01-00.xml" [1]
+2020-02-17 09:30:45 URL:https://static.data.gouv.fr/resources/aife-de-44785462100045/20190220-010003/donnees-essentielles-marches20.02.2019.01-00.xml [47962/47962] -> "donnees-essentielles-marches20.02.2019.01-00.xml" [1]
+2020-02-17 09:30:46 URL:https://static.data.gouv.fr/resources/aife-de-44785462100045/20190219-010002/donnees-essentielles-marches19.02.2019.01-00.xml [66578/66578] -> "donnees-essentielles-marches19.02.2019.01-00.xml" [1]
+2020-02-17 09:30:46 URL:https://static.data.gouv.fr/resources/aife-de-44785462100045/20190216-010011/donnees-essentielles-marches16.02.2019.01-00.xml [61607/61607] -> "donnees-essentielles-marches16.02.2019.01-00.xml" [1]
+2020-02-17 09:30:47 URL:https://static.data.gouv.fr/resources/aife-de-44785462100045/20190215-010019/donnees-essentielles-marches15.02.2019.01-00.xml [63025/63025] -> "donnees-essentielles-marches15.02.2019.01-00.xml" [1]
+2020-02-17 09:30:47 URL:https://static.data.gouv.fr/resources/aife-de-44785462100045/20190214-010001/donnees-essentielles-marches14.02.2019.01-00.xml [38891/38891] -> "donnees-essentielles-marches14.02.2019.01-00.xml" [1]
+2020-02-17 09:30:48 URL:https://static.data.gouv.fr/resources/aife-de-44785462100045/20190213-010003/donnees-essentielles-marches13.02.2019.01-00.xml [33535/33535] -> "donnees-essentielles-marches13.02.2019.01-00.xml" [1]
+2020-02-17 09:30:49 URL:https://static.data.gouv.fr/resources/aife-de-44785462100045/20190212-010003/donnees-essentielles-marches12.02.2019.01-00.xml [64533/64533] -> "donnees-essentielles-marches12.02.2019.01-00.xml" [1]
+2020-02-17 09:30:49 URL:https://static.data.gouv.fr/resources/aife-de-44785462100045/20190209-010017/donnees-essentielles-marches09.02.2019.01-00.xml [53348/53348] -> "donnees-essentielles-marches09.02.2019.01-00.xml" [1]
+2020-02-17 09:30:50 URL:https://static.data.gouv.fr/resources/aife-de-44785462100045/20190208-010009/donnees-essentielles-marches08.02.2019.01-00.xml [30895/30895] -> "donnees-essentielles-marches08.02.2019.01-00.xml" [1]
+2020-02-17 09:30:50 URL:https://static.data.gouv.fr/resources/aife-de-44785462100045/20190207-010003/donnees-essentielles-marches07.02.2019.01-00.xml [59845/59845] -> "donnees-essentielles-marches07.02.2019.01-00.xml" [1]
+2020-02-17 09:30:51 URL:https://static.data.gouv.fr/resources/aife-de-44785462100045/20190206-010007/donnees-essentielles-marches06.02.2019.01-00.xml [69651/69651] -> "donnees-essentielles-marches06.02.2019.01-00.xml" [1]
+2020-02-17 09:30:52 URL:https://static.data.gouv.fr/resources/aife-de-44785462100045/20190205-010000/donnees-essentielles-marches05.02.2019.01-00.xml [51891/51891] -> "donnees-essentielles-marches05.02.2019.01-00.xml" [1]
+2020-02-17 09:30:52 URL:https://static.data.gouv.fr/resources/aife-de-44785462100045/20190202-010004/donnees-essentielles-marches02.02.2019.01-00.xml [50790/50790] -> "donnees-essentielles-marches02.02.2019.01-00.xml" [1]
+2020-02-17 09:30:53 URL:https://static.data.gouv.fr/resources/aife-de-44785462100045/20190201-010005/donnees-essentielles-marches01.02.2019.01-00.xml [51128/51128] -> "donnees-essentielles-marches01.02.2019.01-00.xml" [1]
+2020-02-17 09:30:53 URL:https://static.data.gouv.fr/resources/aife-de-44785462100045/20190131-010000/donnees-essentielles-marches31.01.2019.01-00.xml [25649/25649] -> "donnees-essentielles-marches31.01.2019.01-00.xml" [1]
+2020-02-17 09:30:54 URL:https://static.data.gouv.fr/resources/aife-de-44785462100045/20190130-010001/donnees-essentielles-marches30.01.2019.01-00.xml [24024/24024] -> "donnees-essentielles-marches30.01.2019.01-00.xml" [1]
+2020-02-17 09:30:54 URL:https://static.data.gouv.fr/resources/aife-de-44785462100045/20190129-010001/donnees-essentielles-marches29.01.2019.01-00.xml [50059/50059] -> "donnees-essentielles-marches29.01.2019.01-00.xml" [1]
+2020-02-17 09:30:55 URL:https://static.data.gouv.fr/resources/aife-de-44785462100045/20190126-010004/donnees-essentielles-marches26.01.2019.01-00.xml [15898/15898] -> "donnees-essentielles-marches26.01.2019.01-00.xml" [1]
+2020-02-17 09:30:56 URL:https://static.data.gouv.fr/resources/aife-de-44785462100045/20190125-010002/donnees-essentielles-marches25.01.2019.01-00.xml [127952/127952] -> "donnees-essentielles-marches25.01.2019.01-00.xml" [1]
+2020-02-17 09:30:56 URL:https://static.data.gouv.fr/resources/aife-de-44785462100045/20190123-010002/donnees-essentielles-marches23.01.2019.01-00.xml [63828/63828] -> "donnees-essentielles-marches23.01.2019.01-00.xml" [1]
+2020-02-17 09:30:57 URL:https://static.data.gouv.fr/resources/aife-de-44785462100045/20190122-010002/donnees-essentielles-marches22.01.2019.01-00.xml [61830/61830] -> "donnees-essentielles-marches22.01.2019.01-00.xml" [1]
+2020-02-17 09:30:58 URL:https://static.data.gouv.fr/resources/aife-de-44785462100045/20190121-010005/donnees-essentielles-marches21.01.2019.01-00.xml [152747/152747] -> "donnees-essentielles-marches21.01.2019.01-00.xml" [1]
+2020-02-17 09:30:58 URL:https://static.data.gouv.fr/resources/aife-de-44785462100045/20190117-010001/donnees-essentielles-marches17.01.2019.01-00.xml [50542/50542] -> "donnees-essentielles-marches17.01.2019.01-00.xml" [1]
+2020-02-17 09:30:59 URL:https://static.data.gouv.fr/resources/aife-de-44785462100045/20190116-010001/donnees-essentielles-marches16.01.2019.01-00.xml [24976/24976] -> "donnees-essentielles-marches16.01.2019.01-00.xml" [1]
+2020-02-17 09:30:59 URL:https://static.data.gouv.fr/resources/aife-de-44785462100045/20190115-010001/donnees-essentielles-marches15.01.2019.01-00.xml [56747/56747] -> "donnees-essentielles-marches15.01.2019.01-00.xml" [1]
+2020-02-17 09:31:00 URL:https://static.data.gouv.fr/resources/aife-de-44785462100045/20190113-010001/donnees-essentielles-marches13.01.2019.01-00.xml [53870/53870] -> "donnees-essentielles-marches13.01.2019.01-00.xml" [1]
+2020-02-17 09:31:00 URL:https://static.data.gouv.fr/resources/aife-de-44785462100045/20190111-010005/donnees-essentielles-marches11.01.2019.01-00.xml [13781/13781] -> "donnees-essentielles-marches11.01.2019.01-00.xml" [1]
+2020-02-17 09:31:01 URL:https://static.data.gouv.fr/resources/aife-de-44785462100045/20190110-010004/donnees-essentielles-marches10.01.2019.01-00.xml [56213/56213] -> "donnees-essentielles-marches10.01.2019.01-00.xml" [1]
+2020-02-17 09:31:01 URL:https://static.data.gouv.fr/resources/aife-de-44785462100045/20190109-010003/donnees-essentielles-marches09.01.2019.01-00.xml [20768/20768] -> "donnees-essentielles-marches09.01.2019.01-00.xml" [1]
+2020-02-17 09:31:02 URL:https://static.data.gouv.fr/resources/aife-de-44785462100045/20190108-010000/donnees-essentielles-marches08.01.2019.01-00.xml [23397/23397] -> "donnees-essentielles-marches08.01.2019.01-00.xml" [1]
+2020-02-17 09:31:02 URL:https://static.data.gouv.fr/resources/aife-de-44785462100045/20190105-010001/donnees-essentielles-marches05.01.2019.01-00.xml [42636/42636] -> "donnees-essentielles-marches05.01.2019.01-00.xml" [1]
+2020-02-17 09:31:03 URL:https://static.data.gouv.fr/resources/aife-de-44785462100045/20190104-010000/donnees-essentielles-marches04.01.2019.01-00.xml [12452/12452] -> "donnees-essentielles-marches04.01.2019.01-00.xml" [1]
+2020-02-17 09:31:03 URL:https://static.data.gouv.fr/resources/aife-de-44785462100045/20190103-010005/donnees-essentielles-marches03.01.2019.01-00.xml [5017/5017] -> "donnees-essentielles-marches03.01.2019.01-00.xml" [1]
+2020-02-17 09:31:04 URL:https://static.data.gouv.fr/resources/aife-de-44785462100045/20190103-010000/donnees-essentielles-marches03.01.2019.01-00.xml [5017/5017] -> "donnees-essentielles-marches03.01.2019.01-00.xml.1" [1]
+2020-02-17 09:31:05 URL:https://static.data.gouv.fr/resources/aife-de-44785462100045/20181222-010006/donnees-essentielles-marches22.12.2018.01-00.xml [310776/310776] -> "donnees-essentielles-marches22.12.2018.01-00.xml" [1]
+2020-02-17 09:31:05 URL:https://static.data.gouv.fr/resources/aife-de-44785462100045/20181222-010002/donnees-essentielles-marches22.12.2018.01-00.xml [310776/310776] -> "donnees-essentielles-marches22.12.2018.01-00.xml.1" [1]
+2020-02-17 09:31:06 URL:https://static.data.gouv.fr/resources/aife-de-44090956200033-3/20190426-010151/donnees-essentielles-marches26.04.2019.01-01.xml [29197/29197] -> "donnees-essentielles-marches26.04.2019.01-01.xml" [1]
+2020-02-17 09:31:07 URL:https://static.data.gouv.fr/resources/aife-de-44090956200033-3/20190410-010013/donnees-essentielles-marches10.04.2019.01-00.xml [334758/334758] -> "donnees-essentielles-marches10.04.2019.01-00.xml" [1]
+2020-02-17 09:31:08 URL:https://static.data.gouv.fr/resources/aife-de-44090956200033-3/20190309-010008/donnees-essentielles-marches09.03.2019.01-00.xml [58314/58314] -> "donnees-essentielles-marches09.03.2019.01-00.xml.1" [1]
+2020-02-17 09:31:08 URL:https://static.data.gouv.fr/resources/aife-de-44090956200033-3/20190308-010001/donnees-essentielles-marches08.03.2019.01-00.xml [75359/75359] -> "donnees-essentielles-marches08.03.2019.01-00.xml" [1]
+2020-02-17 09:31:09 URL:https://static.data.gouv.fr/resources/aife-de-44090956200033-3/20190307-010020/donnees-essentielles-marches07.03.2019.01-00.xml [304107/304107] -> "donnees-essentielles-marches07.03.2019.01-00.xml" [1]
+2020-02-17 09:31:10 URL:https://static.data.gouv.fr/resources/aife-de-44090956200033-3/20190306-010014/donnees-essentielles-marches06.03.2019.01-00.xml [50261/50261] -> "donnees-essentielles-marches06.03.2019.01-00.xml.1" [1]
+2020-02-17 09:31:10 URL:https://static.data.gouv.fr/resources/aife-de-44090956200033-3/20190305-010001/donnees-essentielles-marches05.03.2019.01-00.xml [44792/44792] -> "donnees-essentielles-marches05.03.2019.01-00.xml.1" [1]
+2020-02-17 09:31:11 URL:https://static.data.gouv.fr/resources/aife-de-44090956200033-3/20190302-010022/donnees-essentielles-marches02.03.2019.01-00.xml [70608/70608] -> "donnees-essentielles-marches02.03.2019.01-00.xml.1" [1]
+2020-02-17 09:31:14 URL:https://static.data.gouv.fr/resources/aife-de-44090956200033-3/20190301-010040/donnees-essentielles-marches01.03.2019.01-00.xml [1453360/1453360] -> "donnees-essentielles-marches01.03.2019.01-00.xml.1" [1]
+2020-02-17 09:31:14 URL:https://static.data.gouv.fr/resources/aife-de-44090956200033-3/20190228-010037/donnees-essentielles-marches28.02.2019.01-00.xml [39929/39929] -> "donnees-essentielles-marches28.02.2019.01-00.xml.1" [1]
+2020-02-17 09:31:15 URL:https://static.data.gouv.fr/resources/aife-de-44090956200033-3/20190227-010001/donnees-essentielles-marches27.02.2019.01-00.xml [25789/25789] -> "donnees-essentielles-marches27.02.2019.01-00.xml.1" [1]
+2020-02-17 09:31:15 URL:https://static.data.gouv.fr/resources/aife-de-44090956200033-3/20190226-010018/donnees-essentielles-marches26.02.2019.01-00.xml [26571/26571] -> "donnees-essentielles-marches26.02.2019.01-00.xml.1" [1]
+2020-02-17 09:31:16 URL:https://static.data.gouv.fr/resources/aife-de-44090956200033-3/20190223-010013/donnees-essentielles-marches23.02.2019.01-00.xml [31978/31978] -> "donnees-essentielles-marches23.02.2019.01-00.xml.1" [1]
+2020-02-17 09:31:16 URL:https://static.data.gouv.fr/resources/aife-de-44090956200033-3/20190222-010012/donnees-essentielles-marches22.02.2019.01-00.xml [12954/12954] -> "donnees-essentielles-marches22.02.2019.01-00.xml.1" [1]
+2020-02-17 09:31:16 URL:https://static.data.gouv.fr/resources/aife-de-44090956200033-3/20190221-010003/donnees-essentielles-marches21.02.2019.01-00.xml [10603/10603] -> "donnees-essentielles-marches21.02.2019.01-00.xml.1" [1]
+2020-02-17 09:31:17 URL:https://static.data.gouv.fr/resources/aife-de-44090956200033-3/20190220-010016/donnees-essentielles-marches20.02.2019.01-00.xml [10128/10128] -> "donnees-essentielles-marches20.02.2019.01-00.xml.1" [1]
+2020-02-17 09:31:17 URL:https://static.data.gouv.fr/resources/aife-de-44090956200033-3/20190219-010006/donnees-essentielles-marches19.02.2019.01-00.xml [24792/24792] -> "donnees-essentielles-marches19.02.2019.01-00.xml.1" [1]
+2020-02-17 09:31:18 URL:https://static.data.gouv.fr/resources/aife-de-44090956200033-3/20190216-010000/donnees-essentielles-marches16.02.2019.01-00.xml [25961/25961] -> "donnees-essentielles-marches16.02.2019.01-00.xml.1" [1]
+2020-02-17 09:31:18 URL:https://static.data.gouv.fr/resources/aife-de-44090956200033-3/20190215-010000/donnees-essentielles-marches15.02.2019.01-00.xml [50333/50333] -> "donnees-essentielles-marches15.02.2019.01-00.xml.1" [1]
+2020-02-17 09:31:19 URL:https://static.data.gouv.fr/resources/aife-de-44090956200033-3/20190214-010015/donnees-essentielles-marches14.02.2019.01-00.xml [31821/31821] -> "donnees-essentielles-marches14.02.2019.01-00.xml.1" [1]
+2020-02-17 09:31:20 URL:https://static.data.gouv.fr/resources/aife-de-44090956200033-3/20190213-010009/donnees-essentielles-marches13.02.2019.01-00.xml [405191/405191] -> "donnees-essentielles-marches13.02.2019.01-00.xml.1" [1]
+2020-02-17 09:31:21 URL:https://static.data.gouv.fr/resources/aife-de-44090956200033-3/20190212-010010/donnees-essentielles-marches12.02.2019.01-00.xml [489939/489939] -> "donnees-essentielles-marches12.02.2019.01-00.xml.1" [1]
+2020-02-17 09:31:22 URL:https://static.data.gouv.fr/resources/aife-de-44090956200033-3/20190209-010000/donnees-essentielles-marches09.02.2019.01-00.xml [84964/84964] -> "donnees-essentielles-marches09.02.2019.01-00.xml.1" [1]
+2020-02-17 09:31:23 URL:https://static.data.gouv.fr/resources/aife-de-44090956200033-3/20190208-010017/donnees-essentielles-marches08.02.2019.01-00.xml [39520/39520] -> "donnees-essentielles-marches08.02.2019.01-00.xml.1" [1]
+2020-02-17 09:31:23 URL:https://static.data.gouv.fr/resources/aife-de-44090956200033-3/20190207-010011/donnees-essentielles-marches07.02.2019.01-00.xml [47728/47728] -> "donnees-essentielles-marches07.02.2019.01-00.xml.1" [1]
+2020-02-17 09:31:24 URL:https://static.data.gouv.fr/resources/aife-de-44090956200033-3/20190206-010012/donnees-essentielles-marches06.02.2019.01-00.xml [24725/24725] -> "donnees-essentielles-marches06.02.2019.01-00.xml.1" [1]
+2020-02-17 09:31:24 URL:https://static.data.gouv.fr/resources/aife-de-44090956200033-3/20190205-010012/donnees-essentielles-marches05.02.2019.01-00.xml [33063/33063] -> "donnees-essentielles-marches05.02.2019.01-00.xml.1" [1]
+2020-02-17 09:31:25 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20191212-010004/donnees-essentielles-marches12.12.2019.01-00.xml [1161/1161] -> "donnees-essentielles-marches12.12.2019.01-00.xml" [1]
+2020-02-17 09:31:25 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20191211-013939/donnees-essentielles-marches11.12.2019.01-39.xml [1154/1154] -> "donnees-essentielles-marches11.12.2019.01-39.xml" [1]
+2020-02-17 09:31:25 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20191210-010008/donnees-essentielles-marches10.12.2019.01-00.xml [1824/1824] -> "donnees-essentielles-marches10.12.2019.01-00.xml" [1]
+2020-02-17 09:31:26 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20191209-010004/donnees-essentielles-marches09.12.2019.01-00.xml [1396/1396] -> "donnees-essentielles-marches09.12.2019.01-00.xml" [1]
+2020-02-17 09:31:26 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20191208-010010/donnees-essentielles-marches08.12.2019.01-00.xml [1256/1256] -> "donnees-essentielles-marches08.12.2019.01-00.xml" [1]
+2020-02-17 09:31:27 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20191208-010004/donnees-essentielles-marches08.12.2019.01-00.xml [1256/1256] -> "donnees-essentielles-marches08.12.2019.01-00.xml.1" [1]
+2020-02-17 09:31:27 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20191207-010004/donnees-essentielles-marches07.12.2019.01-00.xml [1121/1121] -> "donnees-essentielles-marches07.12.2019.01-00.xml" [1]
+2020-02-17 09:31:27 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20191206-010004/donnees-essentielles-marches06.12.2019.01-00.xml [1275/1275] -> "donnees-essentielles-marches06.12.2019.01-00.xml" [1]
+2020-02-17 09:31:28 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20191205-010004/donnees-essentielles-marches05.12.2019.01-00.xml [1388/1388] -> "donnees-essentielles-marches05.12.2019.01-00.xml" [1]
+2020-02-17 09:31:28 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20191204-010004/donnees-essentielles-marches04.12.2019.01-00.xml [1353/1353] -> "donnees-essentielles-marches04.12.2019.01-00.xml" [1]
+2020-02-17 09:31:29 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20191203-010006/donnees-essentielles-marches03.12.2019.01-00.xml [1300/1300] -> "donnees-essentielles-marches03.12.2019.01-00.xml" [1]
+2020-02-17 09:31:29 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20191203-010004/donnees-essentielles-marches03.12.2019.01-00.xml [1300/1300] -> "donnees-essentielles-marches03.12.2019.01-00.xml.1" [1]
+2020-02-17 09:31:29 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20191202-010005/donnees-essentielles-marches02.12.2019.01-00.xml [1288/1288] -> "donnees-essentielles-marches02.12.2019.01-00.xml" [1]
+2020-02-17 09:31:30 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20191202-010004/donnees-essentielles-marches02.12.2019.01-00.xml [1288/1288] -> "donnees-essentielles-marches02.12.2019.01-00.xml.1" [1]
+2020-02-17 09:31:30 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20191201-010004/donnees-essentielles-marches01.12.2019.01-00.xml [1167/1167] -> "donnees-essentielles-marches01.12.2019.01-00.xml" [1]
+2020-02-17 09:31:31 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20191130-010004/donnees-essentielles-marches30.11.2019.01-00.xml [1124/1124] -> "donnees-essentielles-marches30.11.2019.01-00.xml" [1]
+2020-02-17 09:31:31 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20191129-010004/donnees-essentielles-marches29.11.2019.01-00.xml [1111/1111] -> "donnees-essentielles-marches29.11.2019.01-00.xml" [1]
+2020-02-17 09:31:32 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20191128-010005/donnees-essentielles-marches28.11.2019.01-00.xml [1150/1150] -> "donnees-essentielles-marches28.11.2019.01-00.xml" [1]
+2020-02-17 09:31:32 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20191127-010004/donnees-essentielles-marches27.11.2019.01-00.xml [1323/1323] -> "donnees-essentielles-marches27.11.2019.01-00.xml" [1]
+2020-02-17 09:31:33 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20191126-010004/donnees-essentielles-marches26.11.2019.01-00.xml [1406/1406] -> "donnees-essentielles-marches26.11.2019.01-00.xml" [1]
+2020-02-17 09:31:33 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20191125-010004/donnees-essentielles-marches25.11.2019.01-00.xml [1216/1216] -> "donnees-essentielles-marches25.11.2019.01-00.xml" [1]
+2020-02-17 09:31:34 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20191124-010005/donnees-essentielles-marches24.11.2019.01-00.xml [1161/1161] -> "donnees-essentielles-marches24.11.2019.01-00.xml" [1]
+2020-02-17 09:31:34 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20191124-010004/donnees-essentielles-marches24.11.2019.01-00.xml [1161/1161] -> "donnees-essentielles-marches24.11.2019.01-00.xml.1" [1]
+2020-02-17 09:31:35 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20191123-010005/donnees-essentielles-marches23.11.2019.01-00.xml [1126/1126] -> "donnees-essentielles-marches23.11.2019.01-00.xml" [1]
+2020-02-17 09:31:35 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20191122-010005/donnees-essentielles-marches22.11.2019.01-00.xml [1353/1353] -> "donnees-essentielles-marches22.11.2019.01-00.xml" [1]
+2020-02-17 09:31:35 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20191121-010004/donnees-essentielles-marches21.11.2019.01-00.xml [1264/1264] -> "donnees-essentielles-marches21.11.2019.01-00.xml" [1]
+2020-02-17 09:31:36 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20191120-010004/donnees-essentielles-marches20.11.2019.01-00.xml [1173/1173] -> "donnees-essentielles-marches20.11.2019.01-00.xml" [1]
+2020-02-17 09:31:36 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20191119-010004/donnees-essentielles-marches19.11.2019.01-00.xml [1404/1404] -> "donnees-essentielles-marches19.11.2019.01-00.xml" [1]
+2020-02-17 09:31:37 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20191118-010004/donnees-essentielles-marches18.11.2019.01-00.xml [1356/1356] -> "donnees-essentielles-marches18.11.2019.01-00.xml" [1]
+2020-02-17 09:31:38 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20191117-010005/donnees-essentielles-marches17.11.2019.01-00.xml [1347/1347] -> "donnees-essentielles-marches17.11.2019.01-00.xml" [1]
+2020-02-17 09:31:38 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20191115-010004/donnees-essentielles-marches15.11.2019.01-00.xml [1184/1184] -> "donnees-essentielles-marches15.11.2019.01-00.xml" [1]
+2020-02-17 09:31:38 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20191114-010004/donnees-essentielles-marches14.11.2019.01-00.xml [1236/1236] -> "donnees-essentielles-marches14.11.2019.01-00.xml" [1]
+2020-02-17 09:31:39 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20191113-010003/donnees-essentielles-marches13.11.2019.01-00.xml [1176/1176] -> "donnees-essentielles-marches13.11.2019.01-00.xml" [1]
+2020-02-17 09:31:39 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20191112-010004/donnees-essentielles-marches12.11.2019.01-00.xml [1167/1167] -> "donnees-essentielles-marches12.11.2019.01-00.xml" [1]
+2020-02-17 09:31:45 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20191112-010003/donnees-essentielles-marches12.11.2019.01-00.xml [1167/1167] -> "donnees-essentielles-marches12.11.2019.01-00.xml.1" [1]
+2020-02-17 09:31:45 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20191111-010003/donnees-essentielles-marches11.11.2019.01-00.xml [1186/1186] -> "donnees-essentielles-marches11.11.2019.01-00.xml" [1]
+2020-02-17 09:31:45 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20191110-010005/donnees-essentielles-marches10.11.2019.01-00.xml [1423/1423] -> "donnees-essentielles-marches10.11.2019.01-00.xml" [1]
+2020-02-17 09:31:46 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20191109-010006/donnees-essentielles-marches09.11.2019.01-00.xml [1358/1358] -> "donnees-essentielles-marches09.11.2019.01-00.xml" [1]
+2020-02-17 09:31:46 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20191109-010005/donnees-essentielles-marches09.11.2019.01-00.xml [1358/1358] -> "donnees-essentielles-marches09.11.2019.01-00.xml.1" [1]
+2020-02-17 09:31:47 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20191108-010004/donnees-essentielles-marches08.11.2019.01-00.xml [1187/1187] -> "donnees-essentielles-marches08.11.2019.01-00.xml" [1]
+2020-02-17 09:31:47 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20191107-010005/donnees-essentielles-marches07.11.2019.01-00.xml [1153/1153] -> "donnees-essentielles-marches07.11.2019.01-00.xml" [1]
+2020-02-17 09:31:48 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20191106-010006/donnees-essentielles-marches06.11.2019.01-00.xml [1138/1138] -> "donnees-essentielles-marches06.11.2019.01-00.xml" [1]
+2020-02-17 09:31:48 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20191106-010006/donnees-essentielles-marches06.11.2019.01-00.xml [1138/1138] -> "donnees-essentielles-marches06.11.2019.01-00.xml.1" [1]
+2020-02-17 09:31:48 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20191105-010004/donnees-essentielles-marches05.11.2019.01-00.xml [1249/1249] -> "donnees-essentielles-marches05.11.2019.01-00.xml" [1]
+2020-02-17 09:31:49 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20191105-010003/donnees-essentielles-marches05.11.2019.01-00.xml [1249/1249] -> "donnees-essentielles-marches05.11.2019.01-00.xml.1" [1]
+2020-02-17 09:31:49 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20191104-010004/donnees-essentielles-marches04.11.2019.01-00.xml [1239/1239] -> "donnees-essentielles-marches04.11.2019.01-00.xml" [1]
+2020-02-17 09:31:50 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20191104-010003/donnees-essentielles-marches04.11.2019.01-00.xml [1239/1239] -> "donnees-essentielles-marches04.11.2019.01-00.xml.1" [1]
+2020-02-17 09:31:50 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20191103-010005/donnees-essentielles-marches03.11.2019.01-00.xml [1200/1200] -> "donnees-essentielles-marches03.11.2019.01-00.xml" [1]
+2020-02-17 09:31:50 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20191103-010004/donnees-essentielles-marches03.11.2019.01-00.xml [1200/1200] -> "donnees-essentielles-marches03.11.2019.01-00.xml.1" [1]
+2020-02-17 09:31:51 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20191102-010006/donnees-essentielles-marches02.11.2019.01-00.xml [1231/1231] -> "donnees-essentielles-marches02.11.2019.01-00.xml" [1]
+2020-02-17 09:31:51 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20191101-010005/donnees-essentielles-marches01.11.2019.01-00.xml [1437/1437] -> "donnees-essentielles-marches01.11.2019.01-00.xml" [1]
+2020-02-17 09:31:52 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20191031-010005/donnees-essentielles-marches31.10.2019.01-00.xml [1365/1365] -> "donnees-essentielles-marches31.10.2019.01-00.xml" [1]
+2020-02-17 09:31:52 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20191030-010005/donnees-essentielles-marches30.10.2019.01-00.xml [1352/1352] -> "donnees-essentielles-marches30.10.2019.01-00.xml" [1]
+2020-02-17 09:31:52 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20191030-010004/donnees-essentielles-marches30.10.2019.01-00.xml [1352/1352] -> "donnees-essentielles-marches30.10.2019.01-00.xml.1" [1]
+2020-02-17 09:31:53 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20191029-010004/donnees-essentielles-marches29.10.2019.01-00.xml [1366/1366] -> "donnees-essentielles-marches29.10.2019.01-00.xml" [1]
+2020-02-17 09:31:53 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20191028-010004/donnees-essentielles-marches28.10.2019.01-00.xml [1204/1204] -> "donnees-essentielles-marches28.10.2019.01-00.xml" [1]
+2020-02-17 09:31:54 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20191027-010005/donnees-essentielles-marches27.10.2019.01-00.xml [1125/1125] -> "donnees-essentielles-marches27.10.2019.01-00.xml" [1]
+2020-02-17 09:31:54 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20191027-010004/donnees-essentielles-marches27.10.2019.01-00.xml [1125/1125] -> "donnees-essentielles-marches27.10.2019.01-00.xml.1" [1]
+2020-02-17 09:31:54 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20191026-010004/donnees-essentielles-marches26.10.2019.01-00.xml [1147/1147] -> "donnees-essentielles-marches26.10.2019.01-00.xml" [1]
+2020-02-17 09:31:55 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20191025-010005/donnees-essentielles-marches25.10.2019.01-00.xml [1144/1144] -> "donnees-essentielles-marches25.10.2019.01-00.xml" [1]
+2020-02-17 09:31:55 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20191024-010005/donnees-essentielles-marches24.10.2019.01-00.xml [1142/1142] -> "donnees-essentielles-marches24.10.2019.01-00.xml" [1]
+2020-02-17 09:31:55 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20191024-010004/donnees-essentielles-marches24.10.2019.01-00.xml [1142/1142] -> "donnees-essentielles-marches24.10.2019.01-00.xml.1" [1]
+2020-02-17 09:31:56 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20191023-010005/donnees-essentielles-marches23.10.2019.01-00.xml [1112/1112] -> "donnees-essentielles-marches23.10.2019.01-00.xml" [1]
+2020-02-17 09:31:56 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20191022-010004/donnees-essentielles-marches22.10.2019.01-00.xml [1166/1166] -> "donnees-essentielles-marches22.10.2019.01-00.xml" [1]
+2020-02-17 09:31:57 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20191021-010004/donnees-essentielles-marches21.10.2019.01-00.xml [1167/1167] -> "donnees-essentielles-marches21.10.2019.01-00.xml" [1]
+2020-02-17 09:31:57 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20191020-010007/donnees-essentielles-marches20.10.2019.01-00.xml [1144/1144] -> "donnees-essentielles-marches20.10.2019.01-00.xml" [1]
+2020-02-17 09:31:57 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20191020-010006/donnees-essentielles-marches20.10.2019.01-00.xml [1144/1144] -> "donnees-essentielles-marches20.10.2019.01-00.xml.1" [1]
+2020-02-17 09:31:58 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20191019-010009/donnees-essentielles-marches19.10.2019.01-00.xml [1139/1139] -> "donnees-essentielles-marches19.10.2019.01-00.xml" [1]
+2020-02-17 09:31:58 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20191019-010007/donnees-essentielles-marches19.10.2019.01-00.xml [1139/1139] -> "donnees-essentielles-marches19.10.2019.01-00.xml.1" [1]
+2020-02-17 09:31:59 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20191018-010008/donnees-essentielles-marches18.10.2019.01-00.xml [1176/1176] -> "donnees-essentielles-marches18.10.2019.01-00.xml" [1]
+2020-02-17 09:31:59 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20191018-010007/donnees-essentielles-marches18.10.2019.01-00.xml [1176/1176] -> "donnees-essentielles-marches18.10.2019.01-00.xml.1" [1]
+2020-02-17 09:31:59 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20191017-010006/donnees-essentielles-marches17.10.2019.01-00.xml [1202/1202] -> "donnees-essentielles-marches17.10.2019.01-00.xml" [1]
+2020-02-17 09:32:00 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20191016-010003/donnees-essentielles-marches16.10.2019.01-00.xml [1361/1361] -> "donnees-essentielles-marches16.10.2019.01-00.xml" [1]
+2020-02-17 09:32:00 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20191013-010008/donnees-essentielles-marches13.10.2019.01-00.xml [1166/1166] -> "donnees-essentielles-marches13.10.2019.01-00.xml" [1]
+2020-02-17 09:32:01 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20191013-010007/donnees-essentielles-marches13.10.2019.01-00.xml [1166/1166] -> "donnees-essentielles-marches13.10.2019.01-00.xml.1" [1]
+2020-02-17 09:32:01 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20191012-010006/donnees-essentielles-marches12.10.2019.01-00.xml [1136/1136] -> "donnees-essentielles-marches12.10.2019.01-00.xml" [1]
+2020-02-17 09:32:01 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20191011-010006/donnees-essentielles-marches11.10.2019.01-00.xml [1190/1190] -> "donnees-essentielles-marches11.10.2019.01-00.xml" [1]
+2020-02-17 09:32:02 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20191010-010007/donnees-essentielles-marches10.10.2019.01-00.xml [1132/1132] -> "donnees-essentielles-marches10.10.2019.01-00.xml" [1]
+2020-02-17 09:32:02 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20191009-010004/donnees-essentielles-marches09.10.2019.01-00.xml [1263/1263] -> "donnees-essentielles-marches09.10.2019.01-00.xml" [1]
+2020-02-17 09:32:03 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20191008-010005/donnees-essentielles-marches08.10.2019.01-00.xml [1120/1120] -> "donnees-essentielles-marches08.10.2019.01-00.xml" [1]
+2020-02-17 09:32:03 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20191007-010004/donnees-essentielles-marches07.10.2019.01-00.xml [1294/1294] -> "donnees-essentielles-marches07.10.2019.01-00.xml" [1]
+2020-02-17 09:32:03 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20191005-010006/donnees-essentielles-marches05.10.2019.01-00.xml [1160/1160] -> "donnees-essentielles-marches05.10.2019.01-00.xml" [1]
+2020-02-17 09:32:04 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20191004-010005/donnees-essentielles-marches04.10.2019.01-00.xml [1146/1146] -> "donnees-essentielles-marches04.10.2019.01-00.xml" [1]
+2020-02-17 09:32:04 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20191003-010006/donnees-essentielles-marches03.10.2019.01-00.xml [1246/1246] -> "donnees-essentielles-marches03.10.2019.01-00.xml" [1]
+2020-02-17 09:32:05 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20191003-010006/donnees-essentielles-marches03.10.2019.01-00.xml [1246/1246] -> "donnees-essentielles-marches03.10.2019.01-00.xml.1" [1]
+2020-02-17 09:32:05 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20191002-010004/donnees-essentielles-marches02.10.2019.01-00.xml [1188/1188] -> "donnees-essentielles-marches02.10.2019.01-00.xml" [1]
+2020-02-17 09:32:05 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20191002-010004/donnees-essentielles-marches02.10.2019.01-00.xml [1188/1188] -> "donnees-essentielles-marches02.10.2019.01-00.xml.1" [1]
+2020-02-17 09:32:06 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20191001-010004/donnees-essentielles-marches01.10.2019.01-00.xml [1166/1166] -> "donnees-essentielles-marches01.10.2019.01-00.xml" [1]
+2020-02-17 09:32:06 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190930-010009/donnees-essentielles-marches30.09.2019.01-00.xml [1371/1371] -> "donnees-essentielles-marches30.09.2019.01-00.xml" [1]
+2020-02-17 09:32:06 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190929-010005/donnees-essentielles-marches29.09.2019.01-00.xml [1305/1305] -> "donnees-essentielles-marches29.09.2019.01-00.xml" [1]
+2020-02-17 09:32:07 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190928-010005/donnees-essentielles-marches28.09.2019.01-00.xml [1403/1403] -> "donnees-essentielles-marches28.09.2019.01-00.xml" [1]
+2020-02-17 09:32:07 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190927-010004/donnees-essentielles-marches27.09.2019.01-00.xml [1293/1293] -> "donnees-essentielles-marches27.09.2019.01-00.xml" [1]
+2020-02-17 09:32:08 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190925-190004/donnees-essentielles-marches26.09.2019.01-00.xml [1365/1365] -> "donnees-essentielles-marches26.09.2019.01-00.xml" [1]
+2020-02-17 09:32:08 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190925-010006/donnees-essentielles-marches25.09.2019.01-00.xml [1148/1148] -> "donnees-essentielles-marches25.09.2019.01-00.xml" [1]
+2020-02-17 09:32:08 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190924-010005/donnees-essentielles-marches24.09.2019.01-00.xml [1099/1099] -> "donnees-essentielles-marches24.09.2019.01-00.xml" [1]
+2020-02-17 09:32:09 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190923-010003/donnees-essentielles-marches23.09.2019.01-00.xml [1084/1084] -> "donnees-essentielles-marches23.09.2019.01-00.xml" [1]
+2020-02-17 09:32:09 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190922-010005/donnees-essentielles-marches22.09.2019.01-00.xml [1055/1055] -> "donnees-essentielles-marches22.09.2019.01-00.xml" [1]
+2020-02-17 09:32:10 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190921-010004/donnees-essentielles-marches21.09.2019.01-00.xml [2880/2880] -> "donnees-essentielles-marches21.09.2019.01-00.xml" [1]
+2020-02-17 09:32:10 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190919-190004/donnees-essentielles-marches20.09.2019.01-00.xml [1211/1211] -> "donnees-essentielles-marches20.09.2019.01-00.xml" [1]
+2020-02-17 09:32:10 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190919-010004/donnees-essentielles-marches19.09.2019.01-00.xml [1146/1146] -> "donnees-essentielles-marches19.09.2019.01-00.xml" [1]
+2020-02-17 09:32:11 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190918-010005/donnees-essentielles-marches18.09.2019.01-00.xml [1106/1106] -> "donnees-essentielles-marches18.09.2019.01-00.xml" [1]
+2020-02-17 09:32:11 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190917-010005/donnees-essentielles-marches17.09.2019.01-00.xml [1203/1203] -> "donnees-essentielles-marches17.09.2019.01-00.xml" [1]
+2020-02-17 09:32:12 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190916-010003/donnees-essentielles-marches16.09.2019.01-00.xml [1169/1169] -> "donnees-essentielles-marches16.09.2019.01-00.xml" [1]
+2020-02-17 09:32:12 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190915-010004/donnees-essentielles-marches15.09.2019.01-00.xml [1105/1105] -> "donnees-essentielles-marches15.09.2019.01-00.xml" [1]
+2020-02-17 09:32:12 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190914-010005/donnees-essentielles-marches14.09.2019.01-00.xml [1181/1181] -> "donnees-essentielles-marches14.09.2019.01-00.xml" [1]
+2020-02-17 09:32:13 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190913-010005/donnees-essentielles-marches13.09.2019.01-00.xml [1146/1146] -> "donnees-essentielles-marches13.09.2019.01-00.xml" [1]
+2020-02-17 09:32:13 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190912-010005/donnees-essentielles-marches12.09.2019.01-00.xml [1156/1156] -> "donnees-essentielles-marches12.09.2019.01-00.xml" [1]
+2020-02-17 09:32:14 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190911-010004/donnees-essentielles-marches11.09.2019.01-00.xml [1179/1179] -> "donnees-essentielles-marches11.09.2019.01-00.xml" [1]
+2020-02-17 09:32:14 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190909-190005/donnees-essentielles-marches10.09.2019.01-00.xml [1305/1305] -> "donnees-essentielles-marches10.09.2019.01-00.xml" [1]
+2020-02-17 09:32:14 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190909-010004/donnees-essentielles-marches09.09.2019.01-00.xml [1205/1205] -> "donnees-essentielles-marches09.09.2019.01-00.xml" [1]
+2020-02-17 09:32:15 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190907-190004/donnees-essentielles-marches08.09.2019.01-00.xml [1174/1174] -> "donnees-essentielles-marches08.09.2019.01-00.xml" [1]
+2020-02-17 09:32:15 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190906-190004/donnees-essentielles-marches07.09.2019.01-00.xml [1166/1166] -> "donnees-essentielles-marches07.09.2019.01-00.xml" [1]
+2020-02-17 09:32:15 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190906-010004/donnees-essentielles-marches06.09.2019.01-00.xml [1196/1196] -> "donnees-essentielles-marches06.09.2019.01-00.xml" [1]
+2020-02-17 09:32:16 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190904-190004/donnees-essentielles-marches05.09.2019.01-00.xml [1277/1277] -> "donnees-essentielles-marches05.09.2019.01-00.xml" [1]
+2020-02-17 09:32:16 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190904-010003/donnees-essentielles-marches04.09.2019.01-00.xml [1203/1203] -> "donnees-essentielles-marches04.09.2019.01-00.xml" [1]
+2020-02-17 09:32:17 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190902-190003/donnees-essentielles-marches03.09.2019.01-00.xml [1330/1330] -> "donnees-essentielles-marches03.09.2019.01-00.xml" [1]
+2020-02-17 09:32:17 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190901-190003/donnees-essentielles-marches02.09.2019.01-00.xml [1225/1225] -> "donnees-essentielles-marches02.09.2019.01-00.xml" [1]
+2020-02-17 09:32:18 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190901-010004/donnees-essentielles-marches01.09.2019.01-00.xml [1297/1297] -> "donnees-essentielles-marches01.09.2019.01-00.xml" [1]
+2020-02-17 09:32:18 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190831-010004/donnees-essentielles-marches31.08.2019.01-00.xml [1323/1323] -> "donnees-essentielles-marches31.08.2019.01-00.xml" [1]
+2020-02-17 09:32:18 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190830-010003/donnees-essentielles-marches30.08.2019.01-00.xml [1279/1279] -> "donnees-essentielles-marches30.08.2019.01-00.xml" [1]
+2020-02-17 09:32:19 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190829-010005/donnees-essentielles-marches29.08.2019.01-00.xml [1117/1117] -> "donnees-essentielles-marches29.08.2019.01-00.xml" [1]
+2020-02-17 09:32:19 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190827-190003/donnees-essentielles-marches28.08.2019.01-00.xml [1142/1142] -> "donnees-essentielles-marches28.08.2019.01-00.xml" [1]
+2020-02-17 09:32:19 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190827-010004/donnees-essentielles-marches27.08.2019.01-00.xml [1106/1106] -> "donnees-essentielles-marches27.08.2019.01-00.xml" [1]
+2020-02-17 09:32:20 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190826-010004/donnees-essentielles-marches26.08.2019.01-00.xml [1094/1094] -> "donnees-essentielles-marches26.08.2019.01-00.xml" [1]
+2020-02-17 09:32:20 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190825-010004/donnees-essentielles-marches25.08.2019.01-00.xml [1088/1088] -> "donnees-essentielles-marches25.08.2019.01-00.xml" [1]
+2020-02-17 09:32:21 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190824-010004/donnees-essentielles-marches24.08.2019.01-00.xml [1009/1009] -> "donnees-essentielles-marches24.08.2019.01-00.xml" [1]
+2020-02-17 09:32:21 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190822-190003/donnees-essentielles-marches23.08.2019.01-00.xml [1154/1154] -> "donnees-essentielles-marches23.08.2019.01-00.xml" [1]
+2020-02-17 09:32:21 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190822-010003/donnees-essentielles-marches22.08.2019.01-00.xml [1173/1173] -> "donnees-essentielles-marches22.08.2019.01-00.xml" [1]
+2020-02-17 09:32:22 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190821-010005/donnees-essentielles-marches21.08.2019.01-00.xml [1242/1242] -> "donnees-essentielles-marches21.08.2019.01-00.xml" [1]
+2020-02-17 09:32:22 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190820-010003/donnees-essentielles-marches20.08.2019.01-00.xml [1242/1242] -> "donnees-essentielles-marches20.08.2019.01-00.xml" [1]
+2020-02-17 09:32:23 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190819-010003/donnees-essentielles-marches19.08.2019.01-00.xml [1135/1135] -> "donnees-essentielles-marches19.08.2019.01-00.xml" [1]
+2020-02-17 09:32:23 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190818-010003/donnees-essentielles-marches18.08.2019.01-00.xml [1200/1200] -> "donnees-essentielles-marches18.08.2019.01-00.xml" [1]
+2020-02-17 09:32:23 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190817-010003/donnees-essentielles-marches17.08.2019.01-00.xml [1209/1209] -> "donnees-essentielles-marches17.08.2019.01-00.xml" [1]
+2020-02-17 09:32:24 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190816-010003/donnees-essentielles-marches16.08.2019.01-00.xml [1177/1177] -> "donnees-essentielles-marches16.08.2019.01-00.xml" [1]
+2020-02-17 09:32:24 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190815-010003/donnees-essentielles-marches15.08.2019.01-00.xml [1223/1223] -> "donnees-essentielles-marches15.08.2019.01-00.xml" [1]
+2020-02-17 09:32:25 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190813-190003/donnees-essentielles-marches14.08.2019.01-00.xml [1107/1107] -> "donnees-essentielles-marches14.08.2019.01-00.xml" [1]
+2020-02-17 09:32:25 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190812-190003/donnees-essentielles-marches13.08.2019.01-00.xml [1151/1151] -> "donnees-essentielles-marches13.08.2019.01-00.xml" [1]
+2020-02-17 09:32:25 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190812-010003/donnees-essentielles-marches12.08.2019.01-00.xml [1299/1299] -> "donnees-essentielles-marches12.08.2019.01-00.xml" [1]
+2020-02-17 09:32:26 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190810-190003/donnees-essentielles-marches11.08.2019.01-00.xml [1365/1365] -> "donnees-essentielles-marches11.08.2019.01-00.xml" [1]
+2020-02-17 09:32:26 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190810-010004/donnees-essentielles-marches10.08.2019.01-00.xml [1203/1203] -> "donnees-essentielles-marches10.08.2019.01-00.xml" [1]
+2020-02-17 09:32:27 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190808-190003/donnees-essentielles-marches09.08.2019.01-00.xml [1211/1211] -> "donnees-essentielles-marches09.08.2019.01-00.xml" [1]
+2020-02-17 09:32:27 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190807-190003/donnees-essentielles-marches08.08.2019.01-00.xml [1207/1207] -> "donnees-essentielles-marches08.08.2019.01-00.xml" [1]
+2020-02-17 09:32:27 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190806-190003/donnees-essentielles-marches07.08.2019.01-00.xml [1278/1278] -> "donnees-essentielles-marches07.08.2019.01-00.xml" [1]
+2020-02-17 09:32:28 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190805-190004/donnees-essentielles-marches06.08.2019.01-00.xml [1305/1305] -> "donnees-essentielles-marches06.08.2019.01-00.xml" [1]
+2020-02-17 09:32:28 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190805-010003/donnees-essentielles-marches05.08.2019.01-00.xml [1290/1290] -> "donnees-essentielles-marches05.08.2019.01-00.xml" [1]
+2020-02-17 09:32:29 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190804-010003/donnees-essentielles-marches04.08.2019.01-00.xml [1311/1311] -> "donnees-essentielles-marches04.08.2019.01-00.xml" [1]
+2020-02-17 09:32:29 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190803-010003/donnees-essentielles-marches03.08.2019.01-00.xml [1180/1180] -> "donnees-essentielles-marches03.08.2019.01-00.xml" [1]
+2020-02-17 09:32:29 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190801-190003/donnees-essentielles-marches02.08.2019.01-00.xml [1255/1255] -> "donnees-essentielles-marches02.08.2019.01-00.xml" [1]
+2020-02-17 09:32:30 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190801-010002/donnees-essentielles-marches01.08.2019.01-00.xml [1310/1310] -> "donnees-essentielles-marches01.08.2019.01-00.xml" [1]
+2020-02-17 09:32:30 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190731-010003/donnees-essentielles-marches31.07.2019.01-00.xml [1131/1131] -> "donnees-essentielles-marches31.07.2019.01-00.xml" [1]
+2020-02-17 09:32:31 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190729-190003/donnees-essentielles-marches30.07.2019.01-00.xml [1093/1093] -> "donnees-essentielles-marches30.07.2019.01-00.xml" [1]
+2020-02-17 09:32:31 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190729-010002/donnees-essentielles-marches29.07.2019.01-00.xml [1317/1317] -> "donnees-essentielles-marches29.07.2019.01-00.xml" [1]
+2020-02-17 09:32:31 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190727-190002/donnees-essentielles-marches28.07.2019.01-00.xml [1232/1232] -> "donnees-essentielles-marches28.07.2019.01-00.xml" [1]
+2020-02-17 09:32:32 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190726-190003/donnees-essentielles-marches27.07.2019.01-00.xml [1304/1304] -> "donnees-essentielles-marches27.07.2019.01-00.xml" [1]
+2020-02-17 09:32:32 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190725-190003/donnees-essentielles-marches26.07.2019.01-00.xml [1168/1168] -> "donnees-essentielles-marches26.07.2019.01-00.xml" [1]
+2020-02-17 09:32:33 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190725-010004/donnees-essentielles-marches25.07.2019.01-00.xml [1254/1254] -> "donnees-essentielles-marches25.07.2019.01-00.xml" [1]
+2020-02-17 09:32:33 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190724-010003/donnees-essentielles-marches24.07.2019.01-00.xml [1248/1248] -> "donnees-essentielles-marches24.07.2019.01-00.xml" [1]
+2020-02-17 09:32:33 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190723-010002/donnees-essentielles-marches23.07.2019.01-00.xml [1167/1167] -> "donnees-essentielles-marches23.07.2019.01-00.xml" [1]
+2020-02-17 09:32:34 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190722-010002/donnees-essentielles-marches22.07.2019.01-00.xml [1288/1288] -> "donnees-essentielles-marches22.07.2019.01-00.xml" [1]
+2020-02-17 09:32:34 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190720-190003/donnees-essentielles-marches21.07.2019.01-00.xml [1090/1090] -> "donnees-essentielles-marches21.07.2019.01-00.xml" [1]
+2020-02-17 09:32:35 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190720-010002/donnees-essentielles-marches20.07.2019.01-00.xml [1106/1106] -> "donnees-essentielles-marches20.07.2019.01-00.xml" [1]
+2020-02-17 09:32:35 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190719-010003/donnees-essentielles-marches19.07.2019.01-00.xml [1275/1275] -> "donnees-essentielles-marches19.07.2019.01-00.xml" [1]
+2020-02-17 09:32:35 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190717-190002/donnees-essentielles-marches18.07.2019.01-00.xml [1242/1242] -> "donnees-essentielles-marches18.07.2019.01-00.xml" [1]
+2020-02-17 09:32:36 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190717-010002/donnees-essentielles-marches17.07.2019.01-00.xml [1333/1333] -> "donnees-essentielles-marches17.07.2019.01-00.xml" [1]
+2020-02-17 09:32:36 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190716-010002/donnees-essentielles-marches16.07.2019.01-00.xml [1208/1208] -> "donnees-essentielles-marches16.07.2019.01-00.xml" [1]
+2020-02-17 09:32:36 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190714-190002/donnees-essentielles-marches15.07.2019.01-00.xml [1429/1429] -> "donnees-essentielles-marches15.07.2019.01-00.xml" [1]
+2020-02-17 09:32:37 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190714-010002/donnees-essentielles-marches14.07.2019.01-00.xml [1295/1295] -> "donnees-essentielles-marches14.07.2019.01-00.xml" [1]
+2020-02-17 09:32:37 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190713-010002/donnees-essentielles-marches13.07.2019.01-00.xml [1287/1287] -> "donnees-essentielles-marches13.07.2019.01-00.xml" [1]
+2020-02-17 09:32:38 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190711-190002/donnees-essentielles-marches12.07.2019.01-00.xml [1193/1193] -> "donnees-essentielles-marches12.07.2019.01-00.xml" [1]
+2020-02-17 09:32:38 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190711-010002/donnees-essentielles-marches11.07.2019.01-00.xml [1260/1260] -> "donnees-essentielles-marches11.07.2019.01-00.xml" [1]
+2020-02-17 09:32:38 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190710-010002/donnees-essentielles-marches10.07.2019.01-00.xml [1304/1304] -> "donnees-essentielles-marches10.07.2019.01-00.xml" [1]
+2020-02-17 09:32:39 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190709-010002/donnees-essentielles-marches09.07.2019.01-00.xml [1338/1338] -> "donnees-essentielles-marches09.07.2019.01-00.xml" [1]
+2020-02-17 09:32:39 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190707-190001/donnees-essentielles-marches08.07.2019.01-00.xml [1257/1257] -> "donnees-essentielles-marches08.07.2019.01-00.xml" [1]
+2020-02-17 09:32:40 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190707-010001/donnees-essentielles-marches07.07.2019.01-00.xml [1101/1101] -> "donnees-essentielles-marches07.07.2019.01-00.xml" [1]
+2020-02-17 09:32:40 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190706-010001/donnees-essentielles-marches06.07.2019.01-00.xml [1178/1178] -> "donnees-essentielles-marches06.07.2019.01-00.xml" [1]
+2020-02-17 09:32:40 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190704-190002/donnees-essentielles-marches05.07.2019.01-00.xml [1139/1139] -> "donnees-essentielles-marches05.07.2019.01-00.xml" [1]
+2020-02-17 09:32:41 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190704-010001/donnees-essentielles-marches04.07.2019.01-00.xml [1208/1208] -> "donnees-essentielles-marches04.07.2019.01-00.xml" [1]
+2020-02-17 09:32:41 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190703-010001/donnees-essentielles-marches03.07.2019.01-00.xml [1409/1409] -> "donnees-essentielles-marches03.07.2019.01-00.xml" [1]
+2020-02-17 09:32:41 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190702-010001/donnees-essentielles-marches02.07.2019.01-00.xml [1409/1409] -> "donnees-essentielles-marches02.07.2019.01-00.xml" [1]
+2020-02-17 09:32:42 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190701-010002/donnees-essentielles-marches01.07.2019.01-00.xml [1091/1091] -> "donnees-essentielles-marches01.07.2019.01-00.xml" [1]
+2020-02-17 09:32:42 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190630-010001/donnees-essentielles-marches30.06.2019.01-00.xml [1120/1120] -> "donnees-essentielles-marches30.06.2019.01-00.xml" [1]
+2020-02-17 09:32:43 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190629-010001/donnees-essentielles-marches29.06.2019.01-00.xml [1148/1148] -> "donnees-essentielles-marches29.06.2019.01-00.xml" [1]
+2020-02-17 09:32:43 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190627-190001/donnees-essentielles-marches28.06.2019.01-00.xml [1139/1139] -> "donnees-essentielles-marches28.06.2019.01-00.xml" [1]
+2020-02-17 09:32:43 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190627-010001/donnees-essentielles-marches27.06.2019.01-00.xml [1157/1157] -> "donnees-essentielles-marches27.06.2019.01-00.xml" [1]
+2020-02-17 09:32:44 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190626-010002/donnees-essentielles-marches26.06.2019.01-00.xml [1235/1235] -> "donnees-essentielles-marches26.06.2019.01-00.xml" [1]
+2020-02-17 09:32:44 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190624-190001/donnees-essentielles-marches25.06.2019.01-00.xml [1997/1997] -> "donnees-essentielles-marches25.06.2019.01-00.xml" [1]
+2020-02-17 09:32:45 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190624-010001/donnees-essentielles-marches24.06.2019.01-00.xml [2043/2043] -> "donnees-essentielles-marches24.06.2019.01-00.xml" [1]
+2020-02-17 09:32:45 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190623-010001/donnees-essentielles-marches23.06.2019.01-00.xml [1173/1173] -> "donnees-essentielles-marches23.06.2019.01-00.xml" [1]
+2020-02-17 09:32:45 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190621-190001/donnees-essentielles-marches22.06.2019.01-00.xml [1175/1175] -> "donnees-essentielles-marches22.06.2019.01-00.xml" [1]
+2020-02-17 09:32:46 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190621-010002/donnees-essentielles-marches21.06.2019.01-00.xml [1285/1285] -> "donnees-essentielles-marches21.06.2019.01-00.xml" [1]
+2020-02-17 09:32:46 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190620-010001/donnees-essentielles-marches20.06.2019.01-00.xml [1166/1166] -> "donnees-essentielles-marches20.06.2019.01-00.xml" [1]
+2020-02-17 09:32:47 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190618-190001/donnees-essentielles-marches19.06.2019.01-00.xml [1254/1254] -> "donnees-essentielles-marches19.06.2019.01-00.xml" [1]
+2020-02-17 09:32:47 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190618-010002/donnees-essentielles-marches18.06.2019.01-00.xml [1174/1174] -> "donnees-essentielles-marches18.06.2019.01-00.xml" [1]
+2020-02-17 09:32:47 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190617-010002/donnees-essentielles-marches17.06.2019.01-00.xml [1219/1219] -> "donnees-essentielles-marches17.06.2019.01-00.xml" [1]
+2020-02-17 09:32:48 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190616-010001/donnees-essentielles-marches16.06.2019.01-00.xml [1163/1163] -> "donnees-essentielles-marches16.06.2019.01-00.xml" [1]
+2020-02-17 09:32:48 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190615-010001/donnees-essentielles-marches15.06.2019.01-00.xml [1194/1194] -> "donnees-essentielles-marches15.06.2019.01-00.xml" [1]
+2020-02-17 09:32:48 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190614-010001/donnees-essentielles-marches14.06.2019.01-00.xml [1425/1425] -> "donnees-essentielles-marches14.06.2019.01-00.xml" [1]
+2020-02-17 09:32:49 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190613-010001/donnees-essentielles-marches13.06.2019.01-00.xml [1197/1197] -> "donnees-essentielles-marches13.06.2019.01-00.xml" [1]
+2020-02-17 09:32:49 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190612-010002/donnees-essentielles-marches12.06.2019.01-00.xml [1386/1386] -> "donnees-essentielles-marches12.06.2019.01-00.xml" [1]
+2020-02-17 09:32:50 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190609-190001/donnees-essentielles-marches10.06.2019.01-00.xml [1192/1192] -> "donnees-essentielles-marches10.06.2019.01-00.xml" [1]
+2020-02-17 09:32:50 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190609-010002/donnees-essentielles-marches09.06.2019.01-00.xml [1129/1129] -> "donnees-essentielles-marches09.06.2019.01-00.xml" [1]
+2020-02-17 09:32:50 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190608-010001/donnees-essentielles-marches08.06.2019.01-00.xml [1120/1120] -> "donnees-essentielles-marches08.06.2019.01-00.xml" [1]
+2020-02-17 09:32:51 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190607-010002/donnees-essentielles-marches07.06.2019.01-00.xml [1134/1134] -> "donnees-essentielles-marches07.06.2019.01-00.xml" [1]
+2020-02-17 09:32:51 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190606-010001/donnees-essentielles-marches06.06.2019.01-00.xml [1120/1120] -> "donnees-essentielles-marches06.06.2019.01-00.xml" [1]
+2020-02-17 09:32:52 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190604-190001/donnees-essentielles-marches05.06.2019.01-00.xml [1130/1130] -> "donnees-essentielles-marches05.06.2019.01-00.xml" [1]
+2020-02-17 09:32:52 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190602-190001/donnees-essentielles-marches03.06.2019.01-00.xml [1121/1121] -> "donnees-essentielles-marches03.06.2019.01-00.xml" [1]
+2020-02-17 09:32:52 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190602-010001/donnees-essentielles-marches02.06.2019.01-00.xml [1122/1122] -> "donnees-essentielles-marches02.06.2019.01-00.xml" [1]
+2020-02-17 09:32:53 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190531-190001/donnees-essentielles-marches01.06.2019.01-00.xml [1177/1177] -> "donnees-essentielles-marches01.06.2019.01-00.xml" [1]
+2020-02-17 09:32:53 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190530-190001/donnees-essentielles-marches31.05.2019.01-00.xml [1143/1143] -> "donnees-essentielles-marches31.05.2019.01-00.xml" [1]
+2020-02-17 09:32:54 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190530-010001/donnees-essentielles-marches30.05.2019.01-00.xml [1178/1178] -> "donnees-essentielles-marches30.05.2019.01-00.xml" [1]
+2020-02-17 09:32:54 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190529-010001/donnees-essentielles-marches29.05.2019.01-00.xml [1133/1133] -> "donnees-essentielles-marches29.05.2019.01-00.xml" [1]
+2020-02-17 09:32:54 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190528-010001/donnees-essentielles-marches28.05.2019.01-00.xml [1190/1190] -> "donnees-essentielles-marches28.05.2019.01-00.xml" [1]
+2020-02-17 09:32:55 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190527-010001/donnees-essentielles-marches27.05.2019.01-00.xml [1187/1187] -> "donnees-essentielles-marches27.05.2019.01-00.xml" [1]
+2020-02-17 09:32:55 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190526-010001/donnees-essentielles-marches26.05.2019.01-00.xml [1084/1084] -> "donnees-essentielles-marches26.05.2019.01-00.xml" [1]
+2020-02-17 09:32:55 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190525-010001/donnees-essentielles-marches25.05.2019.01-00.xml [1130/1130] -> "donnees-essentielles-marches25.05.2019.01-00.xml" [1]
+2020-02-17 09:32:56 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190524-010001/donnees-essentielles-marches24.05.2019.01-00.xml [1145/1145] -> "donnees-essentielles-marches24.05.2019.01-00.xml" [1]
+2020-02-17 09:32:56 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190523-010001/donnees-essentielles-marches23.05.2019.01-00.xml [1150/1150] -> "donnees-essentielles-marches23.05.2019.01-00.xml" [1]
+2020-02-17 09:32:57 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190522-010001/donnees-essentielles-marches22.05.2019.01-00.xml [2117/2117] -> "donnees-essentielles-marches22.05.2019.01-00.xml" [1]
+2020-02-17 09:32:57 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190521-010001/donnees-essentielles-marches21.05.2019.01-00.xml [1194/1194] -> "donnees-essentielles-marches21.05.2019.01-00.xml" [1]
+2020-02-17 09:32:57 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190520-010001/donnees-essentielles-marches20.05.2019.01-00.xml [1193/1193] -> "donnees-essentielles-marches20.05.2019.01-00.xml" [1]
+2020-02-17 09:32:58 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190519-010001/donnees-essentielles-marches19.05.2019.01-00.xml [1349/1349] -> "donnees-essentielles-marches19.05.2019.01-00.xml" [1]
+2020-02-17 09:32:58 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190518-010001/donnees-essentielles-marches18.05.2019.01-00.xml [1209/1209] -> "donnees-essentielles-marches18.05.2019.01-00.xml" [1]
+2020-02-17 09:32:59 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190517-010001/donnees-essentielles-marches17.05.2019.01-00.xml [1171/1171] -> "donnees-essentielles-marches17.05.2019.01-00.xml" [1]
+2020-02-17 09:32:59 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190516-010002/donnees-essentielles-marches16.05.2019.01-00.xml [1269/1269] -> "donnees-essentielles-marches16.05.2019.01-00.xml" [1]
+2020-02-17 09:32:59 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190515-010001/donnees-essentielles-marches15.05.2019.01-00.xml [1432/1432] -> "donnees-essentielles-marches15.05.2019.01-00.xml" [1]
+2020-02-17 09:33:00 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190514-010001/donnees-essentielles-marches14.05.2019.01-00.xml [1147/1147] -> "donnees-essentielles-marches14.05.2019.01-00.xml" [1]
+2020-02-17 09:33:00 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190513-010001/donnees-essentielles-marches13.05.2019.01-00.xml [1256/1256] -> "donnees-essentielles-marches13.05.2019.01-00.xml" [1]
+2020-02-17 09:33:01 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190512-010001/donnees-essentielles-marches12.05.2019.01-00.xml [1483/1483] -> "donnees-essentielles-marches12.05.2019.01-00.xml" [1]
+2020-02-17 09:33:01 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190511-010001/donnees-essentielles-marches11.05.2019.01-00.xml [1211/1211] -> "donnees-essentielles-marches11.05.2019.01-00.xml" [1]
+2020-02-17 09:33:01 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190510-010001/donnees-essentielles-marches10.05.2019.01-00.xml [1202/1202] -> "donnees-essentielles-marches10.05.2019.01-00.xml" [1]
+2020-02-17 09:33:02 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190509-010003/donnees-essentielles-marches09.05.2019.01-00.xml [1150/1150] -> "donnees-essentielles-marches09.05.2019.01-00.xml" [1]
+2020-02-17 09:33:02 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190508-010001/donnees-essentielles-marches08.05.2019.01-00.xml [1200/1200] -> "donnees-essentielles-marches08.05.2019.01-00.xml" [1]
+2020-02-17 09:33:02 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190507-010002/donnees-essentielles-marches07.05.2019.01-00.xml [1193/1193] -> "donnees-essentielles-marches07.05.2019.01-00.xml" [1]
+2020-02-17 09:33:03 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190506-010007/donnees-essentielles-marches06.05.2019.01-00.xml [1223/1223] -> "donnees-essentielles-marches06.05.2019.01-00.xml" [1]
+2020-02-17 09:33:03 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190505-010002/donnees-essentielles-marches05.05.2019.01-00.xml [1223/1223] -> "donnees-essentielles-marches05.05.2019.01-00.xml" [1]
+2020-02-17 09:33:04 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190504-010003/donnees-essentielles-marches04.05.2019.01-00.xml [1223/1223] -> "donnees-essentielles-marches04.05.2019.01-00.xml" [1]
+2020-02-17 09:33:04 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190503-010002/donnees-essentielles-marches03.05.2019.01-00.xml [1173/1173] -> "donnees-essentielles-marches03.05.2019.01-00.xml" [1]
+2020-02-17 09:33:04 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190502-010002/donnees-essentielles-marches02.05.2019.01-00.xml [1004/1004] -> "donnees-essentielles-marches02.05.2019.01-00.xml" [1]
+2020-02-17 09:33:05 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018-7/20190501-010002/donnees-essentielles-marches01.05.2019.01-00.xml [1004/1004] -> "donnees-essentielles-marches01.05.2019.01-00.xml" [1]
+2020-02-17 09:33:05 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018/20200217-010001/donnees-essentielles-marches17.02.2020.01-00.xml [3966/3966] -> "donnees-essentielles-marches17.02.2020.01-00.xml" [1]
+2020-02-17 09:33:07 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018/20200215-010722/donnees-essentielles-marches15.02.2020.01-07.xml [473786/473786] -> "donnees-essentielles-marches15.02.2020.01-07.xml" [1]
+2020-02-17 09:33:07 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018/20200214-010628/donnees-essentielles-marches14.02.2020.01-06.xml [200238/200238] -> "donnees-essentielles-marches14.02.2020.01-06.xml" [1]
+2020-02-17 09:33:11 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018/20200213-011808/donnees-essentielles-marches13.02.2020.01-18.xml [2753934/2753934] -> "donnees-essentielles-marches13.02.2020.01-18.xml" [1]
+2020-02-17 09:33:12 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018/20200212-010631/donnees-essentielles-marches12.02.2020.01-06.xml [182922/182922] -> "donnees-essentielles-marches12.02.2020.01-06.xml" [1]
+2020-02-17 09:33:13 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018/20200211-011542/donnees-essentielles-marches11.02.2020.01-15.xml [881264/881264] -> "donnees-essentielles-marches11.02.2020.01-15.xml" [1]
+2020-02-17 09:33:13 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018/20200210-010004/donnees-essentielles-marches10.02.2020.01-00.xml [6497/6497] -> "donnees-essentielles-marches10.02.2020.01-00.xml" [1]
+2020-02-17 09:33:14 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018/20200208-010126/donnees-essentielles-marches08.02.2020.01-01.xml [190156/190156] -> "donnees-essentielles-marches08.02.2020.01-01.xml" [1]
+2020-02-17 09:33:15 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018/20200207-011044/donnees-essentielles-marches07.02.2020.01-10.xml [241769/241769] -> "donnees-essentielles-marches07.02.2020.01-10.xml" [1]
+2020-02-17 09:33:16 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018/20200206-011105/donnees-essentielles-marches06.02.2020.01-11.xml [346806/346806] -> "donnees-essentielles-marches06.02.2020.01-11.xml" [1]
+2020-02-17 09:33:17 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018/20200205-010925/donnees-essentielles-marches05.02.2020.01-09.xml [298001/298001] -> "donnees-essentielles-marches05.02.2020.01-09.xml" [1]
+2020-02-17 09:33:18 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018/20200204-010500/donnees-essentielles-marches04.02.2020.01-04.xml [306891/306891] -> "donnees-essentielles-marches04.02.2020.01-04.xml" [1]
+2020-02-17 09:33:19 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018/20200201-011001/donnees-essentielles-marches01.02.2020.01-10.xml [329978/329978] -> "donnees-essentielles-marches01.02.2020.01-10.xml" [1]
+2020-02-17 09:33:20 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018/20200131-010855/donnees-essentielles-marches31.01.2020.01-08.xml [330251/330251] -> "donnees-essentielles-marches31.01.2020.01-08.xml" [1]
+2020-02-17 09:33:22 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018/20200130-011715/donnees-essentielles-marches30.01.2020.01-17.xml [1172287/1172287] -> "donnees-essentielles-marches30.01.2020.01-17.xml" [1]
+2020-02-17 09:33:23 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018/20200129-011614/donnees-essentielles-marches29.01.2020.01-16.xml [648676/648676] -> "donnees-essentielles-marches29.01.2020.01-16.xml" [1]
+2020-02-17 09:33:24 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018/20200128-012859/donnees-essentielles-marches28.01.2020.01-28.xml [970697/970697] -> "donnees-essentielles-marches28.01.2020.01-28.xml" [1]
+2020-02-17 09:33:26 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018/20200125-012404/donnees-essentielles-marches25.01.2020.01-24.xml [2088372/2088372] -> "donnees-essentielles-marches25.01.2020.01-24.xml" [1]
+2020-02-17 09:33:27 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018/20200124-011300/donnees-essentielles-marches24.01.2020.01-12.xml [281364/281364] -> "donnees-essentielles-marches24.01.2020.01-12.xml" [1]
+2020-02-17 09:33:30 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018/20200123-011734/donnees-essentielles-marches23.01.2020.01-17.xml [1520771/1520771] -> "donnees-essentielles-marches23.01.2020.01-17.xml" [1]
+2020-02-17 09:33:32 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018/20200122-011515/donnees-essentielles-marches22.01.2020.01-15.xml [1285527/1285527] -> "donnees-essentielles-marches22.01.2020.01-15.xml" [1]
+2020-02-17 09:33:33 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018/20200121-010346/donnees-essentielles-marches21.01.2020.01-03.xml [288991/288991] -> "donnees-essentielles-marches21.01.2020.01-03.xml" [1]
+2020-02-17 09:33:34 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018/20200118-010114/donnees-essentielles-marches18.01.2020.01-01.xml [245998/245998] -> "donnees-essentielles-marches18.01.2020.01-01.xml" [1]
+2020-02-17 09:33:35 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018/20200117-010352/donnees-essentielles-marches17.01.2020.01-03.xml [465370/465370] -> "donnees-essentielles-marches17.01.2020.01-03.xml" [1]
+2020-02-17 09:33:36 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018/20200116-010237/donnees-essentielles-marches16.01.2020.01-02.xml [143582/143582] -> "donnees-essentielles-marches16.01.2020.01-02.xml" [1]
+2020-02-17 09:33:36 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018/20200115-010411/donnees-essentielles-marches15.01.2020.01-04.xml [314017/314017] -> "donnees-essentielles-marches15.01.2020.01-04.xml" [1]
+2020-02-17 09:33:37 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018/20200114-010054/donnees-essentielles-marches14.01.2020.01-00.xml [113626/113626] -> "donnees-essentielles-marches14.01.2020.01-00.xml" [1]
+2020-02-17 09:33:40 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018/20200111-011843/donnees-essentielles-marches11.01.2020.01-18.xml [3000104/3000104] -> "donnees-essentielles-marches11.01.2020.01-18.xml" [1]
+2020-02-17 09:33:41 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018/20200110-011659/donnees-essentielles-marches10.01.2020.01-16.xml [1910589/1910589] -> "donnees-essentielles-marches10.01.2020.01-16.xml" [1]
+2020-02-17 09:33:42 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018/20200109-010336/donnees-essentielles-marches09.01.2020.01-03.xml [209607/209607] -> "donnees-essentielles-marches09.01.2020.01-03.xml" [1]
+2020-02-17 09:33:43 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018/20200108-010608/donnees-essentielles-marches08.01.2020.01-06.xml [193688/193688] -> "donnees-essentielles-marches08.01.2020.01-06.xml" [1]
+2020-02-17 09:33:44 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018/20200107-010425/donnees-essentielles-marches07.01.2020.01-04.xml [396849/396849] -> "donnees-essentielles-marches07.01.2020.01-04.xml" [1]
+2020-02-17 09:33:45 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018/20200104-010648/donnees-essentielles-marches04.01.2020.01-06.xml [433917/433917] -> "donnees-essentielles-marches04.01.2020.01-06.xml" [1]
+2020-02-17 09:33:46 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018/20200103-010135/donnees-essentielles-marches03.01.2020.01-01.xml [346937/346937] -> "donnees-essentielles-marches03.01.2020.01-01.xml" [1]
+2020-02-17 09:33:47 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018/20200101-010219/donnees-essentielles-marches01.01.2020.01-02.xml [112085/112085] -> "donnees-essentielles-marches01.01.2020.01-02.xml" [1]
+2020-02-17 09:33:47 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018/20191231-010148/donnees-essentielles-marches31.12.2019.01-01.xml [108099/108099] -> "donnees-essentielles-marches31.12.2019.01-01.xml" [1]
+2020-02-17 09:33:49 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018/20191228-011151/donnees-essentielles-marches28.12.2019.01-11.xml [618659/618659] -> "donnees-essentielles-marches28.12.2019.01-11.xml" [1]
+2020-02-17 09:33:49 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018/20191227-010212/donnees-essentielles-marches27.12.2019.01-02.xml [152389/152389] -> "donnees-essentielles-marches27.12.2019.01-02.xml" [1]
+2020-02-17 09:33:50 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018/20191225-010122/donnees-essentielles-marches25.12.2019.01-01.xml [69611/69611] -> "donnees-essentielles-marches25.12.2019.01-01.xml" [1]
+2020-02-17 09:33:51 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018/20191224-010450/donnees-essentielles-marches24.12.2019.01-04.xml [214651/214651] -> "donnees-essentielles-marches24.12.2019.01-04.xml" [1]
+2020-02-17 09:33:51 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018/20191223-010000/donnees-essentielles-marches23.12.2019.01-00.xml [1272/1272] -> "donnees-essentielles-marches23.12.2019.01-00.xml" [1]
+2020-02-17 09:33:52 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018/20191221-010410/donnees-essentielles-marches21.12.2019.01-04.xml [221379/221379] -> "donnees-essentielles-marches21.12.2019.01-04.xml" [1]
+2020-02-17 09:33:53 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018/20191220-010439/donnees-essentielles-marches20.12.2019.01-04.xml [161767/161767] -> "donnees-essentielles-marches20.12.2019.01-04.xml" [1]
+2020-02-17 09:33:53 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018/20191218-010013/donnees-essentielles-marches18.12.2019.01-00.xml [1124/1124] -> "donnees-essentielles-marches18.12.2019.01-00.xml" [1]
+2020-02-17 09:33:53 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018/20191216-010007/donnees-essentielles-marches16.12.2019.01-00.xml [1242/1242] -> "donnees-essentielles-marches16.12.2019.01-00.xml" [1]
+2020-02-17 09:33:54 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018/20191215-010004/donnees-essentielles-marches15.12.2019.01-00.xml [1328/1328] -> "donnees-essentielles-marches15.12.2019.01-00.xml" [1]
+2020-02-17 09:33:54 URL:https://static.data.gouv.fr/resources/aife-de-13001977100018/20191214-010008/donnees-essentielles-marches14.12.2019.01-00.xml [1282/1282] -> "donnees-essentielles-marches14.12.2019.01-00.xml" [1]
+
+397 fichiers téléchargés.
+Conversion (data.gouv.fr_aife)...
+donnees-essentielles-marches01.01.2020.01-02.xml...
+donnees-essentielles-marches01.02.2019.01-00.xml...
+donnees-essentielles-marches01.02.2020.01-10.xml...
+donnees-essentielles-marches01.03.2019.01-00.xml...
+donnees-essentielles-marches01.05.2019.01-00.xml...
+donnees-essentielles-marches01.06.2019.01-00.xml...
+donnees-essentielles-marches01.07.2019.01-00.xml...
+donnees-essentielles-marches01.08.2019.01-00.xml...
+donnees-essentielles-marches01.09.2019.01-00.xml...
+donnees-essentielles-marches01.10.2019.01-00.xml...
+donnees-essentielles-marches01.11.2019.01-00.xml...
+donnees-essentielles-marches01.12.2019.01-00.xml...
+donnees-essentielles-marches02.02.2019.01-00.xml...
+donnees-essentielles-marches02.03.2019.01-00.xml...
+donnees-essentielles-marches02.04.2019.01-00.xml...
+donnees-essentielles-marches02.05.2019.01-00.xml...
+donnees-essentielles-marches02.06.2019.01-00.xml...
+donnees-essentielles-marches02.07.2019.01-00.xml...
+donnees-essentielles-marches02.08.2019.01-00.xml...
+donnees-essentielles-marches02.09.2019.01-00.xml...
+donnees-essentielles-marches02.10.2019.01-00.xml...
+donnees-essentielles-marches02.11.2019.01-00.xml...
+donnees-essentielles-marches02.12.2019.01-00.xml...
+donnees-essentielles-marches03.01.2019.01-00.xml...
+donnees-essentielles-marches03.01.2020.01-01.xml...
+donnees-essentielles-marches03.04.2019.01-00.xml...
+donnees-essentielles-marches03.05.2019.01-00.xml...
+donnees-essentielles-marches03.06.2019.01-00.xml...
+donnees-essentielles-marches03.07.2019.01-00.xml...
+donnees-essentielles-marches03.08.2019.01-00.xml...
+donnees-essentielles-marches03.09.2019.01-00.xml...
+donnees-essentielles-marches03.10.2019.01-00.xml...
+donnees-essentielles-marches03.11.2019.01-00.xml...
+donnees-essentielles-marches03.12.2019.01-00.xml...
+donnees-essentielles-marches04.01.2019.01-00.xml...
+donnees-essentielles-marches04.01.2020.01-06.xml...
+donnees-essentielles-marches04.02.2020.01-04.xml...
+donnees-essentielles-marches04.04.2019.01-00.xml...
+donnees-essentielles-marches04.05.2019.01-00.xml...
+donnees-essentielles-marches04.07.2019.01-00.xml...
+donnees-essentielles-marches04.08.2019.01-00.xml...
+donnees-essentielles-marches04.09.2019.01-00.xml...
+donnees-essentielles-marches04.10.2019.01-00.xml...
+donnees-essentielles-marches04.11.2019.01-00.xml...
+donnees-essentielles-marches04.12.2019.01-00.xml...
+donnees-essentielles-marches05.01.2019.01-00.xml...
+donnees-essentielles-marches05.02.2019.01-00.xml...
+donnees-essentielles-marches05.02.2020.01-09.xml...
+donnees-essentielles-marches05.03.2019.01-00.xml...
+donnees-essentielles-marches05.04.2019.01-00.xml...
+donnees-essentielles-marches05.05.2019.01-00.xml...
+donnees-essentielles-marches05.06.2019.01-00.xml...
+donnees-essentielles-marches05.07.2019.01-00.xml...
+donnees-essentielles-marches05.08.2019.01-00.xml...
+donnees-essentielles-marches05.09.2019.01-00.xml...
+donnees-essentielles-marches05.10.2019.01-00.xml...
+donnees-essentielles-marches05.11.2019.01-00.xml...
+donnees-essentielles-marches05.12.2019.01-00.xml...
+donnees-essentielles-marches06.02.2019.01-00.xml...
+donnees-essentielles-marches06.02.2020.01-11.xml...
+donnees-essentielles-marches06.03.2019.01-00.xml...
+donnees-essentielles-marches06.04.2019.01-00.xml...
+donnees-essentielles-marches06.05.2019.01-00.xml...
+donnees-essentielles-marches06.06.2019.01-00.xml...
+donnees-essentielles-marches06.07.2019.01-00.xml...
+donnees-essentielles-marches06.08.2019.01-00.xml...
+donnees-essentielles-marches06.09.2019.01-00.xml...
+donnees-essentielles-marches06.11.2019.01-00.xml...
+donnees-essentielles-marches06.12.2019.01-00.xml...
+donnees-essentielles-marches07.01.2020.01-04.xml...
+donnees-essentielles-marches07.02.2019.01-00.xml...
+donnees-essentielles-marches07.02.2020.01-10.xml...
+donnees-essentielles-marches07.03.2019.01-00.xml...
+donnees-essentielles-marches07.03.2019.01-05.xml...
+donnees-essentielles-marches07.05.2019.01-00.xml...
+donnees-essentielles-marches07.06.2019.01-00.xml...
+donnees-essentielles-marches07.07.2019.01-00.xml...
+donnees-essentielles-marches07.08.2019.01-00.xml...
+donnees-essentielles-marches07.09.2019.01-00.xml...
+donnees-essentielles-marches07.10.2019.01-00.xml...
+donnees-essentielles-marches07.11.2019.01-00.xml...
+donnees-essentielles-marches07.12.2019.01-00.xml...
+donnees-essentielles-marches08.01.2019.01-00.xml...
+donnees-essentielles-marches08.01.2020.01-06.xml...
+donnees-essentielles-marches08.02.2019.01-00.xml...
+donnees-essentielles-marches08.02.2020.01-01.xml...
+donnees-essentielles-marches08.03.2019.01-00.xml...
+donnees-essentielles-marches08.03.2019.01-01.xml...
+donnees-essentielles-marches08.05.2019.01-00.xml...
+donnees-essentielles-marches08.06.2019.01-00.xml...
+donnees-essentielles-marches08.07.2019.01-00.xml...
+donnees-essentielles-marches08.08.2019.01-00.xml...
+donnees-essentielles-marches08.09.2019.01-00.xml...
+donnees-essentielles-marches08.10.2019.01-00.xml...
+donnees-essentielles-marches08.11.2019.01-00.xml...
+donnees-essentielles-marches08.12.2019.01-00.xml...
+donnees-essentielles-marches09.01.2019.01-00.xml...
+donnees-essentielles-marches09.01.2020.01-03.xml...
+donnees-essentielles-marches09.02.2019.01-00.xml...
+donnees-essentielles-marches09.03.2019.01-00.xml...
+donnees-essentielles-marches09.04.2019.01-00.xml...
+donnees-essentielles-marches09.05.2019.01-00.xml...
+donnees-essentielles-marches09.06.2019.01-00.xml...
+donnees-essentielles-marches09.07.2019.01-00.xml...
+donnees-essentielles-marches09.08.2019.01-00.xml...
+donnees-essentielles-marches09.09.2019.01-00.xml...
+donnees-essentielles-marches09.10.2019.01-00.xml...
+donnees-essentielles-marches09.11.2019.01-00.xml...
+donnees-essentielles-marches09.12.2019.01-00.xml...
+donnees-essentielles-marches10.01.2019.01-00.xml...
+donnees-essentielles-marches10.01.2020.01-16.xml...
+donnees-essentielles-marches10.02.2020.01-00.xml...
+donnees-essentielles-marches10.04.2019.01-00.xml...
+donnees-essentielles-marches10.04.2019.01-02.xml...
+donnees-essentielles-marches10.05.2019.01-00.xml...
+donnees-essentielles-marches10.06.2019.01-00.xml...
+donnees-essentielles-marches10.07.2019.01-00.xml...
+donnees-essentielles-marches10.08.2019.01-00.xml...
+donnees-essentielles-marches10.09.2019.01-00.xml...
+donnees-essentielles-marches10.10.2019.01-00.xml...
+donnees-essentielles-marches10.11.2019.01-00.xml...
+donnees-essentielles-marches10.12.2019.01-00.xml...
+donnees-essentielles-marches11.01.2019.01-00.xml...
+donnees-essentielles-marches11.01.2020.01-18.xml...
+donnees-essentielles-marches11.02.2020.01-15.xml...
+donnees-essentielles-marches11.04.2019.01-00.xml...
+donnees-essentielles-marches11.05.2019.01-00.xml...
+donnees-essentielles-marches11.07.2019.01-00.xml...
+donnees-essentielles-marches11.08.2019.01-00.xml...
+donnees-essentielles-marches11.09.2019.01-00.xml...
+donnees-essentielles-marches11.10.2019.01-00.xml...
+donnees-essentielles-marches11.11.2019.01-00.xml...
+donnees-essentielles-marches11.12.2019.01-39.xml...
+donnees-essentielles-marches12.02.2019.01-00.xml...
+donnees-essentielles-marches12.02.2020.01-06.xml...
+donnees-essentielles-marches12.03.2019.01-00.xml...
+donnees-essentielles-marches12.04.2019.01-00.xml...
+donnees-essentielles-marches12.05.2019.01-00.xml...
+donnees-essentielles-marches12.06.2019.01-00.xml...
+donnees-essentielles-marches12.07.2019.01-00.xml...
+donnees-essentielles-marches12.08.2019.01-00.xml...
+donnees-essentielles-marches12.09.2019.01-00.xml...
+donnees-essentielles-marches12.10.2019.01-00.xml...
+donnees-essentielles-marches12.11.2019.01-00.xml...
+donnees-essentielles-marches12.12.2019.01-00.xml...
+donnees-essentielles-marches13.01.2019.01-00.xml...
+donnees-essentielles-marches13.02.2019.01-00.xml...
+donnees-essentielles-marches13.02.2020.01-18.xml...
+donnees-essentielles-marches13.03.2019.01-00.xml...
+donnees-essentielles-marches13.04.2019.01-00.xml...
+donnees-essentielles-marches13.05.2019.01-00.xml...
+donnees-essentielles-marches13.06.2019.01-00.xml...
+donnees-essentielles-marches13.07.2019.01-00.xml...
+donnees-essentielles-marches13.08.2019.01-00.xml...
+donnees-essentielles-marches13.09.2019.01-00.xml...
+donnees-essentielles-marches13.10.2019.01-00.xml...
+donnees-essentielles-marches13.11.2019.01-00.xml...
+donnees-essentielles-marches14.01.2020.01-00.xml...
+donnees-essentielles-marches14.02.2019.01-00.xml...
+donnees-essentielles-marches14.02.2020.01-06.xml...
+donnees-essentielles-marches14.03.2019.01-00.xml...
+donnees-essentielles-marches14.05.2019.01-00.xml...
+donnees-essentielles-marches14.06.2019.01-00.xml...
+donnees-essentielles-marches14.07.2019.01-00.xml...
+donnees-essentielles-marches14.08.2019.01-00.xml...
+donnees-essentielles-marches14.09.2019.01-00.xml...
+donnees-essentielles-marches14.11.2019.01-00.xml...
+donnees-essentielles-marches14.12.2019.01-00.xml...
+donnees-essentielles-marches15.01.2019.01-00.xml...
+donnees-essentielles-marches15.01.2020.01-04.xml...
+donnees-essentielles-marches15.02.2019.01-00.xml...
+donnees-essentielles-marches15.02.2020.01-07.xml...
+donnees-essentielles-marches15.03.2019.01-00.xml...
+donnees-essentielles-marches15.05.2019.01-00.xml...
+donnees-essentielles-marches15.06.2019.01-00.xml...
+donnees-essentielles-marches15.07.2019.01-00.xml...
+donnees-essentielles-marches15.08.2019.01-00.xml...
+donnees-essentielles-marches15.09.2019.01-00.xml...
+donnees-essentielles-marches15.11.2019.01-00.xml...
+donnees-essentielles-marches15.12.2019.01-00.xml...
+donnees-essentielles-marches16.01.2019.01-00.xml...
+donnees-essentielles-marches16.01.2020.01-02.xml...
+donnees-essentielles-marches16.02.2019.01-00.xml...
+donnees-essentielles-marches16.03.2019.01-00.xml...
+donnees-essentielles-marches16.04.2019.01-00.xml...
+donnees-essentielles-marches16.05.2019.01-00.xml...
+donnees-essentielles-marches16.06.2019.01-00.xml...
+donnees-essentielles-marches16.07.2019.01-00.xml...
+donnees-essentielles-marches16.08.2019.01-00.xml...
+donnees-essentielles-marches16.09.2019.01-00.xml...
+donnees-essentielles-marches16.10.2019.01-00.xml...
+donnees-essentielles-marches16.12.2019.01-00.xml...
+donnees-essentielles-marches17.01.2019.01-00.xml...
+donnees-essentielles-marches17.01.2020.01-03.xml...
+donnees-essentielles-marches17.02.2020.01-00.xml...
+donnees-essentielles-marches17.04.2019.01-00.xml...
+donnees-essentielles-marches17.05.2019.01-00.xml...
+donnees-essentielles-marches17.06.2019.01-00.xml...
+donnees-essentielles-marches17.07.2019.01-00.xml...
+donnees-essentielles-marches17.08.2019.01-00.xml...
+donnees-essentielles-marches17.09.2019.01-00.xml...
+donnees-essentielles-marches17.10.2019.01-00.xml...
+donnees-essentielles-marches17.11.2019.01-00.xml...
+donnees-essentielles-marches18.01.2020.01-01.xml...
+donnees-essentielles-marches18.04.2019.01-00.xml...
+donnees-essentielles-marches18.05.2019.01-00.xml...
+donnees-essentielles-marches18.06.2019.01-00.xml...
+donnees-essentielles-marches18.07.2019.01-00.xml...
+donnees-essentielles-marches18.08.2019.01-00.xml...
+donnees-essentielles-marches18.09.2019.01-00.xml...
+donnees-essentielles-marches18.10.2019.01-00.xml...
+donnees-essentielles-marches18.11.2019.01-00.xml...
+donnees-essentielles-marches18.12.2019.01-00.xml...
+donnees-essentielles-marches19.02.2019.01-00.xml...
+donnees-essentielles-marches19.03.2019.01-00.xml...
+donnees-essentielles-marches19.04.2019.01-00.xml...
+donnees-essentielles-marches19.05.2019.01-00.xml...
+donnees-essentielles-marches19.06.2019.01-00.xml...
+donnees-essentielles-marches19.07.2019.01-00.xml...
+donnees-essentielles-marches19.08.2019.01-00.xml...
+donnees-essentielles-marches19.09.2019.01-00.xml...
+donnees-essentielles-marches19.10.2019.01-00.xml...
+donnees-essentielles-marches19.11.2019.01-00.xml...
+donnees-essentielles-marches20.02.2019.01-00.xml...
+donnees-essentielles-marches20.03.2019.01-00.xml...
+donnees-essentielles-marches20.04.2019.01-00.xml...
+donnees-essentielles-marches20.05.2019.01-00.xml...
+donnees-essentielles-marches20.06.2019.01-00.xml...
+donnees-essentielles-marches20.07.2019.01-00.xml...
+donnees-essentielles-marches20.08.2019.01-00.xml...
+donnees-essentielles-marches20.09.2019.01-00.xml...
+donnees-essentielles-marches20.10.2019.01-00.xml...
+donnees-essentielles-marches20.11.2019.01-00.xml...
+donnees-essentielles-marches20.12.2019.01-04.xml...
+donnees-essentielles-marches21.01.2019.01-00.xml...
+donnees-essentielles-marches21.01.2020.01-03.xml...
+donnees-essentielles-marches21.02.2019.01-00.xml...
+donnees-essentielles-marches21.03.2019.01-00.xml...
+donnees-essentielles-marches21.05.2019.01-00.xml...
+donnees-essentielles-marches21.06.2019.01-00.xml...
+donnees-essentielles-marches21.07.2019.01-00.xml...
+donnees-essentielles-marches21.08.2019.01-00.xml...
+donnees-essentielles-marches21.09.2019.01-00.xml...
+donnees-essentielles-marches21.10.2019.01-00.xml...
+donnees-essentielles-marches21.11.2019.01-00.xml...
+donnees-essentielles-marches21.12.2019.01-04.xml...
+donnees-essentielles-marches22.01.2019.01-00.xml...
+donnees-essentielles-marches22.01.2020.01-15.xml...
+donnees-essentielles-marches22.02.2019.01-00.xml...
+donnees-essentielles-marches22.05.2019.01-00.xml...
+donnees-essentielles-marches22.06.2019.01-00.xml...
+donnees-essentielles-marches22.07.2019.01-00.xml...
+donnees-essentielles-marches22.08.2019.01-00.xml...
+donnees-essentielles-marches22.09.2019.01-00.xml...
+donnees-essentielles-marches22.10.2019.01-00.xml...
+donnees-essentielles-marches22.11.2019.01-00.xml...
+donnees-essentielles-marches22.12.2018.01-00.xml...
+donnees-essentielles-marches23.01.2019.01-00.xml...
+donnees-essentielles-marches23.01.2020.01-17.xml...
+donnees-essentielles-marches23.02.2019.01-00.xml...
+donnees-essentielles-marches23.03.2019.01-00.xml...
+donnees-essentielles-marches23.05.2019.01-00.xml...
+donnees-essentielles-marches23.06.2019.01-00.xml...
+donnees-essentielles-marches23.07.2019.01-00.xml...
+donnees-essentielles-marches23.08.2019.01-00.xml...
+donnees-essentielles-marches23.09.2019.01-00.xml...
+donnees-essentielles-marches23.10.2019.01-00.xml...
+donnees-essentielles-marches23.11.2019.01-00.xml...
+donnees-essentielles-marches23.12.2019.01-00.xml...
+donnees-essentielles-marches24.01.2020.01-12.xml...
+donnees-essentielles-marches24.04.2019.01-00.xml...
+donnees-essentielles-marches24.05.2019.01-00.xml...
+donnees-essentielles-marches24.06.2019.01-00.xml...
+donnees-essentielles-marches24.07.2019.01-00.xml...
+donnees-essentielles-marches24.08.2019.01-00.xml...
+donnees-essentielles-marches24.09.2019.01-00.xml...
+donnees-essentielles-marches24.10.2019.01-00.xml...
+donnees-essentielles-marches24.11.2019.01-00.xml...
+donnees-essentielles-marches24.12.2019.01-04.xml...
+donnees-essentielles-marches25.01.2019.01-00.xml...
+donnees-essentielles-marches25.01.2020.01-24.xml...
+donnees-essentielles-marches25.04.2019.01-00.xml...
+donnees-essentielles-marches25.05.2019.01-00.xml...
+donnees-essentielles-marches25.06.2019.01-00.xml...
+donnees-essentielles-marches25.07.2019.01-00.xml...
+donnees-essentielles-marches25.08.2019.01-00.xml...
+donnees-essentielles-marches25.09.2019.01-00.xml...
+donnees-essentielles-marches25.10.2019.01-00.xml...
+donnees-essentielles-marches25.11.2019.01-00.xml...
+donnees-essentielles-marches25.12.2019.01-01.xml...
+donnees-essentielles-marches26.01.2019.01-00.xml...
+donnees-essentielles-marches26.02.2019.01-00.xml...
+donnees-essentielles-marches26.03.2019.01-00.xml...
+donnees-essentielles-marches26.04.2019.01-00.xml...
+donnees-essentielles-marches26.04.2019.01-01.xml...
+donnees-essentielles-marches26.05.2019.01-00.xml...
+donnees-essentielles-marches26.06.2019.01-00.xml...
+donnees-essentielles-marches26.07.2019.01-00.xml...
+donnees-essentielles-marches26.08.2019.01-00.xml...
+donnees-essentielles-marches26.09.2019.01-00.xml...
+donnees-essentielles-marches26.10.2019.01-00.xml...
+donnees-essentielles-marches26.11.2019.01-00.xml...
+donnees-essentielles-marches27.02.2019.01-00.xml...
+donnees-essentielles-marches27.03.2019.01-00.xml...
+donnees-essentielles-marches27.04.2019.01-00.xml...
+donnees-essentielles-marches27.05.2019.01-00.xml...
+donnees-essentielles-marches27.06.2019.01-00.xml...
+donnees-essentielles-marches27.07.2019.01-00.xml...
+donnees-essentielles-marches27.08.2019.01-00.xml...
+donnees-essentielles-marches27.09.2019.01-00.xml...
+donnees-essentielles-marches27.10.2019.01-00.xml...
+donnees-essentielles-marches27.11.2019.01-00.xml...
+donnees-essentielles-marches27.12.2019.01-02.xml...
+donnees-essentielles-marches28.01.2020.01-28.xml...
+donnees-essentielles-marches28.02.2019.01-00.xml...
+donnees-essentielles-marches28.03.2019.01-00.xml...
+donnees-essentielles-marches28.05.2019.01-00.xml...
+donnees-essentielles-marches28.06.2019.01-00.xml...
+donnees-essentielles-marches28.07.2019.01-00.xml...
+donnees-essentielles-marches28.08.2019.01-00.xml...
+donnees-essentielles-marches28.09.2019.01-00.xml...
+donnees-essentielles-marches28.10.2019.01-00.xml...
+donnees-essentielles-marches28.11.2019.01-00.xml...
+donnees-essentielles-marches28.12.2019.01-11.xml...
+donnees-essentielles-marches29.01.2019.01-00.xml...
+donnees-essentielles-marches29.01.2020.01-16.xml...
+donnees-essentielles-marches29.03.2019.01-00.xml...
+donnees-essentielles-marches29.05.2019.01-00.xml...
+donnees-essentielles-marches29.06.2019.01-00.xml...
+donnees-essentielles-marches29.07.2019.01-00.xml...
+donnees-essentielles-marches29.08.2019.01-00.xml...
+donnees-essentielles-marches29.09.2019.01-00.xml...
+donnees-essentielles-marches29.10.2019.01-00.xml...
+donnees-essentielles-marches29.11.2019.01-00.xml...
+donnees-essentielles-marches30.01.2019.01-00.xml...
+donnees-essentielles-marches30.01.2020.01-17.xml...
+donnees-essentielles-marches30.03.2019.01-00.xml...
+donnees-essentielles-marches30.04.2019.01-00.xml...
+donnees-essentielles-marches30.05.2019.01-00.xml...
+donnees-essentielles-marches30.06.2019.01-00.xml...
+donnees-essentielles-marches30.07.2019.01-00.xml...
+donnees-essentielles-marches30.08.2019.01-00.xml...
+donnees-essentielles-marches30.09.2019.01-00.xml...
+donnees-essentielles-marches30.10.2019.01-00.xml...
+donnees-essentielles-marches30.11.2019.01-00.xml...
+donnees-essentielles-marches31.01.2019.01-00.xml...
+donnees-essentielles-marches31.01.2020.01-08.xml...
+donnees-essentielles-marches31.03.2019.01-00.xml...
+donnees-essentielles-marches31.05.2019.01-00.xml...
+donnees-essentielles-marches31.07.2019.01-00.xml...
+donnees-essentielles-marches31.08.2019.01-00.xml...
+donnees-essentielles-marches31.10.2019.01-00.xml...
+donnees-essentielles-marches31.12.2019.01-01.xml...
+## Empaquetage (data.gouv.fr_aife)...
+
+data.gouv.fr_aife contient 25248 marchés
+
+Empaquetage de data.gouv.fr_aife OK
+
+2020-02-17T09:34:24 : fin du traitement pour source data.gouv.fr_aife
+============================================
+
+============================================
+2020-02-17T09:34:24 : début du traitement pour source e-marchespublics
+
+## Téléchargement (e-marchespublics)...
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  1  192k    1  3357    0     0   2783      0  0:01:10  0:00:01  0:01:09  2785 66  192k   66  127k    0     0  85532      0  0:00:02  0:00:01  0:00:01 85520100  192k  100  192k    0     0   122k      0  0:00:01  0:00:01 --:--:--  122k
+237 ressources identifiées
+2020-02-17 09:34:26 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20200214-000054/decp-45072478600030-2020-02-14-01.json [34752/34752] -> "decp-45072478600030-2020-02-14-01.json" [1]
+2020-02-17 09:34:27 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20200123-000023/decp-45072478600030-2020-01-23-01.json [34766/34766] -> "decp-45072478600030-2020-01-23-01.json" [1]
+2020-02-17 09:34:27 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20200115-000005/decp-45072478600030-2020-01-15-01.json [4389/4389] -> "decp-45072478600030-2020-01-15-01.json" [1]
+2020-02-17 09:34:28 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20200114-000005/decp-45072478600030-2020-01-14-01.json [12490/12490] -> "decp-45072478600030-2020-01-14-01.json" [1]
+2020-02-17 09:34:28 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20200111-000005/decp-45072478600030-2020-01-11-01.json [4738/4738] -> "decp-45072478600030-2020-01-11-01.json" [1]
+2020-02-17 09:34:29 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20200110-000004/decp-45072478600030-2020-01-10-01.json [5127/5127] -> "decp-45072478600030-2020-01-10-01.json" [1]
+2020-02-17 09:34:29 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20200109-000004/decp-45072478600030-2020-01-09-01.json [3561/3561] -> "decp-45072478600030-2020-01-09-01.json" [1]
+2020-02-17 09:34:29 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20200108-000006/decp-45072478600030-2020-01-08-01.json [15482/15482] -> "decp-45072478600030-2020-01-08-01.json" [1]
+2020-02-17 09:34:30 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20200107-000006/decp-45072478600030-2020-01-07-01.json [12562/12562] -> "decp-45072478600030-2020-01-07-01.json" [1]
+2020-02-17 09:34:30 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20200104-000004/decp-45072478600030-2020-01-04-01.json [8156/8156] -> "decp-45072478600030-2020-01-04-01.json" [1]
+2020-02-17 09:34:31 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20200103-000004/decp-45072478600030-2020-01-03-01.json [4486/4486] -> "decp-45072478600030-2020-01-03-01.json" [1]
+2020-02-17 09:34:31 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20200101-000004/decp-45072478600030-2020-01-01-01.json [814/814] -> "decp-45072478600030-2020-01-01-01.json" [1]
+2020-02-17 09:34:31 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20191231-000020/decp-45072478600030-2019-12-31-01.json [7022/7022] -> "decp-45072478600030-2019-12-31-01.json" [1]
+2020-02-17 09:34:32 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20191228-000004/decp-45072478600030-2019-12-28-01.json [5879/5879] -> "decp-45072478600030-2019-12-28-01.json" [1]
+2020-02-17 09:34:32 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20191227-000003/decp-45072478600030-2019-12-27-01.json [786/786] -> "decp-45072478600030-2019-12-27-01.json" [1]
+2020-02-17 09:34:33 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20191225-000004/decp-45072478600030-2019-12-25-01.json [7432/7432] -> "decp-45072478600030-2019-12-25-01.json" [1]
+2020-02-17 09:34:33 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20191224-000009/decp-45072478600030-2019-12-24-01.json [32428/32428] -> "decp-45072478600030-2019-12-24-01.json" [1]
+2020-02-17 09:34:34 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20191221-000004/decp-45072478600030-2019-12-21-01.json [4419/4419] -> "decp-45072478600030-2019-12-21-01.json" [1]
+2020-02-17 09:34:34 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20191220-000005/decp-45072478600030-2019-12-20-01.json [8140/8140] -> "decp-45072478600030-2019-12-20-01.json" [1]
+2020-02-17 09:34:34 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20191219-000005/decp-45072478600030-2019-12-19-01.json [8657/8657] -> "decp-45072478600030-2019-12-19-01.json" [1]
+2020-02-17 09:34:35 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20191218-000006/decp-45072478600030-2019-12-18-01.json [19034/19034] -> "decp-45072478600030-2019-12-18-01.json" [1]
+2020-02-17 09:34:35 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20191217-000011/decp-45072478600030-2019-12-17-01.json [34415/34415] -> "decp-45072478600030-2019-12-17-01.json" [1]
+2020-02-17 09:34:36 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20191214-000007/decp-45072478600030-2019-12-14-01.json [18198/18198] -> "decp-45072478600030-2019-12-14-01.json" [1]
+2020-02-17 09:34:36 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20191213-000008/decp-45072478600030-2019-12-13-01.json [31881/31881] -> "decp-45072478600030-2019-12-13-01.json" [1]
+2020-02-17 09:34:37 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20191212-000004/decp-45072478600030-2019-12-12-01.json [9674/9674] -> "decp-45072478600030-2019-12-12-01.json" [1]
+2020-02-17 09:34:37 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20191211-000004/decp-45072478600030-2019-12-11-01.json [4288/4288] -> "decp-45072478600030-2019-12-11-01.json" [1]
+2020-02-17 09:34:38 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20191210-000006/decp-45072478600030-2019-12-10-01.json [16802/16802] -> "decp-45072478600030-2019-12-10-01.json" [1]
+2020-02-17 09:34:38 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20191207-012615/decp-45072478600030-2019-12-07-01.json [9258/9258] -> "decp-45072478600030-2019-12-07-01.json" [1]
+2020-02-17 09:34:38 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20191206-000013/decp-45072478600030-2019-12-06-01.json [2364/2364] -> "decp-45072478600030-2019-12-06-01.json" [1]
+2020-02-17 09:34:39 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20191205-000014/decp-45072478600030-2019-12-05-01.json [5776/5776] -> "decp-45072478600030-2019-12-05-01.json" [1]
+2020-02-17 09:34:39 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20191204-000007/decp-45072478600030-2019-12-04-01.json [3508/3508] -> "decp-45072478600030-2019-12-04-01.json" [1]
+2020-02-17 09:34:40 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20191203-000006/decp-45072478600030-2019-12-03-01.json [7951/7951] -> "decp-45072478600030-2019-12-03-01.json" [1]
+2020-02-17 09:34:40 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20191130-000005/decp-45072478600030-2019-11-30-01.json [767/767] -> "decp-45072478600030-2019-11-30-01.json" [1]
+2020-02-17 09:34:41 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20191129-000014/decp-45072478600030-2019-11-29-01.json [29381/29381] -> "decp-45072478600030-2019-11-29-01.json" [1]
+2020-02-17 09:34:41 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20191128-000019/decp-45072478600030-2019-11-28-01.json [14651/14651] -> "decp-45072478600030-2019-11-28-01.json" [1]
+2020-02-17 09:34:41 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20191127-000010/decp-45072478600030-2019-11-27-01.json [3421/3421] -> "decp-45072478600030-2019-11-27-01.json" [1]
+2020-02-17 09:34:42 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20191126-000006/decp-45072478600030-2019-11-26-01.json [2972/2972] -> "decp-45072478600030-2019-11-26-01.json" [1]
+2020-02-17 09:34:42 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20191122-000004/decp-45072478600030-2019-11-22-01.json [3727/3727] -> "decp-45072478600030-2019-11-22-01.json" [1]
+2020-02-17 09:34:43 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20191121-000006/decp-45072478600030-2019-11-21-01.json [732/732] -> "decp-45072478600030-2019-11-21-01.json" [1]
+2020-02-17 09:34:43 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20191120-000005/decp-45072478600030-2019-11-20-01.json [4092/4092] -> "decp-45072478600030-2019-11-20-01.json" [1]
+2020-02-17 09:34:43 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20191119-000006/decp-45072478600030-2019-11-19-01.json [2181/2181] -> "decp-45072478600030-2019-11-19-01.json" [1]
+2020-02-17 09:34:44 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20191116-000013/decp-45072478600030-2019-11-16-01.json [12884/12884] -> "decp-45072478600030-2019-11-16-01.json" [1]
+2020-02-17 09:34:44 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20191115-000005/decp-45072478600030-2019-11-15-01.json [6734/6734] -> "decp-45072478600030-2019-11-15-01.json" [1]
+2020-02-17 09:34:45 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20191114-000011/decp-45072478600030-2019-11-14-01.json [4873/4873] -> "decp-45072478600030-2019-11-14-01.json" [1]
+2020-02-17 09:34:45 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20191113-000007/decp-45072478600030-2019-11-13-01.json [10823/10823] -> "decp-45072478600030-2019-11-13-01.json" [1]
+2020-02-17 09:34:45 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20191109-000006/decp-45072478600030-2019-11-09-01.json [7773/7773] -> "decp-45072478600030-2019-11-09-01.json" [1]
+2020-02-17 09:34:46 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20191108-000012/decp-45072478600030-2019-11-08-01.json [5201/5201] -> "decp-45072478600030-2019-11-08-01.json" [1]
+2020-02-17 09:34:46 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20191107-000004/decp-45072478600030-2019-11-07-01.json [918/918] -> "decp-45072478600030-2019-11-07-01.json" [1]
+2020-02-17 09:34:47 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20191106-000009/decp-45072478600030-2019-11-06-01.json [18435/18435] -> "decp-45072478600030-2019-11-06-01.json" [1]
+2020-02-17 09:34:47 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20191105-000011/decp-45072478600030-2019-11-05-01.json [730/730] -> "decp-45072478600030-2019-11-05-01.json" [1]
+2020-02-17 09:34:48 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20191101-000011/decp-45072478600030-2019-11-01-01.json [3964/3964] -> "decp-45072478600030-2019-11-01-01.json" [1]
+2020-02-17 09:34:48 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20191031-000006/decp-45072478600030-2019-10-31-01.json [3063/3063] -> "decp-45072478600030-2019-10-31-01.json" [1]
+2020-02-17 09:34:48 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20191030-000008/decp-45072478600030-2019-10-30-01.json [3338/3338] -> "decp-45072478600030-2019-10-30-01.json" [1]
+2020-02-17 09:34:49 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20191029-000013/decp-45072478600030-2019-10-29-01.json [11148/11148] -> "decp-45072478600030-2019-10-29-01.json" [1]
+2020-02-17 09:34:49 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20191026-000005/decp-45072478600030-2019-10-26-01.json [2415/2415] -> "decp-45072478600030-2019-10-26-01.json" [1]
+2020-02-17 09:34:50 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20191025-000010/decp-45072478600030-2019-10-25-01.json [12071/12071] -> "decp-45072478600030-2019-10-25-01.json" [1]
+2020-02-17 09:34:50 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20191024-000007/decp-45072478600030-2019-10-24-01.json [3510/3510] -> "decp-45072478600030-2019-10-24-01.json" [1]
+2020-02-17 09:34:50 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20191023-000006/decp-45072478600030-2019-10-23-01.json [3286/3286] -> "decp-45072478600030-2019-10-23-01.json" [1]
+2020-02-17 09:34:51 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20191022-000006/decp-45072478600030-2019-10-22-01.json [1481/1481] -> "decp-45072478600030-2019-10-22-01.json" [1]
+2020-02-17 09:34:51 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20191021-000025/decp-45072478600030-2019-10-21-01.json [15594/15594] -> "decp-45072478600030-2019-10-21-01.json" [1]
+2020-02-17 09:34:52 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20191018-000011/decp-45072478600030-2019-10-18-01.json [2686/2686] -> "decp-45072478600030-2019-10-18-01.json" [1]
+2020-02-17 09:34:52 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20191017-000008/decp-45072478600030-2019-10-17-01.json [4408/4408] -> "decp-45072478600030-2019-10-17-01.json" [1]
+2020-02-17 09:34:52 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20191016-000004/decp-45072478600030-2019-10-16-01.json [2269/2269] -> "decp-45072478600030-2019-10-16-01.json" [1]
+2020-02-17 09:34:53 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20191015-000135/decp-45072478600030-2019-10-15-01.json [8167/8167] -> "decp-45072478600030-2019-10-15-01.json" [1]
+2020-02-17 09:34:53 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20191012-000009/decp-45072478600030-2019-10-12-01.json [7666/7666] -> "decp-45072478600030-2019-10-12-01.json" [1]
+2020-02-17 09:34:54 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20191011-000014/decp-45072478600030-2019-10-11-01.json [13809/13809] -> "decp-45072478600030-2019-10-11-01.json" [1]
+2020-02-17 09:34:54 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20191010-000008/decp-45072478600030-2019-10-10-01.json [5411/5411] -> "decp-45072478600030-2019-10-10-01.json" [1]
+2020-02-17 09:34:55 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20191009-000014/decp-45072478600030-2019-10-09-01.json [19087/19087] -> "decp-45072478600030-2019-10-09-01.json" [1]
+2020-02-17 09:34:55 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20191008-000008/decp-45072478600030-2019-10-08-01.json [13136/13136] -> "decp-45072478600030-2019-10-08-01.json" [1]
+2020-02-17 09:34:55 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20191005-000005/decp-45072478600030-2019-10-05-01.json [776/776] -> "decp-45072478600030-2019-10-05-01.json" [1]
+2020-02-17 09:34:56 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20191004-000011/decp-45072478600030-2019-10-04-01.json [2467/2467] -> "decp-45072478600030-2019-10-04-01.json" [1]
+2020-02-17 09:34:56 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20191003-000007/decp-45072478600030-2019-10-03-01.json [2698/2698] -> "decp-45072478600030-2019-10-03-01.json" [1]
+2020-02-17 09:34:57 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20191002-000007/decp-45072478600030-2019-10-02-01.json [8564/8564] -> "decp-45072478600030-2019-10-02-01.json" [1]
+2020-02-17 09:34:57 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20191001-000007/decp-45072478600030-2019-10-01-01.json [3280/3280] -> "decp-45072478600030-2019-10-01-01.json" [1]
+2020-02-17 09:34:57 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190928-000009/decp-45072478600030-2019-09-28-01.json [3475/3475] -> "decp-45072478600030-2019-09-28-01.json" [1]
+2020-02-17 09:34:58 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190927-000007/decp-45072478600030-2019-09-27-01.json [2951/2951] -> "decp-45072478600030-2019-09-27-01.json" [1]
+2020-02-17 09:34:58 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190926-000007/decp-45072478600030-2019-09-26-01.json [6142/6142] -> "decp-45072478600030-2019-09-26-01.json" [1]
+2020-02-17 09:34:59 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190920-180004/decp-45072478600030-2019-09-21-01.json [879/879] -> "decp-45072478600030-2019-09-21-01.json" [1]
+2020-02-17 09:34:59 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190919-000005/decp-45072478600030-2019-09-19-01.json [2199/2199] -> "decp-45072478600030-2019-09-19-01.json" [1]
+2020-02-17 09:34:59 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190918-000006/decp-45072478600030-2019-09-18-01.json [3538/3538] -> "decp-45072478600030-2019-09-18-01.json" [1]
+2020-02-17 09:35:00 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190916-180006/decp-45072478600030-2019-09-17-01.json [6328/6328] -> "decp-45072478600030-2019-09-17-01.json" [1]
+2020-02-17 09:35:00 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190913-180009/decp-45072478600030-2019-09-14-01.json [18295/18295] -> "decp-45072478600030-2019-09-14-01.json" [1]
+2020-02-17 09:35:01 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190913-000006/decp-45072478600030-2019-09-13-01.json [2222/2222] -> "decp-45072478600030-2019-09-13-01.json" [1]
+2020-02-17 09:35:01 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190912-000008/decp-45072478600030-2019-09-12-01.json [13110/13110] -> "decp-45072478600030-2019-09-12-01.json" [1]
+2020-02-17 09:35:02 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190910-000013/decp-45072478600030-2019-09-10-01.json [1438/1438] -> "decp-45072478600030-2019-09-10-01.json" [1]
+2020-02-17 09:35:02 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190907-000009/decp-45072478600030-2019-09-07-01.json [3724/3724] -> "decp-45072478600030-2019-09-07-01.json" [1]
+2020-02-17 09:35:02 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190906-000008/decp-45072478600030-2019-09-06-01.json [2075/2075] -> "decp-45072478600030-2019-09-06-01.json" [1]
+2020-02-17 09:35:03 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190904-180005/decp-45072478600030-2019-09-05-01.json [1470/1470] -> "decp-45072478600030-2019-09-05-01.json" [1]
+2020-02-17 09:35:03 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190904-000007/decp-45072478600030-2019-09-04-01.json [9063/9063] -> "decp-45072478600030-2019-09-04-01.json" [1]
+2020-02-17 09:35:04 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190903-000008/decp-45072478600030-2019-09-03-01.json [8764/8764] -> "decp-45072478600030-2019-09-03-01.json" [1]
+2020-02-17 09:35:04 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190831-000008/decp-45072478600030-2019-08-31-01.json [1120/1120] -> "decp-45072478600030-2019-08-31-01.json" [1]
+2020-02-17 09:35:04 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190830-000007/decp-45072478600030-2019-08-30-01.json [9510/9510] -> "decp-45072478600030-2019-08-30-01.json" [1]
+2020-02-17 09:35:05 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190829-000008/decp-45072478600030-2019-08-29-01.json [2726/2726] -> "decp-45072478600030-2019-08-29-01.json" [1]
+2020-02-17 09:35:05 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190827-180016/decp-45072478600030-2019-08-28-01.json [3903/3903] -> "decp-45072478600030-2019-08-28-01.json" [1]
+2020-02-17 09:35:06 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190824-000012/decp-45072478600030-2019-08-24-01.json [766/766] -> "decp-45072478600030-2019-08-24-01.json" [1]
+2020-02-17 09:35:06 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190823-000004/decp-45072478600030-2019-08-23-01.json [731/731] -> "decp-45072478600030-2019-08-23-01.json" [1]
+2020-02-17 09:35:06 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190822-000004/decp-45072478600030-2019-08-22-01.json [2614/2614] -> "decp-45072478600030-2019-08-22-01.json" [1]
+2020-02-17 09:35:07 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190821-000005/decp-45072478600030-2019-08-21-01.json [807/807] -> "decp-45072478600030-2019-08-21-01.json" [1]
+2020-02-17 09:35:07 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190819-180009/decp-45072478600030-2019-08-20-01.json [4411/4411] -> "decp-45072478600030-2019-08-20-01.json" [1]
+2020-02-17 09:35:08 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190816-180005/decp-45072478600030-2019-08-17-01.json [1260/1260] -> "decp-45072478600030-2019-08-17-01.json" [1]
+2020-02-17 09:35:08 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190815-000005/decp-45072478600030-2019-08-15-01.json [1243/1243] -> "decp-45072478600030-2019-08-15-01.json" [1]
+2020-02-17 09:35:08 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190813-180008/decp-45072478600030-2019-08-14-01.json [6281/6281] -> "decp-45072478600030-2019-08-14-01.json" [1]
+2020-02-17 09:35:09 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190813-000006/decp-45072478600030-2019-08-13-01.json [6362/6362] -> "decp-45072478600030-2019-08-13-01.json" [1]
+2020-02-17 09:35:09 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190810-000004/decp-45072478600030-2019-08-10-01.json [693/693] -> "decp-45072478600030-2019-08-10-01.json" [1]
+2020-02-17 09:35:10 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190809-000005/decp-45072478600030-2019-08-09-01.json [5795/5795] -> "decp-45072478600030-2019-08-09-01.json" [1]
+2020-02-17 09:35:10 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190807-180010/decp-45072478600030-2019-08-08-01.json [8638/8638] -> "decp-45072478600030-2019-08-08-01.json" [1]
+2020-02-17 09:35:10 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190807-000018/decp-45072478600030-2019-08-07-01.json [11320/11320] -> "decp-45072478600030-2019-08-07-01.json" [1]
+2020-02-17 09:35:11 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190805-180010/decp-45072478600030-2019-08-06-01.json [15112/15112] -> "decp-45072478600030-2019-08-06-01.json" [1]
+2020-02-17 09:35:11 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190803-000005/decp-45072478600030-2019-08-03-01.json [3559/3559] -> "decp-45072478600030-2019-08-03-01.json" [1]
+2020-02-17 09:35:12 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190802-000005/decp-45072478600030-2019-08-02-01.json [1349/1349] -> "decp-45072478600030-2019-08-02-01.json" [1]
+2020-02-17 09:35:12 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190801-000006/decp-45072478600030-2019-08-01-01.json [3045/3045] -> "decp-45072478600030-2019-08-01-01.json" [1]
+2020-02-17 09:35:12 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190731-000008/decp-45072478600030-2019-07-31-01.json [9983/9983] -> "decp-45072478600030-2019-07-31-01.json" [1]
+2020-02-17 09:35:13 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190729-180011/decp-45072478600030-2019-07-30-01.json [18073/18073] -> "decp-45072478600030-2019-07-30-01.json" [1]
+2020-02-17 09:35:13 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190727-000008/decp-45072478600030-2019-07-27-01.json [815/815] -> "decp-45072478600030-2019-07-27-01.json" [1]
+2020-02-17 09:35:14 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190725-180011/decp-45072478600030-2019-07-26-01.json [11360/11360] -> "decp-45072478600030-2019-07-26-01.json" [1]
+2020-02-17 09:35:14 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190725-000007/decp-45072478600030-2019-07-25-01.json [8318/8318] -> "decp-45072478600030-2019-07-25-01.json" [1]
+2020-02-17 09:35:15 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190724-000010/decp-45072478600030-2019-07-24-01.json [6926/6926] -> "decp-45072478600030-2019-07-24-01.json" [1]
+2020-02-17 09:35:15 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190723-000008/decp-45072478600030-2019-07-23-01.json [10011/10011] -> "decp-45072478600030-2019-07-23-01.json" [1]
+2020-02-17 09:35:15 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190719-180007/decp-45072478600030-2019-07-20-01.json [4428/4428] -> "decp-45072478600030-2019-07-20-01.json" [1]
+2020-02-17 09:35:16 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190719-000014/decp-45072478600030-2019-07-19-01.json [20033/20033] -> "decp-45072478600030-2019-07-19-01.json" [1]
+2020-02-17 09:35:16 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190718-000005/decp-45072478600030-2019-07-18-01.json [2194/2194] -> "decp-45072478600030-2019-07-18-01.json" [1]
+2020-02-17 09:35:17 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190717-154238/decp-45072478600030-2019-07-17-02.json [5672/5672] -> "decp-45072478600030-2019-07-17-02.json" [1]
+2020-02-17 09:35:17 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190717-000017/decp-45072478600030-2019-07-17-01.json [6388/6388] -> "decp-45072478600030-2019-07-17-01.json" [1]
+2020-02-17 09:35:17 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190716-000010/decp-45072478600030-2019-07-16-01.json [5490/5490] -> "decp-45072478600030-2019-07-16-01.json" [1]
+2020-02-17 09:35:18 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190712-180008/decp-45072478600030-2019-07-13-01.json [1553/1553] -> "decp-45072478600030-2019-07-13-01.json" [1]
+2020-02-17 09:35:18 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190712-000006/decp-45072478600030-2019-07-12-01.json [6153/6153] -> "decp-45072478600030-2019-07-12-01.json" [1]
+2020-02-17 09:35:19 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190711-000005/decp-45072478600030-2019-07-11-01.json [3485/3485] -> "decp-45072478600030-2019-07-11-01.json" [1]
+2020-02-17 09:35:19 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190710-000017/decp-45072478600030-2019-07-10-01.json [36743/36743] -> "decp-45072478600030-2019-07-10-01.json" [1]
+2020-02-17 09:35:20 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190709-000009/decp-45072478600030-2019-07-09-01.json [15650/15650] -> "decp-45072478600030-2019-07-09-01.json" [1]
+2020-02-17 09:35:20 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190706-000005/decp-45072478600030-2019-07-06-01.json [3209/3209] -> "decp-45072478600030-2019-07-06-01.json" [1]
+2020-02-17 09:35:21 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190704-180008/decp-45072478600030-2019-07-05-01.json [14219/14219] -> "decp-45072478600030-2019-07-05-01.json" [1]
+2020-02-17 09:35:21 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190703-180007/decp-45072478600030-2019-07-04-01.json [14180/14180] -> "decp-45072478600030-2019-07-04-01.json" [1]
+2020-02-17 09:35:21 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190703-000005/decp-45072478600030-2019-07-03-01.json [9755/9755] -> "decp-45072478600030-2019-07-03-01.json" [1]
+2020-02-17 09:35:22 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190701-180014/decp-45072478600030-2019-07-02-01.json [32804/32804] -> "decp-45072478600030-2019-07-02-01.json" [1]
+2020-02-17 09:35:22 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190628-000016/decp-45072478600030-2019-06-28-01.json [5364/5364] -> "decp-45072478600030-2019-06-28-01.json" [1]
+2020-02-17 09:35:23 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190627-000006/decp-45072478600030-2019-06-27-01.json [3018/3018] -> "decp-45072478600030-2019-06-27-01.json" [1]
+2020-02-17 09:35:23 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190625-180007/decp-45072478600030-2019-06-26-01.json [7881/7881] -> "decp-45072478600030-2019-06-26-01.json" [1]
+2020-02-17 09:35:24 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190625-000016/decp-45072478600030-2019-06-25-01.json [33216/33216] -> "decp-45072478600030-2019-06-25-01.json" [1]
+2020-02-17 09:35:24 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190622-000004/decp-45072478600030-2019-06-22-01.json [3140/3140] -> "decp-45072478600030-2019-06-22-01.json" [1]
+2020-02-17 09:35:25 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190620-180012/decp-45072478600030-2019-06-21-01.json [26756/26756] -> "decp-45072478600030-2019-06-21-01.json" [1]
+2020-02-17 09:35:25 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190620-000007/decp-45072478600030-2019-06-20-01.json [9460/9460] -> "decp-45072478600030-2019-06-20-01.json" [1]
+2020-02-17 09:35:26 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190618-180007/decp-45072478600030-2019-06-19-01.json [14551/14551] -> "decp-45072478600030-2019-06-19-01.json" [1]
+2020-02-17 09:35:26 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190618-000004/decp-45072478600030-2019-06-18-01.json [4576/4576] -> "decp-45072478600030-2019-06-18-01.json" [1]
+2020-02-17 09:35:26 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190615-000006/decp-45072478600030-2019-06-15-01.json [5306/5306] -> "decp-45072478600030-2019-06-15-01.json" [1]
+2020-02-17 09:35:27 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190614-000004/decp-45072478600030-2019-06-14-01.json [2324/2324] -> "decp-45072478600030-2019-06-14-01.json" [1]
+2020-02-17 09:35:27 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190612-180010/decp-45072478600030-2019-06-13-01.json [22669/22669] -> "decp-45072478600030-2019-06-13-01.json" [1]
+2020-02-17 09:35:28 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190611-180007/decp-45072478600030-2019-06-12-01.json [1941/1941] -> "decp-45072478600030-2019-06-12-01.json" [1]
+2020-02-17 09:35:28 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190608-000018/decp-45072478600030-2019-06-08-01.json [7793/7793] -> "decp-45072478600030-2019-06-08-01.json" [1]
+2020-02-17 09:35:28 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190606-000004/decp-45072478600030-2019-06-06-01.json [4738/4738] -> "decp-45072478600030-2019-06-06-01.json" [1]
+2020-02-17 09:35:29 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190605-000007/decp-45072478600030-2019-06-05-01.json [14761/14761] -> "decp-45072478600030-2019-06-05-01.json" [1]
+2020-02-17 09:35:29 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190603-180005/decp-45072478600030-2019-06-04-01.json [2064/2064] -> "decp-45072478600030-2019-06-04-01.json" [1]
+2020-02-17 09:35:30 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190529-180005/decp-45072478600030-2019-05-30-01.json [2146/2146] -> "decp-45072478600030-2019-05-30-01.json" [1]
+2020-02-17 09:35:30 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190529-000005/decp-45072478600030-2019-05-29-01.json [4993/4993] -> "decp-45072478600030-2019-05-29-01.json" [1]
+2020-02-17 09:35:31 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190528-000007/decp-45072478600030-2019-05-28-01.json [7445/7445] -> "decp-45072478600030-2019-05-28-01.json" [1]
+2020-02-17 09:35:31 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190525-000008/decp-45072478600030-2019-05-25-01.json [13836/13836] -> "decp-45072478600030-2019-05-25-01.json" [1]
+2020-02-17 09:35:31 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190524-000511/decp-45072478600030-2019-05-24-01.json [6799/6799] -> "decp-45072478600030-2019-05-24-01.json" [1]
+2020-02-17 09:35:32 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190523-000006/decp-45072478600030-2019-05-23-01.json [9820/9820] -> "decp-45072478600030-2019-05-23-01.json" [1]
+2020-02-17 09:35:32 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190522-000013/decp-45072478600030-2019-05-22-01.json [32878/32878] -> "decp-45072478600030-2019-05-22-01.json" [1]
+2020-02-17 09:35:33 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190521-000007/decp-45072478600030-2019-05-21-01.json [10740/10740] -> "decp-45072478600030-2019-05-21-01.json" [1]
+2020-02-17 09:35:33 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190518-000003/decp-45072478600030-2019-05-18-01.json [4174/4174] -> "decp-45072478600030-2019-05-18-01.json" [1]
+2020-02-17 09:35:33 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190517-000004/decp-45072478600030-2019-05-17-01.json [8651/8651] -> "decp-45072478600030-2019-05-17-01.json" [1]
+2020-02-17 09:35:34 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190516-000003/decp-45072478600030-2019-05-16-01.json [765/765] -> "decp-45072478600030-2019-05-16-01.json" [1]
+2020-02-17 09:35:34 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190515-000008/decp-45072478600030-2019-05-15-01.json [11122/11122] -> "decp-45072478600030-2019-05-15-01.json" [1]
+2020-02-17 09:35:35 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190514-000005/decp-45072478600030-2019-05-14-01.json [7760/7760] -> "decp-45072478600030-2019-05-14-01.json" [1]
+2020-02-17 09:35:35 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190511-000004/decp-45072478600030-2019-05-11-01.json [9410/9410] -> "decp-45072478600030-2019-05-11-01.json" [1]
+2020-02-17 09:35:36 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190510-000006/decp-45072478600030-2019-05-10-01.json [14223/14223] -> "decp-45072478600030-2019-05-10-01.json" [1]
+2020-02-17 09:35:36 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190508-000010/decp-45072478600030-2019-05-08-01.json [9211/9211] -> "decp-45072478600030-2019-05-08-01.json" [1]
+2020-02-17 09:35:36 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190507-000011/decp-45072478600030-2019-05-07-01.json [19464/19464] -> "decp-45072478600030-2019-05-07-01.json" [1]
+2020-02-17 09:35:37 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190504-000004/decp-45072478600030-2019-05-04-01.json [2568/2568] -> "decp-45072478600030-2019-05-04-01.json" [1]
+2020-02-17 09:35:37 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190503-000005/decp-45072478600030-2019-05-03-01.json [7150/7150] -> "decp-45072478600030-2019-05-03-01.json" [1]
+2020-02-17 09:35:38 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190501-000004/decp-45072478600030-2019-05-01-01.json [4574/4574] -> "decp-45072478600030-2019-05-01-01.json" [1]
+2020-02-17 09:35:38 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190427-000009/decp-45072478600030-2019-04-27-01.json [17213/17213] -> "decp-45072478600030-2019-04-27-01.json" [1]
+2020-02-17 09:35:38 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190426-000006/decp-45072478600030-2019-04-26-01.json [4051/4051] -> "decp-45072478600030-2019-04-26-01.json" [1]
+2020-02-17 09:35:39 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190424-000005/decp-45072478600030-2019-04-24-01.json [5755/5755] -> "decp-45072478600030-2019-04-24-01.json" [1]
+2020-02-17 09:35:39 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190420-000005/decp-45072478600030-2019-04-20-01.json [7891/7891] -> "decp-45072478600030-2019-04-20-01.json" [1]
+2020-02-17 09:35:40 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190419-000004/decp-45072478600030-2019-04-19-01.json [2153/2153] -> "decp-45072478600030-2019-04-19-01.json" [1]
+2020-02-17 09:35:40 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190418-000003/decp-45072478600030-2019-04-18-01.json [751/751] -> "decp-45072478600030-2019-04-18-01.json" [1]
+2020-02-17 09:35:41 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190417-000005/decp-45072478600030-2019-04-17-01.json [11472/11472] -> "decp-45072478600030-2019-04-17-01.json" [1]
+2020-02-17 09:35:41 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190413-000004/decp-45072478600030-2019-04-13-01.json [5097/5097] -> "decp-45072478600030-2019-04-13-01.json" [1]
+2020-02-17 09:35:41 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190412-000004/decp-45072478600030-2019-04-12-01.json [2273/2273] -> "decp-45072478600030-2019-04-12-01.json" [1]
+2020-02-17 09:35:42 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190411-000004/decp-45072478600030-2019-04-11-01.json [3293/3293] -> "decp-45072478600030-2019-04-11-01.json" [1]
+2020-02-17 09:35:42 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190410-000008/decp-45072478600030-2019-04-10-01.json [9463/9463] -> "decp-45072478600030-2019-04-10-01.json" [1]
+2020-02-17 09:35:42 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190409-000006/decp-45072478600030-2019-04-09-01.json [3133/3133] -> "decp-45072478600030-2019-04-09-01.json" [1]
+2020-02-17 09:35:43 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190405-000004/decp-45072478600030-2019-04-05-01.json [2795/2795] -> "decp-45072478600030-2019-04-05-01.json" [1]
+2020-02-17 09:35:43 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190403-000004/decp-45072478600030-2019-04-03-01.json [5072/5072] -> "decp-45072478600030-2019-04-03-01.json" [1]
+2020-02-17 09:35:44 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190402-000004/decp-45072478600030-2019-04-02-01.json [6848/6848] -> "decp-45072478600030-2019-04-02-01.json" [1]
+2020-02-17 09:35:44 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190330-000002/decp-45072478600030-2019-03-30-01.json [836/836] -> "decp-45072478600030-2019-03-30-01.json" [1]
+2020-02-17 09:35:45 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190329-000007/decp-45072478600030-2019-03-29-01.json [24091/24091] -> "decp-45072478600030-2019-03-29-01.json" [1]
+2020-02-17 09:35:45 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190328-000003/decp-45072478600030-2019-03-28-01.json [6191/6191] -> "decp-45072478600030-2019-03-28-01.json" [1]
+2020-02-17 09:35:45 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190327-000007/decp-45072478600030-2019-03-27-01.json [4869/4869] -> "decp-45072478600030-2019-03-27-01.json" [1]
+2020-02-17 09:35:46 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190326-000010/decp-45072478600030-2019-03-26-01.json [10382/10382] -> "decp-45072478600030-2019-03-26-01.json" [1]
+2020-02-17 09:35:46 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190322-000034/decp-45072478600030-2019-03-22-01.json [3408/3408] -> "decp-45072478600030-2019-03-22-01.json" [1]
+2020-02-17 09:35:47 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190321-000006/decp-45072478600030-2019-03-21-01.json [14717/14717] -> "decp-45072478600030-2019-03-21-01.json" [1]
+2020-02-17 09:35:47 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190320-000002/decp-45072478600030-2019-03-20-01.json [757/757] -> "decp-45072478600030-2019-03-20-01.json" [1]
+2020-02-17 09:35:47 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190319-000004/decp-45072478600030-2019-03-19-01.json [5462/5462] -> "decp-45072478600030-2019-03-19-01.json" [1]
+2020-02-17 09:35:48 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190316-000003/decp-45072478600030-2019-03-16-01.json [4791/4791] -> "decp-45072478600030-2019-03-16-01.json" [1]
+2020-02-17 09:35:48 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190315-000003/decp-45072478600030-2019-03-15-01.json [1612/1612] -> "decp-45072478600030-2019-03-15-01.json" [1]
+2020-02-17 09:35:49 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190314-000005/decp-45072478600030-2019-03-14-01.json [1840/1840] -> "decp-45072478600030-2019-03-14-01.json" [1]
+2020-02-17 09:35:49 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190313-000004/decp-45072478600030-2019-03-13-01.json [939/939] -> "decp-45072478600030-2019-03-13-01.json" [1]
+2020-02-17 09:35:49 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190312-000003/decp-45072478600030-2019-03-12-01.json [5777/5777] -> "decp-45072478600030-2019-03-12-01.json" [1]
+2020-02-17 09:35:50 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190309-000003/decp-45072478600030-2019-03-09-01.json [2190/2190] -> "decp-45072478600030-2019-03-09-01.json" [1]
+2020-02-17 09:35:50 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190308-000002/decp-45072478600030-2019-03-08-01.json [3758/3758] -> "decp-45072478600030-2019-03-08-01.json" [1]
+2020-02-17 09:35:51 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190306-000006/decp-45072478600030-2019-03-06-01.json [8164/8164] -> "decp-45072478600030-2019-03-06-01.json" [1]
+2020-02-17 09:35:51 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190305-000008/decp-45072478600030-2019-03-05-01.json [6402/6402] -> "decp-45072478600030-2019-03-05-01.json" [1]
+2020-02-17 09:35:51 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190302-000007/decp-45072478600030-2019-03-02-01.json [4860/4860] -> "decp-45072478600030-2019-03-02-01.json" [1]
+2020-02-17 09:35:52 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190301-000008/decp-45072478600030-2019-03-01-01.json [8126/8126] -> "decp-45072478600030-2019-03-01-01.json" [1]
+2020-02-17 09:35:52 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190228-000004/decp-45072478600030-2019-02-28-01.json [6337/6337] -> "decp-45072478600030-2019-02-28-01.json" [1]
+2020-02-17 09:35:53 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190227-000002/decp-45072478600030-2019-02-27-01.json [1557/1557] -> "decp-45072478600030-2019-02-27-01.json" [1]
+2020-02-17 09:35:53 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190226-000004/decp-45072478600030-2019-02-26-01.json [2997/2997] -> "decp-45072478600030-2019-02-26-01.json" [1]
+2020-02-17 09:35:53 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190223-000004/decp-45072478600030-2019-02-23-01.json [7694/7694] -> "decp-45072478600030-2019-02-23-01.json" [1]
+2020-02-17 09:35:54 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190222-000004/decp-45072478600030-2019-02-22-01.json [7145/7145] -> "decp-45072478600030-2019-02-22-01.json" [1]
+2020-02-17 09:35:54 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190221-000004/decp-45072478600030-2019-02-21-01.json [6389/6389] -> "decp-45072478600030-2019-02-21-01.json" [1]
+2020-02-17 09:35:55 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190220-000003/decp-45072478600030-2019-02-20-01.json [2152/2152] -> "decp-45072478600030-2019-02-20-01.json" [1]
+2020-02-17 09:35:55 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190219-000006/decp-45072478600030-2019-02-19-01.json [8571/8571] -> "decp-45072478600030-2019-02-19-01.json" [1]
+2020-02-17 09:35:55 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190216-000002/decp-45072478600030-2019-02-16-01.json [2659/2659] -> "decp-45072478600030-2019-02-16-01.json" [1]
+2020-02-17 09:35:56 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190215-113244/decp-45072478600030-2019-02-15-03.json [30125/30125] -> "decp-45072478600030-2019-02-15-03.json" [1]
+2020-02-17 09:35:56 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190215-105645/decp-45072478600030-2019-02-15-02.json [712/712] -> "decp-45072478600030-2019-02-15-02.json" [1]
+2020-02-17 09:35:57 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190215-103710/decp-45072478600030-2019-02-15-01.json [39246/39246] -> "decp-45072478600030-2019-02-15-01.json" [1]
+2020-02-17 09:35:57 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190119-000006/decp-45072478600030-2019-01-19-01.json [10737/10737] -> "decp-45072478600030-2019-01-19-01.json" [1]
+2020-02-17 09:35:58 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190118-000007/decp-45072478600030-2019-01-18-01.json [14865/14865] -> "decp-45072478600030-2019-01-18-01.json" [1]
+2020-02-17 09:35:58 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190116-000001/decp-45072478600030-2019-01-16-01.json [1632/1632] -> "decp-45072478600030-2019-01-16-01.json" [1]
+2020-02-17 09:35:59 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190115-000003/decp-45072478600030-2019-01-15-01.json [2568/2568] -> "decp-45072478600030-2019-01-15-01.json" [1]
+2020-02-17 09:35:59 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190112-000004/decp-45072478600030-2019-01-12-01.json [10356/10356] -> "decp-45072478600030-2019-01-12-01.json" [1]
+2020-02-17 09:35:59 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190111-000006/decp-45072478600030-2019-01-11-01.json [3626/3626] -> "decp-45072478600030-2019-01-11-01.json" [1]
+2020-02-17 09:36:00 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190109-000005/decp-45072478600030-2019-01-09-01.json [3077/3077] -> "decp-45072478600030-2019-01-09-01.json" [1]
+2020-02-17 09:36:00 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190108-000015/decp-45072478600030-2019-01-08-01.json [5846/5846] -> "decp-45072478600030-2019-01-08-01.json" [1]
+2020-02-17 09:36:01 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190103-000004/decp-45072478600030-2019-01-03-01.json [2255/2255] -> "decp-45072478600030-2019-01-03-01.json" [1]
+2020-02-17 09:36:01 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20190101-000002/decp-45072478600030-2019-01-01-01.json [750/750] -> "decp-45072478600030-2019-01-01-01.json" [1]
+2020-02-17 09:36:01 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20181229-000002/decp-45072478600030-2018-12-29-01.json [880/880] -> "decp-45072478600030-2018-12-29-01.json" [1]
+2020-02-17 09:36:02 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20181228-000006/decp-45072478600030-2018-12-28-01.json [6551/6551] -> "decp-45072478600030-2018-12-28-01.json" [1]
+2020-02-17 09:36:02 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20181227-000002/decp-45072478600030-2018-12-27-01.json [1518/1518] -> "decp-45072478600030-2018-12-27-01.json" [1]
+2020-02-17 09:36:03 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20181225-000002/decp-45072478600030-2018-12-25-01.json [795/795] -> "decp-45072478600030-2018-12-25-01.json" [1]
+2020-02-17 09:36:03 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20181222-000002/decp-45072478600030-2018-12-22-01.json [778/778] -> "decp-45072478600030-2018-12-22-01.json" [1]
+2020-02-17 09:36:03 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20181220-000002/decp-45072478600030-2018-12-20-01.json [1905/1905] -> "decp-45072478600030-2018-12-20-01.json" [1]
+2020-02-17 09:36:04 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20181218-000001/decp-45072478600030-2018-12-18-01.json [809/809] -> "decp-45072478600030-2018-12-18-01.json" [1]
+2020-02-17 09:36:04 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20181213-000004/decp-45072478600030-2018-12-13-01.json [7782/7782] -> "decp-45072478600030-2018-12-13-01.json" [1]
+2020-02-17 09:36:05 URL:https://static.data.gouv.fr/resources/donnees-essentielles-des-marches-publics-e-marchespublics-com-1/20181211-171339/decp-45072478600030-2018-12-11-01.json [4246/4246] -> "decp-45072478600030-2018-12-11-01.json" [1]
+
+237 fichiers téléchargés.
+Pas de correction configurée pour cette source.
+Pas de conversion, copie des fichiers source vers /json/e-marchespublics.
+## Empaquetage (e-marchespublics)...
+
+e-marchespublics contient 2622 marchés
+
+Empaquetage de e-marchespublics OK
+
+2020-02-17T09:36:06 : fin du traitement pour source e-marchespublics
+============================================
+
+============================================
+2020-02-17T09:36:06 : début du traitement pour source grandlyon
+
+## Téléchargement (grandlyon)...
+--2020-02-17 09:36:06--  https://download.data.grandlyon.com/files/grandlyon/citoyennete/marches_publics.xml
+Resolving download.data.grandlyon.com (download.data.grandlyon.com)... 91.121.48.88
+Connecting to download.data.grandlyon.com (download.data.grandlyon.com)|91.121.48.88|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 286975 (280K) [application/xml]
+Saving to: ‘marches_publics.xml’
+
+marches_publics.xml   0%[                    ]       0  --.-KB/s               marches_publics.xml  30%[=====>              ]  85.66K   426KB/s               marches_publics.xml 100%[===================>] 280.25K   888KB/s    in 0.3s    
+
+2020-02-17 09:36:06 (888 KB/s) - ‘marches_publics.xml’ saved [286975/286975]
+
+Conversion (grandlyon)...
+## Empaquetage (grandlyon)...
+
+grandlyon contient 263 marchés
+
+Empaquetage de grandlyon OK
+
+2020-02-17T09:36:07 : fin du traitement pour source grandlyon
+============================================
+
+
+## Fusion de tous les fichiers JSON de source en un seul
+## Agrégation du JSON de toutes les sources
+
+Le fichier consolidé contient 85635 marchés avant déduplication.
+
+
+Le fichier consolidé contient 76187 marchés après déduplication.
+Il contenait donc 9448 doublons.
+
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   493  100   493    0     0    794      0 --:--:-- --:--:-- --:--:--   795
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   893  100   893    0     0    860      0  0:00:01  0:00:01 --:--:--  4212
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   507  100   507    0     0    851      0 --:--:-- --:--:-- --:--:--   852
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 29105  100 29105    0     0  25939      0  0:00:01  0:00:01 --:--:-- 84854
+
+Le fichier consolidé contient 76159 marchés après exclusions des marchés inexploitables.
+Il contenait donc 28 marchés inexploitables.
+
+Nombre d'acheteurs uniques : 3789
+Nombre de titulaires uniques : 33901
+Nombre total de marchés pour l'année 2018 : 8073
+Montant total pour l'année 2018 : 6439616878.360009
+Nombre total de marchés pour l'année 2019 : 64396
+Montant total pour l'année 2019 : 168131232702.36957
+Nombre total de marchés pour l'année 2020 : 3513
+Montant total pour l'année 2020 : 1528147430.6500008
+-rw-r--r-- 1 root root 76M Feb 17 09:36 decp.json
+
+Extraction des marchés du jour
+--2020-02-17 09:36:55--  https://www.data.gouv.fr/fr/datasets/r/16962018-5c31-4296-9454-5998585496d2
+Resolving www.data.gouv.fr (www.data.gouv.fr)... 37.59.183.73
+Connecting to www.data.gouv.fr (www.data.gouv.fr)|37.59.183.73|:443... connected.
+HTTP request sent, awaiting response... 302 FOUND
+Location: https://static.data.gouv.fr/resources/fichiers-consolides-des-donnees-essentielles-de-la-commande-publique/20200215-051144/decp.json [following]
+--2020-02-17 09:36:55--  https://static.data.gouv.fr/resources/fichiers-consolides-des-donnees-essentielles-de-la-commande-publique/20200215-051144/decp.json
+Resolving static.data.gouv.fr (static.data.gouv.fr)... 37.59.183.73
+Connecting to static.data.gouv.fr (static.data.gouv.fr)|37.59.183.73|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 60612705 (58M) [application/json]
+Saving to: ‘decp_previous.json’
+
+decp_previous.json    0%[                    ]       0  --.-KB/s               decp_previous.json    0%[                    ]  59.39K   237KB/s               decp_previous.json    0%[                    ] 231.77K   481KB/s               decp_previous.json    0%[                    ] 419.77K   585KB/s               decp_previous.json    1%[                    ] 671.77K   715KB/s               decp_previous.json    1%[                    ] 923.77K   795KB/s               decp_previous.json    2%[                    ]   1.21M   896KB/s               decp_previous.json    2%[                    ]   1.52M   980KB/s               decp_previous.json    3%[                    ]   1.89M  1.05MB/s               decp_previous.json    3%[                    ]   2.29M  1.13MB/s               decp_previous.json    4%[                    ]   2.88M  1.28MB/s               decp_previous.json    5%[>                   ]   3.43M  1.39MB/s               decp_previous.json    7%[>                   ]   4.17M  1.56MB/s               decp_previous.json    8%[>                   ]   4.85M  1.68MB/s               decp_previous.json    9%[>                   ]   5.66M  1.82MB/s    eta 29s    decp_previous.json   10%[=>                  ]   6.21M  1.67MB/s    eta 29s    decp_previous.json   12%[=>                  ]   6.97M  1.78MB/s    eta 29s    decp_previous.json   13%[=>                  ]   7.71M  1.94MB/s    eta 27s    decp_previous.json   14%[=>                  ]   8.51M  2.10MB/s    eta 27s    decp_previous.json   16%[==>                 ]   9.46M  2.28MB/s    eta 27s    decp_previous.json   18%[==>                 ]  10.50M  2.49MB/s    eta 27s    decp_previous.json   20%[===>                ]  11.95M  2.85MB/s    eta 27s    decp_previous.json   23%[===>                ]  13.33M  3.13MB/s    eta 17s    decp_previous.json   25%[====>               ]  14.87M  3.54MB/s    eta 17s    decp_previous.json   29%[====>               ]  17.03M  4.02MB/s    eta 17s    decp_previous.json   32%[=====>              ]  19.01M  4.42MB/s    eta 17s    decp_previous.json   36%[======>             ]  21.10M  4.93MB/s    eta 17s    decp_previous.json   41%[=======>            ]  23.89M  5.51MB/s    eta 9s     decp_previous.json   46%[========>           ]  26.91M  6.12MB/s    eta 9s     decp_previous.json   54%[=========>          ]  31.22M  7.19MB/s    eta 9s     decp_previous.json   59%[==========>         ]  34.37M  7.82MB/s    eta 9s     decp_previous.json   66%[============>       ]  38.66M  9.95MB/s    eta 9s     decp_previous.json   72%[=============>      ]  41.96M  11.2MB/s    eta 3s     decp_previous.json   79%[==============>     ]  46.11M  12.1MB/s    eta 3s     decp_previous.json   86%[================>   ]  49.93M  13.0MB/s    eta 3s     decp_previous.json   92%[=================>  ]  53.57M  14.0MB/s    eta 3s     decp_previous.json  100%[===================>]  57.80M  14.9MB/s    in 8.0s    
+
+2020-02-17 09:37:04 (7.23 MB/s) - ‘decp_previous.json’ saved [60612705/60612705]
+
+Extraction des UID des anciens et nouveaux marchés, en remplaçant les espaces éventuels par 'xSPACEx'... 
+Ancien fichier :        57978 marchés uniques (via uid)
+
+Nouveau fichier :       76159 marchés uniques
+
+                        18203 nouveaux marchés uniques
+
+L'ancien array est soustrait du nouveau, les objets identiques sont supprimés...
+
+Too long with no output (exceeded 10m0s): context deadline exceeded

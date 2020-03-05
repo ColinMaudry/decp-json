@@ -1,34 +1,31 @@
 # DECP JSON
 
-> Toutes les données essentielles de la commande publique converties en JSON.
+> Chargement des données essentielles de la commande publique en base de données et production de statistiques.
 
-**Version 1.3.1**
+**Version 2.0.0**
 
 Rappel de ce que sont les données essentielles de la commande publique (ou DECP) [sur le blog de data.gouv.fr](https://www.data.gouv.fr/fr/posts/le-point-sur-les-donnees-essentielles-de-la-commande-publique/).
 
-L'objectif de ce projet est d'identifier toutes les sources de DECP, et de créer des scripts permettant de produire des fichiers utilisables ([exemple fictif sur le dépôt officiel](https://github.com/etalab/format-commande-publique/blob/master/exemples/json/paquet.json)) au [format JSON réglementaire](https://github.com/etalab/format-commande-publique/tree/master/sch%C3%A9mas/json).
+L'objectif de ce projet est d'exploiter [les données essentielles de la commande publique (DECP)](https://www.data.gouv.fr/fr/datasets/5cd57bf68b4c4179299eb0e9/) et de les rendre intelligibles.
 
-La procédure standard est la suivante :
+![Progression du nombre de marchés par source](https://plot.ly/~ColinMaudry/1.png)
 
-1. J'agrège toutes les données possibles dans leur format d'origine, **XML ou JSON** (les DECP n'existent pas dans d'autres formats)
-2. Je les stocke dans `/sources` dans un répertoire spécifique à la source des données. En effet, selon la source, les données n'ont pas besoin des même traitements pour être utilisables (nettoyage, réparation de la structure, correction de l'encodage, conversion depuis XML)
-3. Je les convertis au format JSON réglementaire, en rajoutant un champ `source`. Certaines données sources n'étant pas valides (par exemple si certains champs manquent), les données JSON ne seront pas non plus valides. Je prends le parti de les garder.
-4. Je crée une archive ZIP avec le JSON converti. Ces archives ZIP sont sauvegardées dans le dépot Git, vous les trouverez dans `/json`
+> Graphique utilisant les statistiques CSV produites par ce projet
 
-**Si vous avez connaissance de données essentielles de la commande publique facilement accessibles (téléchargement en masse possible) et qui ne sont pas encore identifiées ci-dessous, merci de [m'en informer](#contact).**
+Projets connexes :
 
-À terme, les données converties seront principalement mises à disposition sur https://sireneld.io/data.
+- [decp-rama](https://github.com/etalab/decp-rama)
+- [format-commande-publique](https://github.com/etalab/format-commande-publique)
+- [sirene-ld-web](https://github.com/ColinMaudry/sirene-ld-web) (https://sireneld.io/commande-publique)
 
 ## Pré-requis
 
-- [xml2json](https://github.com/Cheedoong/xml2json) pour la conversion de XML vers JSON
-- [jq](https://stedolan.github.io/jq/) pour la conversion JSON vers JSON (disponible dans les dépôts Ubuntu)
+- [jq](https://stedolan.github.io/jq/) pour requêter le fichier JSON (disponible dans les dépôts Ubuntu)
 - une instance MongoDB et `mongoimport` pour le chargement
 - pouvoir exécuter des scripts bash
+- ansible pour initialiser MongoDB
 
 ## Mode d'emploi
-
-Vous trouverez les `code` possibles dans le tableau plus bas.
 
 Pour commencer, vous devez faire une copie de `config/config_template.sh` en `config/config.sh`.
 
@@ -40,7 +37,7 @@ Puis éditez le contenu de `config/config.sh` pour configurer l'accès à votre 
 
 ### (Ré)initialiser la base de données MongoDB
 
-La base de données configurée dans `config/config.sh` et l'utilisateur doivent être créés par vos soins.
+La base de données configurée dans `config/config.sh`.
 
 Ensuite, vous pouvez initialiser la base de données (suppression/création des collections, création de l'index textuel) :
 
@@ -48,66 +45,23 @@ Ensuite, vous pouvez initialiser la base de données (suppression/création des 
 ./dbInit.sh
 ```
 
-### Télécharger, traiter, empaqueter et charger les données en base
-
-Toutes les étapes ci-dessous sont activées de façon séquentielle, à l'exception de `clean`.
-
-Si la source sélectionnée n'a pas de script pour une étape donnée, cette étape sera ignorée.
+Si vous partez d'une base vide, vous pouvez en plus créer les utilisateurs et activer l'authentification avec :
 
 ```
-./all.sh [code]
+./dbInit.sh fromScratch
 ```
 
-### Télécharger les données
+### Génération des statistiques
 
 ```
-./get.sh [code]
+./sourceStats.sh
 ```
 
-### Convertir les données
-
-Les données doivent avoir été téléchargées.
+### Charger des données de marchés publiques et les statistiques dans MongoDB
 
 ```
-./convert.sh [code]
+./load-in-db.sh
 ```
-
-### Créer une archive ZIP des données JSON converties
-
-Les données doivent avoir été converties.
-
-```
-./package.sh [code]
-```
-
-### Charger des données JSON converties dans MongoDB
-
-Les données doivent avoir été converties.
-
-```
-./load-in-db.sh [code]
-```
-
-
-### Supprimer les données JSON converties (mais pas les ZIP)
-
-Les données doivent avoir été converties. Il est recommander de créer une archive ZIP auparavant, au cas où.
-
-```
-./clean.sh [code]
-```
-
-
-## Sources de données
-
-| Code                   | Description                                      | URL                                                           | Statut                                                                               |
-| ---------------------- | ------------------------------------------------ | ------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
-| `data.gouv.fr_pes`     | DECP des collectivités issues du PES Marché      | https://www.data.gouv.fr/fr/datasets/5bd0b6fd8b4c413d0801dc57 | **Intégrée**                                                                         |
-| `data.gouv.fr_aife`    | DECP de l'État publiées par l'AIFE               | https://www.data.gouv.fr/fr/datasets/5bd789ee8b4c4155bd9a0770 | **Intégrée**                                                                         |
-|                        | DECP publiées par achatpublic.com                | [https://www.achatpublic.com](https://frama.link/47M71Xz2)    | Pas de téléchargement en masse                                                       |
-| `marches-publics.info` | DECP publiées par marches-publics.info (AWS)     | https://www.marches-publics.info/mpiaws/index.cfm             | [Plus de téléchargement en masse](https://github.com/ColinMaudry/decp-json/issues/3) |
-| `e-marchespublics.com` | DECP publiées par e-marchespublics.com (Dematis) | https://www.data.gouv.fr/fr/datasets/5c0a7845634f4139b2ee8883 | **Intégrée**                                                                         |
-|                        | DECP des membres de Mégalis Bretagne             | https://marches.megalisbretagne.org/                          | Très peu de DECP publiées                                                            |
 
 ## Contact
 
@@ -122,6 +76,11 @@ Vous pouvez :
 Le code source de ce projet est publié sous licence [Unlicense](http://unlicense.org).
 
 ## Notes de version
+
+### 2.0.0
+
+- migration du code d'agrégation vers [decp-rama](https://github.com/etalab/decp-rama)
+- production de stats
 
 #### 1.3.1
 

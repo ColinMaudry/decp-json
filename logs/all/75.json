@@ -1,0 +1,181 @@
+{
+  "compare" : null,
+  "previous_successful_build" : {
+    "build_num" : 66,
+    "status" : "success",
+    "build_time_millis" : 1010982
+  },
+  "build_parameters" : {
+    "CIRCLE_JOB" : "process-and-publish"
+  },
+  "oss" : true,
+  "all_commit_details_truncated" : false,
+  "committer_date" : null,
+  "steps" : [ {
+    "name" : "Spin up Environment",
+    "actions" : [ {
+      "truncated" : false,
+      "index" : 0,
+      "parallel" : true,
+      "failed" : null,
+      "infrastructure_fail" : null,
+      "name" : "Spin up Environment",
+      "bash_command" : null,
+      "status" : "success",
+      "timedout" : null,
+      "continue" : null,
+      "end_time" : "2019-06-20T04:00:23.305Z",
+      "type" : "test",
+      "allocation_id" : "5d0b04c340cff70008efc98a-0-build/235EBEAB",
+      "output_url" : "https://circle-production-action-output.s3.amazonaws.com/d3c0d81000925d736c40b0d5-5cb96bfb03c6cb00010e1586-0-0?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20200216T144122Z&X-Amz-SignedHeaders=host&X-Amz-Expires=432000&X-Amz-Credential=AKIAIJNI6FA5RIAFFQ7Q%2F20200216%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=511f62bd857d653a587338c26cfb0b749468266c1824ff1d7ef87bbe474c3ea4",
+      "start_time" : "2019-06-20T04:00:06.853Z",
+      "background" : false,
+      "exit_code" : null,
+      "insignificant" : false,
+      "canceled" : null,
+      "step" : 0,
+      "run_time_millis" : 16452,
+      "has_output" : true
+    } ]
+  }, {
+    "name" : "Récupération de decp-rama",
+    "actions" : [ {
+      "truncated" : false,
+      "index" : 0,
+      "parallel" : true,
+      "failed" : null,
+      "infrastructure_fail" : null,
+      "name" : "Récupération de decp-rama",
+      "bash_command" : "#!/bin/bash -eo pipefail\nmkdir -p /home/circleci/project\ncd /home/circleci/project\ngit clone https://github.com/etalab/decp-rama\ncd decp-rama\ngit checkout $CIRCLE_BRANCH\n",
+      "status" : "success",
+      "timedout" : null,
+      "continue" : null,
+      "end_time" : "2019-06-20T04:00:23.737Z",
+      "type" : "test",
+      "allocation_id" : "5d0b04c340cff70008efc98a-0-build/235EBEAB",
+      "output_url" : "https://circle-production-action-output.s3.amazonaws.com/ccc0d81000925d737d40b0d5-5cb96bfb03c6cb00010e1586-101-0?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20200216T144122Z&X-Amz-SignedHeaders=host&X-Amz-Expires=432000&X-Amz-Credential=AKIAIJNI6FA5RIAFFQ7Q%2F20200216%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=fe6f75c4b3814a7fd8a4d4f541e6a4e65e2e8398327f48f513e2bb500b95bae2",
+      "start_time" : "2019-06-20T04:00:23.435Z",
+      "background" : false,
+      "exit_code" : 0,
+      "insignificant" : false,
+      "canceled" : null,
+      "step" : 101,
+      "run_time_millis" : 302,
+      "has_output" : true
+    } ]
+  }, {
+    "name" : "Récupération et traitement des données",
+    "actions" : [ {
+      "truncated" : false,
+      "index" : 0,
+      "parallel" : true,
+      "failed" : true,
+      "infrastructure_fail" : null,
+      "name" : "Récupération et traitement des données",
+      "bash_command" : "#!/bin/bash -eo pipefail\ncd /home/circleci/project/decp-rama\n./process.sh all package sequence\n",
+      "status" : "failed",
+      "timedout" : null,
+      "continue" : null,
+      "end_time" : "2019-06-20T04:18:10.408Z",
+      "type" : "test",
+      "allocation_id" : "5d0b04c340cff70008efc98a-0-build/235EBEAB",
+      "output_url" : "https://circle-production-action-output.s3.amazonaws.com/3dc0d81000925d737d40b0d5-5cb96bfb03c6cb00010e1586-102-0?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20200216T144122Z&X-Amz-SignedHeaders=host&X-Amz-Expires=432000&X-Amz-Credential=AKIAIJNI6FA5RIAFFQ7Q%2F20200216%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=e6ad343b7a6d2fcccb9c018e1a4dd244bbebb996aaf9f94d342b9bc1f0428293",
+      "start_time" : "2019-06-20T04:00:23.742Z",
+      "background" : false,
+      "exit_code" : 1,
+      "insignificant" : false,
+      "canceled" : null,
+      "step" : 102,
+      "run_time_millis" : 1066666,
+      "has_output" : true
+    } ]
+  } ],
+  "body" : null,
+  "usage_queued_at" : "2019-06-20T04:00:03.659Z",
+  "context_ids" : [ ],
+  "fail_reason" : null,
+  "retry_of" : null,
+  "reponame" : "decp-rama",
+  "ssh_users" : [ ],
+  "build_url" : "https://circleci.com/gh/etalab/decp-rama/75",
+  "parallel" : 1,
+  "failed" : true,
+  "branch" : "master",
+  "username" : "etalab",
+  "author_date" : null,
+  "why" : "scheduled-workflow",
+  "user" : {
+    "is_user" : true,
+    "login" : "ColinMaudry",
+    "avatar_url" : "https://avatars0.githubusercontent.com/u/3747136?v=4",
+    "name" : "Colin Maudry",
+    "vcs_type" : "github",
+    "id" : 3747136
+  },
+  "vcs_revision" : "7a161060b7f227afd734f43ea9ac025b1bc3ad42",
+  "workflows" : {
+    "job_name" : "process-and-publish",
+    "job_id" : "a05e1f79-2fda-4273-ba2c-3aabdf52a3c4",
+    "workflow_id" : "eb77a66f-56dd-4d27-bb0f-2b200e21b2fb",
+    "workspace_id" : "eb77a66f-56dd-4d27-bb0f-2b200e21b2fb",
+    "upstream_job_ids" : [ ],
+    "upstream_concurrency_map" : { },
+    "workflow_name" : "daily"
+  },
+  "owners" : [ ],
+  "vcs_tag" : null,
+  "pull_requests" : [ ],
+  "build_num" : 75,
+  "infrastructure_fail" : false,
+  "committer_email" : null,
+  "has_artifacts" : true,
+  "previous" : {
+    "build_num" : 73,
+    "status" : "failed",
+    "build_time_millis" : 2021701
+  },
+  "status" : "failed",
+  "committer_name" : null,
+  "retries" : null,
+  "subject" : null,
+  "vcs_type" : "github",
+  "timedout" : false,
+  "dont_build" : null,
+  "lifecycle" : "finished",
+  "no_dependency_cache" : false,
+  "stop_time" : "2019-06-20T04:18:10.452Z",
+  "ssh_disabled" : true,
+  "build_time_millis" : 1083640,
+  "picard" : {
+    "build_agent" : {
+      "image" : "circleci/picard:1.0.11727-b0960fc9",
+      "properties" : {
+        "build_agent" : "1.0.11727-b0960fc9",
+        "executor" : "docker"
+      }
+    },
+    "resource_class" : {
+      "cpu" : 2.0,
+      "ram" : 4096,
+      "class" : "medium"
+    },
+    "executor" : "docker"
+  },
+  "circle_yml" : {
+    "string" : "version: 2\njobs:\n  process-and-publish:\n    docker:\n    - image: etalab/decp-rama\n    steps:\n    - run:\n        name: Récupération de decp-rama\n        command: |\n          mkdir -p /home/circleci/project\n          cd /home/circleci/project\n          git clone https://github.com/etalab/decp-rama\n          cd decp-rama\n          git checkout $CIRCLE_BRANCH\n    - run:\n        name: Récupération et traitement des données\n        command: |\n          cd /home/circleci/project/decp-rama\n          ./process.sh all package sequence\n    - run:\n        name: Publication des données sur (next.)data.gouv.fr\n        command: |\n          cd /home/circleci/project/decp-rama\n          ./publish.sh\nworkflows:\n  version: 2\n  dev:\n    jobs:\n    - process-and-publish:\n        filters:\n          branches:\n            only:\n            - develop\n  daily:\n    jobs:\n    - process-and-publish\n    triggers:\n    - schedule:\n        cron: 0 4 * * 2,3,4,5,6\n        filters:\n          branches:\n            only:\n            - master\n"
+  },
+  "messages" : [ ],
+  "is_first_green_build" : false,
+  "job_name" : null,
+  "start_time" : "2019-06-20T04:00:06.812Z",
+  "canceler" : null,
+  "all_commit_details" : [ ],
+  "platform" : "2.0",
+  "outcome" : "failed",
+  "vcs_url" : "https://github.com/etalab/decp-rama",
+  "author_name" : null,
+  "node" : null,
+  "queued_at" : "2019-06-20T04:00:03.689Z",
+  "canceled" : false,
+  "author_email" : null
+}

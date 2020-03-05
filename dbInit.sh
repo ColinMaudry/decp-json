@@ -10,8 +10,26 @@
 
 source ./config/config.sh
 
+if [[ $1 -eq "fromScratch" ]]
+then
+    # Ajout de l'admin "root"
+    ansible localhost -m mongodb_user -a "database=admin name=admin password=$adminPassword roles=readWriteAnyDatabase,userAdminAnyDatabase state=present"
+
+    # Activaction de l'authentification
+    sudo sed -i 's/#auth = true/auth = true/' /etc/mongodb.conf
+
+    #Redémarrage de MongoDB pour prendre en compte l'activiatio de l'auth
+    sudo systemctl restart mongodb.service
+
+    # Ajout de l'utilisateur normal
+    ansible localhost -m mongodb_user -a "database=$mongoDatabase name=$mongoUsername password=$mongoPassword roles=readWrite,dbAdmin state=present login_user=admin login_password=$adminPassword login_database=admin"
+fi
+
+
 # Suppression des collections
 
+
+# Suppression des collections
 mongo -u $mongoUsername -p $mongoPassword --port $mongoPort --eval 'db.data.drop()' $mongoDatabase
 
 mongo -u $mongoUsername -p $mongoPassword --port $mongoPort --eval 'db.sources.drop()' $mongoDatabase
@@ -21,6 +39,8 @@ mongo -u $mongoUsername -p $mongoPassword --port $mongoPort --eval 'db.sources.d
 mongo -u $mongoUsername -p $mongoPassword --port $mongoPort --eval 'db.createCollection("data")' $mongoDatabase
 
 mongo -u $mongoUsername -p $mongoPassword --port $mongoPort --eval 'db.createCollection("sources")' $mongoDatabase
+
+mongo -u $mongoUsername -p $mongoPassword --port $mongoPort --eval 'db.createCollection("stats")' $mongoDatabase
 
 # Création de l'index texte sur la collection data
 
