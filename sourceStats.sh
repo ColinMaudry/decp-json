@@ -3,9 +3,9 @@
 source config/config.sh
 
 # Chargement des métadonnées des sources
-wget https://raw.githubusercontent.com/etalab/decp-rama/master/sources/metadata.json -O sources/metadata.json
+wget https://raw.githubusercontent.com/etalab/decp-rama/master/sources/metadata.json -O source-metadata.json
 
-sources=`jq -r '.[] | .code' sources/metadata.json`
+sources=`jq -r '.[] | .code' source-metadata.json`
 
 
 if [[ -f nbMarches_* ]]

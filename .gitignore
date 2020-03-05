@@ -1,5 +1,5 @@
 sources/*
-!sources/metadata.json
+sources-metadata.json
 json/*
 !json/*.zip
 !json/*.md
