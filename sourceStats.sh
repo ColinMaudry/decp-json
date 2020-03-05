@@ -3,7 +3,7 @@
 source config/config.sh
 
 # Chargement des métadonnées des sources
-wget https://raw.githubusercontent.com/etalab/decp-rama/master/sources/metadata.json -O source-metadata.json
+curl -s https://raw.githubusercontent.com/etalab/decp-rama/master/sources/metadata.json > source-metadata.json
 
 sources=`jq -r '.[] | .code' source-metadata.json`
 
@@ -59,7 +59,7 @@ do
     while [ $url -lt 105 -a $grepNb -le 1 ]
     do
         echo "Downloading logs ($i $url)..."
-        wget -q "https://circleci.com/api/v1.1/project/github/etalab/decp-rama/$i/output/$url/0?file=true" -O $log
+        curl -s "https://circleci.com/api/v1.1/project/github/etalab/decp-rama/$i/output/$url/0?file=true" > $log
 
         grepNb=`grep "début du traitement pour source" $log | wc -l`
         echo $grepNb
@@ -126,7 +126,7 @@ do
 
 done
 
-jq . sourceStats.json | head
+jq '.' sourceStats.json | head
 
 head sourceStats.csv
 
