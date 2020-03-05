@@ -3,7 +3,7 @@
 source config/config.sh
 
 # Chargement des métadonnées des sources
-curl -s https://raw.githubusercontent.com/etalab/decp-rama/master/sources/metadata.json > source-metadata.json
+curl -sL https://raw.githubusercontent.com/etalab/decp-rama/master/sources/metadata.json > source-metadata.json
 
 sources=`jq -r '.[] | .code' source-metadata.json`
 
@@ -39,7 +39,7 @@ echo $head > sourceStats.csv
 i=51
 
 # Get last job number
-lastLog=`curl -s "https://circleci.com/api/v1.1/project/github/etalab/decp-rama/tree/master?circle-token=$circleApiKey&limit=1&filter=completed" | jq -r '.[0].build_num'`
+lastLog=`curl -sL "https://circleci.com/api/v1.1/project/github/etalab/decp-rama/tree/master?circle-token=$circleApiKey&limit=1&filter=completed" | jq -r '.[0].build_num'`
 
 echo "last log = $lastLog"
 
@@ -50,7 +50,7 @@ do
     # Get job metadata
     if [[ ! -s logs/all/$i.json ]]
     then
-        curl -s https://circleci.com/api/v1.1/project/github/etalab/decp-rama/$i -u "$circleApiKey:" > logs/all/$i.json
+        curl -sL https://circleci.com/api/v1.1/project/github/etalab/decp-rama/$i -u "$circleApiKey:" > logs/all/$i.json
     fi
 
     date=`jq -r '.start_time | split("T") | .[0]' logs/all/$i.json`
@@ -60,7 +60,7 @@ do
     while [ $url -lt 105 -a $grepNb -le 1 ]
     do
         echo "Downloading logs ($i $url)..."
-        curl -s "https://circleci.com/api/v1.1/project/github/etalab/decp-rama/$i/output/$url/0?file=true" > $log
+        curl -sL "https://circleci.com/api/v1.1/project/github/etalab/decp-rama/$i/output/$url/0?file=true" > $log
 
         grepNb=`grep "début du traitement pour source" $log | wc -l`
 
