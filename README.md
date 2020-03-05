@@ -2,15 +2,13 @@
 
 > Chargement des données essentielles de la commande publique en base de données et production de statistiques.
 
-**Version 2.0.0**
+**Version 2.0.1**
 
 Rappel de ce que sont les données essentielles de la commande publique (ou DECP) [sur le blog de data.gouv.fr](https://www.data.gouv.fr/fr/posts/le-point-sur-les-donnees-essentielles-de-la-commande-publique/).
 
 L'objectif de ce projet est d'exploiter [les données essentielles de la commande publique (DECP)](https://www.data.gouv.fr/fr/datasets/5cd57bf68b4c4179299eb0e9/) et de les rendre intelligibles.
 
 ![Progression du nombre de marchés par source](https://plot.ly/~ColinMaudry/1.png)
-
-> Graphique utilisant les statistiques CSV produites par ce projet
 
 Projets connexes :
 
@@ -76,6 +74,10 @@ Vous pouvez :
 Le code source de ce projet est publié sous licence [Unlicense](http://unlicense.org).
 
 ## Notes de version
+
+### 2.0.1
+
+- ajout de la gestion de redirection (`curl -L`) pour la récupréation des DECP
 
 ### 2.0.0
 
