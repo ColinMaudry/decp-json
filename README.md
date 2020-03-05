@@ -2,7 +2,7 @@
 
 > Chargement des données essentielles de la commande publique en base de données et production de statistiques.
 
-**Version 1.3.1**
+**Version 2.0.0**
 
 Rappel de ce que sont les données essentielles de la commande publique (ou DECP) [sur le blog de data.gouv.fr](https://www.data.gouv.fr/fr/posts/le-point-sur-les-donnees-essentielles-de-la-commande-publique/).
 
@@ -11,6 +11,12 @@ L'objectif de ce projet est d'exploiter [les données essentielles de la command
 ![Progression du nombre de marchés par source](https://plot.ly/~ColinMaudry/1.png)
 
 > Graphique utilisant les statistiques CSV produites par ce projet
+
+Projets connexes :
+
+- [decp-rama](https://github.com/etalab/decp-rama)
+- [format-commande-publique](https://github.com/etalab/format-commande-publique)
+- [sirene-ld-web](https://github.com/ColinMaudry/sirene-ld-web) (https://sireneld.io/commande-publique)
 
 ## Pré-requis
 
@@ -70,6 +76,11 @@ Vous pouvez :
 Le code source de ce projet est publié sous licence [Unlicense](http://unlicense.org).
 
 ## Notes de version
+
+### 2.0.0
+
+- migration du code d'agrégation vers [decp-rama](https://github.com/etalab/decp-rama)
+- production de stats
 
 #### 1.3.1
 
