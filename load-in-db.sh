@@ -10,7 +10,7 @@ source config/config.sh
 
 
 # Chargement des métadonnées des sources
-curl -s https://raw.githubusercontent.com/etalab/decp-rama/master/sources/metadata.json > source-metadata.json
+curl -sL https://raw.githubusercontent.com/etalab/decp-rama/master/sources/metadata.json > source-metadata.json
 
 mongoimport --username $mongoUsername --password $mongoPassword --host $mongoHost:$mongoPort --db $mongoDatabase --collection sources --drop --jsonArray --file source-metadata.json
 
@@ -20,7 +20,7 @@ then
 fi
 
 # Chargement des données agrégées de decp-rama
-curl -s https://www.data.gouv.fr/fr/datasets/r/16962018-5c31-4296-9454-5998585496d2 > decp.json
+curl -sL https://www.data.gouv.fr/fr/datasets/r/16962018-5c31-4296-9454-5998585496d2 > decp.json
 
 jq '.marches' decp.json | mongoimport --username $mongoUsername --password $mongoPassword --host $mongoHost:$mongoPort --db $mongoDatabase --collection data --drop --jsonArray
 
