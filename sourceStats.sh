@@ -34,7 +34,6 @@ echo $head > sourceStats.csv
 
 
 # Download logs from circle
-
 # Jobs before 51 are rubbish
 i=51
 
@@ -45,6 +44,14 @@ echo "last log = $lastLog"
 
 while [[ ! $i -gt $lastLog ]]
 do
+    for logNum in 71 119 151
+    do
+        if [[ $i -eq $logNum ]]
+        then
+            ((i++))
+        fi
+    done
+
     log=logs/all/$i.log
 
     # Get job metadata
@@ -59,6 +66,7 @@ do
 
     while [ $url -lt 105 -a $grepNb -le 1 ]
     do
+
         echo "Downloading logs ($i $url)..."
         curl -sL "https://circleci.com/api/v1.1/project/github/etalab/decp-rama/$i/output/$url/0?file=true" > $log
 
@@ -87,11 +95,15 @@ do
 
     date=`basename -s .log $log`
 
+
+
     csvLine="$date"
 
     for source in $sources
     do
         nbMarches=`grep "$source contient" $log | sed -r 's/^.*contient ([0-9]+) marchés/\1/' | tr -d "\r\n "`
+
+
 
         csvLine="$csvLine,$nbMarches"
 
@@ -107,6 +119,40 @@ do
         dateObject="$dateObject
         {\"source\":\"$source\",\"marches\":$nbMarches,\"nouveauxMarches\":$nbNewMarches},"
         csvLine="$csvLine,$nbNewMarches"
+    done
+
+    nbAcheteurs=`grep "Nombre d'acheteurs uniques" $log | sed -r 's/^.*acheteurs uniques : ([0-9]+)/\1/' | tr -d "\r\n "`
+    nbTitulaires=`grep "Nombre de titulaires uniques" $log | sed -r 's/^.*titulaires uniques : ([0-9]+)/\1/' | tr -d "\r\n "`
+
+    if [[ $nbAcheteurs = "" ]]
+    then
+        nbAcheteurs="0"
+    fi
+
+    if [[ $nbTitulaires = "" ]]
+    then
+        nbTitulaires="0"
+    fi
+
+    dateObject="${dateObject::-1}],\"acheteurs\":$nbAcheteurs,\"titulaires\":$nbTitulaires,\"annees\":["
+
+    for annee in 2018 2019 2020
+    do
+        nbMarchesAnnee=`grep "Nombre total de marchés pour l'année $annee" $log | sed -r "s/^.*année $annee : ([0-9]+)/\1/" | tr -d "\r\n "`
+        montantAnnee=`grep "Montant total pour l'année $annee" $log | sed -r "s/^.*année $annee : ([0-9]+)/\1/" | tr -d "\r\n "`
+
+        if [[ $nbMarchesAnnee = "" ]]
+        then
+            nbMarchesAnnee="0"
+        fi
+
+        if [[ $montantAnnee = "" ]]
+        then
+            montantAnnee="0"
+        fi
+
+        dateObject="$dateObject
+        {\"annee\":\"$annee\",\"marches\":$nbMarchesAnnee,\"montant\":$montantAnnee },"
     done
 
     # Close the date object
