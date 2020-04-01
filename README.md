@@ -2,7 +2,7 @@
 
 > Toutes les données essentielles de la commande publique agrégées et converties
 
-**Version 1.11.3**
+**Version 1.11.4**
 
 Rappel de ce que sont les données essentielles de la commande publique (ou DECP) [sur le blog de data.gouv.fr](https://www.data.gouv.fr/fr/posts/le-point-sur-les-donnees-essentielles-de-la-commande-publique/).
 
@@ -105,13 +105,17 @@ Le code source de ce projet est publié sous licence [MIT](https://opensource.or
 
 ## Notes de version
 
+#### 1.11.4
+
+- Allongement de la durée de timeout (`no_output_timeout`) CircleCI (1 heure => 1 heure 45 minutes)
+
 #### 1.11.3
 
 - Données AIFE : Plus de discrimination sur l'extension de fichier ([#30](https://github.com/etalab/decp-rama/issues/30))
 
 #### 1.11.2
 
-- Allongement de la durée de timeout CircleCI
+- Allongement de la durée de timeout CircleCI (`no_output_timeout`) (10 minutes => 1 heure)
 
 #### 1.11.1
 
