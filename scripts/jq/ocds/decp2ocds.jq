@@ -15,26 +15,17 @@ def getBuyer:
     . | (if (."_type" == "Marché") then
     .acheteur else .autoriteConcedante end)
     ;
-def getSupplier(lastModif):
+def getSupplier:
     . | (if (."_type" == "Marché") then
     (lastModif.titulaires // .titulaires) else .concessionnaires end) |
     if (. == null) then empty else .[] end
     ;
-def chooseReleaseTag(lastModif):
-    ["award","contract"]
-    ;
-
 def formatDate(date):
     if (date|type == "string") then
         date | match("(\\d{4}-\\d\\d-\\d\\d)(.*)?") | (.captures[0].string + "T00:00:00" + (if .captures[1].string == "" then "Z" else .captures[1].string end))
     else null end
     ;
 
-def getReleaseDate(lastModif):
-    if (lastModif|type == "object")|not then formatDate(.datePublicationDonnees)
-    else formatDate(lastModif.datePublicationDonneesModification)
-    end
-    ;
 def getDurationInDays(durationInMonths):
     durationInMonths * 30.5 | floor
     ;
@@ -75,7 +66,6 @@ def getReleaseIdMeta:
         .modifications as $modifications |
         getReleaseIdMeta as $releaseIdMeta |
         ($releaseIdMeta.id + "-" + $releaseIdMeta.seq) as $releaseId |
-        ($modifications | last) as $lastModif |
         ($ocidPrefix + "-" + $releaseIdMeta.id) as $ocid |
         [{
         "id": ($ocid + "-item-1"),
@@ -91,9 +81,9 @@ def getReleaseIdMeta:
         "ocid": $ocid,
 		"id": $releaseId,
         "decpUID": .uid,
-		"date": (getReleaseDate($lastModif) // $datetime),
+		"date": (formatDate(.datePublicationDonnees) // $datetime),
         "language": "fr",
-		"tag": chooseReleaseTag($lastModif),
+		"tag": ["award","contract"],
 		"initiationType": "tender",
 		"parties":
         [
@@ -108,7 +98,7 @@ def getReleaseIdMeta:
                         "legalName": .nom
                     }})
                     ,
-          (getSupplier($lastModif) | {
+          (getSupplier | {
                   "name": .denominationSociale,
                   "id": (getIdScheme(.typeIdentifiant) + "-" + .id + "-supplier") ,
                   "roles": ["supplier"],
@@ -132,7 +122,7 @@ def getReleaseIdMeta:
 				"amount": .montant,
 				"currency": "EUR"
 			},
-			"suppliers": [(getSupplier($lastModif) | {
+			"suppliers": [(getSupplier | {
                   "name": .denominationSociale,
                   "id": (getIdScheme(.typeIdentifiant) + "-" + .id + "-supplier")
                   })
@@ -147,23 +137,22 @@ def getReleaseIdMeta:
                     "id": ($ocid + "-contract-1"),
                     "awardID": ($ocid + "-award-1"),
                     "value": {
-                        "amount": ($lastModif.montant // .montant),
+                        "amount": .montant,
                         "currency": "EUR"
                     },
                     "description": .objet,
-                    "amendments": (if ($releaseIdMeta.nbModif > 0) then
-                        [ {
-                            "id": ($ocid + "-amendment-" + ($releaseIdMeta.seq | tonumber | tostring)),
-                            "date": (formatDate($lastModif.dateNotificationModification)),
-                            "rationale":  ($lastModif.objetModification),
-                            "amendsReleaseID": ($releaseIdMeta.id + "-" + ($releaseIdMeta.seq | tonumber | . - 1 |
-                            tostring | if length < 2 then "0" + . else . end)),
-                            "releaseID": $releaseId
-                            } ]
-                        else null end),
+                    # "amendments": (if ($releaseIdMeta.nbModif > 0) then
+                    #     [ {
+                    #         "id": ($ocid + "-amendment-" + ($releaseIdMeta.seq | tonumber | tostring)),
+                    #         "date": (formatDate($lastModif.dateNotificationModification)),
+                    #         "rationale":  ($lastModif.objetModification),
+                    #         "amendsReleaseID": ($releaseIdMeta.id + "-" + ($releaseIdMeta.seq | tonumber | . - 1 |
+                    #         tostring | if length < 2 then "0" + . else . end)),
+                    #         "releaseID": $releaseId
+                    #         } ]
+                    #     else null end),
                     "period":   {
-                        "durationInDays": getDurationInDays($lastModif.dureeMois //
-                        .dureeMois)
+                        "durationInDays": getDurationInDays(.dureeMois)
                     },
                     "status": (if $releaseIdMeta.nbModif > 0 then "active" else "pending" end),
                     "items": $items
