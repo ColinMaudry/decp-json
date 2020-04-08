@@ -14,7 +14,7 @@
       "ocid": "ocds-78apv2-200013183000212018MAPA201805",
       "id": "200013183000212018MAPA201805-01",
       "decpUID": "200013183000212018MAPA20180501",
-      "date": "2019-05-21T00:00:00Z",
+      "date": "2019-04-25T00:00:00+02:00",
       "language": "fr",
       "tag": [
         "award",
@@ -87,19 +87,10 @@
           "id": "ocds-78apv2-200013183000212018MAPA201805-contract-1",
           "awardID": "ocds-78apv2-200013183000212018MAPA201805-award-1",
           "value": {
-            "amount": 100000,
+            "amount": 80000,
             "currency": "EUR"
           },
           "description": "FOURNITURE D'UN AUTOMATE DE SET UP PCR",
-          "amendments": [
-            {
-              "id": "ocds-78apv2-200013183000212018MAPA201805-amendment-1",
-              "date": "2019-05-19T00:00:00Z",
-              "rationale": "L'objet de la modification",
-              "amendsReleaseID": "200013183000212018MAPA201805-00",
-              "releaseID": "200013183000212018MAPA201805-01"
-            }
-          ],
           "period": {
             "durationInDays": 1189
           },
