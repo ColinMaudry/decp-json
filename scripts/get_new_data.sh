@@ -43,29 +43,29 @@ if [[ $nbNewMarches -lt 1000 ]]
 # Méthode classique si peu de nouveaux marchés
 then
 
-echo '{"marches":[' > temp.json
+    echo '{"marches":[' > temp.json
 
-echo "Pour chaque nouvelle UID, export de l'objet marché correspondant vers un nouveau fichier..."
-echo ""
+    echo "Pour chaque nouvelle UID, export de l'objet marché correspondant vers un nouveau fichier..."
+    echo ""
 
-i=1
+    i=1
 
-for uid in `cat todayMarches`
-do
-         uid=`echo $uid | sed 's/xSPACEx/ /g'`
-         echo "$i   $uid"
-         if [[ $i -lt $nbNewMarches ]]
-         then
-             object=`jq --arg uid "$uid" '.marches[] | select(.uid == $uid)' $newFile | sed 's/^\}/},/'`
-             ((i++));
-         else
-             object=`jq --arg uid "$uid" '.marches[] | select(.uid == $uid)' $newFile`
-         fi
-         echo "${object}" >> temp.json
+    for uid in `cat todayMarches`
+    do
+        uid=`echo $uid | sed 's/xSPACEx/ /g'`
+        echo "$i   $uid"
+        if [[ $i -lt $nbNewMarches ]]
+        then
+         object=`jq --arg uid "$uid" '.marches[] | select(.uid == $uid)' $newFile | sed 's/^\}/},/'`
+         ((i++));
+        else
+         object=`jq --arg uid "$uid" '.marches[] | select(.uid == $uid)' $newFile`
+        fi
+        echo "${object}" >> temp.json
 
-done
+    done
 
-echo ']}' >> temp.json
+    echo ']}' >> temp.json
 
 else
     # Méthode si nombreux nouveaux marchés
