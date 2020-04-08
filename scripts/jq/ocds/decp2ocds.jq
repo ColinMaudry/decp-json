@@ -17,8 +17,8 @@ def getBuyer:
     ;
 def getSupplier:
     . | (if (."_type" == "Marché") then
-    (lastModif.titulaires // .titulaires) else .concessionnaires end) |
-    if (. == null) then empty else .[] end
+    .titulaires else .concessionnaires end) |
+    if (. == null) then empty else unique_by(.id) | .[] end
     ;
 def formatDate(date):
     if (date|type == "string") then
