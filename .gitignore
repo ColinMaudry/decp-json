@@ -3,4 +3,5 @@ sources/*
 json
 flattened
 *.json
+!scripts/jq/ocds/tests/**/*.json
 *.log
