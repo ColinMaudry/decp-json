@@ -54,8 +54,8 @@ def getReleaseIdMeta:
         if (._type == "Marché" and (.modifications | length) == 0) then
         .modifications as $modifications |
         getReleaseIdMeta as $releaseIdMeta |
-        ($releaseIdMeta.id + "-" + $releaseIdMeta.seq) as $releaseId |
         ($ocidPrefix + "-" + $releaseIdMeta.id) as $ocid |
+        ($ocid + "-" + $releaseIdMeta.seq) as $releaseId |
         [{
         "id": ($ocid + "-item-1"),
         "description": .objet,
