@@ -1,0 +1,112 @@
+{
+  "version": "1.1",
+  "uri": "https://www.data.gouv.fr/fr/datasets/r/2a84ffc7-7121-48d2-a28f-85d835ed09a4",
+  "publishedDate": "2019-01-01T01:01:01+02:00",
+  "publisher": {
+    "name": "Secrétariat Général du Gouvernement",
+    "scheme": "FR-RCS",
+    "uid": "12000101100010"
+  },
+  "license": "https://www.etalab.gouv.fr/licence-ouverte-open-licence",
+  "publicationPolicy": "https://www.data.gouv.fr/fr/datasets/5d1a216e6f4441513e89b93e",
+  "releases": [
+    {
+      "ocid": "ocds-78apv2-200013183000212018MAPA20180500",
+      "id": "ocds-78apv2-200013183000212018MAPA20180500-00",
+      "decpUID": "200013183000212018MAPA20180500",
+      "date": "2019-04-25T00:00:00+02:00",
+      "language": "fr",
+      "tag": [
+        "award",
+        "contract"
+      ],
+      "initiationType": "tender",
+      "parties": [
+        {
+          "name": "LASAT",
+          "id": "FR-RCS-20001318300021-buyer",
+          "roles": [
+            "buyer"
+          ],
+          "identifier": {
+            "scheme": "FR-RCS",
+            "id": "20001318300021",
+            "legalName": "LASAT"
+          }
+        },
+        {
+          "name": "TECAN FRANCE SASU",
+          "id": "FR-RCS-20001318300021-supplier",
+          "roles": [
+            "supplier"
+          ],
+          "identifier": {
+            "scheme": "FR-RCS",
+            "id": "20001318300021",
+            "legalName": "TECAN FRANCE SASU"
+          }
+        }
+      ],
+      "buyer": {
+        "name": "LASAT",
+        "id": "FR-RCS-20001318300021-buyer"
+      },
+      "awards": [
+        {
+          "id": "ocds-78apv2-200013183000212018MAPA20180500-award-1",
+          "description": "FOURNITURE D'UN AUTOMATE DE SET UP PCR",
+          "status": "active",
+          "date": "2018-12-03T00:00:00Z",
+          "value": {
+            "amount": 80000,
+            "currency": "EUR"
+          },
+          "suppliers": [
+            {
+              "name": "TECAN FRANCE SASU",
+              "id": "FR-RCS-20001318300021-supplier"
+            }
+          ],
+          "items": [
+            {
+              "id": "ocds-78apv2-200013183000212018MAPA20180500-item-1",
+              "description": "FOURNITURE D'UN AUTOMATE DE SET UP PCR",
+              "classification": {
+                "scheme": "CPV",
+                "id": "38950000-9"
+              }
+            }
+          ],
+          "contractPeriod": {
+            "durationInDays": 1189
+          }
+        }
+      ],
+      "contracts": [
+        {
+          "id": "ocds-78apv2-200013183000212018MAPA20180500-contract-1",
+          "awardID": "ocds-78apv2-200013183000212018MAPA20180500-award-1",
+          "value": {
+            "amount": 80000,
+            "currency": "EUR"
+          },
+          "description": "FOURNITURE D'UN AUTOMATE DE SET UP PCR",
+          "period": {
+            "durationInDays": 1189
+          },
+          "status": "pending",
+          "items": [
+            {
+              "id": "ocds-78apv2-200013183000212018MAPA20180500-item-1",
+              "description": "FOURNITURE D'UN AUTOMATE DE SET UP PCR",
+              "classification": {
+                "scheme": "CPV",
+                "id": "38950000-9"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

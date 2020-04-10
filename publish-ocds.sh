@@ -17,9 +17,9 @@ case ${CIRCLE_BRANCH} in
     master)
 
     export api="https://www.data.gouv.fr/api/1"
-    export dataset_id="5cd57bf68b4c4179299eb0e9"
-    export resource_id_json="16962018-5c31-4296-9454-5998585496d2"
-    export resource_id_xml="17046b18-8921-486a-bc31-c9196d5c3e9c"
+    export dataset_id="5d1a216e6f4441513e89b93e"
+    export resource_id_json="2a84ffc7-7121-48d2-a28f-85d835ed09a4"
+    export resource_id_xlsx="9edac89c-874a-40f8-b01b-bb81be8afe7f"
 
 
     #API_KEY configurée dans les options de build de CircleCI
@@ -36,45 +36,34 @@ case ${CIRCLE_BRANCH} in
 #         api_key=$NEXT_API_KEY
 #     ;;
 
-    if [[ ! -f ./json/decp.json ]]
-    then
-        echo "Le fichier agrégé ./json/decp.json doit d'abord être généré avec la commande './merge_all_sources.sh'."
-        exit 1
-    fi
+if [[ ! -f ./json/releases.json or ! -f ./flattened.xslx ]]
+then
+    echo "Les fichiers ./json/releases.json et ./flattened.xslx doivent d'abord être générés avec la commande './scripts/makeOCDS.sh json/decp.json'."
+    exit 1
+fi
 
-    echo "Remplacement de decp.json et decp.xml par leur mise à jour quotidienne"
+mv flattened.xlsx ./json/
 
-    for ext in json xml
-    do
+echo "Remplacement de releases.json et flattened.xslx par leur mise à jour quotidienne"
 
-        case $ext in
-            xml)
-            resource_id=$resource_id_xml
-            ;;
+for file in releases.json flattened.xlsx
+do
 
-            json)
-            resource_id=$resource_id_json
-            ;;
-        esac
+case $file in
+    flattened.xlsx)
+    resource_id=$resource_id_xlsx
+    ;;
 
-        echo "Mise à jour de decp.${ext}..."
+    releases.json)
+    resource_id=$resource_id_json
+    ;;
+esac
 
-        curl "$api/datasets/$dataset_id/resources/${resource_id}/upload/" -F "file=@${ext}/decp.${ext}" -H "X-API-KEY: $api_key"
+echo "Mise à jour de ${file}..."
 
-        date=`date "+%F"`
+curl "$api/datasets/$dataset_id/resources/${resource_id}/upload/" -F "file=@json/${file}" -H "X-API-KEY: $api_key"
 
-        echo "Publication de decp_$date.${ext}..."
-
-        curl "$api/datasets/$dataset_id/upload/" -F "file=@decp_${date}.${ext}" -F "filename=decp_$date" -H "X-API-KEY: $api_key" > dailyResource.json
-
-        idDailyResource=`jq -r '.id' dailyResource.json`
-
-        # Change le type de ressource de 'main' à 'update'
-        curl -X PUT "$api/datasets/$dataset_id/resources/$idDailyResource/" --data '{"type":"update"}' -H "Content-type: application/json" -H "X-API-KEY: $api_key"
-
-        rm dailyResource.json
-
-    done
+done
 
 ;;
 esac

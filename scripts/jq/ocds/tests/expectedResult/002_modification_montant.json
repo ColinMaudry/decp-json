@@ -1,0 +1,12 @@
+{
+  "version": "1.1",
+  "uri": "https://www.data.gouv.fr/fr/datasets/r/2a84ffc7-7121-48d2-a28f-85d835ed09a4",
+  "publishedDate": "2019-01-01T01:01:01+02:00",
+  "publisher": {
+    "name": "Secrétariat Général du Gouvernement",
+    "scheme": "FR-RCS",
+    "uid": "12000101100010"
+  },
+  "license": "https://www.etalab.gouv.fr/licence-ouverte-open-licence",
+  "publicationPolicy": "https://www.data.gouv.fr/fr/datasets/5d1a216e6f4441513e89b93e"
+}

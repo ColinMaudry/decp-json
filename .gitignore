@@ -3,4 +3,5 @@ sources/*
 json
 xml
 *.json
+!scripts/jq/ocds/tests/**/*.json
 *.log

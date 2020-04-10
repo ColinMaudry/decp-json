@@ -19,11 +19,12 @@ jobs:
                 command: |
                      cd /home/circleci/project/decp-rama
                      ./process.sh all package sequence
+                     ./scripts/makeOCDS.sh json/decp.json
             - run:
                 name: Publication des données sur (next.)data.gouv.fr
                 command: |
                     cd /home/circleci/project/decp-rama
-                    ./publish.sh
+                    ./publish-decp.sh
 workflows:
     version: 2
     dev:
