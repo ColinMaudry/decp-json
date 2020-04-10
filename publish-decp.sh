@@ -20,6 +20,7 @@ case ${CIRCLE_BRANCH} in
     export dataset_id="5cd57bf68b4c4179299eb0e9"
     export resource_id_json="16962018-5c31-4296-9454-5998585496d2"
     export resource_id_xml="17046b18-8921-486a-bc31-c9196d5c3e9c"
+    export resource_id_ocds="68bd2001-3420-4d94-bc49-c90878df322c"
 
 
     #API_KEY configurée dans les options de build de CircleCI
@@ -46,7 +47,6 @@ case ${CIRCLE_BRANCH} in
 
     for ext in json xml
     do
-
         case $ext in
             xml)
             resource_id=$resource_id_xml
@@ -75,6 +75,9 @@ case ${CIRCLE_BRANCH} in
         rm dailyResource.json
 
     done
+
+    echo "Mise à jour des données au format OCDS..."
+    curl "$api/datasets/$dataset_id/resources/${resource_id_ocds}/upload/" -F "file=@json/releases.ocds.json" -H "X-API-KEY: $api_key"
 
 ;;
 esac

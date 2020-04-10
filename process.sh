@@ -76,6 +76,11 @@ case $source in
         echo "## Conversion du JSON du jour en XML..."
         scripts/jsonDECP2xmlDECP.sh decp_$date.json > decp_$date.xml
         ls -lh decp_$date.xml
+
+        echo ""
+        echo "## Conversion du JSON agrégé au format OCDS JSON..."
+        # > json/releases.ocds.json
+        scripts/makeOCDS.sh json/decp.json
     ;;
     *)
 
