@@ -30,22 +30,11 @@ def getDurationInDays(durationInMonths):
     durationInMonths * 30.5 | floor
     ;
 def getReleaseIdMeta:
-    (.uid | match("..$") | .string) as $suffix |
-    if
-    ((.uid | type) == "string")
-    and ($suffix | test("\\d\\d")) and ($suffix | tonumber) == (.modifications |length)
-    then
-    {
-        "id": (.uid | rtrimstr($suffix)),
-        "seq": $suffix,
-        "nbModif": (.modifications |length)
-    }
-    else
     {
         "id": .uid,
         "seq": (if (.modifications |length) < 10 then  ("0"  + (.modifications |length | tostring)) else (.modifications | length | tostring) end),
         "nbModif": (.modifications |length)
-    } end
+    }
     ;
 
 {
@@ -62,7 +51,7 @@ def getReleaseIdMeta:
 	"releases": [
         .marches[] |
 
-        if (._type == "Marché") then
+        if (._type == "Marché" and (.modifications | length) == 0) then
         .modifications as $modifications |
         getReleaseIdMeta as $releaseIdMeta |
         ($releaseIdMeta.id + "-" + $releaseIdMeta.seq) as $releaseId |
@@ -132,7 +121,7 @@ def getReleaseIdMeta:
 				"durationInDays": getDurationInDays(.dureeMois)
 			}
 			}],
-            "contracts":[
+            "contracts": [
                 {
                     "id": ($ocid + "-contract-1"),
                     "awardID": ($ocid + "-award-1"),
