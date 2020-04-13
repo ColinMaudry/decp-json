@@ -20,7 +20,4 @@ export dataset_url="https://www.data.gouv.fr/fr/datasets/$dataset_id"
 export ocid_prefix="ocds-78apv2"
 export DECP_HOME=`pwd`
 
-# Récupération des variables injectées dans l'OCDS
-source $DECP_HOME/scripts/jq/ocds/config.sh
-
 $DECP_HOME/scripts/makeOCDS_json.sh $1 > $DECP_HOME/json/releases.ocds.json
