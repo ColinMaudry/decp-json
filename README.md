@@ -2,7 +2,7 @@
 
 > Toutes les données essentielles de la commande publique agrégées et converties
 
-**Version 1.11.5**
+**Version 1.11.6**
 
 Rappel de ce que sont les données essentielles de la commande publique (ou DECP) [sur le blog de data.gouv.fr](https://www.data.gouv.fr/fr/posts/le-point-sur-les-donnees-essentielles-de-la-commande-publique/).
 
@@ -104,6 +104,10 @@ Les fichiers JSON et XML doivent avoir été produits préalablement, par exempl
 Le code source de ce projet est publié sous licence [MIT](https://opensource.org/licenses/MIT).
 
 ## Notes de version
+
+#### 1.11.6
+
+- Fixation de la durée de timeout (`no_output_timeout`) CircleCI à 1 heure 30 minutes. Si les timeout sont rares, le traitement des données se fera exceptionnellement en local. Autrement, il faudra migrer vers une autre solution.
 
 #### 1.11.5
 
