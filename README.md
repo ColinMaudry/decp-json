@@ -107,7 +107,7 @@ Le code source de ce projet est publié sous licence [MIT](https://opensource.or
 
 #### 1.11.6
 
-- Fixation de la durée de timeout (`no_output_timeout`) CircleCI à 1 heure 30 minutes. Si les timeout sont rares, le traitement des données se fera exceptionnellement en local. Autrement, il faudra migrer vers une autre solution.
+- Fixation de la durée de timeout (`no_output_timeout`) CircleCI à 1 heure 30 minutes. fin de ne pas surconsommer les crédits Circle d'Etalab. Si les timeout sont rares, le traitement des données se fera exceptionnellement en local. Autrement, il faudra migrer vers une autre solution.
 
 #### 1.11.5
 
