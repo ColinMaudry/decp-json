@@ -55,7 +55,7 @@ def getReleaseIdMeta:
         .modifications as $modifications |
         getReleaseIdMeta as $releaseIdMeta |
         ($ocidPrefix + "-" + $releaseIdMeta.id) as $ocid |
-        ($ocid + "-" + $releaseIdMeta.seq) as $releaseId |
+        ($ocid + "-" + .datePublicationDonnees + "-" + $releaseIdMeta.seq) as $releaseId |
         [{
         "id": ($ocid + "-item-1"),
         "description": .objet,
