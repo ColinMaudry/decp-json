@@ -79,7 +79,6 @@ case $source in
 
         echo ""
         echo "## Conversion du JSON agrégé au format OCDS JSON..."
-        # > json/releases.ocds.json
         scripts/makeOCDS.sh json/decp.json
     ;;
     *)

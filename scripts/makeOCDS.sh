@@ -20,4 +20,4 @@ export dataset_url="https://www.data.gouv.fr/fr/datasets/$dataset_id"
 export ocid_prefix="ocds-78apv2"
 export DECP_HOME=`pwd`
 
-$DECP_HOME/scripts/makeOCDS_json.sh $1 > $DECP_HOME/json/releases.ocds.json
+$DECP_HOME/scripts/makeOCDS_json.sh $1 > $DECP_HOME/json/decp.ocds.json
