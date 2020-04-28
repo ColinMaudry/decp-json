@@ -2,7 +2,7 @@
 
 > Toutes les données essentielles de la commande publique agrégées et converties
 
-**Version 1.11.6**
+**Version 1.12.0**
 
 Rappel de ce que sont les données essentielles de la commande publique (ou DECP) [sur le blog de data.gouv.fr](https://www.data.gouv.fr/fr/posts/le-point-sur-les-donnees-essentielles-de-la-commande-publique/).
 
@@ -13,7 +13,7 @@ La procédure standard est la suivante :
 1. Nous agrégeons toutes les données possibles dans leur format d'origine, **XML ou JSON** (les DECP n'existent pas dans d'autres formats)
 2. Nous les stockons dans `/sources` dans un répertoire spécifique à la source des données. En effet, selon la source, les données n'ont pas besoin des même traitements pour être utilisables (nettoyage, réparation de la structure, correction de l'encodage)
 3. Nous les convertissons au format JSON réglementaire si la source est en XML. Certaines données sources n'étant pas valides, nous corrigeons ce qui peut être corrigé (par exemple le format d'une date).  Si certains champs manquent dans les données, nous avons pris le parti de les garder et de [signaler ces anomalies](https://github.com/etalab/decp-rama/labels/anomalie).
-4. Nous convertissons l'agrégat au format JSON au fichier XML
+4. Nous convertissons l'agrégat au format JSON (format réglementaire + format [OCDS](https://standard.open-contracting.org/latest/fr/)) et au format XML réglementaire
 4. Nous publions les agrégats XML et JSON sur **[un jeu de données sur data.gouv.fr](https://www.data.gouv.fr/fr/datasets/5cd57bf68b4c4179299eb0e9)**
 5. Nous publions également chaque jour un fichier des nouveaux marchés sur le même jeu de données
 
@@ -75,7 +75,7 @@ Exemples :
 
 ## Publication du résultat
 
-Le script `publish.sh` permet de publier les fichiers produits sur [le jeu de données](https://www.data.gouv.fr/fr/datasets/5cd57bf68b4c4179299eb0e9).
+Le script `publish-decp.sh` permet de publier les fichiers produits sur [le jeu de données](https://www.data.gouv.fr/fr/datasets/5cd57bf68b4c4179299eb0e9).
 
 Les fichiers JSON et XML doivent avoir été produits préalablement, par exemple avec :
 
@@ -104,6 +104,10 @@ Les fichiers JSON et XML doivent avoir été produits préalablement, par exempl
 Le code source de ce projet est publié sous licence [MIT](https://opensource.org/licenses/MIT).
 
 ## Notes de version
+
+### 1.12.0 (28 avril 2020)
+
+- Ajout du format [OCDS](https://standard.open-contracting.org/latest/fr/) aux formats de sortie
 
 #### 1.11.6
 
