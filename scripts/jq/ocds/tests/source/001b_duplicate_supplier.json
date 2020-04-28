@@ -1,0 +1,41 @@
+{
+  "$schema": "https://raw.githubusercontent.com/etalab/format-commande-publique/master/schemas/json/paquet.json",
+  "marches": [
+    {
+      "id": "2018MAPA20180500",
+      "uid": "200013183000212018MAPA20180500",
+      "acheteur": {
+        "id": "20001318300021",
+        "nom": "LASAT"
+      },
+      "_type": "Marché",
+      "nature": "Marché",
+      "objet": "FOURNITURE D'UN AUTOMATE DE SET UP PCR",
+      "codeCPV": "38950000-9",
+      "procedure": "Procédure adaptée",
+      "lieuExecution": {
+        "code": "19000",
+        "typeCode": "Code postal",
+        "nom": "TULLE"
+      },
+      "dureeMois": 39,
+      "dateNotification": "2018-12-03",
+      "datePublicationDonnees": "2019-04-25+02:00",
+      "montant": 80000,
+      "formePrix": "Révisable",
+      "titulaires": [
+        {
+          "typeIdentifiant": "SIRET",
+          "id": "38024392300089",
+          "denominationSociale": "TECAN FRANCE SASU"
+        },
+        {
+          "typeIdentifiant": "SIRET",
+          "id": "38024392300089",
+          "denominationSociale": "TECAN FRANCE SASU"
+        }
+      ],
+      "modifications": []
+    }
+  ]
+}
