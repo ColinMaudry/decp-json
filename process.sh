@@ -35,7 +35,15 @@ case $source in
         echo ""
         echo "## Fusion de tous les fichiers JSON de source en un seul"
 
-        scripts/merge_all_sources.sh
+        scripts/mergeAllSources.sh
+
+        echo "## Exclusions des marchés avec anomalie"
+
+        scripts/excludeMarches.sh
+
+        echo "## Génération des statistiques"
+
+        scripts/stats.sh
 
         echo ""
         echo "Extraction des marchés du jour"
