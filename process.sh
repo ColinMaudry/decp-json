@@ -37,14 +37,14 @@ case $source in
 
         scripts/mergeAllSources.sh
 
+        echo "## Exclusions des marchés avec anomalie"
+
+        scripts/excludeMarches.sh
+
         echo ""
         echo "## Correction des anomalie globales"
 
         scripts/fixAll.sh
-
-        echo "## Exclusions des marchés avec anomalie"
-
-        scripts/excludeMarches.sh
 
         echo "## Génération des statistiques"
 
