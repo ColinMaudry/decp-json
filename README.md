@@ -107,10 +107,12 @@ Le code source de ce projet est publié sous licence [MIT](https://opensource.or
 
 ## Notes de version
 
-### 1.13.0 (20 mai 2020)
+### 1.13.0 (21 mai 2020)
 
 - Migration du dépôt vers l'organisation @139bercy
 - Remplacement des anciens noms de procédure par les nouveaux dans les données consolidées (voir [https://github.com/139bercy/format-commande-publique/issues/48](https://github.com/139bercy/format-commande-publique/issues/48))
+- Correction de bug : le SIRET de l'autorité concédante est maintenant ajoutée à l'`uid` des contrats de concession ([#39](https://github.com/139bercy/decp-rama/issues/39))
+
 
 ### 1.12.0 (28 avril 2020)
 
