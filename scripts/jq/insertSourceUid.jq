@@ -9,7 +9,7 @@ def walk(f):
 
 . | walk(
     if type == "object" and has("_type") then
-    .acheteur.id as $acheteurId  |
+    (.acheteur.id // .autoriteConcedante.id) as $acheteurId  |
     .id as $marcheId |
     to_entries
       | .[0:1]
