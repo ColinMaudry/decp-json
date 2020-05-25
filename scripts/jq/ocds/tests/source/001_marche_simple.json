@@ -1,5 +1,5 @@
 {
-  "$schema": "https://raw.githubusercontent.com/etalab/format-commande-publique/master/schemas/json/paquet.json",
+  "$schema": "https://schema.data.gouv.fr/schemas/139bercy/format-commande-publique/1.5.0/marches.json",
   "marches": [
     {
       "id": "2018MAPA20180500",
