@@ -3,7 +3,7 @@
 
 cd $DECP_HOME/json
 
-# Suppression des marchés exclus (voir https://github.com/etalab/decp-rama/issues/26)
+# Suppression des marchés exclus (voir https://github.com/139bercy/decp-rama/issues/26)
 
 nombreMarchesNoDuplicates=`jq '.marches | length' decp.json`
 

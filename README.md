@@ -4,11 +4,11 @@
 
 [![CircleCI](https://circleci.com/gh/139bercy/decp-rama.svg?style=svg)](https://circleci.com/gh/139bercy/decp-rama)
 
-**Version 1.12.0**
+**Version 1.13.0**
 
 Rappel de ce que sont les données essentielles de la commande publique (ou DECP) [sur le blog de data.gouv.fr](https://www.data.gouv.fr/fr/posts/le-point-sur-les-donnees-essentielles-de-la-commande-publique/).
 
-L'objectif de ce projet est d'identifier toutes les sources de DECP, et de créer des scripts permettant de produire des fichiers utilisables (**[jeu de données sur data.gouv.fr](https://www.data.gouv.fr/fr/datasets/5cd57bf68b4c4179299eb0e9)**) au [formats JSON et XML réglementaires](https://github.com/etalab/format-commande-publique/tree/master/sch%C3%A9mas).
+L'objectif de ce projet est d'identifier toutes les sources de DECP, et de créer des scripts permettant de produire des fichiers utilisables (**[jeu de données sur data.gouv.fr](https://www.data.gouv.fr/fr/datasets/5cd57bf68b4c4179299eb0e9)**) au [formats JSON et XML réglementaires](https://github.com/139bercy/format-commande-publique/tree/master/sch%C3%A9mas).
 
 La procédure standard est la suivante :
 
@@ -16,7 +16,7 @@ La procédure standard est la suivante :
 2. Nous les stockons dans `/sources` dans un répertoire spécifique à la source des données. En effet, selon la source, les données n'ont pas besoin des même traitements pour être utilisables (nettoyage, réparation de la structure, correction de l'encodage)
 3. Nous les convertissons au format JSON réglementaire si la source est en XML. Certaines données sources n'étant pas valides, nous corrigeons ce qui peut être corrigé (par exemple le format d'une date).  Si certains champs manquent dans les données, nous avons pris le parti de les garder et de [signaler ces anomalies](https://github.com/139bercy/decp-rama/labels/anomalie).
 4. Nous convertissons l'agrégat au format JSON (format réglementaire + format [OCDS](https://standard.open-contracting.org/latest/fr/)) et au format XML réglementaire
-4. Nous publions les agrégats XML et JSON sur **[un jeu de données sur data.gouv.fr](https://www.data.gouv.fr/fr/datasets/5cd57bf68b4c4179299eb0e9)**
+4. Nous publions les agrégats JSON, XML et OCDS sur **[un jeu de données sur data.gouv.fr](https://www.data.gouv.fr/fr/datasets/5cd57bf68b4c4179299eb0e9)**
 5. Nous publions également chaque jour un fichier des nouveaux marchés sur le même jeu de données
 
 **Si vous avez connaissance de données essentielles de la commande publique facilement accessibles (téléchargement en masse possible) et qui ne sont pas encore identifiées ci-dessous, merci de [nous en informer](#contact).**
@@ -79,7 +79,7 @@ Exemples :
 
 Le script `publish-decp.sh` permet de publier les fichiers produits sur [le jeu de données](https://www.data.gouv.fr/fr/datasets/5cd57bf68b4c4179299eb0e9).
 
-Les fichiers JSON et XML doivent avoir été produits préalablement, par exemple avec :
+Les fichiers JSON, XML et OCDS doivent avoir été produits préalablement, par exemple avec :
 
 ```
 ./process.sh all package sequence
@@ -106,6 +106,12 @@ Les fichiers JSON et XML doivent avoir été produits préalablement, par exempl
 Le code source de ce projet est publié sous licence [MIT](https://opensource.org/licenses/MIT).
 
 ## Notes de version
+
+### 1.13.0 (21 mai 2020)
+
+- Migration du dépôt vers l'organisation @139bercy
+- Remplacement des anciens noms de procédure par les nouveaux dans les données consolidées (voir [https://github.com/139bercy/format-commande-publique/issues/48](https://github.com/139bercy/format-commande-publique/issues/48))
+- Correction de bug : le SIRET de l'autorité concédante est maintenant ajoutée à l'`uid` des contrats de concession ([#39](https://github.com/139bercy/decp-rama/issues/39))
 
 ### 1.12.0 (28 avril 2020)
 

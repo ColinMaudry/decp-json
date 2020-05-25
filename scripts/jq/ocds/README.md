@@ -1,12 +1,12 @@
 Afin de publier les [données essentielles de la commande publique](https://www.data.gouv.fr/fr/datasets/5cd57bf68b4c4179299eb0e9/) (DECP) dans un format standard et intéropérable à l'échelle internationale, nous les convertissons publions au format OCDS (Open Contracting Data Standard, [Standard de Données sur la Commande Publique Ouverte (fr)](http://standard.open-contracting.org/latest/fr/)). Ce format a été conçu par l'[Open Contracting Partnership (en)](https://www.open-contracting.org/) (en) en collaboration avec des acheteurs publics de nombreux pays.
 
-Les scripts de publication sont consultables sur [le dépôt des scripts de traitement et publication des DECP](https://github.com/etalab/decp-rama/tree/master/scripts/jq/ocds).
+Les scripts de publication sont consultables sur [le dépôt des scripts de traitement et publication des DECP](https://github.com/139bercy/decp-rama/tree/master/scripts/jq/ocds).
 
 ## Structure du format DECP
 
 Pour information, les données de concessions ne sont pour l'instant pas converties au format OCDS. Cette section ne traite donc que données de marchés au sens strict, et non des contrats de concession.
 
-Le format DECP français, dont les schémas se trouvent [ici](https://github.com/etalab/format-commande-publique), se constitue principalemetn de deux parties : le "tronc" des données, contenu à la racine `marche`, et le bloc `modifications`.
+Le format DECP français, dont les schémas se trouvent [ici](https://github.com/139bercy/format-commande-publique), se constitue principalemetn de deux parties : le "tronc" des données, contenu à la racine `marche`, et le bloc `modifications`.
 
 Le tronc décrit les données du marché telle que connues au moment de l'attribution du marché. Dans la vie des données d'une même procédure, les données de ce tronc ne changent donc pas, à l'exception des deux derniers chiffres de l'identifiants de marché (`id`), qui s'incrémentent à chaque modification. Tous les changements sont enregistrés dans le bloc de données `modifications`.
 
