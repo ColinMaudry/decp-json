@@ -4,7 +4,7 @@
 
 [![CircleCI](https://circleci.com/gh/139bercy/decp-rama.svg?style=svg)](https://circleci.com/gh/139bercy/decp-rama)
 
-**Version 1.13.0**
+**Version 1.14.0**
 
 Rappel de ce que sont les données essentielles de la commande publique (ou DECP) [sur le blog de data.gouv.fr](https://www.data.gouv.fr/fr/posts/le-point-sur-les-donnees-essentielles-de-la-commande-publique/).
 
@@ -106,6 +106,10 @@ Les fichiers JSON, XML et OCDS doivent avoir été produits préalablement, par 
 Le code source de ce projet est publié sous licence [MIT](https://opensource.org/licenses/MIT).
 
 ## Notes de version
+
+### 1.14.0 (11 juin 2020)
+
+- Fixation de la durée de timeout (`no_output_timeout`) CircleCI à 4 heures.
 
 ### 1.13.0 (21 mai 2020)
 
