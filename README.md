@@ -98,7 +98,7 @@ Les fichiers JSON, XML et OCDS doivent avoir été produits préalablement, par 
 
 ## Contact
 
-- commandepublique@data.gouv.fr
+- decp@finances.gouv.fr
 - intéragir avec ce dépôt sur Github (issues, pull request).
 
 ## Licence
