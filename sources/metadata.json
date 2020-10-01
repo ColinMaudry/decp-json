@@ -32,7 +32,13 @@
   {
     "id": "6",
     "code": "atexo-maximilien",
-    "description": "DECP téléchargées depuis les plateformes Atexo",
+    "description": "Données téléchargées depuis la plateforme marches.maximilien.fr",
     "url": "https://www.data.gouv.fr/datasets/5f4d1921f7e627ef3ae26944"
+  },
+  {
+    "id": "7",
+    "code": "ternum-bfc",
+    "description": "Données publiées par le profil d'acheteur Ternum BFC",
+    "url": "http://focus-marches.ternum-bfc.fr/xml/"
   }
 ]
