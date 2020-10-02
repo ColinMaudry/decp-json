@@ -4,7 +4,7 @@
 
 [![CircleCI](https://circleci.com/gh/139bercy/decp-rama.svg?style=svg)](https://circleci.com/gh/139bercy/decp-rama)
 
-**Version 1.14.2**
+**Version 1.15.O**
 
 Rappel de ce que sont les données essentielles de la commande publique (ou DECP) [sur le blog de data.gouv.fr](https://www.data.gouv.fr/fr/posts/le-point-sur-les-donnees-essentielles-de-la-commande-publique/).
 
@@ -95,6 +95,9 @@ Les fichiers JSON, XML et OCDS doivent avoir été produits préalablement, par 
 | `e-marchespublics.com` | DECP publiées par e-marchespublics.com (Dematis)     | https://www.data.gouv.fr/fr/datasets/5c0a7845634f4139b2ee8883                 | **Intégrée**                                                                                  |
 |                        | DECP des membres de Mégalis Bretagne                 | https://marches.megalisbretagne.org/                                          | Très peu de DECP publiées                                                                     |
 | `grandlyon`            | Marchés du Grand Lyon publiés sur data.grandlyon.com | https://data.grandlyon.com/citoyennete/marchf-public-de-la-mftropole-de-lyon/ | **Intégrée**                                                                                  |
+| `atexo-maximilien`            | DECP téléchargées depuis la plateforme marches.maximilien.fr | https://www.data.gouv.fr/datasets/5f4d1921f7e627ef3ae26944 | **Intégrée**                                                                                  |
+| `ternum-bfc`            | DECP publiées par le profil d'acheteur Ternum BFC | http://focus-marches.ternum-bfc.fr/xml/ | **Intégrée**                                                                                  |
+
 
 ## Contact
 
@@ -106,6 +109,10 @@ Les fichiers JSON, XML et OCDS doivent avoir été produits préalablement, par 
 Le code source de ce projet est publié sous licence [MIT](https://opensource.org/licenses/MIT).
 
 ## Notes de version
+
+### 1.15.0 (2 octobre 2020)
+
+- Ajout des données de marches.maximilien.fr et du profil d'acheteur Ternum BFC
 
 ### 1.14.2 (15 juillet 2020)
 
