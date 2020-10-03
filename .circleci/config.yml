@@ -36,6 +36,7 @@ workflows:
     daily:
         jobs:
             - process-and-publish
+        context: decp-rama-context
         triggers:
             - schedule:
                 cron: 0 4 * * 2,3,4,5,6
