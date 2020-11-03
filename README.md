@@ -81,6 +81,8 @@ Exemples :
 ```
 ./process.sh all package sequence
 ```
+./process.sh all package sequence
+```
 
 2. Déclarez une clé API permettant de modifier [le jeu de données](https://www.data.gouv.fr/fr/datasets/5cd57bf68b4c4179299eb0e9) :
 
