@@ -4,7 +4,9 @@
 
 [![CircleCI](https://circleci.com/gh/139bercy/decp-rama.svg?style=svg)](https://circleci.com/gh/139bercy/decp-rama)
 
-**Version 1.14.2**
+Vous trouverez davantage d'information sur les données essentielles de la commande publique sur https://139bercy.github.io/decp-docs/.
+
+**Version 1.15.O**
 
 Rappel de ce que sont les données essentielles de la commande publique (ou DECP) [sur le blog de data.gouv.fr](https://www.data.gouv.fr/fr/posts/le-point-sur-les-donnees-essentielles-de-la-commande-publique/).
 
@@ -35,8 +37,6 @@ La procédure standard est la suivante :
 
 Vous trouverez les `code` possibles dans le tableau plus bas.
 
-Pour commencer, vous devez faire une copie de `config/config_template.sh` en `config/config.sh`.
-
 ### Traitement séquentiel d'une source ou de toutes les sources
 
 Le script `process.sh` permet de lancer une étape de traitement ou toutes les étapes de traitement pour une source ou toutes les sources configurées.
@@ -61,6 +61,9 @@ Si la source sélectionnée n'a pas de script pour une étape donnée, cette ét
 Exemples :
 
 ```
+# Lancer toutes les étapes de traitement sur toutes les sources
+./process.sh all package sequence
+
 # Ne lancer que l'étape de conversion XML > JSON pour la source data.gouv.fr_pes
 ./process.sh data.gouv.fr_pes convert only
 
@@ -69,20 +72,28 @@ Exemples :
 
 # Lancer toutes les étapes jusqu'à convert (get, fix, convert) pour toutes les sources configurées
 ./process.sh all convert sequence
-
-# Lancer toutes les étapes de traitement sur toutes les sources
-./process.sh all package sequence
-
 ```
 
 ## Publication du résultat
 
-Le script `publish-decp.sh` permet de publier les fichiers produits sur [le jeu de données](https://www.data.gouv.fr/fr/datasets/5cd57bf68b4c4179299eb0e9).
-
-Les fichiers JSON, XML et OCDS doivent avoir été produits préalablement, par exemple avec :
+1. Les fichiers JSON, XML et OCDS doivent avoir été produits préalablement, par exemple avec :
 
 ```
 ./process.sh all package sequence
+```
+./process.sh all package sequence
+```
+
+2. Déclarez une clé API permettant de modifier [le jeu de données](https://www.data.gouv.fr/fr/datasets/5cd57bf68b4c4179299eb0e9) :
+
+```
+export API_KEY=eyJhbGciOkJIUzI1NiJ9.eyJfc2VyIjoiNTM0ZmZmM2xhO2E3MjkyYzY0YTc3NTI2IiwidGltZSI6...
+```
+
+3. Exécutez le script `publish-decp.sh` permet de publier les fichiers produits sur [le jeu de données](https://www.data.gouv.fr/fr/datasets/5cd57bf68b4c4179299eb0e9).
+
+```
+./publish-decp.sh
 ```
 
 ## Sources de données
@@ -95,6 +106,9 @@ Les fichiers JSON, XML et OCDS doivent avoir été produits préalablement, par 
 | `e-marchespublics.com` | DECP publiées par e-marchespublics.com (Dematis)     | https://www.data.gouv.fr/fr/datasets/5c0a7845634f4139b2ee8883                 | **Intégrée**                                                                                  |
 |                        | DECP des membres de Mégalis Bretagne                 | https://marches.megalisbretagne.org/                                          | Très peu de DECP publiées                                                                     |
 | `grandlyon`            | Marchés du Grand Lyon publiés sur data.grandlyon.com | https://data.grandlyon.com/citoyennete/marchf-public-de-la-mftropole-de-lyon/ | **Intégrée**                                                                                  |
+| `atexo-maximilien`            | DECP téléchargées depuis la plateforme marches.maximilien.fr | https://www.data.gouv.fr/datasets/5f4d1921f7e627ef3ae26944 | **Intégrée**                                                                                  |
+| `ternum-bfc`            | DECP publiées par le profil d'acheteur Ternum BFC | http://focus-marches.ternum-bfc.fr/xml/ | **Intégrée**                                                                                  |
+
 
 ## Contact
 
@@ -106,6 +120,12 @@ Les fichiers JSON, XML et OCDS doivent avoir été produits préalablement, par 
 Le code source de ce projet est publié sous licence [MIT](https://opensource.org/licenses/MIT).
 
 ## Notes de version
+
+### 1.15.0 (12 novembre 2020)
+
+- Ajout des données de marches.maximilien.fr et du profil d'acheteur Ternum BFC
+- Amélioration des instructions pour une exécution locale des scripts
+- Script partagé pour la conversion XML>JSON ([convert-xml.sh](https://github.com/139bercy/decp-rama/blob/master/scripts/sources/shared/convert-xml.sh))
 
 ### 1.14.2 (15 juillet 2020)
 
