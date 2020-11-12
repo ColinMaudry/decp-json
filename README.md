@@ -121,9 +121,11 @@ Le code source de ce projet est publié sous licence [MIT](https://opensource.or
 
 ## Notes de version
 
-### 1.15.0 (2 octobre 2020)
+### 1.15.0 (12 novembre 2020)
 
 - Ajout des données de marches.maximilien.fr et du profil d'acheteur Ternum BFC
+- Amélioration des instructions pour une exécution locale des scripts
+- Script partagé pour la conversion XML>JSON ([convert-xml.sh](https://github.com/139bercy/decp-rama/blob/master/scripts/sources/shared/convert-xml.sh))
 
 ### 1.14.2 (15 juillet 2020)
 
