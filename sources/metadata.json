@@ -40,5 +40,11 @@
     "code": "ternum-bfc",
     "description": "Données publiées par le profil d'acheteur Ternum BFC",
     "url": "http://focus-marches.ternum-bfc.fr/xml/"
+  },
+  {
+    "id": "8",
+    "code": "megalis-bretagne",
+    "description": "Données publiées par le profil d'acheteur Megalis Bretagne",
+    "url": "https://www.data.gouv.fr/api/1/datasets/donnees-essentielles-des-marches-publics-de-megalis-bretagne/"
   }
 ]

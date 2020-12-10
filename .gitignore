@@ -1,3 +1,7 @@
+# Fichier Max
+.DS_store
+
+# Fichiers projet DECP
 sources/*
 !sources/metadata.json
 json

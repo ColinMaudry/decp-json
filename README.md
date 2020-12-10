@@ -4,9 +4,9 @@
 
 [![CircleCI](https://circleci.com/gh/139bercy/decp-rama.svg?style=svg)](https://circleci.com/gh/139bercy/decp-rama)
 
-Vous trouverez davantage d'information sur les données essentielles de la commande publique sur https://139bercy.github.io/decp-docs/.
+Ce document décrit la manière dont les données essentielles de la commande publique sont consolidées techniquement. Vous trouverez davantage d'information sur les données essentielles de la commande publique sur https://139bercy.github.io/decp-docs/.
 
-**Version 1.15.O**
+**Version 1.15.1**
 
 Rappel de ce que sont les données essentielles de la commande publique (ou DECP) [sur le blog de data.gouv.fr](https://www.data.gouv.fr/fr/posts/le-point-sur-les-donnees-essentielles-de-la-commande-publique/).
 
@@ -41,7 +41,7 @@ Vous trouverez les `code` possibles dans le tableau plus bas.
 
 Le script `process.sh` permet de lancer une étape de traitement ou toutes les étapes de traitement pour une source ou toutes les sources configurées.
 
-Les sources configurées sont visibles dans `sources/metadata.json`, et récapitulées dans le tableau ci-dessous.
+Les sources configurées sont visibles dans `sources/metadata.json`.
 
 Les étapes de traitement et leur code respectif sont les suivantes, dans l'ordre :
 
@@ -81,8 +81,6 @@ Exemples :
 ```
 ./process.sh all package sequence
 ```
-./process.sh all package sequence
-```
 
 2. Déclarez une clé API permettant de modifier [le jeu de données](https://www.data.gouv.fr/fr/datasets/5cd57bf68b4c4179299eb0e9) :
 
@@ -96,168 +94,16 @@ export API_KEY=eyJhbGciOkJIUzI1NiJ9.eyJfc2VyIjoiNTM0ZmZmM2xhO2E3MjkyYzY0YTc3NTI2
 ./publish-decp.sh
 ```
 
-## Sources de données
+## Sources de données agrégrées
 
-| Code                   | Description                                          | URL                                                                           | Statut                                                                                        |
-| ---------------------- | ---------------------------------------------------- | ----------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| `data.gouv.fr_pes`     | DECP des collectivités issues du PES Marché          | https://www.data.gouv.fr/fr/datasets/5bd0b6fd8b4c413d0801dc57                 | **Intégrée**                                                                                  |
-| `data.gouv.fr_aife`    | DECP de l'État publiées par l'AIFE                   | https://www.data.gouv.fr/fr/datasets/5bd789ee8b4c4155bd9a0770                 | **Intégrée**                                                                                  |
-| `marches-publics.info` | DECP publiées par marches-publics.info (AWS)         | https://www.marches-publics.info/mpiaws/index.cfm                             | [Mises à dispo par la communauté](https://www.data.gouv.fr/datasets/5cdb1722634f41416ffe90e2) |
-| `e-marchespublics.com` | DECP publiées par e-marchespublics.com (Dematis)     | https://www.data.gouv.fr/fr/datasets/5c0a7845634f4139b2ee8883                 | **Intégrée**                                                                                  |
-|                        | DECP des membres de Mégalis Bretagne                 | https://marches.megalisbretagne.org/                                          | Très peu de DECP publiées                                                                     |
-| `grandlyon`            | Marchés du Grand Lyon publiés sur data.grandlyon.com | https://data.grandlyon.com/citoyennete/marchf-public-de-la-mftropole-de-lyon/ | **Intégrée**                                                                                  |
-| `atexo-maximilien`            | DECP téléchargées depuis la plateforme marches.maximilien.fr | https://www.data.gouv.fr/datasets/5f4d1921f7e627ef3ae26944 | **Intégrée**                                                                                  |
-| `ternum-bfc`            | DECP publiées par le profil d'acheteur Ternum BFC | http://focus-marches.ternum-bfc.fr/xml/ | **Intégrée**                                                                                  |
-
+Se reporter au fichier `sources/metadata.json`.
 
 ## Contact
 
-- decp@finances.gouv.fr
-- intéragir avec ce dépôt sur Github (issues, pull request).
+- Pour toute question technique ou juridique, une seule adresse : decp@finances.gouv.fr
+- Il est également possible d'ntéragir directement avec ce dépôt sur GitHub (issues, pull request) pour demander des évolutions ou signaler des anomalies.
 
 ## Licence
 
 Le code source de ce projet est publié sous licence [MIT](https://opensource.org/licenses/MIT).
 
-## Notes de version
-
-### 1.15.0 (12 novembre 2020)
-
-- Ajout des données de marches.maximilien.fr et du profil d'acheteur Ternum BFC
-- Amélioration des instructions pour une exécution locale des scripts
-- Script partagé pour la conversion XML>JSON ([convert-xml.sh](https://github.com/139bercy/decp-rama/blob/master/scripts/sources/shared/convert-xml.sh))
-
-### 1.14.2 (15 juillet 2020)
-
-- Remplacement de l'adresse email de contact
-
-### 1.14.1 (24 juin 2020)
-
-- Conversion JSON > XML par blocs de 30 000 marchés pour limiter la consommation de mémoire ([#42](https://github.com/139bercy/decp-rama/issues/42))
-
-### 1.14.0 (11 juin 2020)
-
-- Fixation de la durée de timeout (`no_output_timeout`) CircleCI à 4 heures.
-
-### 1.13.0 (21 mai 2020)
-
-- Migration du dépôt vers l'organisation @139bercy
-- Remplacement des anciens noms de procédure par les nouveaux dans les données consolidées (voir [https://github.com/139bercy/format-commande-publique/issues/48](https://github.com/139bercy/format-commande-publique/issues/48))
-- Correction de bug : le SIRET de l'autorité concédante est maintenant ajoutée à l'`uid` des contrats de concession ([#39](https://github.com/139bercy/decp-rama/issues/39))
-
-### 1.12.0 (28 avril 2020)
-
-- Ajout du format [OCDS](https://standard.open-contracting.org/latest/fr/) aux formats de sortie
-
-#### 1.11.6
-
-- Fixation de la durée de timeout (`no_output_timeout`) CircleCI à 1 heure 30 minutes. fin de ne pas surconsommer les crédits Circle d'Etalab. Si les timeout sont rares, le traitement des données se fera exceptionnellement en local. Autrement, il faudra migrer vers une autre solution.
-
-#### 1.11.5
-
-- Allongement de la durée de timeout (`no_output_timeout`) CircleCI (1 heure 45 minutes => 10 heures)
-
-#### 1.11.4
-
-- Allongement de la durée de timeout (`no_output_timeout`) CircleCI (1 heure => 1 heure 45 minutes)
-
-#### 1.11.3
-
-- Données AIFE : Plus de discrimination sur l'extension de fichier ([#30](https://github.com/139bercy/decp-rama/issues/30))
-
-#### 1.11.2
-
-- Allongement de la durée de timeout CircleCI (`no_output_timeout`) (10 minutes => 1 heure)
-
-#### 1.11.1
-
-- Suppression d'une commande qui dépendait de la création d'une archive ZIP
-
-### 1.11.0
-
-- Ajout d'un jeu de données supplémentaire de l'AIFE (https://www.data.gouv.fr/fr/datasets/aife-de-13001977100018/)
-- Ajout de stats dans les logs
-- Suppression de la création d'archive ZIP
-
-### 1.10.0
-
-- Données PES marché : récupération du fichier consolidé plutôt des centains de fichiers individuels (#GreenIT)
-
-### 1.9.0
-
-- Amélioration de la production des fichiers JSON et XML du jour lorsqu'il y a plus de 1000 nouveaux marchés sur une journée
-- Prise en compte des [marchés exclus (fictifs ou inexploitables)](https://github.com/139bercy/decp-rama/issues/26)
-
-#### 1.8.3 (31/08/2019)
-
-- Seul le premier espace (s'il y en avait) dans les identifiants de marchés était traité. S'il y avait plus d'un espace, il décalait le compte des nouveaux marchés. J'ai modifié l'expression régulière pour qu'elle soit globale.
-
-#### 1.8.2 (13/08/2019)
-
-- `wget` parcourait également les dossiers parents et frères de /decp, téléchargeant les fichiers XML de /lcsqa. C'est corrigé avec l'option `-np`pour `no-parent`.
-
-#### 1.8.1 (04/07/2019)
-
-- pour les marchés provenant de l'AIFE (`data.gouv.fr_aife`), si une `datePublicationDonnees` est manquante, elle est récupérée à partir du nom du fichier XML publié par l'AIFE
-- pour les marchés provenant du portail du Grand Lyon (`grandlyon`), si plusieurs `datePublicationDonnees` sont présentes, seule la première est retenue
-
-### 1.8.0 (20/06/2019)
-
-- Correction d'un bug dans la génération des nouveaux marchés du jour
-- dédublication des marchés via l'`uid` (concaténation du SIRET de l'acheteur et de l'`id` du marché)
-
-### 1.7.0 (10/06/2019)
-
-- image docker plutôt que de réinstaller toutes les dépendances dans la VM à chaque run de CircleCI
-- les données ne sont récupérées et consolidées que du mardi au samedi matin (peu ou pas de nouvelles données le weekend)
-- seul les runs sur la branche `master` se terminent par une publication sur data.gouv.fr, pas sur `develop` et autres branches
-
-### 1.6.0 (30/05/2019)
-
-- les fichiers des nouveaux marchés du jour sont maintenant [typés "Mise à jour" sur data.gouv.fr](https://www.data.gouv.fr/datasets/5cd57bf68b4c4179299eb0e9)
-
-#### 1.5.1 (28/05/2019)
-
-- correction d'une erreur dans la conversion JSON > XML
-
-### 1.5.0 (25/05/2019)
-
-- conversion de l'agrégat vers XML
-- correction des soucis de téléchargement et de traitement
-- ajout des données du Grand Lyon (merci Nathalie Vernus-Prost)
-- création d'un fichier des nouveaux marchés du jour
-
-### 1.4.0 (09/05/2019)
-
-- **fork de [decp-json](https://github.com/ColinMaudry/decp-json) ([Colin Maudry](https://twitter.com/col1m)) par Etalab pour la publication des données sur data.gouv.fr**
-- passage à la licence MIT
-- amélioration du mécanisme d'orchestration du traitement avec `process.sh`
-- automatisation du process récupération/traitement/publication dans CircleCI
-
-#### 1.3.1 (05/04/2019)
-
-- correction d'un bug dans la fusion des JSON
-
-### 1.3.0 (04/04/2019)
-
-- ajout des données de e-marchespublics.com
-- couvertures des trois datasets de l'AIFE
-- gestion des sources de données qui ne nécessitent pas de conversion
-- amélioration du workflow (get > convert > fix > package > load-in-db)
-
-### 1.2.0 (07/03/2019)
-
-- correction d'une anomalie dans les données `marches-publics.info` (certains marchés n'ont pas de `_type`)
-- nouvelles données dans `/json`
-- ajout d'un script de (ré)initialisation de MongoDB
-
-### 1.1.0 (27/02/2019)
-
-- support des [données publiées sur marches-publics.info](https://www.marches-publics.info/mpiaws/index.cfm) (`marches-publics.info`)
-- ajout de la date du dernier téléchargement dans les métadonnées
-- amélioration de la scructure des scripts
-- ajout de `all.sh`, pour traiter intégralement une source (sauf le chargement en base de données)
-
-### 1.0.0 (02/02/2019)
-
-- support des [données PES marché publiées sur data.gouv.fr](https://www.data.gouv.fr/fr/datasets/5bd0b6fd8b4c413d0801dc57/) (`data.gouv.fr_pes`)
