@@ -38,7 +38,7 @@ Nouveau fichier :       $nbMarchesUniqueNew marchés uniques\n
 # Si le nombre de nouveaux marchés uniques est trop important par rapport au précédent fichier decp.json (previous_decp.json) le temps de traitement devient trop important et le CI peut time out (5h pour extraire 8500 nouveaux marchés https://circleci.com/gh/etalab/decp-rama/234).
 # Pour éviter cela, si le nombre de marchés est important, on utilise une méthode jq (différence d'array) qui est un peu longue (30 min ?), mais don't le temps d'exécution ne devrait pas être lié au nombre de nouveaux marchés.
 
-if [[ $nbNewMarches -lt 1000 ]]
+if [[ $nbNewMarches -lt 1500 ]]
 
 # Méthode classique si peu de nouveaux marchés
 then
