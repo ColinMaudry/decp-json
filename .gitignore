@@ -1,5 +1,6 @@
 # Fichier Max
 .DS_store
+*.icloud
 
 # Fichiers projet DECP
 sources/*

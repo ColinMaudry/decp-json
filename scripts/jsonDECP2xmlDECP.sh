@@ -2,7 +2,7 @@
 source=$1
 
 length=`jq -r '.marches | length' $source`
-chunk_size=100000
+chunk_size=30000
 
 start_range=0
 end_range=$chunk_size

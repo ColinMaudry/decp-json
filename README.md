@@ -26,7 +26,7 @@ La procédure standard est la suivante :
 ## Pré-requis
 
 - [xml2json](https://github.com/Cheedoong/xml2json) pour la conversion de XML vers JSON (binaire Linus amd64 inclus dans `./scripts/bin`)
-- [jq](https://stedolan.github.io/jq/) pour la modification des fichiers JSON (disponible dans les dépôts Ubuntu)
+- [jq](https://stedolan.github.io/jq/) pour la modification des fichiers JSON (disponible dans les dépôts Ubuntu, version >=1.6 car la 1.5 a un bug qui pose problème dans une conversion des fichiers JSON en XML)
 - [xsltproc](http://xmlsoft.org/XSLT/xsltproc2.html) pour la correction d'anomalies dans certaines sources XML (disponible dans les dépôts Ubuntu)
 - [json2xml](https://github.com/edsu/json2xml) pour la conversion XML vers JSON
 - [libxml2-utils] pour l'outil `xmllint` (disponible dans les dépôts Ubuntu)
