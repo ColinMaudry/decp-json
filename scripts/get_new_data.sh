@@ -39,7 +39,8 @@ Nouveau fichier :       $nbMarchesUniqueNew marchés uniques\n
 if [[ $nbNewMarches -gt 1500 ]]
 then 
     nbNewMarches=1499
-    head -n $nbNewMarches todayMarches > todayMarches
+    cp -a todayMarches todayMarches_old
+    head -n $nbNewMarches todayMarches_old > todayMarches
 fi
 
 # Si le nombre de nouveaux marchés uniques est trop important par rapport au précédent fichier decp.json (previous_decp.json) le temps de traitement devient trop important et le CI peut time out (5h pour extraire 8500 nouveaux marchés https://circleci.com/gh/etalab/decp-rama/234).
