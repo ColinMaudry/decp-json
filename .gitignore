@@ -10,3 +10,7 @@ xml
 *.json
 !scripts/jq/ocds/tests/**/*.json
 *.log
+decp_*.xml
+newMarches*
+oldMarches*
+todayMarches

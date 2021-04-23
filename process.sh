@@ -27,10 +27,14 @@ case $source in
         echo "Sources :"
         echo $sources
         echo ""
-        for source in $sources
-        do
-            ./process.sh $source $step $mode
-        done
+        if [[ "$mode" != "nothing" ]]
+        then
+          ## Pas de traitement des sources si l'option "nothing" est fourni
+          for source in $sources
+          do
+              ./process.sh $source $step $mode
+          done
+        fi
 
         echo ""
         echo "## Fusion de tous les fichiers JSON de source en un seul"

@@ -1,47 +1,94 @@
 ---
 version: 2
 jobs:
-    process-and-publish:
+    get_data:
+      docker:
+          - image: 139bercy/decp-rama
+      steps:
+          - checkout
+          - run: date +%F > date
+          - run:
+              name: Récupération des données
+              command: |
+                   ./process.sh all get only
+          - save_cache:
+              key: data-in-{{ .Branch }}-{{ checksum "sources/metadata.json" }}-{{ checksum "date" }}
+              paths:
+                - "json/"
+                - "xml/"
+                - "sources/"
+    process:
         docker:
             - image: 139bercy/decp-rama
         steps:
+            - checkout
+            - run: date +%F > date
+            - restore_cache:
+                keys:
+                  - data-in-{{ .Branch }}-{{ checksum "sources/metadata.json" }}-{{ checksum "date" }}
+                  - data-in-master-{{ checksum "sources/metadata.json" }}-{{ checksum "date" }}
             - run:
-                  # Récupération du code manuel car soucis avec "- checkout"
-                  name: Récupération de decp-rama
-                  command: |
-                      mkdir -p /home/circleci/project
-                      cd /home/circleci/project
-                      git clone https://github.com/139bercy/decp-rama
-                      cd decp-rama
-                      git checkout $CIRCLE_BRANCH
-            - run:
-                  name: Récupération et traitement des données
-                  no_output_timeout: 6h
-                  command: |
-                       cd /home/circleci/project/decp-rama
-                       ./process.sh all package sequence
-            - run:
-                  name: Publication des données sur (next.)data.gouv.fr
-                  command: |
-                      cd /home/circleci/project/decp-rama
-                      ./publish-decp.sh
+                name: Traitement des données
+                no_output_timeout: 6h
+                command: |
+                     ./process.sh all fix only
+                     ./process.sh all convert only
+                     ./process.sh all package only
+            - save_cache:
+                key: data-out-{{ .Branch }}-{{ checksum "date" }}
+                paths:
+                  - "json/decp.json"
+                  - "xml/decp.xml"
+                  - "decp_*.json"
+                  - "decp_*.xml"
+                  - "json/decp.ocds.json"
+    publish:
+      docker:
+        - image: 139bercy/decp-rama
+      steps:
+        - checkout
+        - run: date +%F > date
+        - restore_cache:
+            keys:
+              - data-out-{{ .Branch }}-{{ checksum "date" }}
+        - run:
+            name: Publication des données sur (next.)data.gouv.fr
+            command: |
+                ./publish-decp.sh
 workflows:
     version: 2
+    data:
+      jobs:
+        - get_data
+      triggers:
+        - schedule:
+            cron: 0 1 * * 2,3,4,5,6
+            filters:
+              branches:
+                only:
+                  - master
+
     dev:
-        jobs:
-            - process-and-publish:
-                  filters:
-                      branches:
-                          only:
-                              - develop
+      jobs:
+          # - hold: # <<< A job that will require manual approval in the CircleCI web application.
+          #     type: approval # <<< This key-value pair will set your workflow to a status of "On Hold"
+          # - get_data:
+          #     requires:
+          #       - hold # Will only be validated if approved so get_data won't run until then
+          - process
+
     daily:
-        jobs:
-            - process-and-publish:
-                  context: decp-rama-context
-        triggers:
-            - schedule:
-                  cron: 0 3 * * 2,3,4,5,6
-                  filters:
-                      branches:
-                          only:
-                              - master
+      jobs:
+        - process
+        - publish:
+            context:
+              - decp-rama-context
+            requires:
+              - process
+      triggers:
+        - schedule:
+            cron: 0 3 * * 2,3,4,5,6
+            filters:
+              branches:
+                only:
+                  - master
