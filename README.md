@@ -94,7 +94,7 @@ export API_KEY=eyJhbGciOkJIUzI1NiJ9.eyJfc2VyIjoiNTM0ZmZmM2xhO2E3MjkyYzY0YTc3NTI2
 ./publish-decp.sh
 ```
 
-## Sources de données agrégrées
+## Sources de données agrégées
 
 Se reporter au fichier `sources/metadata.json`.
 
