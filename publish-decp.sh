@@ -65,7 +65,7 @@ case ${CIRCLE_BRANCH} in
 
         echo "Publication de decp_$date.${ext}..."
 
-        curl "$api/datasets/$dataset_id/upload/" -F "file=@decp_${date}.${ext}" -F "filename=decp_$date" -H "X-API-KEY: $api_key" > dailyResource.json
+        curl "$api/datasets/$dataset_id/upload/" -F "file=@results/decp_${date}.${ext}" -F "filename=decp_$date" -H "X-API-KEY: $api_key" > dailyResource.json
 
         idDailyResource=`jq -r '.id' dailyResource.json`
 
@@ -81,4 +81,3 @@ case ${CIRCLE_BRANCH} in
 
 ;;
 esac
-

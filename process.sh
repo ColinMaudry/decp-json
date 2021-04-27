@@ -27,76 +27,76 @@ case $source in
         echo "Sources :"
         echo $sources
         echo ""
-        if [[ "$mode" != "nothing" ]]
-        then
           ## Pas de traitement des sources si l'option "nothing" est fourni
-          for source in $sources
-          do
-              ./process.sh $source $step $mode
-          done
-        fi
+        for source in $sources
+        do
+            ./process.sh $source $step $mode
+        done
 
-        echo ""
-        echo "## Fusion de tous les fichiers JSON de source en un seul"
-
-        scripts/mergeAllSources.sh
-
-        echo "## Exclusions des marchés avec anomalie"
-
-        scripts/excludeMarches.sh
-
-        echo ""
-        echo "## Correction des anomalie globales"
-
-        scripts/fixAll.sh
-
-        echo "## Génération des statistiques"
-
-        scripts/stats.sh
-
-        echo ""
-        echo "Extraction des marchés du jour"
-
-        case ${CIRCLE_BRANCH} in
-            *)
-
-            resource="https://www.data.gouv.fr/fr/datasets/r/16962018-5c31-4296-9454-5998585496d2"
-
-            ;;
-
-            # *)
-            # export api="https://next.data.gouv.fr/api/1"
-            # export resource_id_json="a53049f9-3536-4dab-b0fb-8928917cb12a"
-            # api_key=$NEXT_API_KEY
-            # ;;
-        esac
-
-        wget $resource -O decp_previous.json
-
-        # Le fichier des marchés du jour est sauvegardé dans ./decp_{date-iso}.json
-        scripts/get_new_data.sh decp_previous.json json/decp.json
-
-
-
-        if [[ ! -d xml  ]]
+        if [[ "$mode" == "nothing" ]]
         then
-            mkdir xml
+          echo ""
+          echo "## Fusion de tous les fichiers JSON de source en un seul"
+
+          scripts/mergeAllSources.sh
+
+          echo "## Exclusions des marchés avec anomalie"
+
+          scripts/excludeMarches.sh
+
+          echo ""
+          echo "## Correction des anomalie globales"
+
+          scripts/fixAll.sh
+
+          echo "## Génération des statistiques"
+
+          scripts/stats.sh
+
+          echo ""
+          echo "Extraction des marchés du jour"
+
+          case ${CIRCLE_BRANCH} in
+              *)
+
+              resource="https://www.data.gouv.fr/fr/datasets/r/16962018-5c31-4296-9454-5998585496d2"
+
+              ;;
+
+              # *)
+              # export api="https://next.data.gouv.fr/api/1"
+              # export resource_id_json="a53049f9-3536-4dab-b0fb-8928917cb12a"
+              # api_key=$NEXT_API_KEY
+              # ;;
+          esac
+
+          wget $resource -O results/decp_previous.json
+
+          # Le fichier des marchés du jour est sauvegardé dans ./decp_{date-iso}.json
+          scripts/get_new_data.sh results/decp_previous.json json/decp.json
+
+
+
+          if [[ ! -d xml  ]]
+          then
+              mkdir xml
+          fi
+
+          date=`date "+%F"`
+          echo ""
+          echo "## Conversion du JSON agrégé en XML..."
+          scripts/jsonDECP2xmlDECP.sh json/decp.json > xml/decp.xml
+          ls -lh xml/decp.xml
+
+          echo ""
+          echo "## Conversion du JSON du jour en XML..."
+          scripts/jsonDECP2xmlDECP.sh results/decp_$date.json > results/decp_$date.xml
+          ls -lh results/decp_$date.xml
+
+          echo ""
+          echo "## Conversion du JSON agrégé au format OCDS JSON..."
+          scripts/makeOCDS.sh json/decp.json
         fi
-
-        date=`date "+%F"`
-        echo ""
-        echo "## Conversion du JSON agrégé en XML..."
-        scripts/jsonDECP2xmlDECP.sh json/decp.json > xml/decp.xml
-        ls -lh xml/decp.xml
-
-        echo ""
-        echo "## Conversion du JSON du jour en XML..."
-        scripts/jsonDECP2xmlDECP.sh decp_$date.json > decp_$date.xml
-        ls -lh decp_$date.xml
-
-        echo ""
-        echo "## Conversion du JSON agrégé au format OCDS JSON..."
-        scripts/makeOCDS.sh json/decp.json
     ;;
     *)
 
@@ -118,6 +118,9 @@ case $source in
                         break;
                     fi
                 done
+             ;;
+             nothing)
+              echo "On ne fait rien concernant les sources"
              ;;
              *)
              echo "Seules les valeurs 'only' et 'sequence' sont acceptées."

@@ -34,13 +34,16 @@ jobs:
                      ./process.sh all fix only
                      ./process.sh all convert only
                      ./process.sh all package only
+                     ./process.sh all package nothing # traitement final pour regrouper toutes les données
             - save_cache:
                 key: data-out-{{ .Branch }}-{{ checksum "date" }}
                 paths:
+                  # - "results/decp_previous.json"
                   - "json/decp.json"
                   - "xml/decp.xml"
-                  - "decp_*.json"
-                  - "decp_*.xml"
+                  - "results/"
+                  # - "decp_*.json"
+                  # - "decp_*.xml"
                   - "json/decp.ocds.json"
     publish:
       docker:
@@ -76,6 +79,13 @@ workflows:
           #     requires:
           #       - hold # Will only be validated if approved so get_data won't run until then
           - process
+          # - hold: # <<< A job that will require manual approval in the CircleCI web application.
+          #     type: approval # <<< This key-value pair will set your workflow to a status of "On Hold"
+          # - publish:
+          #     context:
+          #       - decp-rama-context
+          #     requires:
+          #       - hold
 
     daily:
       jobs:
