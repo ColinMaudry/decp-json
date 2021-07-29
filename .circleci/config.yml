@@ -147,7 +147,7 @@ jobs:
             command: |
                 mkdir -p sources/aws-marchespublics
                 cd sources/aws-marchespublics
-                ./decp-aws/publish-marches-public.info.sh
+                ../../decp-aws/publish-marches-public.info.sh
 workflows:
     version: 2
     data:
