@@ -6,6 +6,18 @@ jobs:
           - image: 139bercy/decp-rama
       steps:
           - checkout
+          - run:
+              name: Condition pour les branches
+              command: |
+                    if [ "$CIRCLE_BRANCH" != "master" ]; then
+                        if [ $(git diff --name-only master..${CIRCLE_BRANCH} | grep "sources/metadata.json" | wc -l) = 0 ]; then
+                          commit_id_head=$(git log -n1 --format=format:"%H")
+                          commit_id_head1=$(git log -n2 --format=format:"%H" | tail -1)
+                          if [ $(git diff --name-only ${commit_id_head1} ${commit_id_head} | grep "sources/metadata.json" | wc -l) = 0 ]; then
+                            circleci-agent step halt
+                          fi
+                        fi
+                    fi
           - run: date +%F > date
           - run:
               name: Récupération des données
@@ -17,6 +29,7 @@ jobs:
                 - "json/"
                 - "xml/"
                 - "sources/"
+
     process:
         docker:
             - image: 139bercy/decp-rama
@@ -50,6 +63,14 @@ jobs:
         - image: 139bercy/decp-rama
       steps:
         - checkout
+        - run:
+            name: Condition pour les branches
+            command: |
+                if [ "$CIRCLE_BRANCH" != "master" ]; then
+                    if [ $(git log -1 | grep "\[publish\]" | wc -l) = 0 ]; then
+                      circleci-agent step halt
+                    fi
+                fi
         - run: date +%F > date
         - restore_cache:
             keys:
@@ -58,6 +79,75 @@ jobs:
             name: Publication des données sur (next.)data.gouv.fr
             command: |
                 ./publish-decp.sh
+
+    get_marches_public_info:
+      docker:
+          - image: 139bercy/decp-rama
+      steps:
+          - checkout
+          - run:
+              name: Condition pour les branches
+              command: |
+                    if [ "$CIRCLE_BRANCH" != "master" ]; then
+                        if [ $(git diff --name-only master..${CIRCLE_BRANCH} | grep "decp-aws/get-aws-marchespublics.sh" | wc -l) = 0 ]; then
+                          commit_id_head=$(git log -n1 --format=format:"%H")
+                          commit_id_head1=$(git log -n2 --format=format:"%H" | tail -1)
+                          if [ $(git diff --name-only ${commit_id_head1} ${commit_id_head} | grep "decp-aws/get-aws-marchespublics.sh" | wc -l) = 0 ]; then
+                            circleci-agent step halt
+                          fi
+                        fi
+                    fi
+          - run: date +%F > date
+          - run:
+              name: Prise en compte de l'exécution du schedule annually
+              command: |
+                  if [[ ${LAST_YEAR} == "true" ]]
+                  then
+                    dateDebut="$(date -d '-1year' +%Y)-01-01"
+                    dateFin="$(date -d '-1year' +%Y)-12-31"
+                  fi
+          - run:
+              name: Récupération des données
+              command: |
+                  mkdir -p sources/aws-marchespublics
+                  cd sources/aws-marchespublics
+                  ../../decp-aws/get-aws-marchespublics.sh
+          - save_cache:
+              key: data-in-{{ .Branch }}-{{ checksum "decp-aws/get-aws-marchespublics.sh" }}-{{ checksum "date" }}
+              paths:
+                - "sources/"
+
+    publish_marches_public_info:
+      docker:
+        - image: 139bercy/decp-rama
+      steps:
+        - checkout
+        - run:
+            name: Condition pour les branches
+            command: |
+                if [ "$CIRCLE_BRANCH" != "master" ]; then
+                    if [ $(git log -1 | grep "\[publish\]" | wc -l) = 0 ]; then
+                      circleci-agent step halt
+                    fi
+                fi
+        - run: date +%F > date
+        - run:
+            name: Prise en compte de l'exécution du schedule annually
+            command: |
+                if [[ ${LAST_YEAR} == "true" ]]
+                then
+                  dateDebut="$(date -d '-1year' +%Y)-01-01"
+                  dateFin="$(date -d '-1year' +%Y)-12-31"
+                fi
+        - restore_cache:
+            keys:
+              - data-out-{{ .Branch }}-{{ checksum "decp-aws/get-aws-marchespublics.sh" }}
+        - run:
+            name: Publication des données sur (next.)data.gouv.fr
+            command: |
+                mkdir -p sources/aws-marchespublics
+                cd sources/aws-marchespublics
+                ./decp-aws/publish-marches-public.info.sh
 workflows:
     version: 2
     data:
@@ -73,19 +163,22 @@ workflows:
 
     dev:
       jobs:
-          # - hold: # <<< A job that will require manual approval in the CircleCI web application.
-          #     type: approval # <<< This key-value pair will set your workflow to a status of "On Hold"
-          # - get_data:
-          #     requires:
-          #       - hold # Will only be validated if approved so get_data won't run until then
-          - process
-          # - hold: # <<< A job that will require manual approval in the CircleCI web application.
-          #     type: approval # <<< This key-value pair will set your workflow to a status of "On Hold"
-          # - publish:
-          #     context:
-          #       - decp-rama-context
-          #     requires:
-          #       - hold
+        - get_data
+        - get_marches_public_info
+        - process:
+            requires:
+              - get_data
+        - publish:
+            context:
+              - decp-rama-context
+            requires:
+              - process
+        - publish_marches_public_info:
+            context:
+              - decp-rama-context
+              - decp-aws-context
+            requires:
+              - process
 
     daily:
       jobs:
@@ -98,6 +191,32 @@ workflows:
       triggers:
         - schedule:
             cron: 0 3 * * 2,3,4,5,6
+            filters:
+              branches:
+                only:
+                  - master
+    weekly:
+      jobs:
+        - get_marches_public_info
+        - publish_marches_public_info:
+            context:
+              - decp-rama-context
+      triggers:
+        - schedule:
+            cron: 0 3 * * 0
+            filters:
+              branches:
+                only:
+                  - master
+    annually:
+      jobs:
+        - publish_marches_public_info:
+            context:
+              - decp-rama-context
+              - decp-aws-context
+      triggers:
+        - schedule:
+            cron: 0 3 30 6 *
             filters:
               branches:
                 only:
