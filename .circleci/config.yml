@@ -89,10 +89,10 @@ jobs:
               name: Condition pour les branches
               command: |
                     if [ "$CIRCLE_BRANCH" != "master" ]; then
-                        if [ $(git diff --name-only master..${CIRCLE_BRANCH} | grep "decp-aws/get-aws-marchespublics.sh" | wc -l) = 0 ]; then
+                        if [ $(git diff --name-only master..${CIRCLE_BRANCH} | grep "decp-aws/get-marches-public.info.sh" | wc -l) = 0 ]; then
                           commit_id_head=$(git log -n1 --format=format:"%H")
                           commit_id_head1=$(git log -n2 --format=format:"%H" | tail -1)
-                          if [ $(git diff --name-only ${commit_id_head1} ${commit_id_head} | grep "decp-aws/get-aws-marchespublics.sh" | wc -l) = 0 ]; then
+                          if [ $(git diff --name-only ${commit_id_head1} ${commit_id_head} | grep "decp-aws/get-marches-public.info.sh" | wc -l) = 0 ]; then
                             circleci-agent step halt
                           fi
                         fi
@@ -111,9 +111,9 @@ jobs:
               command: |
                   mkdir -p sources/aws-marchespublics
                   cd sources/aws-marchespublics
-                  ../../decp-aws/get-aws-marchespublics.sh
+                  ../../decp-aws/get-marches-public.info.sh
           - save_cache:
-              key: data-in-{{ .Branch }}-{{ checksum "decp-aws/get-aws-marchespublics.sh" }}-{{ checksum "date" }}
+              key: data-in-{{ .Branch }}-{{ checksum "decp-aws/get-marches-public.info.sh" }}-{{ checksum "date" }}
               paths:
                 - "sources/"
 
@@ -141,13 +141,13 @@ jobs:
                 fi
         - restore_cache:
             keys:
-              - data-out-{{ .Branch }}-{{ checksum "decp-aws/get-aws-marchespublics.sh" }}
+              - data-in-{{ .Branch }}-{{ checksum "decp-aws/get-marches-public.info.sh" }}-{{ checksum "date" }}
         - run:
             name: Publication des données sur (next.)data.gouv.fr
             command: |
                 mkdir -p sources/aws-marchespublics
                 cd sources/aws-marchespublics
-                ./decp-aws/publish-marches-public.info.sh
+                ../../decp-aws/publish-marches-public.info.sh
 workflows:
     version: 2
     data:
@@ -201,6 +201,8 @@ workflows:
         - publish_marches_public_info:
             context:
               - decp-rama-context
+            requires:
+              - get_marches_public_info
       triggers:
         - schedule:
             cron: 0 3 * * 0

@@ -11,7 +11,7 @@ echo $newFileName
 
 if [[ ! -f ${newFileName} ]]
 then
-    echo "Le fichier agrégé ./json/decp.json doit d'abord être généré avec la commande './merge_all_sources.sh'."
+    echo "Le fichier agrégé ${newFileName} doit d'abord être généré avec la commande '$(dirname $0)/get-marches-public.info.sh'."
     exit 1
 fi
 
