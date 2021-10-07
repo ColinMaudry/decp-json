@@ -46,5 +46,11 @@
     "code": "megalis-bretagne",
     "description": "Données publiées par le profil d'acheteur Megalis Bretagne",
     "url": "https://www.data.gouv.fr/fr/datasets/5f4f4f8910f4b55843deae51"
+  },
+  {
+    "id": "9",
+    "code": "region-bretagne",
+    "description": "Données publiées par la région bretagne sur son site opendata",
+    "url": "https://data.bretagne.bzh/api/datasets/1.0/decp-crb/alternative_exports/decp2021_regionbretagne_csv_xml"
   }
 ]
