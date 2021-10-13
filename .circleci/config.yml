@@ -155,7 +155,7 @@ workflows:
         - get_data
       triggers:
         - schedule:
-            cron: 0 1 * * 2,3,4,5,6
+            cron: 0 1 * * 2,4,6
             filters:
               branches:
                 only:
@@ -190,7 +190,7 @@ workflows:
               - process
       triggers:
         - schedule:
-            cron: 0 3 * * 2,3,4,5,6
+            cron: 0 3 * * 2,4,6
             filters:
               branches:
                 only:
