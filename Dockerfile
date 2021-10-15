@@ -1,6 +1,7 @@
 FROM python:2-slim
-RUN apt-get update
-RUN apt-get install -y xsltproc libxml2-utils git build-essential curl zip wget python3 python3-venv python3-pip lftp
+RUN apt-get update && apt-get upgrade -y --no-install-recommends \
+  && apt-get install -y xsltproc libxml2-utils git build-essential curl zip wget python3 python3-venv python3-pip lftp --no-install-recommends \
+  && apt-get clean && rm -rf /var/cache/apt
 WORKDIR /deps
 RUN git clone https://github.com/edsu/json2xml.git
 RUN git clone https://github.com/Cheedoong/xml2json.git
